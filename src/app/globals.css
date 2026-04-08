@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* SF Pro Rounded — self-hosted */
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("/fonts/SF-Pro-Rounded-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("/fonts/SF-Pro-Rounded-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("/fonts/SF-Pro-Rounded-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("/fonts/SF-Pro-Rounded-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-brand: #FDDE24;
+  --color-brand-cream: #FFFEE7;
+
+  --color-primary: #10B981;
+  --color-primary-dark: #059669;
+  --color-primary-light: #ECFDF5;
+
+  --color-accent: #FBBF24;
+  --color-accent-dark: #F59E0B;
+  --color-accent-light: #FEF3C7;
+
+  --color-mango: #F97316;
+  --color-mango-dark: #EA580C;
+
+  --color-text: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  --color-bg: #FFFEE7;
+  --color-bg-warm: #F3E8D8;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  --font-heading: var(--font-heading), "Plus Jakarta Sans", -apple-system, sans-serif;
+  --font-body: "SF Pro Rounded", var(--font-body), "Nunito", -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+.text-xs {
+  font-size: 12px !important;
+  line-height: 1.5;
+}
