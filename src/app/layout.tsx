@@ -113,26 +113,26 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "Xoài Tứ Quý là gì?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Xoài Tứ Quý là giống xoài đặc sản Bến Tre, cho trái quanh năm (3 vụ/năm). Trồng trên đất giồng cát ven biển nhiễm mặn tại Thạnh Phú, tạo ra vị mặn nhẹ cuối lưỡi — đặc điểm không thể tái tạo ở vùng khác. Đã được cấp Chỉ dẫn địa lý CDĐL #00124 bởi Cục Sở hữu trí tuệ năm 2022.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Giá dao động theo ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi vựa 0932 585 533 (A Phúc) để có giá chính xác. Giá cập nhật mỗi sáng.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "Ship xa xoài có bị dập không?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Không. Mỗi trái bọc lưới xốp riêng, xếp trong thùng carton có lót đệm. Tỷ lệ lỗi dưới 2%. Nếu có quả dập — gửi ảnh qua Zalo, bồi ngay đơn sau.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Sao biết là xoài Bến Tre thật?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Mỗi thùng có QR truy xuất nguồn gốc: tên vườn, ngày hái, người thu hoạch. Sản phẩm thuộc vùng Chỉ dẫn địa lý Bến Tre do Cục SHTT cấp năm 2022.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Giá xoài tứ quý Bến Tre bao nhiêu?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Giá dao động theo ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi vựa +84 932 585 533 (A Phúc) để có giá chính xác.",
+            text: "Không. Mỗi trái bọc lưới xốp riêng, xếp trong thùng carton có lót đệm. Tỷ lệ lỗi dưới 2% sau 3 năm giao hàng ra Bắc.",
           },
         },
         {
@@ -140,7 +140,23 @@ const jsonLd = {
           name: "Xoài Tứ Quý ăn chín hay xanh ngon hơn?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Miền Bắc thường thích ăn chín — ngọt đậm, thơm hắc, vị mặn nhẹ. Miền Nam thích ăn xanh — giòn sần sật, chua thanh. Vựa cung cấp cả hai.",
+            text: "Cả hai đều ngon. Miền Bắc thích ăn chín — ngọt đậm, thơm hắc, vị mặn nhẹ. Miền Nam thích ăn xanh — giòn sần sật, chua thanh.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Mùa xoài Tứ Quý khi nào?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Xoài Tứ Quý cho trái quanh năm, 3 vụ chính: Vụ 1 tháng 4, Vụ 2 tháng 8, Vụ 3 tháng 12 (âm lịch). Xoài xanh có quanh năm.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Mua xoài sỉ Bến Tre cần bao nhiêu?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Tối thiểu 1 thùng 20kg. Đóng thùng linh hoạt theo yêu cầu. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá.",
           },
         },
       ],

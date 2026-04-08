@@ -133,28 +133,36 @@ export const TESTIMONIALS = [
 
 export const FAQS = [
   {
-    q: "Ship xa như vậy xoài có bị dập không?",
-    a: "Mỗi trái bọc lưới xốp riêng, xếp trong thùng carton có lót đệm + đá khô. 3 năm giao hàng Bắc, tỷ lệ lỗi dưới 2%. Nếu có quả dập — gửi ảnh qua Zalo, bồi ngay đơn sau, không cần gửi trả.",
+    q: "Xoài Tứ Quý là gì?",
+    a: "Xoài Tứ Quý là giống xoài đặc sản Bến Tre, cho trái quanh năm (3 vụ/năm). Trồng trên đất giồng cát ven biển nhiễm mặn tại Thạnh Phú, tạo ra vị mặn nhẹ cuối lưỡi — đặc điểm không thể tái tạo ở vùng khác. Đã được cấp Chỉ dẫn địa lý CDĐL #00124 bởi Cục Sở hữu trí tuệ năm 2022.",
   },
   {
-    q: "Sao biết là xoài Bến Tre thật chứ không phải nơi khác?",
-    a: 'Mỗi thùng có QR truy xuất nguồn gốc: tên vườn, ngày hái, người thu hoạch. Sản phẩm thuộc vùng Chỉ dẫn địa lý "Bến Tre" do Cục SHTT cấp năm 2022 — giả là vi phạm pháp luật.',
+    q: "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
+    a: "Giá dao động theo ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi vựa 0932 585 533 (A Phúc) để có giá chính xác trong ngày. Giá cập nhật mỗi sáng.",
   },
   {
-    q: "Tôi đang có mối rồi, sao phải đổi?",
-    a: "Không cần đổi ngay. Đặt 1 thùng 20kg, so sánh với mối hiện tại. Phí ship được báo trước, mọi chi phí minh bạch.",
+    q: "Ship xa xoài có bị dập không?",
+    a: "Không. Mỗi trái bọc lưới xốp riêng, xếp trong thùng carton có lót đệm. Tỷ lệ lỗi dưới 2% sau 3 năm giao hàng ra Bắc. Nếu có quả dập — gửi ảnh qua Zalo, bồi ngay đơn sau.",
   },
   {
-    q: "Giá sỉ có ổn định không?",
-    a: "Giá dao động theo thị trường, cập nhật mỗi sáng trên web và Zalo OA. Sau khi chốt đơn, cam kết giữ giá 7 ngày — không tăng giữa chừng.",
+    q: "Sao biết là xoài Bến Tre thật?",
+    a: "Mỗi thùng có QR truy xuất nguồn gốc: tên vườn, ngày hái, người thu hoạch. Sản phẩm thuộc vùng Chỉ dẫn địa lý \"Bến Tre\" do Cục SHTT cấp 2022. Sử dụng tên gọi này cho xoài vùng khác là vi phạm pháp luật.",
+  },
+  {
+    q: "Xoài Tứ Quý ăn chín hay xanh ngon hơn?",
+    a: "Cả hai đều ngon, tuỳ khẩu vị. Miền Bắc thích ăn chín — ngọt đậm, thơm hắc, vị mặn nhẹ. Miền Nam thích ăn xanh — giòn sần sật, chua thanh. Vựa cung cấp cả hai loại.",
+  },
+  {
+    q: "Mua xoài sỉ Bến Tre cần bao nhiêu?",
+    a: "Tối thiểu 1 thùng 20kg. Đóng thùng linh hoạt theo yêu cầu — carton, xốp, bao lưới đều được. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá.",
   },
   {
     q: "Thanh toán và hóa đơn?",
     a: "COD khi nhận hàng hoặc chuyển khoản trước. Có sổ công nợ cho đối tác quen (sau 3 đơn). Xuất hóa đơn VAT đầy đủ cho nhà hàng, doanh nghiệp.",
   },
   {
-    q: "Xoài Tứ Quý ăn chín hay xanh ngon hơn?",
-    a: "Người miền Bắc thường thích ăn chín — ngọt đậm, thơm hắc, vị mặn nhẹ. Người miền Nam thích ăn xanh — giòn sần sật, chua thanh. Chúng tôi cung cấp cả hai, ghi rõ khi đặt hàng.",
+    q: "Mùa xoài Tứ Quý khi nào?",
+    a: "Xoài Tứ Quý cho trái quanh năm, 3 vụ chính: Vụ 1 tháng 4 (âm lịch), Vụ 2 tháng 8, Vụ 3 tháng 12 (vụ Tết). Xoài xanh có quanh năm. Nguồn cung ổn định, không sợ đứt hàng.",
   },
 ];
 
