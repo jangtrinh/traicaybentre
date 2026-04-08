@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 /* --- Rate limit: 3 submissions per IP per hour (in-memory) --- */
 const rateLimitMap = new Map<string, number[]>();
@@ -101,6 +103,13 @@ export async function POST(request: Request) {
         </div>
       </div>
     `;
+
+    if (!resend) {
+      return NextResponse.json(
+        { error: "Email chưa được cấu hình. Vui lòng liên hệ Zalo." },
+        { status: 503 }
+      );
+    }
 
     await resend.emails.send({
       from: "Trái Cây Bến Tre <onboarding@resend.dev>",
