@@ -142,7 +142,7 @@ export const FAQS = [
   },
   {
     q: "Tôi đang có mối rồi, sao phải đổi?",
-    a: "Không cần đổi ngay. Đặt thử 1 thùng 20kg, so sánh với mối hiện tại. Phí ship sẽ được báo trước. Nếu hàng không hơn, anh/chị không mất gì cả.",
+    a: "Không cần đổi ngay. Đặt 1 thùng 20kg, so sánh với mối hiện tại. Phí ship được báo trước, mọi chi phí minh bạch.",
   },
   {
     q: "Giá sỉ có ổn định không?",

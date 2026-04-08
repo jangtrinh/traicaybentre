@@ -5,13 +5,13 @@ const CONTACT_INFO = [
   {
     Icon: ChatCircleDots,
     label: "Zalo (nhanh nhất)",
-    value: "0918 469 075",
+    value: "0932 585 533",
     sub: "Phản hồi trong 5 phút",
   },
   {
     Icon: Phone,
     label: "Hotline",
-    value: "0918 469 075",
+    value: "0932 585 533",
     sub: "4h sáng — 18h hàng ngày",
   },
   {
@@ -64,7 +64,7 @@ export function ContactSection() {
                   Mẹo cho tiểu thương mới
                 </p>
                 <p className="text-sm leading-relaxed text-text/50">
-                  Đặt thử 1 thùng 20kg, bán thử 2–3 ngày. Nếu khách khen hơn → tăng đơn dần. Không rủi ro.
+                  Đặt 1 thùng 20kg, bán thử 2–3 ngày, so sánh phản hồi khách với mối cũ. Nếu khách khen hơn → tăng đơn dần.
                 </p>
               </div>
             </div>

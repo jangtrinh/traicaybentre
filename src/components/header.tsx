@@ -13,10 +13,10 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { label: "Sản phẩm", href: "#products" },
-    { label: "Quy trình", href: "#process" },
+    { label: "Sản phẩm", href: "/#products" },
+    { label: "Quy trình", href: "/#process" },
     { label: "Nguồn gốc", href: "/nguon-goc" },
-    { label: "Đối tác", href: "#testimonials" },
+    { label: "Đối tác", href: "/#testimonials" },
   ];
 
   return (
@@ -65,7 +65,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="ml-1 flex h-8 items-center justify-center rounded-full bg-black px-5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-text transition-colors"
           >
             Liên hệ
