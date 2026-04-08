@@ -1,5 +1,10 @@
+"use client";
+
 import { FadeIn } from "./fade-in";
-import { CALENDAR, MONTH_LABELS, CURRENT_MONTH } from "@/lib/landing-data";
+import { CALENDAR, MONTH_LABELS } from "@/lib/landing-data";
+
+/* Dynamic current month — updates in browser */
+const CURRENT_MONTH = new Date().getMonth();
 
 export function CalendarSection() {
   return (
@@ -47,7 +52,7 @@ export function CalendarSection() {
                     idx < CALENDAR.length - 1 ? "border-b border-border" : ""
                   }`}
                 >
-                  <div className="px-2 sm:px-4 py-3 text-[10px] sm:text-xs font-semibold text-text leading-tight">
+                  <div className="px-2 sm:px-4 py-3 text-xs font-semibold text-text leading-tight">
                     {item.name}
                   </div>
                   {item.months.map((v, mi) => (
@@ -82,7 +87,7 @@ export function CalendarSection() {
                   Đầu/cuối vụ
                 </span>
                 <span className="text-xs font-semibold text-mango">
-                  ▼ T4 — Bạn đang ở đây
+                  ▼ T{CURRENT_MONTH + 1} — Bạn đang ở đây
                 </span>
               </div>
             </div>

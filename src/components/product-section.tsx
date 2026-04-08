@@ -63,8 +63,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             {product.name}
           </h3>
           <p className="mt-2 flex items-center gap-1 text-xs text-text-muted">
-            <MapPin size={12} weight="fill" /> {product.farm} · Hái ngày{" "}
-            {product.harvestDate}
+            <MapPin size={12} weight="fill" /> {product.farm}
           </p>
 
           {/* Tag pills with icons — gentle style */}

@@ -25,7 +25,7 @@ export function FaqSection() {
                 aria-controls={`faq-answer-${i}`}
                 className="flex w-full items-center justify-between py-5 text-left"
               >
-                <span className="pr-4 text-sm font-semibold leading-snug text-text">
+                <span className="pr-4 text-base font-semibold leading-snug text-text">
                   {faq.q}
                 </span>
                 <span
@@ -44,7 +44,7 @@ export function FaqSection() {
                   openIndex === i ? "max-h-64" : "max-h-0"
                 }`}
               >
-                <p className="pb-5 text-sm leading-relaxed text-text-secondary">
+                <p className="pb-5 text-sm leading-relaxed text-text/60 sm:text-base sm:leading-relaxed">
                   {faq.a}
                 </p>
               </div>

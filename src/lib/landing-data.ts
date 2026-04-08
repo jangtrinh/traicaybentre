@@ -26,7 +26,7 @@ export const PRODUCTS: Product[] = [
     id: 1,
     name: "Xoài Tứ Quý — VIP",
     farm: "Vườn ông Ba, Thạnh Phú",
-    harvestDate: "02/04",
+    harvestDate: "",
     priceSi: "23.000–25.000",
     priceLe: "",
     savings: "",
@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
     badge: "VIP",
     badgeColor: "bg-purple-600",
     stock: "~500kg",
-    stockUntil: "05/04",
+    stockUntil: "",
     tags: ["Không tì vết", "Trái lớn 600g+", "Quà tặng"],
     image: "/images/xoai-real-2.jpg",
     sticker: "/images/vip.png",
@@ -45,7 +45,7 @@ export const PRODUCTS: Product[] = [
     id: 2,
     name: "Xoài Tứ Quý — Loại 1",
     farm: "Vườn ông Ba, Thạnh Phú",
-    harvestDate: "02/04",
+    harvestDate: "",
     priceSi: "20.000–22.000",
     priceLe: "",
     savings: "",
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     badge: "Bán chạy #1",
     badgeColor: "bg-red-600",
     stock: "~2.2 tấn",
-    stockUntil: "05/04",
+    stockUntil: "",
     tags: ["Ngọt đậm", "Trái to", "Vị mặn đặc trưng"],
     image: "/images/xoai-real-3.jpg",
     sticker: "/images/loai-1.png",
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
     id: 3,
     name: "Xoài Tứ Quý — Loại 2",
     farm: "Vườn chú Tám, Ba Tri",
-    harvestDate: "01/04",
+    harvestDate: "",
     priceSi: "16.000–18.000",
     priceLe: "",
     savings: "",
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     badge: "Giá tốt",
     badgeColor: "bg-green-700",
     stock: "~3 tấn",
-    stockUntil: "07/04",
+    stockUntil: "",
     tags: ["Giá tốt nhất", "Chất lượng ngon", "Làm gỏi"],
     image: "/images/xoai-real-5.jpg",
     sticker: "/images/loai-2.png",
@@ -200,5 +200,5 @@ export const MONTH_LABELS = [
   "T12",
 ];
 
-/* Current month index (0-based) */
-export const CURRENT_MONTH = 3;
+/* Current month index (0-based) — auto-updates */
+export const CURRENT_MONTH = new Date().getMonth();
