@@ -13,11 +13,11 @@ export function CalendarSection() {
         <FadeIn>
           <div className="mb-16 text-center">
             <h2 className="font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Lịch Mùa Vụ — Biết mùa, mua đúng
+              Lịch Mùa — Biết Mùa, Lấy Đúng Giá
             </h2>
             <p className="mt-2 text-sm text-text-secondary">
-              Xoài Tứ Quý cho trái 3 vụ/năm — nguồn cung ổn định, không sợ đứt
-              hàng
+              Xoài Tứ Quý ra trái 3 vụ/năm — tháng nào vựa cũng có hàng,
+              bạn hàng khỏi lo đứt
             </p>
           </div>
         </FadeIn>
@@ -87,7 +87,7 @@ export function CalendarSection() {
                   Đầu/cuối vụ
                 </span>
                 <span className="text-xs font-semibold text-mango">
-                  ▼ T{CURRENT_MONTH + 1} — Bạn đang ở đây
+                  ▼ T{CURRENT_MONTH + 1} — Tháng này
                 </span>
               </div>
             </div>

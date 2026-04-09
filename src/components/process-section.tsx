@@ -12,14 +12,14 @@ export function ProcessSection() {
         <FadeIn>
           <div className="mb-14 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Tại sao khác biệt
+              Tại sao chỉ Thạnh Phú
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Từ vườn đến tay bạn
+              Từ vườn ra tới sạp
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-base text-text/60">
-              Xoài Tứ Quý trồng ở Cần Thơ, Tiền Giang vẫn ngọt — nhưng thiếu
-              vị mặn đặc trưng. Chỉ đất giồng cát Thạnh Phú mới tạo ra hương vị này.
+              Xoài Tứ Quý trồng Cần Thơ, Tiền Giang vẫn ngọt — nhưng không có
+              cái mặn nhẹ cuối lưỡi. Chỉ đất giồng cát Thạnh Phú mới cho ra được.
             </p>
           </div>
         </FadeIn>

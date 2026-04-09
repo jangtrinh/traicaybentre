@@ -33,16 +33,16 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
 ]);
 
 const WHY_CHOOSE = [
-  "Gần vựa nhất trong 3 thị trường lớn — phí vận chuyển thấp nhất, xoài đến tươi nhất",
-  "Xe lạnh xuất bến mỗi chiều, hàng đến TP.HCM trong 24 giờ",
-  "Giao tận chợ đầu mối, siêu thị, nhà hàng, quán trái cây — không giới hạn địa điểm",
-  "Đóng thùng linh hoạt: carton hoặc xốp tùy yêu cầu người mua",
+  "Gần vựa nhất trong 3 thành phố lớn — ship rẻ nhất, xoài tươi nhất",
+  "Xe lạnh đi mỗi chiều, sáng hôm sau là tới TP.HCM",
+  "Giao tận chợ đầu mối, siêu thị, nhà hàng, quán trái cây — chỗ nào cũng tới",
+  "Đóng thùng carton hay xốp — tuỳ ý bạn hàng",
 ];
 
 const FAQ = [
   {
     q: "Ship TP.HCM mấy tiếng?",
-    a: "Khoảng 6–8 tiếng từ khi xe xuất bến tại Thạnh Phú. Xe lạnh khởi hành chiều tối, hàng đến TP.HCM sáng sớm hôm sau — tổng không quá 24 giờ từ khi đặt hàng (với đơn đặt trước 15h).",
+    a: "Xe chạy 6–8 tiếng từ Thạnh Phú. Xe lạnh đi chiều tối, sáng sớm hôm sau tới TP.HCM — tính từ lúc đặt không quá 24 giờ (đơn đặt trước 15h).",
   },
   {
     q: "Có giao tận chợ không?",
@@ -78,8 +78,8 @@ export default function GiaoHangTpHcmPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-lg leading-7 text-text/70">
-              Gần vựa nhất trong cả nước — xe lạnh mỗi chiều, phí ship thấp nhất,
-              xoài tươi đến tay trong 24 giờ. Giao tận chợ, nhà hàng, siêu thị.
+              Thành phố gần vựa nhất — xe lạnh đi mỗi chiều, phí ship rẻ nhất,
+              xoài tới tay trong 24 giờ. Giao tận chợ, nhà hàng, siêu thị.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
@@ -116,7 +116,7 @@ export default function GiaoHangTpHcmPage() {
             {[
               { Icon: Truck, title: "Thời gian giao", desc: "24 giờ từ vựa Thạnh Phú đến TP.HCM. Xe lạnh xuất bến hằng ngày buổi chiều tối." },
               { Icon: Package, title: "Đóng gói", desc: "Thùng carton hoặc thùng xốp tùy yêu cầu. Lưới xốp từng trái, lót đệm chống va đập." },
-              { Icon: CheckCircle, title: "Bảo hành", desc: "Tỷ lệ lỗi < 2%. Hàng hư: gửi ảnh Zalo, bồi ngay đơn sau. Không tranh luận." },
+              { Icon: CheckCircle, title: "Bảo hành", desc: "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Không hỏi nhiều." },
             ].map(({ Icon, title, desc }, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm">

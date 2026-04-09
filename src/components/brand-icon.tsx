@@ -1,12 +1,22 @@
 import Image from "next/image";
 
-type BrandName = "tiktok" | "facebook" | "instagram" | "zalo";
+type BrandName =
+  | "tiktok"
+  | "facebook"
+  | "instagram"
+  | "zalo"
+  | "messenger"
+  | "x"
+  | "telegram";
 
 const BRAND_ICONS: Record<BrandName, string> = {
   tiktok: "/icons/tiktok.svg",
   facebook: "/icons/facebook.svg",
   instagram: "/icons/instagram.svg",
   zalo: "/icons/zalo.svg",
+  messenger: "/icons/messenger.svg",
+  x: "/icons/x.svg",
+  telegram: "/icons/telegram.svg",
 };
 
 export function BrandIcon({

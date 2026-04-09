@@ -30,7 +30,7 @@ export function CertificationSection() {
       <div className="mx-auto max-w-[1200px]">
         <FadeIn>
           <h2 className="mb-16 text-center font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-            Chứng nhận
+            Giấy Tờ Đàng Hoàng
           </h2>
         </FadeIn>
 

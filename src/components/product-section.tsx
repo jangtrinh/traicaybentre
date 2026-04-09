@@ -95,7 +95,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               </span>
             </div>
             <p className="mt-1 text-xs text-text-muted">
-              Giá dao động theo ngày — gọi vựa để có giá chính xác
+              Giá đổi mỗi sáng — gọi Anh Phúc lấy giá chuẩn ngày
             </p>
           </div>
 
@@ -111,7 +111,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             href="#contact"
             className="mt-5 block w-full rounded-full bg-black py-4 text-center text-sm font-bold uppercase tracking-[0.15em] text-white hover:bg-text transition-colors"
           >
-            Liên hệ đặt hàng
+            Nhận báo giá
           </a>
         </div>
       </div>
@@ -126,10 +126,10 @@ export function ProductSection() {
         <FadeIn>
           <div className="mb-16 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Sản phẩm của chúng tôi
+              Hàng vựa đang có
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Chọn ngay
+              Xoài Đang Có
             </h2>
           </div>
         </FadeIn>

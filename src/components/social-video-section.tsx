@@ -79,7 +79,7 @@ function EmbedCard({ embed }: { embed: SocialEmbed }) {
               <Play size={28} weight="fill" className="ml-1 text-white" />
             </div>
             <span className="text-sm font-medium text-text-secondary">
-              Nhấn để xem video
+              Bấm coi video
             </span>
           </button>
         ) : (
@@ -117,14 +117,14 @@ export function SocialVideoSection() {
         <FadeIn>
           <div className="mb-16 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Theo dõi chúng tôi
+              Vựa trên mạng xã hội
             </span>
             <h2 className="mt-2 font-heading text-4xl font-extrabold text-text sm:text-5xl">
-              Xem thực tế từ vườn đến tay bạn
+              Coi thực tế tại vườn
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm text-text-secondary">
-              Video thực tế từ vườn xoài Thạnh Phú — thu hoạch, đóng gói, giao
-              hàng. Không dàn dựng.
+              Video quay tại vườn Thạnh Phú — thu hoạch, đóng thùng, giao hàng.
+              Không dàn dựng, không filter.
             </p>
           </div>
         </FadeIn>

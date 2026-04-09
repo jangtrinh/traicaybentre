@@ -20,7 +20,7 @@ export function TestimonialSection() {
       <div className="mx-auto max-w-[800px] text-center">
         <FadeIn>
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-            Đối tác nói gì
+            Bạn hàng nói vầy
           </span>
         </FadeIn>
 

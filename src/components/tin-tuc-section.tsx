@@ -19,10 +19,10 @@ export function TinTucSection() {
               Tin tức & báo giá
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Bài viết mới nhất
+              Tin mới từ vựa
             </h2>
             <p className="mt-4 text-base text-text/60">
-              Cập nhật báo giá hàng tháng, công thức ẩm thực, và câu chuyện vựa Thạnh Phú
+              Báo giá tháng, món ngon từ xoài, và chuyện vựa Thạnh Phú — cập đều tay
             </p>
           </div>
         </FadeIn>
@@ -70,7 +70,7 @@ export function TinTucSection() {
               href="/tin-tuc"
               className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
             >
-              Xem tất cả bài viết
+              Coi tất cả tin
               <ArrowRight size={16} weight="bold" />
             </a>
           </div>

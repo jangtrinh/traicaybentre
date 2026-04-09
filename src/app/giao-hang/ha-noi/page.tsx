@@ -33,10 +33,10 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
 ]);
 
 const WHY_CHOOSE = [
-  "95% sản lượng vựa hiện tiêu thụ tại miền Bắc — đã có quy trình đóng gói & ship xa chuẩn hóa",
-  "Xe lạnh duy trì 8–12°C suốt tuyến, hoặc gửi bay hàng hỏa tốc trong ngày",
-  "Thùng xốp đục lỗ + lưới xốp từng trái + đệm chống sốc — tỷ lệ lỗi dưới 2%",
-  "Hàng lỗi khi nhận: gửi ảnh Zalo, vựa bồi ngay đơn sau — không tranh luận",
+  "95% xoài vựa bán ra Bắc — đóng gói ship xa đã quen tay",
+  "Xe lạnh giữ 8–12°C suốt tuyến, hoặc gửi bay trong ngày nếu gấp",
+  "Thùng xốp đục lỗ + lưới xốp từng trái + đệm chống sốc — hàng hư không tới 2%",
+  "Nhận thấy hàng hư → chụp hình gửi Zalo, đơn sau vựa bồi liền, không hỏi nhiều",
 ];
 
 const FAQ = [
@@ -46,7 +46,7 @@ const FAQ = [
   },
   {
     q: "Xoài có bị dập khi giao xa không?",
-    a: "Không. Mỗi trái được bọc lưới xốp riêng, đặt trong thùng xốp đục lỗ thoáng khí có lót đệm giữa các lớp. Quy trình này đã áp dụng 3 năm cho thị trường Hà Nội với tỷ lệ hư hỏng dưới 2%.",
+    a: "Không. Mỗi trái bọc lưới xốp riêng, đặt thùng xốp đục lỗ thoáng khí, giữa các lớp có đệm lót. Cách đóng này vựa làm 3 năm cho khách Hà Nội rồi — hàng hư không tới 2%.",
   },
   {
     q: "Phí ship Hà Nội bao nhiêu?",
@@ -78,8 +78,9 @@ export default function GiaoHangHaNoiPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-lg leading-7 text-text/70">
-              Xe lạnh duy trì 8–12°C hoặc gửi bay hỏa tốc. Đóng gói chống dập
-              chuẩn tuyến xa. 95% sản lượng vựa tiêu thụ tại miền Bắc.
+              Xe lạnh duy trì 8–12°C hoặc gửi bay trong ngày nếu gấp. Đóng gói
+              chống dập chuẩn tuyến xa. 95% xoài vựa bán cho mối ngoài Bắc —
+              quen tuyến lắm rồi.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
@@ -116,7 +117,7 @@ export default function GiaoHangHaNoiPage() {
             {[
               { Icon: Truck, title: "Thời gian giao", desc: "48 giờ từ vựa Thạnh Phú đến Hà Nội. Xe lạnh hằng ngày hoặc gửi bay hỏa tốc." },
               { Icon: Package, title: "Đóng gói", desc: "Thùng xốp đục lỗ + lưới xốp từng trái + đệm chống sốc. Chuẩn tuyến xa 48h+" },
-              { Icon: CheckCircle, title: "Bảo hành", desc: "Tỷ lệ lỗi < 2%. Hàng hư: gửi ảnh Zalo, bồi ngay đơn sau. Không tranh luận." },
+              { Icon: CheckCircle, title: "Bảo hành", desc: "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Không hỏi nhiều." },
             ].map(({ Icon, title, desc }, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm">
@@ -183,10 +184,10 @@ export default function GiaoHangHaNoiPage() {
         <div className="mx-auto max-w-[600px]">
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold uppercase text-text">
-              Đặt xoài giao Hà Nội ngay
+              Lấy xoài ra Hà Nội
             </h2>
             <p className="mt-4 text-text/70">
-              Gọi hoặc nhắn Zalo — vựa báo giá & thời gian giao trong 15 phút.
+              Gọi hoặc nhắn Zalo — vựa báo giá + lịch giao trong 15 phút.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a

@@ -38,12 +38,12 @@ export const metadata: Metadata = {
 /* ═══════ Data ═══════ */
 
 const KEY_STATS = [
-  { value: "> 400 ha", label: "Diện tích vùng trồng" },
-  { value: "700+", label: "Hộ dân tham gia" },
-  { value: "30 tấn/ha", label: "Năng suất mỗi năm" },
+  { value: "> 400 ha", label: "Diện tích trồng" },
+  { value: "700+", label: "Hộ dân trồng" },
+  { value: "30 tấn/ha", label: "Năng suất / năm" },
   { value: "3 vụ/năm", label: "Thu hoạch quanh năm" },
   { value: "86 ha", label: "Mã số vùng trồng XK" },
-  { value: "95%", label: "Tiêu thụ miền Bắc" },
+  { value: "95%", label: "Bán ra miền Bắc" },
 ];
 
 const SOIL_SPECS = [
@@ -151,8 +151,8 @@ export default function NguonGocPage() {
                 Gốc
               </h1>
               <p className="mt-6 max-w-[500px] text-lg leading-relaxed text-text/60">
-                Vùng trồng duy nhất trên cả nước có chất lượng và năng suất ổn định
-                cho giống xoài Tứ Quý — nhờ đất giồng cát ven biển nhiễm mặn đặc thù.
+                Cả nước chỉ Thạnh Phú trồng được xoài Tứ Quý ngon và đều tay —
+                nhờ đất giồng cát ven biển nhiễm mặn tự nhiên.
               </p>
             </FadeIn>
           </div>
@@ -263,8 +263,8 @@ export default function NguonGocPage() {
                   mới cho ra trái có chất lượng tốt nhất</strong>.
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-text/60">
-                  Trước khi xoài Tứ Quý được nhân rộng, vùng đất Thạnh Phú chủ yếu trồng sắn, dưa hấu —
-                  giá trị kinh tế thấp. Nhiều hộ chuyển đổi sang xoài từ 2010, thu nhập tăng gấp 3–4 lần.
+                  Trước đây vùng Thạnh Phú trồng sắn, dưa hấu — thu nhập bấp bênh.
+                  Từ 2010 nhiều hộ bỏ dưa trồng xoài, thu nhập tăng gấp 3–4 lần.
                 </p>
                 </div>
               </div>
@@ -298,13 +298,13 @@ export default function NguonGocPage() {
                 Icon: Waves,
                 title: "Đất nhiễm mặn",
                 subtitle: "Vị mặn nhẹ đặc trưng",
-                desc: "Muối tan 0,009–0,022% trong đất → Sodium (Na) tích tụ trong quả → vị mặn nhẹ cuối lưỡi. Đặc điểm KHÔNG THỂ tái tạo ở vùng khác.",
+                desc: "Muối tan 0,009–0,022% trong đất → chất Natri (Na) tích trong quả → vị mặn nhẹ cuối lưỡi. Đặc điểm này chỗ khác không sao làm lại được.",
               },
               {
                 Icon: Waves,
                 title: "Giao thoa ngọt-mặn",
                 subtitle: "Cân bằng vị giác",
-                desc: "Nước ngọt từ sông Mekong + nước mặn từ biển Đông → tạo profile vị ngọt đậm hòa quyện vị mặn nhẹ — duy nhất.",
+                desc: "Nước ngọt từ sông Mekong + nước mặn từ biển Đông → ngọt đậm hoà với mặn nhẹ — không đâu có.",
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.1}>
@@ -389,10 +389,10 @@ export default function NguonGocPage() {
                     Kỹ thuật bao trái — Đặc trưng Thạnh Phú
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-text/60">
-                    Cây cho trái quanh năm với nhiều độ tuổi quả trên cùng 1 cây. Người trồng bao
-                    từng trái bằng túi vải đa màu từ khi bằng ngón tay — mỗi đợt thu hoạch dùng 1 màu
-                    để phân biệt. Kỹ thuật này giúp trái đẹp mã, đồng đều, giảm 5–10 kg thuốc BVTV/ha,
-                    và tăng lợi nhuận 18–20 triệu đồng/ha.
+                    Cây ra trái quanh năm — trên cùng 1 cây có đủ độ tuổi quả.
+                    Nông dân bao từng trái bằng túi vải từ khi bằng ngón tay, mỗi
+                    đợt dùng 1 màu để phân biệt. Nhờ vậy trái đẹp, đồng đều, giảm
+                    5–10 kg thuốc BVTV/ha, lợi nhuận tăng 18–20 triệu đồng/ha.
                   </p>
                 </div>
               </div>

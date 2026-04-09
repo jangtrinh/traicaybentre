@@ -17,7 +17,7 @@ export function Footer() {
             />
             <div className="mt-6">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-                Follow us
+                Theo dõi vựa
               </span>
               <div className="mt-3 flex items-center gap-4">
                 {(["facebook", "tiktok", "instagram"] as const).map((brand) => (
@@ -48,7 +48,7 @@ export function Footer() {
         {/* Official site promote */}
         <div className="mt-16 rounded-2xl bg-text/5 p-6 text-center">
           <p className="text-sm font-semibold text-text/70">
-            Trang web chính thức của Xoài Tứ Quý Thạnh Phú
+            Trang chính thức của vựa Xoài Tứ Quý Thạnh Phú
           </p>
           <a
             href="https://xoaituquythanhphu.com"

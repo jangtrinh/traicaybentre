@@ -4,11 +4,11 @@ import Link from "next/link";
 import { FadeIn } from "./fade-in";
 
 const WHOLESALE_ITEMS = [
-  "Giá sỉ theo tấn, cập nhật mỗi sáng",
-  "MOQ: 1 thùng 20kg — thử trước, mua sau",
-  "Phí ship báo trước — tuỳ tuyến và quy cách",
-  "Sổ công nợ sau 3 đơn",
-  "Hóa đơn VAT đầy đủ",
+  "Giá sỉ theo tấn, cập mỗi sáng",
+  "Lấy tối thiểu 1 thùng 20kg — thử trước rồi tính",
+  "Phí ship báo trước — tuỳ tuyến, tuỳ quy cách",
+  "Ghi sổ công nợ sau 3 đơn quen",
+  "Xuất hoá đơn VAT đầy đủ",
 ];
 
 export function DualCtaSection() {
@@ -17,12 +17,12 @@ export function DualCtaSection() {
       <div className="mx-auto max-w-[1100px]">
         <FadeIn>
           <span className="block text-center text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-            Dành cho đối tác
+            Dành cho bạn hàng
           </span>
           <h2 className="mt-3 text-center font-heading text-4xl font-bold uppercase leading-tight text-text sm:text-5xl lg:text-6xl">
             Lấy Mối Sỉ
             <br />
-            <span className="text-mango">Từ Vựa</span>
+            <span className="text-mango">Thẳng Từ Vựa</span>
           </h2>
         </FadeIn>
 
@@ -54,11 +54,11 @@ export function DualCtaSection() {
                 Tiểu thương · Đại lý · Nhà hàng / Khách sạn
               </span>
               <h3 className="mt-3 font-heading text-2xl font-bold text-text sm:text-3xl">
-                Trực tiếp từ vườn, giá tận gốc
+                Giá tận gốc — không qua tay ai
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-text/60 sm:text-base">
-                Lấy hàng trực tiếp từ vựa — không qua trung gian, không markup.
-                Cập nhật giá mỗi sáng, hỗ trợ đóng thùng theo yêu cầu.
+                Bạn hàng lấy thẳng từ vựa, không qua trung gian, không đội giá.
+                Giá cập mỗi sáng, đóng thùng theo ý bạn hàng — cần sao vựa làm vậy.
               </p>
 
               <ul className="mt-6 space-y-3">
@@ -82,7 +82,7 @@ export function DualCtaSection() {
                   href="#contact"
                   className="group inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-black px-6 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-text"
                 >
-                  Gửi đơn lấy giá sỉ
+                  Xem giá sỉ
                   <ArrowRight
                     size={16}
                     weight="bold"
@@ -98,7 +98,7 @@ export function DualCtaSection() {
                 </a>
               </div>
               <p className="mt-3 text-center text-xs text-text/40 sm:text-left">
-                Zalo phản hồi trong 5 phút · 4h sáng — 18h hàng ngày
+                Zalo trả trong 5 phút · 4h sáng – 18h · Anh Phúc nghe máy
               </p>
             </div>
           </div>

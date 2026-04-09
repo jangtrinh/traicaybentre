@@ -51,40 +51,40 @@ const SELLING_POINTS = [
   {
     Icon: ShieldCheck,
     title: "CDĐL #00124",
-    desc: "Chỉ dẫn địa lý chính thức — chỉ có xoài Thạnh Phú",
+    desc: "Chỉ xoài Thạnh Phú mới được gọi tên này",
   },
   {
     Icon: Leaf,
     title: "Đất giồng cát nhiễm mặn",
-    desc: "Tạo vị mặn nhẹ cuối lưỡi — không thể tái tạo vùng khác",
+    desc: "Cho vị mặn nhẹ cuối lưỡi — chỗ khác không có",
   },
   {
     Icon: Truck,
     title: "Giao lạnh toàn quốc",
-    desc: "24h ra HCM, 48h ra Hà Nội. Tỷ lệ lỗi < 2%",
+    desc: "HCM 24h · Hà Nội 48h · hàng hư không tới 2%",
   },
   {
     Icon: Scales,
     title: "Cân dư 2%",
-    desc: "Luôn cân dư bù hao. Hàng lỗi bồi ngay đơn sau",
+    desc: "Cân dư bù hao. Hàng hư — đơn sau bồi liền",
   },
 ];
 
 const ORDER_INFO = [
   {
     Icon: Package,
-    title: "MOQ",
-    desc: "Tối thiểu 1 thùng 20kg. Đóng thùng linh hoạt theo yêu cầu.",
+    title: "Lấy tối thiểu",
+    desc: "1 thùng 20kg. Đóng thùng theo ý bạn hàng.",
   },
   {
     Icon: TrendUp,
     title: "Thanh toán",
-    desc: "COD hoặc CK trước. Sổ công nợ sau 3 đơn. Hóa đơn VAT.",
+    desc: "COD hoặc chuyển khoản trước. Mối quen 3 đơn → mở sổ. Xuất VAT đầy đủ.",
   },
   {
     Icon: Clock,
-    title: "Giờ hoạt động",
-    desc: "4h sáng — 18h hàng ngày. Zalo phản hồi trong 5 phút.",
+    title: "Giờ vựa làm",
+    desc: "4h sáng – 18h mỗi ngày. Zalo trả 5 phút.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function XoaiTuQuyPage() {
               <h1 className="mt-3 font-heading text-4xl font-bold uppercase leading-tight text-text sm:text-5xl lg:text-6xl">
                 Xoài Tứ Quý
                 <br />
-                <span className="text-mango">Mua Trực Tiếp</span>
+                <span className="text-mango">Lấy Thẳng</span>
                 <br />
                 Từ Vựa
               </h1>
@@ -146,9 +146,9 @@ export default function XoaiTuQuyPage() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mt-6 max-w-[480px] text-lg leading-7 text-text/70">
-                Trồng trên đất giồng cát ven biển nhiễm mặn tự nhiên — tạo nên
-                vị mặn nhẹ cuối lưỡi không đâu có. Chỉ dẫn địa lý CDĐL #00124
-                bởi Cục Sở hữu trí tuệ.
+                Trồng trên đất giồng cát ven biển, nhiễm mặn tự nhiên — cho ra
+                cái vị mặn nhẹ cuối lưỡi mà không chỗ nào làm lại được. Có Chỉ
+                dẫn địa lý CDĐL #00124 do Cục SHTT cấp.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -299,7 +299,7 @@ export default function XoaiTuQuyPage() {
               Vận chuyển
             </h2>
             <p className="mb-10 text-center text-sm text-text/50">
-              Bấm vào thành phố để xem chi tiết giao hàng tại khu vực của bạn
+              Bấm vào thành phố để coi chi tiết giao hàng
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -333,8 +333,8 @@ export default function XoaiTuQuyPage() {
               ))}
             </div>
             <p className="mt-8 text-center text-sm text-text/50">
-              Mỗi trái bọc lưới xốp riêng, xếp trong thùng carton có lót đệm.
-              Tỷ lệ lỗi dưới 2%. Hàng lỗi — gửi ảnh Zalo, bồi ngay đơn sau.
+              Mỗi trái bọc lưới xốp riêng, xếp thùng carton có lót đệm. Hàng
+              hư không tới 2%. Có trái dập → chụp gửi Zalo, đơn sau bồi liền.
             </p>
           </FadeIn>
         </div>

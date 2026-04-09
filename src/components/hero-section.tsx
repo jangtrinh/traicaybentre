@@ -10,7 +10,7 @@ import { FadeIn } from "./fade-in";
 const HERO_PHRASES: [string, string, string][] = [
   ["Ngọt Đậm", "Vị Mặn Nhẹ", "Cuối Lưỡi"],
   ["Đất Giồng Cát", "Ven Biển", "Thạnh Phú"],
-  ["Hái Lúc Sáng", "Giao Tận Nơi", "Trong 24h"],
+  ["Sáng Hái", "Chiều Lên Xe", "Sáng Mai Tới"],
   ["CDĐL #00124", "Chỉ Dẫn", "Địa Lý Riêng"],
 ];
 
@@ -120,13 +120,14 @@ export function HeroSection() {
 
           <FadeIn delay={0.15}>
             <p className="mt-8 max-w-[485px] text-lg leading-7 text-text/70 lg:text-xl">
-              Xoài Tứ Quý đặc sản Thạnh Phú, Bến Tre — trồng trên đất giồng
-              cát ven biển nhiễm mặn tự nhiên, tạo nên hương vị không đâu có.
+              Xoài Tứ Quý Thạnh Phú, Bến Tre — trồng trên đất giồng cát ven
+              biển, nhiễm mặn tự nhiên nên vị xoài có chút mặn nhẹ cuối lưỡi,
+              không chỗ nào làm lại được.
             </p>
             <p className="mt-4 max-w-[485px] text-lg leading-7 text-text/70 lg:text-xl">
-              Hái sáng tại vườn, giao lạnh 24h ra Hà Nội.
+              Sáng hái ngoài vườn, chiều lên xe lạnh ra Hà Nội.
               <br />
-              Giá cập nhật mỗi ngày — <strong className="text-text">gọi vựa để có giá chính xác</strong>.
+              Giá cập mỗi sáng — <strong className="text-text">Anh Phúc nghe máy từ 4h sáng tới tối</strong>.
             </p>
           </FadeIn>
         </div>

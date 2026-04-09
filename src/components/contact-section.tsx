@@ -7,19 +7,19 @@ import { FadeIn } from "./fade-in";
 const CONTACT_INFO = [
   {
     Icon: ChatCircleDots,
-    label: "Zalo (nhanh nhất)",
+    label: "Zalo (trả nhanh)",
     value: "0932 585 533",
-    sub: "Phản hồi trong 5 phút",
+    sub: "Anh Phúc trả trong 5 phút",
   },
   {
     Icon: Phone,
-    label: "Hotline",
+    label: "Gọi trực tiếp",
     value: "0932 585 533",
-    sub: "4h sáng — 18h hàng ngày",
+    sub: "4h sáng – 18h · Anh Phúc nghe máy",
   },
   {
     Icon: MapPin,
-    label: "Vựa",
+    label: "Địa chỉ vựa",
     value: "Thạnh Phú, Bến Tre",
     sub: "Mở cửa 4h sáng",
   },
@@ -69,10 +69,10 @@ export function ContactSection() {
         <FadeIn>
           <div className="mb-16 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Liên hệ lấy mối sỉ
+              Liên hệ lấy mối
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Đặt hàng sỉ
+              Để Vựa Gọi Lại
             </h2>
           </div>
         </FadeIn>
@@ -101,10 +101,10 @@ export function ContactSection() {
               <div className="mt-4 rounded-2xl bg-brand-cream/80 p-6">
                 <p className="mb-2 flex items-center gap-2 text-sm font-bold text-text/70">
                   <Lightbulb size={16} weight="fill" />
-                  Mẹo cho tiểu thương mới
+                  Mẹo cho mối mới
                 </p>
                 <p className="text-sm leading-relaxed text-text/50">
-                  Đặt 1 thùng 20kg, bán thử 2–3 ngày, so sánh phản hồi khách với mối cũ. Nếu khách khen hơn → tăng đơn dần.
+                  Lấy 1 thùng 20kg, bán thử 2–3 ngày, coi khách nói sao so với mối cũ. Khách khen hơn thì tăng đơn dần — vựa không ép.
                 </p>
               </div>
             </div>
@@ -121,10 +121,10 @@ export function ContactSection() {
                   Gửi thành công!
                 </h3>
                 <p className="mb-1 text-text/60">
-                  Cảm ơn <strong>{name}</strong> đã quan tâm đến xoài Tứ Quý Bến Tre.
+                  Cảm ơn anh/chị <strong>{name}</strong>! Vựa đã nhận thông tin.
                 </p>
                 <p className="text-text/60">
-                  Vựa sẽ liên hệ lại qua SĐT/Zalo <strong>{phone}</strong> sớm nhất có thể.
+                  Anh Phúc sẽ gọi vô <strong>{phone}</strong> trong vòng 15 phút (giờ làm việc).
                 </p>
                 <button
                   onClick={() => {
@@ -138,7 +138,7 @@ export function ContactSection() {
                   }}
                   className="mt-6 rounded-full border-2 border-text/15 px-6 py-2.5 text-sm font-semibold text-text/60 hover:border-text hover:text-text transition-colors"
                 >
-                  Gửi đơn khác
+                  Gửi liên hệ khác
                 </button>
               </div>
             ) : (
@@ -159,21 +159,21 @@ export function ContactSection() {
 
                 <div className="mb-6">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Họ tên <span className="text-red-500">*</span>
+                    Anh/chị tên gì <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Nguyễn Văn A"
+                    placeholder="VD: Anh Hùng"
                     className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
                   />
                 </div>
 
                 <div className="mb-6">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Số điện thoại / Zalo <span className="text-red-500">*</span>
+                    SĐT / Zalo <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -187,7 +187,7 @@ export function ContactSection() {
 
                 <div className="mb-6">
                   <label className="mb-3 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Bạn là <span className="text-red-500">*</span>
+                    Anh/chị là <span className="text-red-500">*</span>
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {CUSTOMER_TYPES.map((opt) => (
@@ -215,12 +215,12 @@ export function ContactSection() {
 
                 <div className="mb-6">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Ghi chú
+                    Nhắn thêm
                   </label>
                   <textarea
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
-                    placeholder="VD: Cần 50kg xoài chín loại 1, giao thứ 4 hàng tuần..."
+                    placeholder="VD: Cần 50kg xoài chín Loại 1, giao thứ 4 mỗi tuần..."
                     rows={3}
                     className="w-full resize-none border-b-2 border-text/15 bg-transparent py-3 font-[inherit] text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
                   />
@@ -241,7 +241,7 @@ export function ContactSection() {
                       Đang gửi...
                     </>
                   ) : (
-                    "Gửi đơn sỉ"
+                    "Gửi thông tin — vựa gọi lại"
                   )}
                 </button>
               </form>

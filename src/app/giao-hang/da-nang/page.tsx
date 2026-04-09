@@ -33,10 +33,10 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
 ]);
 
 const WHY_CHOOSE = [
-  "Xe lạnh chuyên tuyến miền Trung, duy trì nhiệt độ 8–12°C suốt hành trình 36 giờ",
+  "Xe lạnh chuyên tuyến miền Trung, giữ nhiệt độ 8–12°C suốt 36 giờ",
   "Đóng gói thùng xốp chuẩn ship xa: lưới xốp từng trái, đệm lót chống sốc nhiều lớp",
-  "Phục vụ nhà hàng, khách sạn, resort khu vực Đà Nẵng, Hội An, Huế và các tỉnh miền Trung",
-  "Xuất hóa đơn VAT đầy đủ cho doanh nghiệp, nhà hàng, đối tác B2B",
+  "Bạn hàng là nhà hàng, khách sạn, resort khu vực Đà Nẵng, Hội An, Huế và các tỉnh miền Trung",
+  "Xuất hoá đơn VAT đầy đủ cho công ty, nhà hàng, khách sạn",
 ];
 
 const FAQ = [
@@ -74,8 +74,8 @@ export default function GiaoHangDaNangPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-lg leading-7 text-text/70">
-              Xe lạnh 36 giờ từ Thạnh Phú, Bến Tre thẳng đến Đà Nẵng.
-              Phục vụ nhà hàng, khách sạn, resort khu vực miền Trung.
+              Xe lạnh 36 giờ từ Thạnh Phú thẳng ra Đà Nẵng. Bạn hàng là nhà
+              hàng, khách sạn, resort khu vực miền Trung.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
@@ -112,7 +112,7 @@ export default function GiaoHangDaNangPage() {
             {[
               { Icon: Truck, title: "Thời gian giao", desc: "36 giờ từ vựa Thạnh Phú đến Đà Nẵng. Xe lạnh chạy thẳng tuyến, không qua kho trung chuyển." },
               { Icon: Package, title: "Đóng gói", desc: "Thùng xốp chuẩn ship xa: lưới xốp từng trái, đệm lót chống sốc nhiều lớp, duy trì 8–12°C." },
-              { Icon: CheckCircle, title: "Bảo hành", desc: "Tỷ lệ lỗi < 2%. Hàng hư: gửi ảnh Zalo, bồi ngay đơn sau. Xuất hóa đơn VAT cho doanh nghiệp." },
+              { Icon: CheckCircle, title: "Bảo hành", desc: "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Xuất VAT cho công ty." },
             ].map(({ Icon, title, desc }, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm">
