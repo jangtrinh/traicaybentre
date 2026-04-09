@@ -5,32 +5,54 @@ import { Play } from "@phosphor-icons/react";
 import { BrandIcon } from "./brand-icon";
 import { FadeIn } from "./fade-in";
 
-interface SocialVideo {
+interface SocialEmbed {
   id: string;
   platform: "tiktok" | "facebook" | "instagram";
+  type: "video" | "post";
   embedUrl: string;
   title: string;
 }
 
-const SOCIAL_VIDEOS: SocialVideo[] = [
+const SOCIAL_EMBEDS: SocialEmbed[] = [
   {
-    id: "tiktok-1",
-    platform: "tiktok",
-    embedUrl: "https://www.tiktok.com/embed/v2/7490599498871498017",
-    title: "Thu hoạch xoài Tứ Quý tại vườn Thạnh Phú",
-  },
-  {
-    id: "facebook-1",
+    id: "facebook-post-1",
     platform: "facebook",
+    type: "post",
     embedUrl:
-      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F680323011294802&show_text=false&width=350",
-    title: "Đóng thùng xoài giao miền Bắc",
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Gbu3Ea2eS6G2Mp8cExb6skGKikrsyRD8K8Gj6wR5UDvH3ByTCiUJzApzAYE7JE5ql%26id%3D61573415880985&show_text=true&width=500",
+    title: "Bài viết từ Fanpage",
+  },
+  // TODO: Thêm TikTok và Facebook Reel khi có video
+  // {
+  //   id: "tiktok-1",
+  //   platform: "tiktok",
+  //   type: "video",
+  //   embedUrl: "https://www.tiktok.com/embed/v2/7490599498871498017",
+  //   title: "Thu hoạch xoài Tứ Quý tại vườn Thạnh Phú",
+  // },
+  // {
+  //   id: "facebook-1",
+  //   platform: "facebook",
+  //   type: "video",
+  //   embedUrl:
+  //     "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F680323011294802&show_text=false&width=350",
+  //   title: "Đóng thùng xoài giao miền Bắc",
+  // },
+  {
+    id: "facebook-post-2",
+    platform: "facebook",
+    type: "post",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02jheb69Gv6QWruDEVfTBoQfyT52m3njsxxJb5ECMAswE5B57Lery4gj5pdnrhbuSul%26id%3D61573415880985&show_text=true&width=500",
+    title: "Bài viết từ Fanpage",
   },
   {
-    id: "tiktok-2",
-    platform: "tiktok",
-    embedUrl: "https://www.tiktok.com/embed/v2/7490599498871498017",
-    title: "Vị mặn nhẹ cuối lưỡi — bí mật từ đất cát ven biển",
+    id: "facebook-post-3",
+    platform: "facebook",
+    type: "post",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02x9rZaPLXQRVtrd3fiUchw6fiQpeRybxTBhBgtry89DkJhH2yxChZecAMeATGLvSRl%26id%3D61573415880985&show_text=true&width=500",
+    title: "Bài viết từ Fanpage",
   },
 ];
 
@@ -40,14 +62,15 @@ const PLATFORM_LABEL: Record<string, string> = {
   instagram: "Instagram",
 };
 
-function VideoCard({ video }: { video: SocialVideo }) {
+function EmbedCard({ embed }: { embed: SocialEmbed }) {
   const [loaded, setLoaded] = useState(false);
+  const isPost = embed.type === "post";
 
   return (
     <div className="flex flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
-      {/* Video embed area */}
-      <div className="relative aspect-[9/16] max-h-[480px] w-full bg-text/5">
-        {!loaded ? (
+      {/* Embed area — fixed height, width auto-fills */}
+      <div className="relative h-[450px] w-full bg-text/5">
+        {!loaded && !isPost ? (
           <button
             onClick={() => setLoaded(true)}
             className="absolute inset-0 flex flex-col items-center justify-center gap-3 transition-opacity hover:opacity-80"
@@ -61,24 +84,25 @@ function VideoCard({ video }: { video: SocialVideo }) {
           </button>
         ) : (
           <iframe
-            src={video.embedUrl}
-            className="h-full w-full border-0"
-            allow="autoplay; encrypted-media"
+            src={embed.embedUrl}
+            className="absolute inset-0 h-full w-full border-0"
+            scrolling="no"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen
-            title={video.title}
+            title={embed.title}
           />
         )}
       </div>
 
       {/* Info bar */}
       <div className="flex items-center gap-3 px-4 py-3">
-        <BrandIcon brand={video.platform} size={24} />
+        <BrandIcon brand={embed.platform} size={24} />
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-semibold text-text">
-            {video.title}
+            {embed.title}
           </p>
           <p className="text-xs text-text-muted">
-            {PLATFORM_LABEL[video.platform]}
+            {PLATFORM_LABEL[embed.platform]}
           </p>
         </div>
       </div>
@@ -106,9 +130,9 @@ export function SocialVideoSection() {
         </FadeIn>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SOCIAL_VIDEOS.map((video, i) => (
-            <FadeIn key={video.id} delay={i * 0.1}>
-              <VideoCard video={video} />
+          {SOCIAL_EMBEDS.map((embed, i) => (
+            <FadeIn key={embed.id} delay={i * 0.1}>
+              <EmbedCard embed={embed} />
             </FadeIn>
           ))}
         </div>
@@ -117,9 +141,7 @@ export function SocialVideoSection() {
         <FadeIn delay={0.3}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             {[
-              { brand: "tiktok" as const, url: "https://tiktok.com/@xoaibentre", label: "TikTok" },
-              { brand: "facebook" as const, url: "https://facebook.com/xoaituquybentre", label: "Facebook" },
-              { brand: "instagram" as const, url: "https://instagram.com/xoaibentre", label: "Instagram" },
+              { brand: "facebook" as const, url: "https://www.facebook.com/profile.php?id=61573415880985", label: "Facebook" },
             ].map((social) => (
               <a
                 key={social.brand}
