@@ -5,6 +5,15 @@ import Image from "next/image";
 import { CaretDown } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
 
+// Phrases rotate trong h1 — mỗi phrase là 3 dòng tạo nên 1 thông điệp
+// Phrase đầu là SEO anchor (giữ nguyên "Ngọt Đậm / Vị Mặn Nhẹ / Cuối Lưỡi")
+const HERO_PHRASES: [string, string, string][] = [
+  ["Ngọt Đậm", "Vị Mặn Nhẹ", "Cuối Lưỡi"],
+  ["Đất Giồng Cát", "Ven Biển", "Thạnh Phú"],
+  ["Hái Lúc Sáng", "Giao Tận Nơi", "Trong 24h"],
+  ["CDĐL #00124", "Chỉ Dẫn", "Địa Lý Riêng"],
+];
+
 const HERO_IMAGES = [
   { src: "/images/vua-khai-truong.jpg", alt: "Vựa Trái Cây Bến Tre — ngày khai trương tại xã Đại Điền, Thạnh Phú" },
   { src: "/images/xoai-real-2.jpg", alt: "Xoài Tứ Quý — tay cầm quả lớn tại vựa" },
@@ -59,6 +68,46 @@ function HeroImageCarousel() {
   );
 }
 
+function RotatingHeroTitle() {
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % HERO_PHRASES.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    // min-h [3.45em] = 3 dòng × leading 1.15 → giữ chiều cao cố định, không layout shift
+    <h1
+      className="relative min-h-[3.45em] font-heading text-[40px] font-semibold uppercase leading-[1.15] text-text sm:text-5xl md:text-6xl lg:text-7xl"
+      aria-live="polite"
+    >
+      {HERO_PHRASES.map((phrase, i) => {
+        const isActive = i === phraseIndex;
+        return (
+          <span
+            key={i}
+            aria-hidden={!isActive}
+            className={`absolute inset-0 block transition-all duration-700 ease-out ${
+              isActive
+                ? "opacity-100 translate-y-0 blur-0"
+                : "opacity-0 -translate-y-3 blur-sm"
+            }`}
+          >
+            {phrase[0]}
+            <br />
+            {phrase[1]}
+            <br />
+            <span className="text-mango">{phrase[2]}</span>
+          </span>
+        );
+      })}
+    </h1>
+  );
+}
+
 export function HeroSection() {
   return (
     <section className="relative flex min-h-screen flex-col bg-brand px-5 pt-28 pb-24">
@@ -66,13 +115,7 @@ export function HeroSection() {
         {/* Left — massive display text */}
         <div className="px-0 md:pl-10">
           <FadeIn>
-            <h1 className="font-heading text-[40px] font-semibold uppercase leading-[1.15] text-text sm:text-5xl md:text-6xl lg:text-7xl">
-              Ngọt Đậm
-              <br />
-              Vị Mặn Nhẹ
-              <br />
-              Cuối Lưỡi
-            </h1>
+            <RotatingHeroTitle />
           </FadeIn>
 
           <FadeIn delay={0.15}>
