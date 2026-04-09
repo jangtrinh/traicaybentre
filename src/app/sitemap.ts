@@ -13,5 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/giao-hang/tp-hcm`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/giao-hang/da-nang`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/tin-tuc`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 },
+    { url: `${base}/tin-tuc/nguon-goc-xoai-tu-quy-cau-chuyen-1982`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tin-tuc/7-mon-ngon-tu-xoai-tu-quy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/kien-thuc/chi-dan-dia-ly-cd-dl-00124`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/kien-thuc/cach-bao-quan-lam-chin-xoai-tu-quy`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/kien-thuc/vung-trong-xoai-mien-tay`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 }
