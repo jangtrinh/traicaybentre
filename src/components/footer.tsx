@@ -38,7 +38,7 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-4">
               <a href="/kien-thuc/xoai-tu-quy-la-gi" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Kiến thức</a>
-              <a href="/giao-hang/ha-noi" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Giao hàng</a>
+              <a href="/tin-tuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Tin tức</a>
               <a href="/#contact" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Liên hệ</a>
             </div>
           </div>
