@@ -37,7 +37,7 @@ export function Footer() {
               <a href="/nguon-goc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Nguồn gốc</a>
             </div>
             <div className="flex flex-col gap-4">
-              <a href="/kien-thuc/xoai-tu-quy-la-gi" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Kiến thức</a>
+              <a href="/kien-thuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Kiến thức</a>
               <a href="/tin-tuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Tin tức</a>
               <a href="/#contact" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Liên hệ</a>
             </div>

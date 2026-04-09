@@ -16,7 +16,7 @@ export function Header() {
     { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
     { label: "Giá hôm nay", href: "/gia-xoai-hom-nay" },
     { label: "Nguồn gốc", href: "/nguon-goc" },
-    { label: "Kiến thức", href: "/kien-thuc/xoai-tu-quy-la-gi" },
+    { label: "Kiến thức", href: "/kien-thuc" },
     { label: "Tin tức", href: "/tin-tuc" },
   ];
 
