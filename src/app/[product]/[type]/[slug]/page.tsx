@@ -30,7 +30,7 @@ type RouteParams = { product: string; type: string; slug: string };
 type Props = { params: Promise<RouteParams> };
 
 export const dynamicParams = false; // 404 anything outside generateStaticParams
-export const revalidate = 300;       // ISR — re-check publishedAt gate every 5 min
+export const revalidate = 60;        // ISR — re-check publishedAt gate every 60s
 
 const VALID_TYPES: ArticleType[] = ["kien-thuc", "tin-tuc"];
 
