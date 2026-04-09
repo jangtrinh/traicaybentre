@@ -2,7 +2,27 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArticleLayout } from "@/components/article-layout";
 import { VUA_XOAI_IMAGES } from "@/lib/vua-xoai-images";
+import { MON_XOAI_IMAGES, type MonXoaiImage } from "@/lib/mon-xoai-images";
 import { getArticleJsonLd, getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
+
+/* Reusable dish image with credit attribution */
+function DishImage({ image }: { image: MonXoaiImage }) {
+  return (
+    <div className="my-6 overflow-hidden rounded-2xl">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        className="w-full object-cover"
+        sizes="(max-width: 760px) 100vw, 760px"
+      />
+      <p className="mt-2 text-center text-xs text-text/40">
+        Ảnh minh họa: <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer">{image.credit}</a>
+      </p>
+    </div>
+  );
+}
 
 const PAGE_URL = `${SITE_URL}/tin-tuc/7-mon-ngon-tu-xoai-tu-quy`;
 
@@ -79,6 +99,7 @@ export default function MonNgonTuXoaiPage() {
 
       {/* H2: Món 1 — Gỏi xoài */}
       <h2>1. Gỏi xoài Tứ Quý — Món khai vị truyền thống</h2>
+      <DishImage image={MON_XOAI_IMAGES.goiXoaiTomThit} />
       <p>
         Gỏi xoài là món xuất hiện trên bàn nhậu miền Nam từ hàng chục năm nay.
         Với xoài Tứ Quý, vị chua thanh tự nhiên và độ giòn đặc trưng cho ra
@@ -128,6 +149,7 @@ export default function MonNgonTuXoaiPage() {
 
       {/* H2: Món 2 — Sinh tố */}
       <h2>2. Sinh tố xoài Tứ Quý — Đặc sản mùa hè</h2>
+      <DishImage image={MON_XOAI_IMAGES.sinhToXoaiDau} />
       <p>
         Sinh tố xoài Tứ Quý không cần thêm đường vẫn đủ ngọt nhờ vị ngọt đậm
         tự nhiên của quả chín. Vị mặn nhẹ cuối lưỡi tạo chiều sâu hương vị mà
@@ -219,6 +241,7 @@ export default function MonNgonTuXoaiPage() {
 
       {/* H2: Món 4 — Xoài lắc */}
       <h2>4. Xoài lắc Tứ Quý — Snack đường phố không thể thiếu</h2>
+      <DishImage image={MON_XOAI_IMAGES.goiXoaiTomKho} />
       <p>
         Xoài lắc là món snack phổ biến nhất từ xoài Tứ Quý xanh — được bán
         rộng rãi từ xe đẩy vỉa hè đến chuỗi trà sữa. Vị mặn ngọt cay đặc trưng
@@ -255,6 +278,7 @@ export default function MonNgonTuXoaiPage() {
 
       {/* H2: Món 5 — Xoài dầm */}
       <h2>5. Xoài dầm Tứ Quý — Tráng miệng giải nhiệt mùa hè</h2>
+      <DishImage image={MON_XOAI_IMAGES.xoaiDamHoa} />
       <p>
         Xoài dầm là biến tấu tráng miệng nhẹ nhàng, phù hợp thời tiết nóng.
         Vị ngọt thanh của xoài chín kết hợp nước cốt dừa béo mịn và đá bào
@@ -306,6 +330,7 @@ export default function MonNgonTuXoaiPage() {
 
       {/* H2: Món 6 — Chè xoài nước cốt dừa */}
       <h2>6. Chè xoài nước cốt dừa — Đặc sản Bến Tre</h2>
+      <DishImage image={MON_XOAI_IMAGES.cheXoaiSingapore} />
       <p>
         Đây là món chè mang hồn ẩm thực miền Tây — béo ngậy từ nước cốt dừa
         Bến Tre, ngọt sánh từ xoài Tứ Quý chín, thêm chút dai từ bột báng.
@@ -344,6 +369,7 @@ export default function MonNgonTuXoaiPage() {
 
       {/* H2: Món 7 — Chutney */}
       <h2>7. Tương cà xoài (Mango chutney) — Xoài Tứ Quý kiểu Ấn Độ</h2>
+      <DishImage image={MON_XOAI_IMAGES.cheXoaiNgot} />
       <p>
         Mango chutney là gia vị nổi tiếng thế giới, và xoài Tứ Quý với vị mặn
         nhẹ tự nhiên cho ra phiên bản chutney cân vị hơn bất kỳ giống xoài nào
