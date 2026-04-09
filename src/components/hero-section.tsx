@@ -6,6 +6,7 @@ import { CaretDown } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
 
 const HERO_IMAGES = [
+  { src: "/images/vua-khai-truong.jpg", alt: "Vựa Trái Cây Bến Tre — ngày khai trương tại xã Đại Điền, Thạnh Phú" },
   { src: "/images/xoai-real-2.jpg", alt: "Xoài Tứ Quý — tay cầm quả lớn tại vựa" },
   { src: "/images/xoai-real-7.jpg", alt: "Rổ xoài xanh tươi mới hái — close-up" },
   { src: "/images/xoai-real-3.jpg", alt: "Xoài Tứ Quý quả to, vựa đóng hàng" },
