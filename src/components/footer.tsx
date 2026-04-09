@@ -32,14 +32,14 @@ export function Footer() {
           {/* Nav links — jinzhenlian 2-column style */}
           <div className="flex gap-20">
             <div className="flex flex-col gap-4">
-              <a href="#products" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Sản phẩm</a>
-              <a href="#process" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Quy trình</a>
+              <a href="/xoai-tu-quy" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Xoài Tứ Quý</a>
+              <a href="/gia-xoai-hom-nay" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Giá hôm nay</a>
               <a href="/nguon-goc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Nguồn gốc</a>
             </div>
             <div className="flex flex-col gap-4">
-              <a href="#testimonials" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Đối tác</a>
-              <a href="#faq" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Tìm hiểu</a>
-              <a href="#contact" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Liên hệ</a>
+              <a href="/kien-thuc/xoai-tu-quy-la-gi" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Kiến thức</a>
+              <a href="/giao-hang/ha-noi" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Giao hàng</a>
+              <a href="/#contact" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Liên hệ</a>
             </div>
           </div>
         </div>

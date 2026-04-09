@@ -13,10 +13,10 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { label: "Sản phẩm", href: "/#products" },
-    { label: "Quy trình", href: "/#process" },
+    { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
+    { label: "Giá hôm nay", href: "/gia-xoai-hom-nay" },
     { label: "Nguồn gốc", href: "/nguon-goc" },
-    { label: "Đối tác", href: "/#testimonials" },
+    { label: "Kiến thức", href: "/kien-thuc/xoai-tu-quy-la-gi" },
   ];
 
   return (

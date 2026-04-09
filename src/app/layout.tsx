@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
+import { getHomepageJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -67,102 +68,8 @@ export const metadata: Metadata = {
   },
 };
 
-/* JSON-LD structured data for SEO + GEO + AEO */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://traicaybentre.com/#business",
-      name: "Trái Cây Bến Tre — Vựa Xoài Tứ Quý",
-      description:
-        "Vựa xoài Tứ Quý Thạnh Phú, Bến Tre. Chỉ dẫn địa lý CDĐL #00124. Giao lạnh toàn quốc.",
-      url: "https://traicaybentre.com",
-      telephone: "+84932585533",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Thạnh Phú",
-        addressRegion: "Bến Tre",
-        postalCode: "86400",
-        addressCountry: "VN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 9.8508435,
-        longitude: 106.6173415,
-      },
-      image: "https://traicaybentre.com/images/xoai-real-2.jpg",
-      priceRange: "16.000–25.000đ/kg",
-      openingHours: "Mo-Su 04:00-18:00",
-      areaServed: { "@type": "Country", name: "VN" },
-      sameAs: [
-        "https://www.facebook.com/profile.php?id=100089485120129",
-        "https://xoaituquythanhphu.com",
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://traicaybentre.com/#website",
-      url: "https://traicaybentre.com",
-      name: "Trái Cây Bến Tre",
-      inLanguage: "vi",
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://traicaybentre.com/#faq",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Xoài Tứ Quý là gì?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Xoài Tứ Quý là giống xoài đặc sản Bến Tre, cho trái quanh năm (3 vụ/năm). Trồng trên đất giồng cát ven biển nhiễm mặn tại Thạnh Phú, tạo ra vị mặn nhẹ cuối lưỡi — đặc điểm không thể tái tạo ở vùng khác. Đã được cấp Chỉ dẫn địa lý CDĐL #00124 bởi Cục Sở hữu trí tuệ năm 2022.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Giá dao động theo ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi vựa 0932 585 533 (A Phúc) để có giá chính xác. Giá cập nhật mỗi sáng.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Ship xa xoài có bị dập không?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Không. Mỗi trái bọc lưới xốp riêng, xếp trong thùng carton có lót đệm. Tỷ lệ lỗi dưới 2% sau 3 năm giao hàng ra Bắc.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Xoài Tứ Quý ăn chín hay xanh ngon hơn?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Cả hai đều ngon. Miền Bắc thích ăn chín — ngọt đậm, thơm hắc, vị mặn nhẹ. Miền Nam thích ăn xanh — giòn sần sật, chua thanh.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Mùa xoài Tứ Quý khi nào?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Xoài Tứ Quý cho trái quanh năm, 3 vụ chính: Vụ 1 tháng 4, Vụ 2 tháng 8, Vụ 3 tháng 12 (âm lịch). Xoài xanh có quanh năm.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Mua xoài sỉ Bến Tre cần bao nhiêu?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Tối thiểu 1 thùng 20kg. Đóng thùng linh hoạt theo yêu cầu. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá.",
-          },
-        },
-      ],
-    },
-  ],
-};
+/* JSON-LD structured data — centralized in structured-data.ts */
+const jsonLd = getHomepageJsonLd();
 
 export default function RootLayout({
   children,
