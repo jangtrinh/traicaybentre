@@ -53,13 +53,17 @@ export function ContactSection() {
 
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Có lỗi xảy ra");
+        throw new Error(data.error || "Có trục trặc nhỏ");
       }
 
       setStatus("success");
     } catch (err) {
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Có lỗi xảy ra. Vui lòng thử lại.");
+      setErrorMsg(
+        err instanceof Error
+          ? err.message
+          : "Gửi không được rồi — anh/chị thử lại, hoặc Zalo 0932 585 533 để vựa nhận trực tiếp nha.",
+      );
     }
   };
 
