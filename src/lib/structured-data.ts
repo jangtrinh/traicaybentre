@@ -343,4 +343,35 @@ export function getArticleJsonLd(opts: {
   };
 }
 
+/** Product schema for [product] landing pages.
+ *  Minimal Schema.org Product — name, description, image, brand, category.
+ *  NO nested Offer: price dao động si/le, tránh rich result penalty.
+ *  Add Offer sau khi có stable price API. (red-team F5)
+ */
+export function getProductJsonLd(opts: {
+  name: string;
+  description: string;
+  url: string;
+  image: string;
+  category?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: opts.name,
+    description: opts.description,
+    image: opts.image,
+    url: opts.url,
+    category: opts.category ?? "Trái cây đặc sản Bến Tre",
+    brand: {
+      "@type": "Brand",
+      name: BUSINESS_NAME,
+    },
+    manufacturer: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#business`,
+    },
+  };
+}
+
 export { SITE_URL };

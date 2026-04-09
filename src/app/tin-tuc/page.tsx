@@ -7,7 +7,11 @@ import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { getAllPublishedArticles } from "@/lib/articles";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
+
+// ISR — refresh hub every 5 min so newly-published MDX articles appear
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Tin Tức & Báo Giá Xoài Tứ Quý | Bến Tre",
@@ -37,7 +41,42 @@ function formatDate(iso: string) {
   return `${d}/${m}/${y}`;
 }
 
+type HubPost = {
+  href: string;
+  title: string;
+  description: string;
+  date: string;
+  category: string;
+  coverImage: { src: string; alt: string };
+};
+
+function getHubPosts(): HubPost[] {
+  const legacy: HubPost[] = BLOG_POSTS.map((p) => ({
+    href: `/tin-tuc/${p.slug}`,
+    title: p.title,
+    description: p.description,
+    date: p.date,
+    category: p.category,
+    coverImage: p.coverImage,
+  }));
+
+  const mdx: HubPost[] = getAllPublishedArticles("tin-tuc").map((a) => ({
+    href: a.urlPath,
+    title: a.frontmatter.title,
+    description: a.frontmatter.metaDescription,
+    date: a.frontmatter.publishedAt.slice(0, 10),
+    category: a.frontmatter.pillar ?? "Tin tức",
+    coverImage: {
+      src: a.frontmatter.ogImage ?? "/Xoai-2.jpg",
+      alt: a.frontmatter.title,
+    },
+  }));
+
+  return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
+}
+
 export default function TinTucPage() {
+  const posts = getHubPosts();
   return (
     <>
       <script
@@ -71,10 +110,10 @@ export default function TinTucPage() {
       <section className="bg-brand-cream px-5 py-20">
         <div className="mx-auto max-w-[900px]">
           <div className="flex flex-col gap-6">
-            {BLOG_POSTS.map((post, i) => (
-              <FadeIn key={post.slug} delay={i * 0.08}>
+            {posts.map((post, i) => (
+              <FadeIn key={post.href} delay={Math.min(i, 10) * 0.06}>
                 <Link
-                  href={`/tin-tuc/${post.slug}`}
+                  href={post.href}
                   className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:grid sm:grid-cols-[240px_1fr]"
                 >
                   {/* Cover image — full width trên mobile, cột trái trên sm+ */}

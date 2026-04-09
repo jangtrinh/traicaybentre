@@ -5,7 +5,11 @@ import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { KNOWLEDGE_ARTICLES } from "@/lib/knowledge-data";
+import { getAllPublishedArticles } from "@/lib/articles";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
+
+// ISR — refresh hub every 5 min so newly-published MDX articles appear
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Kiến Thức Xoài Tứ Quý — Hướng Dẫn Đầy Đủ | Trái Cây Bến Tre",
@@ -32,7 +36,30 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "Kiến thức", url: `${SITE_URL}/kien-thuc` },
 ]);
 
+// Merge legacy knowledge articles with new MDX articles (product-scoped)
+function getHubItems() {
+  const legacy = KNOWLEDGE_ARTICLES.map((a) => ({
+    href: `/kien-thuc/${a.slug}`,
+    title: a.title,
+    description: a.description,
+    date: a.date,
+    category: a.category,
+  }));
+
+  const mdx = getAllPublishedArticles("kien-thuc").map((a) => ({
+    href: a.urlPath,
+    title: a.frontmatter.title,
+    description: a.frontmatter.metaDescription,
+    date: a.frontmatter.publishedAt.slice(0, 10),
+    category: a.frontmatter.pillar ?? "Kiến thức",
+  }));
+
+  // Newest first — both sources use ISO-like date strings
+  return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
+}
+
 export default function KienThucIndexPage() {
+  const items = getHubItems();
   return (
     <>
       <script
@@ -68,10 +95,10 @@ export default function KienThucIndexPage() {
       <section className="bg-brand-cream px-5 py-20">
         <div className="mx-auto max-w-[1100px]">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {KNOWLEDGE_ARTICLES.map((article, i) => (
-              <FadeIn key={article.slug} delay={i * 0.06}>
+            {items.map((article, i) => (
+              <FadeIn key={article.href} delay={Math.min(i, 12) * 0.04}>
                 <a
-                  href={`/kien-thuc/${article.slug}`}
+                  href={article.href}
                   className="group flex h-full flex-col rounded-2xl bg-white p-6 shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
                   <span className="inline-block w-fit rounded-full bg-mango/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-mango-dark">

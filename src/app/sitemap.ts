@@ -1,8 +1,19 @@
 import type { MetadataRoute } from "next";
+import { getAllPublishedArticles } from "@/lib/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://traicaybentre.com";
+
+  // Dynamic entries from MDX articles (visible only when uxReviewed + publishedAt elapsed)
+  const articleEntries: MetadataRoute.Sitemap = getAllPublishedArticles().map((a) => ({
+    url: `${base}${a.urlPath}`,
+    lastModified: new Date(a.frontmatter.publishedAt),
+    changeFrequency: a.type === "tin-tuc" ? "weekly" : "monthly",
+    priority: a.type === "kien-thuc" ? 0.75 : 0.65,
+  }));
+
   return [
+    ...articleEntries,
     { url: base, lastModified: new Date(), changeFrequency: "daily", priority: 1 },
     { url: `${base}/xoai-tu-quy`, lastModified: new Date(), changeFrequency: "daily", priority: 0.95 },
     { url: `${base}/nguon-goc`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
