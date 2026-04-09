@@ -256,7 +256,7 @@ export default function BaoGiaThang04Page() {
         <div className="mx-auto flex max-w-[800px] flex-wrap justify-center gap-4">
           {[
             { label: "← Tất cả tin tức", href: "/tin-tuc" },
-            { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+            { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
             { label: "Sản phẩm xoài Tứ Quý", href: "/xoai-tu-quy" },
             { label: "Liên hệ đặt sỉ", href: "/#contact" },
           ].map((link) => (

@@ -8,6 +8,7 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import { SectionDivider } from "./section-divider";
 import { FadeIn } from "./fade-in";
+import { ShareButtons } from "./share-buttons";
 
 interface ArticleLayoutProps {
   category: string;
@@ -78,7 +79,9 @@ export function ArticleLayout({
       {/* Article body */}
       <section className="bg-brand-cream px-5 py-20">
         <div className="mx-auto max-w-[760px] [&_h2]:mt-12 [&_h2]:font-heading [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-text [&_h2]:leading-tight [&_h2]:mb-4 [&_h3]:mt-8 [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-text [&_h3]:mb-3 [&_p]:mb-4 [&_p]:text-base [&_p]:leading-7 [&_p]:text-text/75 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li]:text-text/75 [&_li]:leading-7 [&_strong]:text-text [&_strong]:font-semibold [&_a]:text-mango [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-mango-dark">
+          <ShareButtons title={title} placement="top" />
           {children}
+          <ShareButtons title={title} placement="bottom" />
         </div>
       </section>
 
@@ -93,7 +96,7 @@ export function ArticleLayout({
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
               { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
               { label: "Tin tức & báo giá", href: "/tin-tuc" },
               { label: "Liên hệ đặt sỉ", href: "/#contact" },

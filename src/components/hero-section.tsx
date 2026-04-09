@@ -25,7 +25,7 @@ function HeroImageCarousel() {
   }, []);
 
   return (
-    <div className="relative aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-3xl shadow-2xl">
+    <div className="relative aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-3xl shadow-2xl md:aspect-[4/5]">
       {HERO_IMAGES.map((img, i) => (
         <Image
           key={img.src}
@@ -87,8 +87,8 @@ export function HeroSection() {
           </FadeIn>
         </div>
 
-        {/* Right — rotating image carousel */}
-        <FadeIn delay={0.1} className="hidden justify-center lg:flex">
+        {/* Right — rotating image carousel (stack dưới text trên mobile/tablet, bên phải trên desktop) */}
+        <FadeIn delay={0.1} className="flex justify-center">
           <HeroImageCarousel />
         </FadeIn>
       </div>

@@ -234,7 +234,7 @@ export default function XoaiSoSanhPage() {
             {[
               { label: "Xoài Tứ Quý là gì?", href: "/kien-thuc/xoai-tu-quy-la-gi" },
               { label: "Mua xoài Tứ Quý", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
               { label: "Nguồn gốc & CDĐL", href: "/nguon-goc" },
             ].map((link) => (
               <a

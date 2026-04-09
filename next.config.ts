@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
+  /* === 301 redirects for merged/renamed routes === */
+  async redirects() {
+    return [
+      {
+        // /gia-xoai-hom-nay đã merge vào /xoai-tu-quy#gia (section bảng giá)
+        source: "/gia-xoai-hom-nay",
+        destination: "/xoai-tu-quy#gia",
+        permanent: true,
+      },
+    ];
+  },
+
   /* === Long cache headers for static assets in /public === */
   async headers() {
     return [

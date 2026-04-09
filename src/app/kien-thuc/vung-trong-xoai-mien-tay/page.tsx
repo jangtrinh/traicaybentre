@@ -509,7 +509,7 @@ export default function VungTrongXoaiMienTayPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
               { label: "Mùa vụ 3 vụ/năm", href: "/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam" },
               { label: "Xoài Tứ Quý là gì?", href: "/kien-thuc/xoai-tu-quy-la-gi" },
               { label: "So sánh với Cát Hòa Lộc", href: "/kien-thuc/xoai-tu-quy-vs-xoai-cat-hoa-loc" },

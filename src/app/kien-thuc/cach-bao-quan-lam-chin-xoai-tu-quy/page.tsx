@@ -410,7 +410,7 @@ export default function BaoQuanLamChinXoaiPage() {
         Nếu mua lần đầu mà chưa biết sở thích, hãy để một nửa chín (ăn tươi),
         giữ một nửa xanh (làm gỏi) — bạn sẽ hiểu rõ hơn về xoài Tứ Quý sau
         trải nghiệm đó. Xem giá xoài xanh và chín tại{" "}
-        <a href="/gia-xoai-hom-nay">bảng giá xoài hôm nay</a>.
+        <a href="/xoai-tu-quy#gia">bảng giá xoài hôm nay</a>.
       </p>
 
       {/* H2: Bảo quản lâu dài */}

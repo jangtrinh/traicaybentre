@@ -463,7 +463,7 @@ export default function MonNgonTuXoaiPage() {
         20kg xoài xanh hoặc già xanh, đóng thùng xốp chống dập, ship 1–2 ngày
         ra Bắc. Xem chi tiết tại{" "}
         <a href="/xoai-tu-quy">trang sản phẩm xoài Tứ Quý</a> hoặc kiểm tra{" "}
-        <a href="/gia-xoai-hom-nay">giá xoài hôm nay</a> trước khi đặt.
+        <a href="/xoai-tu-quy#gia">giá xoài hôm nay</a> trước khi đặt.
       </p>
 
       <div className="my-6 rounded-2xl border border-border bg-white p-5 shadow-sm text-sm text-text/70">

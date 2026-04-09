@@ -321,7 +321,7 @@ export default function ChiDanDiaLyCdDl00124Page() {
         Muốn đặt mua xoài Tứ Quý chính vùng CDĐL #00124? Liên hệ trực tiếp vựa Thạnh Phú
         qua{" "}
         <a href="/#contact">trang liên hệ</a> hoặc xem{" "}
-        <a href="/gia-xoai-hom-nay">giá xoài hôm nay</a> trước khi đặt hàng.
+        <a href="/xoai-tu-quy#gia">giá xoài hôm nay</a> trước khi đặt hàng.
       </p>
     </ArticleLayout>
   );

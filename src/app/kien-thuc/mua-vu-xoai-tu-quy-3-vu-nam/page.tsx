@@ -278,7 +278,7 @@ export default function MuaVuXoaiTuQuy3VuNamPage() {
                   <strong className="text-text">35.000đ/kg trở lên</strong> do nhu cầu quà tặng
                   tăng đột biến. Bên nhập hàng nên đặt trước <strong className="text-text">ít
                   nhất 10–14 ngày</strong> để được ưu tiên phân bổ hàng. Xem{" "}
-                  <a href="/gia-xoai-hom-nay" className="text-mango underline underline-offset-4 hover:text-mango-dark">
+                  <a href="/xoai-tu-quy#gia" className="text-mango underline underline-offset-4 hover:text-mango-dark">
                     bảng giá xoài hôm nay
                   </a>{" "}
                   để theo dõi biến động theo thời gian thực.
@@ -324,7 +324,7 @@ export default function MuaVuXoaiTuQuy3VuNamPage() {
               </div>
               <p className="mt-4 text-xs text-text/40">
                 Giá sỉ/kg tại vựa, chưa tính phí vận chuyển. Cập nhật hàng ngày tại{" "}
-                <a href="/gia-xoai-hom-nay" className="underline hover:text-text">
+                <a href="/xoai-tu-quy#gia" className="underline hover:text-text">
                   giá xoài hôm nay
                 </a>.
               </p>
@@ -524,7 +524,7 @@ export default function MuaVuXoaiTuQuy3VuNamPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
               { label: "Vùng trồng miền Tây", href: "/kien-thuc/vung-trong-xoai-mien-tay" },
               { label: "Xoài Tứ Quý là gì?", href: "/kien-thuc/xoai-tu-quy-la-gi" },
               { label: "So sánh với Cát Hòa Lộc", href: "/kien-thuc/xoai-tu-quy-vs-xoai-cat-hoa-loc" },

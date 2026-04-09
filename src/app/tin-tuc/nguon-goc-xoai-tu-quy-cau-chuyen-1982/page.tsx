@@ -265,7 +265,7 @@ export default function NguonGocXoaiTuQuyPage() {
         Nếu bạn muốn đặt mua xoài Tứ Quý chính hiệu từ vựa Thạnh Phú, xem thông tin sản
         phẩm tại{" "}
         <a href="/xoai-tu-quy">trang xoài Tứ Quý</a> hoặc kiểm tra{" "}
-        <a href="/gia-xoai-hom-nay">giá xoài hôm nay</a> trước khi đặt.
+        <a href="/xoai-tu-quy#gia">giá xoài hôm nay</a> trước khi đặt.
       </p>
     </ArticleLayout>
   );

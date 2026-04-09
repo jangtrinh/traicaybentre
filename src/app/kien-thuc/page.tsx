@@ -107,7 +107,7 @@ export default function KienThucIndexPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
               { label: "Tin tức & báo giá", href: "/tin-tuc" },
               { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
               { label: "Liên hệ đặt sỉ", href: "/#contact" },

@@ -253,7 +253,7 @@ export default function XoaiTuQuyLaGiPage() {
               </div>
               <p className="mt-4 text-xs text-text/40">
                 Giá thị trường, cập nhật hàng ngày. Xem giá chính xác tại{" "}
-                <a href="/gia-xoai-hom-nay" className="underline hover:text-text">giá xoài hôm nay</a>.
+                <a href="/xoai-tu-quy#gia" className="underline hover:text-text">giá xoài hôm nay</a>.
               </p>
             </div>
           </FadeIn>
@@ -344,7 +344,7 @@ export default function XoaiTuQuyLaGiPage() {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { label: "Mua xoài Tứ Quý", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/gia-xoai-hom-nay" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
               { label: "Nguồn gốc & CDĐL", href: "/nguon-goc" },
               { label: "So sánh với Cát Hòa Lộc", href: "/kien-thuc/xoai-tu-quy-vs-xoai-cat-hoa-loc" },
             ].map((link) => (

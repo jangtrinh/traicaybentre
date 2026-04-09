@@ -33,7 +33,7 @@ export function Footer() {
           <div className="flex gap-20">
             <div className="flex flex-col gap-4">
               <a href="/xoai-tu-quy" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Xoài Tứ Quý</a>
-              <a href="/gia-xoai-hom-nay" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Giá hôm nay</a>
+              <a href="/xoai-tu-quy#gia" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Giá hôm nay</a>
               <a href="/nguon-goc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Nguồn gốc</a>
             </div>
             <div className="flex flex-col gap-4">
