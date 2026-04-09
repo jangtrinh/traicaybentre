@@ -100,7 +100,7 @@ function RotatingHeroTitle() {
             <br />
             {phrase[1]}
             <br />
-            <span className="text-mango">{phrase[2]}</span>
+            {phrase[2]}
           </span>
         );
       })}
