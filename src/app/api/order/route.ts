@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
     if (recent.length >= RATE_LIMIT_MAX) {
       return NextResponse.json(
-        { error: "Bạn đã gửi quá nhiều đơn. Vui lòng thử lại sau." },
+        { error: "Anh/chị gửi nhiều đơn quá rồi — chờ chút rồi gửi lại dùm vựa nha." },
         { status: 429 }
       );
     }
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     // Validate required fields
     if (!name || !phone || !customerType) {
       return NextResponse.json(
-        { error: "Vui lòng điền đầy đủ thông tin" },
+        { error: "Anh/chị điền đủ thông tin giúp vựa nha — thiếu xíu là vựa chưa gọi lại được." },
         { status: 400 }
       );
     }
@@ -106,7 +106,7 @@ export async function POST(request: Request) {
 
     if (!resend) {
       return NextResponse.json(
-        { error: "Email chưa được cấu hình. Vui lòng liên hệ Zalo." },
+        { error: "Email vựa đang trục trặc — anh/chị Zalo 0932 585 533 cho Anh Phúc nha, trả liền." },
         { status: 503 }
       );
     }
@@ -122,7 +122,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Order email error:", error);
     return NextResponse.json(
-      { error: "Không thể gửi đơn hàng. Vui lòng thử lại." },
+      { error: "Đơn chưa gửi đi được — anh/chị thử lại, hoặc Zalo 0932 585 533 để vựa nhận trực tiếp nha." },
       { status: 500 }
     );
   }
