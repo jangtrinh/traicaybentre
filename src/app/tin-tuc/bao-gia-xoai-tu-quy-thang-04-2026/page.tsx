@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -103,6 +104,20 @@ export default function BaoGiaThang04Page() {
               Tổng hợp giá xoài Tứ Quý Bến Tre tháng 4/2026. Vụ 1 bắt đầu với
               chất lượng cao, nguồn cung ổn định từ vựa Thạnh Phú.
             </p>
+          </FadeIn>
+
+          {/* Feature image */}
+          <FadeIn delay={0.15}>
+            <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="/images/vua-xoai/xoai-tu-quy-vip-tay-cam-1.jpg"
+                alt="Xoài Tứ Quý VIP vụ 1 tháng 4/2026 — quả 600-800g nặng tay tại vựa Thạnh Phú"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 800px) 800px, 100vw"
+              />
+            </div>
           </FadeIn>
         </div>
       </section>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
@@ -65,37 +67,56 @@ export default function TinTucPage() {
 
       <SectionDivider from="brand" to="brand-cream" />
 
-      {/* Post list */}
+      {/* Post list — mỗi card là Link clickable toàn bộ */}
       <section className="bg-brand-cream px-5 py-20">
-        <div className="mx-auto max-w-[800px]">
+        <div className="mx-auto max-w-[900px]">
           <div className="flex flex-col gap-6">
             {BLOG_POSTS.map((post, i) => (
               <FadeIn key={post.slug} delay={i * 0.08}>
-                <article className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="mb-2 flex items-center gap-3">
-                    <span className="rounded-full bg-mango/15 px-3 py-0.5 text-xs font-bold text-mango">
-                      {post.category}
-                    </span>
-                    <time
-                      dateTime={post.date}
-                      className="text-xs text-text/40"
-                    >
-                      {formatDate(post.date)}
-                    </time>
+                <Link
+                  href={`/tin-tuc/${post.slug}`}
+                  className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:grid sm:grid-cols-[240px_1fr]"
+                >
+                  {/* Cover image — full width trên mobile, cột trái trên sm+ */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-cream sm:aspect-auto sm:h-full">
+                    <Image
+                      src={post.coverImage.src}
+                      alt={post.coverImage.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 640px) 240px, 100vw"
+                    />
                   </div>
-                  <h2 className="font-heading text-xl font-bold text-text">
-                    {post.title}
-                  </h2>
-                  <p className="mt-2 text-sm leading-relaxed text-text/60">
-                    {post.description}
-                  </p>
-                  <Link
-                    href={`/tin-tuc/${post.slug}`}
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-text hover:text-mango transition-colors"
-                  >
-                    Đọc tiếp →
-                  </Link>
-                </article>
+
+                  {/* Content */}
+                  <article className="flex flex-col p-6 sm:p-7">
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="rounded-full bg-mango/15 px-3 py-0.5 text-xs font-bold text-mango">
+                        {post.category}
+                      </span>
+                      <time
+                        dateTime={post.date}
+                        className="text-xs text-text/40"
+                      >
+                        {formatDate(post.date)}
+                      </time>
+                    </div>
+                    <h2 className="font-heading text-xl font-bold text-text transition-colors group-hover:text-mango sm:text-2xl">
+                      {post.title}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-text/60">
+                      {post.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-text/70 transition-colors group-hover:text-mango">
+                      Đọc tiếp
+                      <ArrowRight
+                        size={14}
+                        weight="bold"
+                        className="transition-transform group-hover:translate-x-1"
+                      />
+                    </span>
+                  </article>
+                </Link>
               </FadeIn>
             ))}
           </div>
