@@ -112,7 +112,7 @@ export async function POST(request: Request) {
     }
 
     await resend.emails.send({
-      from: "Trái Cây Bến Tre <onboarding@resend.dev>",
+      from: "Đơn hàng — Trái Cây Bến Tre <don@traicaybentre.com>",
       to: "trinhnguyengiang@gmail.com",
       subject: `[Đơn mới] ${customerType} — ${name} — ${phone}`,
       html: emailHtml,
