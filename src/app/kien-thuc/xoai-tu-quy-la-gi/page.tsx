@@ -360,7 +360,6 @@ export default function XoaiTuQuyLaGiPage() {
         </div>
       </section>
 
-      <SectionDivider from="brand" to="brand-cream" />
       <Footer />
     </>
   );

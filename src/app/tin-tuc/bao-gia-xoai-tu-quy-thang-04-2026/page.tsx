@@ -271,7 +271,6 @@ export default function BaoGiaThang04Page() {
         </div>
       </section>
 
-      <SectionDivider from="brand" to="brand-cream" />
       <Footer />
     </>
   );

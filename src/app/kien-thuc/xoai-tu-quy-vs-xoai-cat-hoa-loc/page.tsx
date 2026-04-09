@@ -249,7 +249,6 @@ export default function XoaiSoSanhPage() {
         </div>
       </section>
 
-      <SectionDivider from="brand" to="brand-cream" />
       <Footer />
     </>
   );
