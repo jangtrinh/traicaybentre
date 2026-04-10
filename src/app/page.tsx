@@ -12,6 +12,7 @@ import { FaqSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
+import { ProductShowcaseSection } from "@/components/product-showcase-section";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <SectionDivider from="brand" to="brand-cream" />
       <ProductSection />
       <SectionDivider from="brand-cream" to="brand" />
+      <ProductShowcaseSection />
+      <SectionDivider from="brand" to="brand-cream" />
       <ProcessSection />
       <SectionDivider from="brand" to="brand-cream" />
       <CalendarSection />
