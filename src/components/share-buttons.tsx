@@ -38,11 +38,13 @@ const TARGETS: ShareTarget[] = [
     icon: <BrandIcon brand="facebook" size={40} />,
   },
   {
+    // Zalo: only monochrome SVG available (Iconify simple-icons), so we render
+    // a white glyph on the brand-blue circle button.
     name: "zalo",
     label: "Chia sẻ lên Zalo",
     buildHref: (u) => `https://zalo.me/share?url=${encodeURIComponent(u)}`,
-    bg: "",
-    icon: <BrandIcon brand="zalo" size={40} />,
+    bg: "bg-[#0068FF] hover:bg-[#0055d4]",
+    icon: <BrandIcon brand="zalo" size={20} />,
   },
   {
     name: "messenger",
