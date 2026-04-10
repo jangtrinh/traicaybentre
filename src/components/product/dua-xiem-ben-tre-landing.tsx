@@ -10,7 +10,6 @@ import Link from "next/link";
 import {
   Truck,
   Drop,
-  Leaf,
   Phone,
   MapPin,
   Package,

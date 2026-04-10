@@ -25,28 +25,32 @@ type ShareTarget = {
   icon: React.ReactNode;
 };
 
+// Icons facebook/zalo/messenger/telegram already include their own brand
+// background + white glyph baked into the SVG. Render them at full button size
+// with no extra wrapper background. X is a bare black glyph only — invert it
+// to white and place on a black circle.
 const TARGETS: ShareTarget[] = [
   {
     name: "facebook",
     label: "Chia sẻ lên Facebook",
     buildHref: (u) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}`,
-    bg: "bg-[#1877F2] hover:bg-[#0f66d9]",
-    icon: <BrandIcon brand="facebook" size={18} className="brightness-0 invert" />,
+    bg: "",
+    icon: <BrandIcon brand="facebook" size={40} />,
   },
   {
     name: "zalo",
     label: "Chia sẻ lên Zalo",
     buildHref: (u) => `https://zalo.me/share?url=${encodeURIComponent(u)}`,
-    bg: "bg-[#0068FF] hover:bg-[#0055d4]",
-    icon: <BrandIcon brand="zalo" size={18} className="brightness-0 invert" />,
+    bg: "",
+    icon: <BrandIcon brand="zalo" size={40} />,
   },
   {
     name: "messenger",
     label: "Chia sẻ qua Messenger",
     buildHref: (u) =>
       `https://www.facebook.com/dialog/send?link=${encodeURIComponent(u)}&app_id=291494419107518&redirect_uri=${encodeURIComponent(u)}`,
-    bg: "bg-[#0084FF] hover:bg-[#006acc]",
-    icon: <BrandIcon brand="messenger" size={18} className="brightness-0 invert" />,
+    bg: "",
+    icon: <BrandIcon brand="messenger" size={40} />,
   },
   {
     name: "x",
@@ -54,15 +58,15 @@ const TARGETS: ShareTarget[] = [
     buildHref: (u, t) =>
       `https://twitter.com/intent/tweet?url=${encodeURIComponent(u)}&text=${encodeURIComponent(t)}`,
     bg: "bg-black hover:bg-neutral-800",
-    icon: <BrandIcon brand="x" size={16} className="brightness-0 invert" />,
+    icon: <BrandIcon brand="x" size={18} className="brightness-0 invert" />,
   },
   {
     name: "telegram",
     label: "Chia sẻ lên Telegram",
     buildHref: (u, t) =>
       `https://t.me/share/url?url=${encodeURIComponent(u)}&text=${encodeURIComponent(t)}`,
-    bg: "bg-[#229ED9] hover:bg-[#1b85b6]",
-    icon: <BrandIcon brand="telegram" size={18} className="brightness-0 invert" />,
+    bg: "",
+    icon: <BrandIcon brand="telegram" size={40} />,
   },
 ];
 
@@ -128,7 +132,7 @@ export function ShareButtons({ title, url, placement = "bottom" }: ShareButtonsP
             onClick={() => openPopup(t.buildHref(currentUrl, title))}
             aria-label={t.label}
             title={t.label}
-            className={`flex h-10 w-10 items-center justify-center rounded-full text-white transition-transform hover:scale-110 ${t.bg}`}
+            className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-white transition-transform hover:scale-110 ${t.bg}`}
           >
             {t.icon}
           </button>
