@@ -37,6 +37,27 @@ export type ArticlePillar =
   | "meo-thuong-thuc"
   | "heritage-bentre";
 
+/** Vietnamese display labels for pillar slugs — used in category pills, breadcrumbs, etc. */
+export const PILLAR_LABELS: Record<ArticlePillar, string> = {
+  "gia-thi-truong": "Giá & thị trường",
+  "ky-thuat-bao-quan": "Kỹ thuật bảo quản",
+  "so-sanh-giong": "So sánh giống xoài",
+  "giao-hang-theo-vung": "Giao hàng theo vùng",
+  "meo-thuong-thuc": "Mẹo thưởng thức",
+  "heritage-bentre": "Di sản Bến Tre",
+};
+
+/** Localize a pillar slug, falling back to a humanized version for unknown values. */
+export function localizePillar(pillar: string | undefined | null): string {
+  if (!pillar) return "";
+  if (pillar in PILLAR_LABELS) return PILLAR_LABELS[pillar as ArticlePillar];
+  // Fallback: kebab-case → Capitalized words
+  return pillar
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
 export interface ArticleFrontmatter {
   title: string;
   publishedAt: string;

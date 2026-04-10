@@ -24,6 +24,7 @@ import {
   getArticleByUrlPathIncludingScheduled,
   getAllArticleParamsForBuild,
   getRelatedArticles,
+  localizePillar,
   type ArticleType,
 } from "@/lib/articles";
 import {
@@ -44,18 +45,9 @@ function isValidType(t: string): t is ArticleType {
   return VALID_TYPES.includes(t as ArticleType);
 }
 
-const PILLAR_LABELS: Record<string, string> = {
-  "gia-thi-truong": "Giá & thị trường",
-  "ky-thuat-bao-quan": "Kỹ thuật bảo quản",
-  "so-sanh-giong": "So sánh giống xoài",
-  "giao-hang-theo-vung": "Giao hàng theo vùng",
-  "meo-thuong-thuc": "Mẹo thưởng thức",
-  "heritage-bentre": "Di sản Bến Tre",
-};
-
 function buildCategory(type: ArticleType, pillar: string | undefined): string {
   const typeLabel = type === "kien-thuc" ? "Kiến thức" : "Tin tức";
-  const pillarLabel = pillar ? PILLAR_LABELS[pillar] ?? "" : "";
+  const pillarLabel = localizePillar(pillar);
   return pillarLabel ? `${typeLabel} — ${pillarLabel}` : typeLabel;
 }
 

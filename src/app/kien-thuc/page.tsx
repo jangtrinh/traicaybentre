@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { KNOWLEDGE_ARTICLES } from "@/lib/knowledge-data";
-import { getAllPublishedArticles } from "@/lib/articles";
+import { getAllPublishedArticles, localizePillar } from "@/lib/articles";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
 // ISR — refresh hub every 5 min so newly-published MDX articles appear
@@ -51,7 +51,7 @@ function getHubItems() {
     title: a.frontmatter.title,
     description: a.frontmatter.metaDescription,
     date: a.frontmatter.publishedAt.slice(0, 10),
-    category: a.frontmatter.pillar ?? "Kiến thức",
+    category: a.frontmatter.pillar ? localizePillar(a.frontmatter.pillar) : "Kiến thức",
   }));
 
   // Newest first — both sources use ISO-like date strings
