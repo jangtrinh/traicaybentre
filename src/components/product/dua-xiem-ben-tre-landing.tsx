@@ -56,6 +56,7 @@ const SHIPPING_ROUTES = [
 const INTERNAL_LINKS = [
   { label: "Tất cả sản phẩm", href: "/san-pham" },
   { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
+  { label: "Dừa Xiêm vs Miền Tây", href: "/dua-xiem-ben-tre/kien-thuc/dua-xiem-ben-tre-vs-dua-xiem-mien-tay" },
   { label: "Nguồn gốc & vựa", href: "/nguon-goc" },
   { label: "Liên hệ Zalo", href: ZALO_LINK },
 ];

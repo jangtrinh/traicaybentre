@@ -484,6 +484,59 @@ export default function NguonGocPage() {
         </div>
       </section>
 
+      {/* Về vựa + multi-product — additive section (IA Phase 07, F11 SEO-safe) */}
+      <SectionDivider from="brand-cream" to="brand" />
+      <section className="bg-brand px-5 py-20">
+        <div className="mx-auto max-w-[1000px]">
+          <FadeIn>
+            <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
+              Về vựa <span className="text-mango">Trái Cây Bến Tre</span>
+            </h2>
+            <p className="mb-10 text-center text-sm text-text/50">
+              Từ xoài Tứ Quý đến dừa xiêm — tất cả từ vựa Thạnh Phú
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="rounded-2xl bg-text/5 p-6 text-sm leading-relaxed text-text/70 sm:p-8 sm:text-base">
+              <p>
+                Vựa Trái Cây Bến Tre bắt đầu từ xoài Tứ Quý — giống xoài đặc sản
+                CDĐL #00124 chỉ có ở Thạnh Phú, Ba Tri, Bình Đại. Sau 3 năm giao
+                hàng toàn quốc, vựa mở rộng thêm{" "}
+                <strong>Dừa Xiêm Bến Tre (dừa sọ gọt sẵn)</strong> và{" "}
+                <strong>Dừa Xiêm Rau Câu Dừa</strong> — đặc sản vùng dừa nổi tiếng
+                nhất Việt Nam.
+              </p>
+              <p className="mt-4">
+                Cam kết vựa: lấy thẳng từ nhà vườn, không qua trung gian, cân dư 2%
+                bù hao, hàng hư bồi đơn sau. Mối nào cũng nói vậy — nhưng ở đây làm
+                thật, 3 năm rồi.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <h3 className="mb-6 mt-12 text-center font-heading text-2xl font-bold uppercase text-text">
+              Các loại trái cây tại vựa
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
+                { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
+                { label: "Tất cả sản phẩm", href: "/san-pham" },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full border-2 border-text/15 bg-white px-5 py-2.5 text-sm font-semibold text-text/70 hover:border-text hover:text-text transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
     </main>
     <Footer />
     </>

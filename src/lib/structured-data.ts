@@ -2,7 +2,7 @@
 
 const SITE_URL = "https://www.traicaybentre.com";
 const PHONE = "+84932585533";
-const BUSINESS_NAME = "Trái Cây Bến Tre — Vựa Xoài Tứ Quý";
+const BUSINESS_NAME = "Trái Cây Bến Tre — Vựa Đặc Sản Thạnh Phú";
 
 /* Shared business entity — reused across schemas */
 const localBusiness = {

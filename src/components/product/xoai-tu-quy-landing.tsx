@@ -75,8 +75,9 @@ const SHIPPING_ROUTES = [
 
 const INTERNAL_LINKS = [
   { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
-  { label: "Kiến thức xoài Tứ Quý", href: "/kien-thuc/xoai-tu-quy-la-gi" },
-  { label: "Tin tức & báo giá", href: "/tin-tuc" },
+  { label: "Xoài Bến Tre có gì đặc biệt?", href: "/xoai-tu-quy/kien-thuc/xoai-ben-tre-co-gi-dac-biet" },
+  { label: "1 kg bao nhiêu trái?", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-1-kg-bao-nhieu-trai" },
+  { label: "Giá Loại 1 Thạnh Phú", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-thanh-phu-loai-1-gia-bao-nhieu" },
   { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
   { label: "Tất cả sản phẩm", href: "/san-pham" },
   { label: "Liên hệ đặt sỉ", href: "/#contact" },
