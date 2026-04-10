@@ -15,7 +15,6 @@ import { MobileMenuOverlay, type NavLink } from "./mobile-menu-overlay";
 const NAV_LINKS: NavLink[] = [
   { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
   { label: "Dừa Xiêm", href: "/dua-xiem-ben-tre" },
-  { label: "Giá hôm nay", href: "/xoai-tu-quy#gia" },
   { label: "Nguồn gốc", href: "/nguon-goc" },
   { label: "Kiến thức", href: "/kien-thuc" },
   { label: "Tin tức", href: "/tin-tuc" },

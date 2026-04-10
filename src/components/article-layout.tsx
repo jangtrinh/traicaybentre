@@ -12,7 +12,6 @@ import {
   CalendarBlank,
   Compass,
   Storefront,
-  CurrencyCircleDollar,
   Certificate,
   Phone,
   ArrowRight,
@@ -36,7 +35,7 @@ interface ArticleLayoutProps {
 
 const EXPLORE_LINKS = [
   { label: "Xoài Tứ Quý", sub: "Sản phẩm chính", href: "/xoai-tu-quy", Icon: Storefront },
-  { label: "Giá hôm nay", sub: "Bảng giá mới nhất", href: "/xoai-tu-quy#gia", Icon: CurrencyCircleDollar },
+  { label: "Dừa Xiêm", sub: "Dừa sọ Bến Tre", href: "/dua-xiem-ben-tre", Icon: Storefront },
   { label: "Nguồn gốc", sub: "Vườn & chứng nhận", href: "/nguon-goc", Icon: Certificate },
   { label: "Tin tức", sub: "Báo giá & bài viết", href: "/tin-tuc", Icon: Newspaper },
   { label: "Đặt sỉ", sub: "Liên hệ ngay", href: "/#contact", Icon: Phone },
@@ -63,8 +62,10 @@ export function ArticleLayout({
       ))}
       <Header />
 
-      {/* === Immersive hero — full-bleed image with gradient overlay === */}
-      <article className="relative bg-text pt-28">
+      {/* === Immersive hero — full-bleed image with gradient overlay ===
+          Use brand-cream pt zone so the fixed Header (transparent, dark text)
+          stays readable above the dark image. Header on cream → visible. */}
+      <article className="relative bg-brand-cream pt-28">
         <div className="relative h-[62vh] min-h-[520px] w-full overflow-hidden">
           <Image
             src={heroImage.src}

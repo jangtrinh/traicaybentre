@@ -163,7 +163,7 @@ export function XoaiTuQuyLanding() {
         </div>
       </section>
 
-      {/* Price tiers — anchor #gia cho deep-link từ nav "Giá hôm nay" */}
+      {/* Price tiers — anchor #gia for in-page deep-links */}
       <section id="gia" className="scroll-mt-32 bg-brand-cream px-5 pb-20">
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
