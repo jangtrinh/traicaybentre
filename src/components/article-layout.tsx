@@ -1,12 +1,24 @@
-/* === Reusable layout for SEO articles (kien-thuc, tin-tuc) ===
- * Provides consistent structure: hero + prose container + footer.
- * Use for all knowledge/blog articles to keep DRY.
+/* === Reusable editorial layout for SEO articles (kien-thuc, tin-tuc, MDX) ===
+ * Immersive hero + centered reading column + rich typography + footer links.
+ * Used by ALL articles — legacy page.tsx + new MDX [product]/[type]/[slug].
+ * Props contract is STABLE — do not break without migrating all callers.
  */
 
 import Image from "next/image";
+import Link from "next/link";
+import {
+  Newspaper,
+  Clock,
+  CalendarBlank,
+  Compass,
+  Storefront,
+  CurrencyCircleDollar,
+  Certificate,
+  Phone,
+  ArrowRight,
+} from "@phosphor-icons/react/dist/ssr";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import { SectionDivider } from "./section-divider";
 import { FadeIn } from "./fade-in";
 import { ShareButtons } from "./share-buttons";
 
@@ -17,8 +29,18 @@ interface ArticleLayoutProps {
   publishDate: string;
   heroImage: { src: string; alt: string };
   jsonLd: object[];
+  /** Optional reading time in minutes; defaults to "5 phút đọc" */
+  readingTime?: number;
   children: React.ReactNode;
 }
+
+const EXPLORE_LINKS = [
+  { label: "Xoài Tứ Quý", sub: "Sản phẩm chính", href: "/xoai-tu-quy", Icon: Storefront },
+  { label: "Giá hôm nay", sub: "Bảng giá mới nhất", href: "/xoai-tu-quy#gia", Icon: CurrencyCircleDollar },
+  { label: "Nguồn gốc", sub: "Vườn & chứng nhận", href: "/nguon-goc", Icon: Certificate },
+  { label: "Tin tức", sub: "Báo giá & bài viết", href: "/tin-tuc", Icon: Newspaper },
+  { label: "Đặt sỉ", sub: "Liên hệ ngay", href: "/#contact", Icon: Phone },
+];
 
 export function ArticleLayout({
   category,
@@ -27,6 +49,7 @@ export function ArticleLayout({
   publishDate,
   heroImage,
   jsonLd,
+  readingTime = 5,
   children,
 }: ArticleLayoutProps) {
   return (
@@ -40,74 +63,104 @@ export function ArticleLayout({
       ))}
       <Header />
 
-      {/* Article hero */}
-      <article className="bg-brand pt-28 pb-16">
-        <div className="mx-auto max-w-[820px] px-5">
-          <FadeIn>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              {category}
-            </span>
-            <h1 className="mt-3 font-heading text-[32px] font-bold uppercase leading-tight text-text sm:text-5xl">
-              {title}
-            </h1>
-            {subtitle && (
-              <p className="mt-4 text-lg leading-7 text-text/60">{subtitle}</p>
-            )}
-            <p className="mt-4 text-sm text-text/40">Cập nhật: {publishDate}</p>
-          </FadeIn>
-        </div>
+      {/* === Immersive hero — full-bleed image with gradient overlay === */}
+      <article className="relative bg-text pt-28">
+        <div className="relative h-[62vh] min-h-[520px] w-full overflow-hidden">
+          <Image
+            src={heroImage.src}
+            alt={heroImage.alt}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Gradient overlay for legibility */}
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/45 to-black/85"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-brand-cream"
+          />
 
-        {/* Hero image */}
-        <FadeIn delay={0.1}>
-          <div className="mx-auto mt-10 max-w-[1100px] px-5">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-3xl shadow-2xl">
-              <Image
-                src={heroImage.src}
-                alt={heroImage.alt}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1100px) 100vw, 1100px"
-              />
+          {/* Hero content */}
+          <div className="relative z-10 flex h-full items-end pb-20">
+            <div className="mx-auto w-full max-w-[1100px] px-5">
+              <FadeIn>
+                <Link
+                  href="/tin-tuc"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:border-mango hover:bg-mango/20"
+                >
+                  <Newspaper size={14} weight="fill" />
+                  {category}
+                </Link>
+                <h1 className="mt-6 max-w-4xl font-heading text-[34px] font-bold leading-[1.08] text-white drop-shadow-sm sm:text-5xl lg:text-6xl">
+                  {title}
+                </h1>
+                {subtitle && (
+                  <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
+                    {subtitle}
+                  </p>
+                )}
+                <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/75">
+                  <span className="inline-flex items-center gap-1.5">
+                    <CalendarBlank size={16} weight="regular" />
+                    Cập nhật: {publishDate}
+                  </span>
+                  <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden />
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock size={16} weight="regular" />
+                    {readingTime} phút đọc
+                  </span>
+                  <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden />
+                  <span className="font-semibold text-mango">Trái Cây Bến Tre</span>
+                </div>
+              </FadeIn>
             </div>
           </div>
-        </FadeIn>
+        </div>
       </article>
 
-      <SectionDivider from="brand" to="brand-cream" />
-
-      {/* Article body */}
-      <section className="bg-brand-cream px-5 py-20">
-        <div className="mx-auto max-w-[760px] [&_h2]:mt-12 [&_h2]:font-heading [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-text [&_h2]:leading-tight [&_h2]:mb-4 [&_h3]:mt-8 [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-text [&_h3]:mb-3 [&_p]:mb-4 [&_p]:text-base [&_p]:leading-7 [&_p]:text-text/75 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li]:text-text/75 [&_li]:leading-7 [&_strong]:text-text [&_strong]:font-semibold [&_a]:text-mango [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-mango-dark">
+      {/* === Article body — editorial reading column === */}
+      <section className="bg-brand-cream px-5 pt-14 pb-20">
+        <div className="mx-auto max-w-[720px]">
           <ShareButtons title={title} placement="top" />
-          {children}
+          <div className="article-prose">{children}</div>
           <ShareButtons title={title} placement="bottom" />
         </div>
       </section>
 
-      <SectionDivider from="brand-cream" to="brand" />
-
-      {/* Internal links footer */}
+      {/* === Explore footer — visual cards === */}
       <section className="bg-brand px-5 py-16">
-        <div className="mx-auto max-w-[820px]">
-          <h3 className="mb-6 text-center font-heading text-2xl font-bold uppercase text-text">
-            Khám phá thêm
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
-              { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
-              { label: "Tin tức & báo giá", href: "/tin-tuc" },
-              { label: "Liên hệ đặt sỉ", href: "/#contact" },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-full border-2 border-text/15 bg-white px-5 py-2.5 text-sm font-semibold text-text/70 hover:border-text hover:text-text transition-colors"
+        <div className="mx-auto max-w-[1100px]">
+          <div className="mb-10 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-text/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-text/70">
+              <Compass size={14} weight="fill" />
+              Khám phá thêm
+            </span>
+            <h3 className="mt-4 font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
+              Đừng bỏ lỡ
+            </h3>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {EXPLORE_LINKS.map(({ label, sub, href, Icon }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group relative flex flex-col justify-between rounded-2xl border-2 border-text/10 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-mango hover:shadow-lg"
               >
-                {link.label}
-              </a>
+                <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-mango/10 text-mango-dark transition-colors group-hover:bg-mango group-hover:text-white">
+                  <Icon size={22} weight="duotone" />
+                </div>
+                <div>
+                  <div className="font-heading text-base font-bold text-text">{label}</div>
+                  <div className="mt-0.5 text-xs text-text/55">{sub}</div>
+                  <div className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-mango-dark opacity-0 transition-opacity group-hover:opacity-100">
+                    Xem ngay <ArrowRight size={12} weight="bold" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
