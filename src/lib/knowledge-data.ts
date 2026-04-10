@@ -8,6 +8,10 @@ export interface KnowledgeArticle {
   description: string;
   date: string;
   category: string;
+  /** Product slug (defaults to "xoai-tu-quy" if undefined). IA F2 additive. */
+  product?: string;
+  /** Full URL path (defaults to `/kien-thuc/${slug}` if undefined). IA F2 additive. */
+  urlPath?: string;
 }
 
 export const KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [

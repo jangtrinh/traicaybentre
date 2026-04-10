@@ -18,7 +18,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://traicaybentre.com"),
+  metadataBase: new URL("https://www.traicaybentre.com"),
   title: "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
   description:
     "Xoài Tứ Quý đặc sản Thạnh Phú, Bến Tre. Chỉ dẫn địa lý CDĐL #00124. Giao lạnh toàn quốc. Giá cập nhật mỗi ngày — gọi vựa để có giá chính xác.",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     title: "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
     description:
       "Đặc sản Thạnh Phú, Bến Tre — vị mặn nhẹ không đâu có. Giao lạnh toàn quốc. CDĐL #00124.",
-    url: "https://traicaybentre.com",
+    url: "https://www.traicaybentre.com",
     siteName: "Trái Cây Bến Tre",
     type: "website",
     locale: "vi_VN",
     images: [
       {
-        url: "https://traicaybentre.com/images/xoai-real-2.jpg",
+        url: "https://www.traicaybentre.com/images/xoai-real-2.jpg",
         width: 1200,
         height: 1500,
         alt: "Xoài Tứ Quý Bến Tre — tay cầm quả lớn tại vựa",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
     description: "Đặc sản Thạnh Phú — vị mặn nhẹ không đâu có. CDĐL #00124.",
-    images: ["https://traicaybentre.com/images/xoai-real-2.jpg"],
+    images: ["https://www.traicaybentre.com/images/xoai-real-2.jpg"],
   },
   robots: {
     index: true,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://traicaybentre.com",
+    canonical: "https://www.traicaybentre.com",
   },
 };
 

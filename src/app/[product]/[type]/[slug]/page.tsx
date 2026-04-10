@@ -18,6 +18,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
+import remarkGfm from "remark-gfm";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { PriceTickerFooter } from "@/components/price-ticker-footer";
@@ -60,7 +61,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   const fm = article.frontmatter;
-  const canonical = `https://traicaybentre.com${article.urlPath}`;
+  const canonical = `https://www.traicaybentre.com${article.urlPath}`;
   return {
     title: fm.title,
     description: fm.metaDescription,
@@ -86,27 +87,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function buildArticleJsonLd(article: ReturnType<typeof getArticleByUrlPath>) {
   if (!article) return null;
   const fm = article.frontmatter;
-  const url = `https://traicaybentre.com${article.urlPath}`;
+  const url = `https://www.traicaybentre.com${article.urlPath}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: fm.title,
     description: fm.metaDescription,
-    image: fm.ogImage ? `https://traicaybentre.com${fm.ogImage}` : undefined,
+    image: fm.ogImage ? `https://www.traicaybentre.com${fm.ogImage}` : undefined,
     datePublished: fm.publishedAt,
     dateModified: fm.publishedAt,
     author: {
       "@type": "Organization",
       name: "Trái Cây Bến Tre",
-      url: "https://traicaybentre.com",
+      url: "https://www.traicaybentre.com",
     },
     publisher: {
       "@type": "Organization",
       name: "Trái Cây Bến Tre",
       logo: {
         "@type": "ImageObject",
-        url: "https://traicaybentre.com/Logo.png",
+        url: "https://www.traicaybentre.com/Logo.png",
       },
     },
     mainEntityOfPage: url,
@@ -223,7 +224,14 @@ export default async function ArticlePage({ params }: Props) {
             id="article-body"
             className="prose prose-neutral max-w-none prose-headings:font-heading prose-headings:text-text prose-headings:scroll-mt-24 prose-h2:text-2xl prose-h2:mt-10 prose-h3:text-xl prose-a:text-mango-dark hover:prose-a:text-mango prose-blockquote:border-mango prose-blockquote:bg-mango/5 prose-blockquote:py-1 prose-blockquote:not-italic prose-strong:text-text prose-table:text-sm prose-th:bg-brand prose-img:rounded-xl"
           >
-            <MDXRemote source={article.body} />
+            <MDXRemote
+              source={article.body}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                },
+              }}
+            />
           </div>
 
           {/* FAQ render (also covered by FAQPage schema) */}

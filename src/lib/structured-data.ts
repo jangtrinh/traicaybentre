@@ -1,6 +1,6 @@
 /* === Centralized JSON-LD structured data builders for SEO + AEO === */
 
-const SITE_URL = "https://traicaybentre.com";
+const SITE_URL = "https://www.traicaybentre.com";
 const PHONE = "+84932585533";
 const BUSINESS_NAME = "Trái Cây Bến Tre — Vựa Xoài Tứ Quý";
 

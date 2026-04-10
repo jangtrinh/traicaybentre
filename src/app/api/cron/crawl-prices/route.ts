@@ -23,7 +23,7 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 
 const USER_AGENT =
-  "TraiCayBenTreBot/1.0 (+https://traicaybentre.com; price-reference; contact: hi@traicaybentre.com)";
+  "TraiCayBenTreBot/1.0 (+https://www.traicaybentre.com; price-reference; contact: hi@traicaybentre.com)";
 
 type CrawlResult = {
   source: string;

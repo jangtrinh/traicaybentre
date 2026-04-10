@@ -17,7 +17,7 @@ import { BLOG_POSTS } from "@/lib/blog-data";
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-const BASE = "https://traicaybentre.com";
+const BASE = "https://www.traicaybentre.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://traicaybentre.com/sitemap.xml
+Sitemap: https://www.traicaybentre.com/sitemap.xml

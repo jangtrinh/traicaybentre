@@ -11,6 +11,10 @@ export interface BlogPost {
     src: string;
     alt: string;
   };
+  /** Product slug (defaults to "xoai-tu-quy" if undefined). IA F2 additive. */
+  product?: string;
+  /** Full URL path (defaults to `/tin-tuc/${slug}` if undefined). IA F2 additive. */
+  urlPath?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [

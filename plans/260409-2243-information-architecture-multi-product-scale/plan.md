@@ -40,11 +40,11 @@ Scale site từ mono-product (chỉ Xoài Tứ Quý) sang multi-product (thêm D
 | # | Phase | Status | Effort | Files | Blocking |
 |---|-------|--------|--------|-------|----------|
 | 01 | [Foundation & Products Registry](phase-01-foundation-and-registry.md) | ✅ done | 2-3h | 3 new | — |
-| 02 | [Dynamic Product Template](phase-02-dynamic-product-template.md) | pending | 3-4h | 2 new, 1 delete | P01 |
+| 02 | [Dynamic Product Template](phase-02-dynamic-product-template.md) | ✅ done | 3-4h | 2 new, 1 delete | P01 |
 | 03 | [MDX Article System](phase-03-supabase-article-schema.md) | ✅ done | 2-3h | `src/lib/articles.ts` + `src/content/articles/` | P01 (whitelist hardcoded for now) |
-| 04 | [Scoped Article Routes](phase-04-scoped-article-routes.md) | pending | 2-3h | 2 new (dynamic routes) | P03 |
-| 05 | [Global Hubs + Dynamic Sitemap](phase-05-global-hubs-and-sitemap.md) | pending | 2-3h | 2-3 edits | P03, P04 |
-| 06 | [Catalog Hub + Navigation](phase-06-catalog-hub-and-navigation.md) | pending | 3-4h | 3-4 files | P01, P02 |
+| 04 | [Scoped Article Routes](phase-04-scoped-article-routes.md) | ✅ done (pre-shipped during MDX pivot) | 2-3h | `[product]/[type]/[slug]/page.tsx` | P03 |
+| 05 | [Global Hubs + Dynamic Sitemap](phase-05-global-hubs-and-sitemap.md) | ✅ done | 2-3h | sitemap.ts + 2 interfaces | P03, P04 |
+| 06 | [Catalog Hub + Navigation](phase-06-catalog-hub-and-navigation.md) | ✅ partial (catalog done, header dropdown deferred) | 3-4h | /san-pham + catalog + footer | P01, P02 |
 | 07 | [Homepage Seasonal Hero + /nguon-goc rewrite](phase-07-homepage-seasonal-hero.md) | pending | 3-4h | 4-5 files | P01, P06 |
 | 08 | [Verify & Acceptance](phase-08-verify-and-acceptance.md) | pending | 2-3h | — (tests only) | ALL |
 
