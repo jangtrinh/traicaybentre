@@ -16,7 +16,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { PriceTickerFooter } from "@/components/price-ticker-footer";
 import {
   getArticleByUrlPath,
@@ -147,86 +150,144 @@ export default async function ArticlePage({ params }: Props) {
   const jsonLd = buildArticleJsonLd(article);
   const fm = article.frontmatter;
 
+  const hubHref = article.type === "kien-thuc" ? "/kien-thuc" : "/tin-tuc";
+  const hubLabel = article.type === "kien-thuc" ? "Kiến thức" : "Tin tức";
+  const heroImage = fm.ogImage ?? "/Xoai-2.jpg";
+
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10 sm:py-16">
+    <>
       {jsonLd && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
+      <Header />
 
-      {/* Breadcrumb */}
-      <nav className="mb-6 text-sm text-neutral-600" aria-label="Breadcrumb">
-        <Link href="/">Trang chủ</Link>
-        {" › "}
-        <Link href={`/${article.product}`}>Xoài Tứ Quý</Link>
-        {" › "}
-        <Link href={`/${article.product}/${article.type}`}>
-          {article.type === "kien-thuc" ? "Kiến thức" : "Tin tức"}
-        </Link>
-        {" › "}
-        <span className="text-neutral-900">{fm.title}</span>
-      </nav>
+      <article className="bg-brand-cream pt-28 pb-16 sm:pt-32">
+        <div className="mx-auto max-w-3xl px-5">
+          {/* Breadcrumb */}
+          <nav
+            className="mb-6 text-xs text-text/60 sm:text-sm"
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" className="hover:text-mango">
+              Trang chủ
+            </Link>
+            <span className="mx-1.5">›</span>
+            <Link href={`/${article.product}`} className="hover:text-mango">
+              Xoài Tứ Quý
+            </Link>
+            <span className="mx-1.5">›</span>
+            <Link href={hubHref} className="hover:text-mango">
+              {hubLabel}
+            </Link>
+            <span className="mx-1.5">›</span>
+            <span className="text-text">{fm.title}</span>
+          </nav>
 
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{fm.title}</h1>
-        <p className="mt-3 text-sm text-neutral-600">
-          Đăng ngày{" "}
-          {new Date(fm.publishedAt).toLocaleDateString("vi-VN", {
-            day: "2-digit",
-            month: "long",
-            year: "numeric",
-          })}
-        </p>
-      </header>
+          <header className="mb-8">
+            {fm.pillar && (
+              <span className="inline-block rounded-full bg-mango/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-mango-dark">
+                {fm.pillar.replace(/-/g, " ")}
+              </span>
+            )}
+            <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-text sm:text-4xl">
+              {fm.title}
+            </h1>
+            <p className="mt-3 text-sm text-text/60">
+              Đăng ngày{" "}
+              <time dateTime={fm.publishedAt}>
+                {new Date(fm.publishedAt).toLocaleDateString("vi-VN", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </time>
+            </p>
+          </header>
 
-      <div
-        id="article-body"
-        className="prose prose-neutral max-w-none prose-headings:scroll-mt-20"
-      >
-        <MDXRemote source={article.body} />
-      </div>
+          {/* Hero image */}
+          <figure className="relative mb-8 aspect-[16/9] overflow-hidden rounded-2xl bg-white shadow-md">
+            <Image
+              src={heroImage}
+              alt={fm.title}
+              fill
+              priority
+              sizes="(min-width: 768px) 768px, 100vw"
+              className="object-cover"
+            />
+          </figure>
 
-      {/* FAQ render (also covered by FAQPage schema) */}
-      {fm.faq && fm.faq.length > 0 && (
-        <section className="mt-12 border-t pt-8">
-          <h2 className="text-2xl font-bold">Câu hỏi thường gặp</h2>
-          <dl className="mt-4 space-y-4">
-            {fm.faq.map((qa, i) => (
-              <div key={i}>
-                <dt className="font-semibold">{qa.q}</dt>
-                <dd className="mt-1 text-neutral-700">{qa.a}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-      )}
+          <div
+            id="article-body"
+            className="prose prose-neutral max-w-none prose-headings:font-heading prose-headings:text-text prose-headings:scroll-mt-24 prose-h2:text-2xl prose-h2:mt-10 prose-h3:text-xl prose-a:text-mango-dark hover:prose-a:text-mango prose-blockquote:border-mango prose-blockquote:bg-mango/5 prose-blockquote:py-1 prose-blockquote:not-italic prose-strong:text-text prose-table:text-sm prose-th:bg-brand prose-img:rounded-xl"
+          >
+            <MDXRemote source={article.body} />
+          </div>
 
-      {/* Price ticker — shown on price-sensitive pillars (gia-thi-truong)
-          and all tin-tuc articles. Reads Supabase price_history with 5m ISR. */}
-      {(article.type === "tin-tuc" || article.frontmatter.pillar === "gia-thi-truong") && (
-        <PriceTickerFooter />
-      )}
+          {/* FAQ render (also covered by FAQPage schema) */}
+          {fm.faq && fm.faq.length > 0 && (
+            <section className="mt-12 border-t border-border pt-8">
+              <h2 className="font-heading text-2xl font-bold text-text">
+                Câu hỏi thường gặp
+              </h2>
+              <dl className="mt-6 space-y-5">
+                {fm.faq.map((qa, i) => (
+                  <div key={i} className="rounded-xl bg-white p-5 shadow-sm">
+                    <dt className="font-semibold text-text">{qa.q}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-text/70">
+                      {qa.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
 
-      {/* Related articles */}
-      {related.length > 0 && (
-        <section className="mt-12 border-t pt-8">
-          <h2 className="text-2xl font-bold">Bài liên quan</h2>
-          <ul className="mt-4 space-y-3">
-            {related.map((r) => (
-              <li key={r.urlPath}>
-                <Link
-                  href={r.urlPath}
-                  className="text-emerald-700 hover:underline"
-                >
-                  {r.frontmatter.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-    </article>
+          {/* Price ticker — shown on price-sensitive pillars (gia-thi-truong)
+              and all tin-tuc articles. Reads Supabase price_history. */}
+          {(article.type === "tin-tuc" ||
+            article.frontmatter.pillar === "gia-thi-truong") && (
+            <PriceTickerFooter />
+          )}
+
+          {/* Related articles */}
+          {related.length > 0 && (
+            <section className="mt-12 border-t border-border pt-8">
+              <h2 className="font-heading text-2xl font-bold text-text">
+                Bài liên quan
+              </h2>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {related.map((r) => (
+                  <li key={r.urlPath}>
+                    <Link
+                      href={r.urlPath}
+                      className="block rounded-xl bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                    >
+                      <span className="font-semibold text-text hover:text-mango">
+                        {r.frontmatter.title}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Back to hub */}
+          <div className="mt-10 border-t border-border pt-6">
+            <Link
+              href={hubHref}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-mango-dark hover:text-mango"
+            >
+              ← Xem tất cả bài {hubLabel.toLowerCase()}
+            </Link>
+          </div>
+        </div>
+      </article>
+
+      <Footer />
+    </>
   );
 }
