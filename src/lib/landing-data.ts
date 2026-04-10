@@ -119,6 +119,26 @@ export const PRODUCTS: Product[] = [
     sticker: "/images/gdrive/Dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
     unit: "trái",
   },
+  {
+    id: 6,
+    name: "Dừa Xiêm — Rau Câu Dừa",
+    farm: "Nhà vườn Thạnh Phú",
+    harvestDate: "",
+    priceSi: "18.000–22.000",
+    priceLe: "",
+    savings: "",
+    weight: "500–700g/trái (sọ)",
+    moq: "10 trái",
+    desc: "Dừa sọ Bến Tre nhồi rau câu dừa — thạch dừa mát lạnh bên trong sọ dừa tươi. Ăn liền, không cần chế biến. Quà biếu, tiệc, tráng miệng sang.",
+    badge: "Hot",
+    badgeColor: "bg-orange-600",
+    stock: "Quanh năm",
+    stockUntil: "",
+    tags: ["Rau câu dừa", "Ăn liền", "Quà biếu"],
+    image: "/images/gdrive/Dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+    sticker: "/images/gdrive/Dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
+    unit: "trái",
+  },
 ];
 
 export const PROCESS_STEPS = [
