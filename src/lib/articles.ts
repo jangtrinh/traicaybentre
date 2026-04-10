@@ -138,10 +138,10 @@ function loadAllArticlesUnfiltered(): Article[] {
 }
 
 function isVisible(a: Article): boolean {
-  return (
-    a.frontmatter.uxReviewed === true &&
-    new Date(a.frontmatter.publishedAt).getTime() <= Date.now()
-  );
+  // Publish immediately once UX-reviewed.
+  // Note: publishedAt is still used for sort order and "Đăng ngày..." display,
+  // but no longer gates visibility — avoids 404s for pre-dated content drops.
+  return a.frontmatter.uxReviewed === true;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
