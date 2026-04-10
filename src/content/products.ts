@@ -99,8 +99,8 @@ export const products: Record<string, ProductEntry> = {
     name: "Dừa Xiêm Bến Tre",
     shortName: "Dừa Xiêm",
     tagline: "Dừa sọ Bến Tre — nước ngọt thanh, quanh năm",
-    heroImage: "/images/xoai-real-2.jpg", // placeholder — real asset added at launch plan
-    heroImageAlt: "Dừa Xiêm Bến Tre (dừa sọ) tươi",
+    heroImage: "/images/gdrive/Dua/20260408_144602.jpg",
+    heroImageAlt: "Dừa Xiêm Bến Tre (dừa sọ) tươi — vựa Thạnh Phú",
     season: "year-round",
     status: "coming-soon",
     order: 2,
