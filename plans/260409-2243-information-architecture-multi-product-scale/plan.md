@@ -1,7 +1,7 @@
 ---
 title: "Information Architecture — Multi-Product Scale"
 description: "Scale vựa từ mono-product (Xoài Tứ Quý) sang multi-product (+ Dừa Xiêm Bến Tre + N loại tương lai). Hybrid Legacy-Preserving, SEO-first zero redirect."
-status: pending
+status: shipped
 priority: P1
 effort: 3-5d
 branch: main
@@ -45,8 +45,8 @@ Scale site từ mono-product (chỉ Xoài Tứ Quý) sang multi-product (thêm D
 | 04 | [Scoped Article Routes](phase-04-scoped-article-routes.md) | ✅ done (pre-shipped during MDX pivot) | 2-3h | `[product]/[type]/[slug]/page.tsx` | P03 |
 | 05 | [Global Hubs + Dynamic Sitemap](phase-05-global-hubs-and-sitemap.md) | ✅ done | 2-3h | sitemap.ts + 2 interfaces | P03, P04 |
 | 06 | [Catalog Hub + Navigation](phase-06-catalog-hub-and-navigation.md) | ✅ partial (catalog done, header dropdown deferred) | 3-4h | /san-pham + catalog + footer | P01, P02 |
-| 07 | [Homepage Seasonal Hero + /nguon-goc rewrite](phase-07-homepage-seasonal-hero.md) | pending | 3-4h | 4-5 files | P01, P06 |
-| 08 | [Verify & Acceptance](phase-08-verify-and-acceptance.md) | pending | 2-3h | — (tests only) | ALL |
+| 07 | [Homepage Seasonal Hero + /nguon-goc rewrite](phase-07-homepage-seasonal-hero.md) | ⏸ deferred (YAGNI — only 1 active product, no visual change needed; resume khi dua-xiem launch) | 3-4h | 4-5 files | P01, P06 |
+| 08 | [Verify & Acceptance](phase-08-verify-and-acceptance.md) | ✅ done (core checks) | 2-3h | build + tree verify | ALL |
 
 **Scope lock:** Plan này **không** bao gồm launch Dừa Xiêm Bến Tre (content + landing). Đó là plan riêng sau khi infra ready. Xoài legacy TSX articles **không migrate** — giữ nguyên hardcoded.
 

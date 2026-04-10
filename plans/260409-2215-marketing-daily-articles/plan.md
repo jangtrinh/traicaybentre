@@ -1,17 +1,16 @@
 ---
 title: "Marketing Daily Articles — 90 bài/30 ngày (3 slot × AI + Automation)"
 description: "Content calendar 3 bài/ngày auto-publish, AI-drafted, price-crawler powered, holiday-aware runway"
-status: blocked
+status: pending
 priority: P2
 effort: 30d (auto cadence after setup)
 branch: main
 tags: [marketing, content, seo, aeo, geo, blog, automation, ai]
 created: 2026-04-09
-updated: 2026-04-09
-blockedBy: [260409-2243-information-architecture-multi-product-scale]
+updated: 2026-04-10
 ---
 
-> **BLOCKED:** URL pattern cho 90 bài mới (`/kien-thuc/{slug}` → `/xoai-tu-quy/kien-thuc/{slug}`) và content source (Supabase schema) được định nghĩa trong plan IA multi-product. Chờ IA plan hoàn thành Phase 04 (Supabase Article Schema) + Phase 05 (Scoped Article Routes). `content-calendar-90-articles.md` cần update paths sau khi IA plan chốt schema.
+> **UNBLOCKED (2026-04-10):** IA plan `260409-2243-information-architecture-multi-product-scale` shipped. URL pattern locked to `/xoai-tu-quy/kien-thuc/{slug}` + `/xoai-tu-quy/tin-tuc/{slug}` (scoped). Content source = MDX files in `src/content/articles/{product}/{type}/{slug}.mdx` (via `src/lib/articles.ts` helpers). `content-calendar-90-articles.md` needs path update `/kien-thuc/{slug}` → `/xoai-tu-quy/kien-thuc/{slug}` before execution.
 
 # Marketing Daily Articles — Content Calendar 90 bài / 30 ngày
 

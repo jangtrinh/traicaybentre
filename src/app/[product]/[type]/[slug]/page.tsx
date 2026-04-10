@@ -3,24 +3,21 @@
  *
  * URL pattern: `/{product}/{type}/{slug}` (e.g. `/xoai-tu-quy/kien-thuc/xoai-tu-quy-la-gi`)
  *
+ * Format: reuses `<ArticleLayout>` — same chrome as legacy
+ * `/tin-tuc/7-mon-ngon-tu-xoai-tu-quy` (brand hero + brand-cream body + footer
+ * internal links). Single source of truth for article page format.
+ *
  * Visibility: gated by `uxReviewed: true` AND `publishedAt <= now()` in the loader.
- * Static generation: `generateStaticParams` pre-renders all visible articles at build.
- *
- * IA Phase 04 implementation. Reads via `@/lib/articles` (no DB dependency).
- *
- * NOTE: Reserved top-level routes (`kien-thuc`, `tin-tuc`, `nguon-goc`, `giao-hang`,
- * `san-pham`, `lien-he`, `gia-xoai-hom-nay`, `api`) take precedence over this dynamic
- * `[product]` route in Next.js routing. Only product slugs (e.g. `xoai-tu-quy`) reach
- * here. Defensive `notFound()` if product/type/slug doesn't resolve to an article.
+ * Static generation: `generateStaticParams` pre-renders all UX-reviewed articles
+ * (including future-scheduled); runtime `getArticleByUrlPath()` returns null for
+ * unpublished → `notFound()` → ISR rebuilds when publishedAt elapses.
  */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import remarkGfm from "remark-gfm";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { ArticleLayout } from "@/components/article-layout";
 import { PriceTickerFooter } from "@/components/price-ticker-footer";
 import {
   getArticleByUrlPath,
@@ -29,6 +26,11 @@ import {
   getRelatedArticles,
   type ArticleType,
 } from "@/lib/articles";
+import {
+  getArticleJsonLd,
+  getBreadcrumbJsonLd,
+  SITE_URL,
+} from "@/lib/structured-data";
 
 type RouteParams = { product: string; type: string; slug: string };
 type Props = { params: Promise<RouteParams> };
@@ -40,6 +42,29 @@ const VALID_TYPES: ArticleType[] = ["kien-thuc", "tin-tuc"];
 
 function isValidType(t: string): t is ArticleType {
   return VALID_TYPES.includes(t as ArticleType);
+}
+
+const PILLAR_LABELS: Record<string, string> = {
+  "gia-thi-truong": "Giá & thị trường",
+  "ky-thuat-bao-quan": "Kỹ thuật bảo quản",
+  "so-sanh-giong": "So sánh giống xoài",
+  "giao-hang-theo-vung": "Giao hàng theo vùng",
+  "meo-thuong-thuc": "Mẹo thưởng thức",
+  "heritage-bentre": "Di sản Bến Tre",
+};
+
+function buildCategory(type: ArticleType, pillar: string | undefined): string {
+  const typeLabel = type === "kien-thuc" ? "Kiến thức" : "Tin tức";
+  const pillarLabel = pillar ? PILLAR_LABELS[pillar] ?? "" : "";
+  return pillarLabel ? `${typeLabel} — ${pillarLabel}` : typeLabel;
+}
+
+function formatPublishDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("vi-VN", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
@@ -55,13 +80,11 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { product, type, slug } = await params;
   if (!isValidType(type)) return {};
-  // Use including-scheduled variant so future articles still get correct metadata
-  // when ISR builds them at publish time.
   const article = getArticleByUrlPathIncludingScheduled(`/${product}/${type}/${slug}`);
   if (!article) return {};
 
   const fm = article.frontmatter;
-  const canonical = `https://www.traicaybentre.com${article.urlPath}`;
+  const canonical = `${SITE_URL}${article.urlPath}`;
   return {
     title: fm.title,
     description: fm.metaDescription,
@@ -84,37 +107,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function buildArticleJsonLd(article: ReturnType<typeof getArticleByUrlPath>) {
-  if (!article) return null;
-  const fm = article.frontmatter;
-  const url = `https://www.traicaybentre.com${article.urlPath}`;
+export default async function ArticlePage({ params }: Props) {
+  const { product, type, slug } = await params;
+  if (!isValidType(type)) notFound();
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: fm.title,
+  const article = getArticleByUrlPath(`/${product}/${type}/${slug}`);
+  if (!article) notFound();
+
+  const related = getRelatedArticles(article.product, article.type, article.slug, 3);
+  const fm = article.frontmatter;
+  const canonical = `${SITE_URL}${article.urlPath}`;
+  const hubHref = article.type === "kien-thuc" ? "/kien-thuc" : "/tin-tuc";
+  const hubLabel = article.type === "kien-thuc" ? "Kiến thức" : "Tin tức";
+  const heroImageSrc = fm.ogImage ?? "/Xoai-2.jpg";
+
+  const articleJsonLd = getArticleJsonLd({
+    title: fm.title,
     description: fm.metaDescription,
-    image: fm.ogImage ? `https://www.traicaybentre.com${fm.ogImage}` : undefined,
+    url: canonical,
     datePublished: fm.publishedAt,
     dateModified: fm.publishedAt,
-    author: {
-      "@type": "Organization",
-      name: "Trái Cây Bến Tre",
-      url: "https://www.traicaybentre.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Trái Cây Bến Tre",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.traicaybentre.com/Logo.png",
-      },
-    },
-    mainEntityOfPage: url,
-    keywords: [fm.primaryKeyword, ...(fm.secondaryKeywords ?? [])].join(", "),
-  };
+    image: fm.ogImage ? `${SITE_URL}${fm.ogImage}` : undefined,
+  });
 
-  const faqSchema =
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Trang chủ", url: SITE_URL },
+    { name: hubLabel, url: `${SITE_URL}${hubHref}` },
+    { name: fm.title, url: canonical },
+  ]);
+
+  const faqJsonLd =
     fm.faq && fm.faq.length > 0
       ? {
           "@context": "https://schema.org",
@@ -127,175 +149,83 @@ function buildArticleJsonLd(article: ReturnType<typeof getArticleByUrlPath>) {
         }
       : null;
 
-  const speakableSchema = {
+  const speakableJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    url: canonical,
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["#aeo-answer", "blockquote"],
     },
-    url,
   };
 
-  return [articleSchema, faqSchema, speakableSchema].filter(Boolean);
-}
+  const jsonLd = [articleJsonLd, breadcrumbJsonLd, speakableJsonLd, faqJsonLd]
+    .filter((s): s is NonNullable<typeof s> => s !== null);
 
-export default async function ArticlePage({ params }: Props) {
-  const { product, type, slug } = await params;
-  if (!isValidType(type)) notFound();
-
-  const article = getArticleByUrlPath(`/${product}/${type}/${slug}`);
-  if (!article) notFound();
-
-  const related = getRelatedArticles(article.product, article.type, article.slug, 3);
-  const jsonLd = buildArticleJsonLd(article);
-  const fm = article.frontmatter;
-
-  const hubHref = article.type === "kien-thuc" ? "/kien-thuc" : "/tin-tuc";
-  const hubLabel = article.type === "kien-thuc" ? "Kiến thức" : "Tin tức";
-  const heroImage = fm.ogImage ?? "/Xoai-2.jpg";
+  const showPriceTicker =
+    article.type === "tin-tuc" || fm.pillar === "gia-thi-truong";
 
   return (
-    <>
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+    <ArticleLayout
+      category={buildCategory(article.type, fm.pillar)}
+      title={fm.title}
+      subtitle={fm.metaDescription}
+      publishDate={formatPublishDate(fm.publishedAt)}
+      heroImage={{ src: heroImageSrc, alt: fm.title }}
+      jsonLd={jsonLd}
+    >
+      <MDXRemote
+        source={article.body}
+        options={{
+          mdxOptions: { remarkPlugins: [remarkGfm] },
+        }}
+      />
+
+      {/* FAQ render (also covered by FAQPage schema) */}
+      {fm.faq && fm.faq.length > 0 && (
+        <section className="mt-12 border-t border-border pt-8">
+          <h2>Câu hỏi thường gặp</h2>
+          <dl className="mt-4 space-y-4">
+            {fm.faq.map((qa, i) => (
+              <div key={i} className="rounded-xl bg-white p-5 shadow-sm">
+                <dt className="font-semibold text-text">{qa.q}</dt>
+                <dd className="mt-2 text-sm leading-relaxed text-text/70">
+                  {qa.a}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       )}
-      <Header />
 
-      <article className="bg-brand-cream pt-28 pb-16 sm:pt-32">
-        <div className="mx-auto max-w-3xl px-5">
-          {/* Breadcrumb */}
-          <nav
-            className="mb-6 text-xs text-text/60 sm:text-sm"
-            aria-label="Breadcrumb"
-          >
-            <Link href="/" className="hover:text-mango">
-              Trang chủ
-            </Link>
-            <span className="mx-1.5">›</span>
-            <Link href={`/${article.product}`} className="hover:text-mango">
-              Xoài Tứ Quý
-            </Link>
-            <span className="mx-1.5">›</span>
-            <Link href={hubHref} className="hover:text-mango">
-              {hubLabel}
-            </Link>
-            <span className="mx-1.5">›</span>
-            <span className="text-text">{fm.title}</span>
-          </nav>
+      {/* Price ticker — price-sensitive pillars + all tin-tuc */}
+      {showPriceTicker && <PriceTickerFooter />}
 
-          <header className="mb-8">
-            {fm.pillar && (
-              <span className="inline-block rounded-full bg-mango/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-mango-dark">
-                {fm.pillar.replace(/-/g, " ")}
-              </span>
-            )}
-            <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-text sm:text-4xl">
-              {fm.title}
-            </h1>
-            <p className="mt-3 text-sm text-text/60">
-              Đăng ngày{" "}
-              <time dateTime={fm.publishedAt}>
-                {new Date(fm.publishedAt).toLocaleDateString("vi-VN", {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </time>
-            </p>
-          </header>
+      {/* Related articles */}
+      {related.length > 0 && (
+        <section className="mt-12 border-t border-border pt-8">
+          <h2>Bài liên quan</h2>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            {related.map((r) => (
+              <li key={r.urlPath}>
+                <Link
+                  href={r.urlPath}
+                  className="block rounded-xl bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className="font-semibold text-text hover:text-mango">
+                    {r.frontmatter.title}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
-          {/* Hero image */}
-          <figure className="relative mb-8 aspect-[16/9] overflow-hidden rounded-2xl bg-white shadow-md">
-            <Image
-              src={heroImage}
-              alt={fm.title}
-              fill
-              priority
-              sizes="(min-width: 768px) 768px, 100vw"
-              className="object-cover"
-            />
-          </figure>
-
-          <div
-            id="article-body"
-            className="prose prose-neutral max-w-none prose-headings:font-heading prose-headings:text-text prose-headings:scroll-mt-24 prose-h2:text-2xl prose-h2:mt-10 prose-h3:text-xl prose-a:text-mango-dark hover:prose-a:text-mango prose-blockquote:border-mango prose-blockquote:bg-mango/5 prose-blockquote:py-1 prose-blockquote:not-italic prose-strong:text-text prose-table:text-sm prose-th:bg-brand prose-img:rounded-xl"
-          >
-            <MDXRemote
-              source={article.body}
-              options={{
-                mdxOptions: {
-                  remarkPlugins: [remarkGfm],
-                },
-              }}
-            />
-          </div>
-
-          {/* FAQ render (also covered by FAQPage schema) */}
-          {fm.faq && fm.faq.length > 0 && (
-            <section className="mt-12 border-t border-border pt-8">
-              <h2 className="font-heading text-2xl font-bold text-text">
-                Câu hỏi thường gặp
-              </h2>
-              <dl className="mt-6 space-y-5">
-                {fm.faq.map((qa, i) => (
-                  <div key={i} className="rounded-xl bg-white p-5 shadow-sm">
-                    <dt className="font-semibold text-text">{qa.q}</dt>
-                    <dd className="mt-2 text-sm leading-relaxed text-text/70">
-                      {qa.a}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </section>
-          )}
-
-          {/* Price ticker — shown on price-sensitive pillars (gia-thi-truong)
-              and all tin-tuc articles. Reads Supabase price_history. */}
-          {(article.type === "tin-tuc" ||
-            article.frontmatter.pillar === "gia-thi-truong") && (
-            <PriceTickerFooter />
-          )}
-
-          {/* Related articles */}
-          {related.length > 0 && (
-            <section className="mt-12 border-t border-border pt-8">
-              <h2 className="font-heading text-2xl font-bold text-text">
-                Bài liên quan
-              </h2>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {related.map((r) => (
-                  <li key={r.urlPath}>
-                    <Link
-                      href={r.urlPath}
-                      className="block rounded-xl bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-                    >
-                      <span className="font-semibold text-text hover:text-mango">
-                        {r.frontmatter.title}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {/* Back to hub */}
-          <div className="mt-10 border-t border-border pt-6">
-            <Link
-              href={hubHref}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-mango-dark hover:text-mango"
-            >
-              ← Xem tất cả bài {hubLabel.toLowerCase()}
-            </Link>
-          </div>
-        </div>
-      </article>
-
-      <Footer />
-    </>
+      {/* Back to hub */}
+      <p className="mt-10 border-t border-border pt-6">
+        <Link href={hubHref}>← Xem tất cả bài {hubLabel.toLowerCase()}</Link>
+      </p>
+    </ArticleLayout>
   );
 }

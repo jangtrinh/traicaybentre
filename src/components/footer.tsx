@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BrandIcon } from "./brand-icon";
 
 export function Footer() {
@@ -32,7 +33,7 @@ export function Footer() {
           {/* Nav links — jinzhenlian 2-column style */}
           <div className="flex gap-20">
             <div className="flex flex-col gap-4">
-              <a href="/san-pham" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Sản phẩm</a>
+              <Link href="/san-pham" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Sản phẩm</Link>
               <a href="/xoai-tu-quy" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Xoài Tứ Quý</a>
               <a href="/xoai-tu-quy#gia" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Giá hôm nay</a>
               <a href="/nguon-goc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Nguồn gốc</a>
