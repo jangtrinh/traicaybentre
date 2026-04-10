@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { getHomepageJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -88,7 +89,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
