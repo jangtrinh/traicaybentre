@@ -77,6 +77,8 @@ const INTERNAL_LINKS = [
   { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
   { label: "Kiến thức xoài Tứ Quý", href: "/kien-thuc/xoai-tu-quy-la-gi" },
   { label: "Tin tức & báo giá", href: "/tin-tuc" },
+  { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
+  { label: "Tất cả sản phẩm", href: "/san-pham" },
   { label: "Liên hệ đặt sỉ", href: "/#contact" },
 ];
 
