@@ -253,6 +253,55 @@ export function XoaiTuQuyLanding() {
         </div>
       </section>
 
+      {/* KW#9 anchor: vựa xoài tứ quý bến tre giá sỉ */}
+      <section id="gia-si" className="scroll-mt-32 bg-brand px-5 pb-20">
+        <div className="mx-auto max-w-[1000px]">
+          <FadeIn>
+            <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
+              Vựa xoài Tứ Quý Bến Tre
+              <br />
+              <span className="text-mango">giá sỉ</span>
+            </h2>
+            <p className="mb-8 text-center text-sm text-text/50">
+              Trực tiếp từ vựa Thạnh Phú — cắt trung gian, giá tốt nhất
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {PRICE_DATA.tiers.map((tier) => (
+                <div key={tier.sku} className="rounded-2xl bg-text/5 p-5 text-center">
+                  <span className={`inline-block rounded-full ${tier.badgeColor} px-3 py-1 text-xs font-bold uppercase text-white`}>
+                    {tier.badge}
+                  </span>
+                  <div className="mt-2 font-heading text-2xl font-bold text-text">
+                    {tier.priceRange}<span className="text-sm font-medium text-text/50">₫/kg</span>
+                  </div>
+                  <p className="mt-1 text-xs text-text/40">{tier.weight}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 rounded-2xl bg-text/5 p-5">
+              <ul className="space-y-2 text-sm text-text/70">
+                <li>• Tối thiểu <strong>1 thùng 20kg</strong>. Đóng thùng theo ý mối.</li>
+                <li>• <strong>COD</strong> hoặc chuyển khoản trước. Mối quen 3 đơn → mở sổ <strong>công nợ</strong>.</li>
+                <li>• Xuất <strong>VAT</strong> đầy đủ cho nhà hàng, doanh nghiệp.</li>
+                <li>• Giao lạnh toàn quốc: HCM 24h, Hà Nội 48h.</li>
+              </ul>
+            </div>
+            <div className="mt-6 text-center">
+              <a
+                href="https://zalo.me/0932585533?text=M%C3%ACnh%20mu%E1%BB%91n%20l%E1%BA%A5y%20s%E1%BB%89%20xo%C3%A0i%20T%E1%BB%A9%20Qu%C3%BD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
+              >
+                Zalo báo giá sỉ
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Shipping — 3 cards clickable tới trang giao hàng tương ứng */}
       <SectionDivider from="brand" to="brand-cream" />
       <section id="giao-hang" className="scroll-mt-32 bg-brand-cream px-5 py-20">

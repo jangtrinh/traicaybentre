@@ -7,10 +7,11 @@ import { FadeIn } from "@/components/fade-in";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Xoài Tứ Quý Giao Hà Nội — 48h Từ Vựa Thạnh Phú | Trái Cây Bến Tre",
+  title: "Mua Xoài Bến Tre Chính Gốc Ở Đâu Hà Nội? — Giao 48h Từ Vựa Thạnh Phú",
   description:
-    "Giao xoài Tứ Quý Bến Tre đến Hà Nội trong 48h bằng xe lạnh hoặc gửi bay. Đóng gói chống dập. 95% khách hàng miền Bắc. Gọi đặt sỉ: 0932 585 533.",
+    "Mua xoài Bến Tre chính gốc ở đâu Hà Nội? Đặt trực tiếp từ vựa Thạnh Phú CDĐL #00124. Giao lạnh 48h, đóng gói chống dập. Gọi: 0932 585 533.",
   keywords: [
+    "mua xoài bến tre chính gốc ở đâu hà nội",
     "xoài tứ quý giao hà nội",
     "mua xoài bến tre tại hà nội",
     "xoài sỉ hà nội",
@@ -19,8 +20,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/giao-hang/ha-noi` },
   openGraph: {
-    title: "Xoài Tứ Quý Giao Hà Nội — 48h Từ Vựa Thạnh Phú",
-    description: "Xe lạnh / gửi bay. Đóng gói chống dập. 95% tiêu thụ miền Bắc.",
+    title: "Mua Xoài Bến Tre Chính Gốc Hà Nội — Giao 48h Từ Vựa",
+    description: "Mua xoài Bến Tre chính gốc Hà Nội. CDĐL #00124, giao lạnh 48h. Đóng gói chống dập.",
     url: `${SITE_URL}/giao-hang/ha-noi`,
     images: [{ url: `${SITE_URL}/images/xoai-real-2.jpg`, width: 1200, height: 1500 }],
   },
@@ -40,6 +41,14 @@ const WHY_CHOOSE = [
 ];
 
 const FAQ = [
+  {
+    q: "Mua xoài Bến Tre chính gốc ở đâu Hà Nội?",
+    a: "Đặt trực tiếp từ vựa Trái Cây Bến Tre tại Thạnh Phú. Xoài có Chỉ dẫn địa lý CDĐL #00124 do Cục SHTT cấp — đảm bảo chính gốc. Gọi 0932 585 533 hoặc nhắn Zalo, vựa báo giá + lịch giao trong 15 phút.",
+  },
+  {
+    q: "Làm sao biết xoài Bến Tre chính gốc, không phải hàng trộn?",
+    a: "Mỗi thùng có tem CDĐL #00124 + QR truy xuất nguồn gốc: tên vườn, ngày hái, người thu hoạch. Xoài Tứ Quý chính gốc có vị mặn nhẹ cuối lưỡi đặc trưng — chỗ khác không có.",
+  },
   {
     q: "Ship Hà Nội mấy ngày?",
     a: "Thông thường 48 giờ từ khi đóng hàng tại vựa Thạnh Phú. Xe lạnh khởi hành mỗi ngày 17h–18h, đến Hà Nội sáng ngày kế. Nếu cần gấp hơn, chọn phương án gửi bay — hàng đến trong ngày.",
@@ -215,8 +224,9 @@ export default function GiaoHangHaNoiPage() {
       <section className="bg-brand-cream px-5 py-12">
         <div className="mx-auto flex max-w-[800px] flex-wrap justify-center gap-3">
           {[
-            { label: "Tìm hiểu về Xoài Tứ Quý", href: "/xoai-tu-quy" },
-            { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
+            { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
+            { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
+            { label: "Tất cả sản phẩm", href: "/san-pham" },
             { label: "Liên hệ đặt sỉ", href: "/#contact" },
           ].map((link) => (
             <a

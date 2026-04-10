@@ -201,9 +201,116 @@ export function DuaXiemBenTreLanding() {
         </div>
       </section>
 
-      {/* Shipping */}
+      {/* Đặt online + pricing — SEO KW#6 "đặt dừa xiêm bến tre online ship toàn quốc" */}
       <SectionDivider from="brand" to="brand-cream" />
-      <section className="bg-brand-cream px-5 py-20">
+      <section id="dat-online" className="scroll-mt-32 bg-brand-cream px-5 py-20">
+        <div className="mx-auto max-w-[1000px]">
+          <FadeIn>
+            <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
+              Đặt dừa xiêm Bến Tre online
+              <br />
+              <span className="text-mango">ship toàn quốc</span>
+            </h2>
+            <p className="mb-10 text-center text-sm text-text/50">
+              Đặt qua Zalo hoặc gọi — vựa báo giá + lịch giao trong 15 phút
+            </p>
+          </FadeIn>
+
+          {/* Price cards */}
+          <FadeIn delay={0.1}>
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-3xl bg-white p-6 shadow-md">
+                <span className="inline-block rounded-full bg-mango/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-mango-dark">
+                  Sỉ
+                </span>
+                <div className="mt-3 font-heading text-3xl font-bold text-text">
+                  8.000 – 10.000
+                  <span className="text-sm font-medium text-text/50">₫/trái</span>
+                </div>
+                <p className="mt-2 text-sm text-text/60">
+                  Từ 50 trái trở lên. Đóng túi lưới, ship xe lạnh.
+                </p>
+              </div>
+              <div className="rounded-3xl bg-white p-6 shadow-md">
+                <span className="inline-block rounded-full bg-text/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-text/70">
+                  Lẻ
+                </span>
+                <div className="mt-3 font-heading text-3xl font-bold text-text">
+                  15.000 – 18.000
+                  <span className="text-sm font-medium text-text/50">₫/trái</span>
+                </div>
+                <p className="mt-2 text-sm text-text/60">
+                  Từ 10 trái. Đóng gói hút chân không hoặc túi lưới.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Ordering steps */}
+          <FadeIn delay={0.2}>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              {[
+                { step: "1", title: "Nhắn Zalo/Gọi", desc: "Báo số lượng + địa chỉ giao. Vựa báo giá + lịch giao ngay." },
+                { step: "2", title: "Chuyển khoản / COD", desc: "Chuyển khoản trước hoặc COD khi nhận hàng. Mối quen → mở sổ công nợ." },
+                { step: "3", title: "Nhận hàng", desc: "Dừa giao tận nơi xe lạnh. HCM 24h, HN 48h. Hàng lỗi → bồi đơn sau." },
+              ].map((item) => (
+                <div key={item.step} className="rounded-2xl bg-white p-6 text-center shadow-sm">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-mango font-heading text-lg font-bold text-white">
+                    {item.step}
+                  </div>
+                  <h3 className="mt-3 font-heading text-lg font-bold text-text">{item.title}</h3>
+                  <p className="mt-2 text-sm text-text/60">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* CTA */}
+          <FadeIn delay={0.3}>
+            <div className="mt-10 text-center">
+              <a
+                href={ZALO_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
+              >
+                Đặt dừa qua Zalo
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* FAQ — SEO KW#6 */}
+      <section className="bg-brand-cream px-5 pb-20">
+        <div className="mx-auto max-w-[800px]">
+          <FadeIn>
+            <h2 className="mb-8 font-heading text-3xl font-bold uppercase text-text">
+              Câu hỏi thường gặp — Dừa Xiêm Bến Tre
+            </h2>
+          </FadeIn>
+          <div className="space-y-4">
+            {[
+              { q: "Đặt dừa xiêm Bến Tre online ship toàn quốc được không?", a: "Được. Vựa giao lạnh toàn quốc: TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Đặt qua Zalo hoặc gọi 0932 585 533." },
+              { q: "Dừa sọ khác dừa xiêm nguyên trái sao?", a: "Dừa sọ là dừa xiêm đã gọt sạch vỏ xanh, chỉ còn sọ trắng + nước bên trong. Mở nắp uống liền, đóng gói đẹp, dễ ship xa." },
+              { q: "Giá dừa xiêm Bến Tre bao nhiêu?", a: "Sỉ từ 50 trái: 8.000-10.000₫/trái. Lẻ từ 10 trái: 15.000-18.000₫/trái. Giá có thể thay đổi theo mùa, gọi vựa báo giá chính xác." },
+              { q: "Nước dừa có ngọt không?", a: "Dừa xiêm Bến Tre nước ngọt thanh tự nhiên, không gắt. Vựa chọn trái chín tới — ngọt nhất." },
+              { q: "Bảo quản dừa sọ được bao lâu?", a: "Dừa sọ chưa khui: ngăn mát 5-7 ngày. Đã khui: uống trong ngày. Dừa gói hút chân không: 10-14 ngày ngăn mát." },
+            ].map(({ q, a }, i) => (
+              <FadeIn key={i} delay={i * 0.06}>
+                <div className="rounded-2xl bg-white p-6 shadow-sm">
+                  <h3 className="font-heading text-base font-bold text-text">{q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text/70">{a}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Shipping */}
+      <SectionDivider from="brand-cream" to="brand" />
+      <section className="bg-brand px-5 py-20">
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-4xl font-bold uppercase text-text">

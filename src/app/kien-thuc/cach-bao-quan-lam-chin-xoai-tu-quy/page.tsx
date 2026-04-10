@@ -7,10 +7,11 @@ import { getArticleJsonLd, getBreadcrumbJsonLd, SITE_URL } from "@/lib/structure
 const PAGE_URL = `${SITE_URL}/kien-thuc/cach-bao-quan-lam-chin-xoai-tu-quy`;
 
 export const metadata: Metadata = {
-  title: "Cách Bảo Quản & Làm Chín Xoài Tứ Quý Tại Nhà — Hướng Dẫn Đầy Đủ 2026",
+  title: "Cách Bảo Quản Xoài Tứ Quý Bến Tre Tại Nhà — 7-14 Ngày Không Hỏng",
   description:
-    "Hướng dẫn bảo quản xoài Tứ Quý tươi 7-14 ngày, 5 cách làm chín nhanh, tránh sai lầm thường gặp. Phù hợp tất cả vùng miền.",
+    "Cách bảo quản xoài Tứ Quý Bến Tre tại nhà 7-14 ngày không hỏng. 5 cách làm chín nhanh, 5 sai lầm cần tránh. Hướng dẫn từ vựa Thạnh Phú.",
   keywords: [
+    "cách bảo quản xoài tứ quý bến tre",
     "cách bảo quản xoài tứ quý",
     "làm chín xoài nhanh",
     "xoài tứ quý để được bao lâu",

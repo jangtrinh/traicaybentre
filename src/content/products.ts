@@ -105,21 +105,22 @@ export const products: Record<string, ProductEntry> = {
     status: "active",
     order: 2,
     seo: {
-      title: "Dừa Xiêm Bến Tre (Dừa Sọ) — Gọt Sẵn, Nước Ngọt, Giao Toàn Quốc",
+      title: "Đặt Dừa Xiêm Bến Tre Online — Dừa Sọ Gọt Sẵn, Ship Toàn Quốc",
       description:
-        "Dừa Xiêm Bến Tre dạng dừa sọ gọt sẵn từ vựa Thạnh Phú. Nước ngọt thanh, uống liền, đóng gói đẹp, giao lạnh toàn quốc. Đặt sỉ tận vựa.",
+        "Đặt dừa xiêm Bến Tre online ship toàn quốc. Dừa sọ gọt sẵn từ vựa Thạnh Phú. Sỉ 8-10k₫/trái, lẻ 15-18k₫/trái. Nước ngọt thanh, đóng gói đẹp, giao lạnh.",
       keywords: [
+        "đặt dừa xiêm bến tre online ship toàn quốc",
         "dừa xiêm bến tre",
-        "dừa sọ",
+        "dừa sọ bến tre",
         "dừa xiêm gọt sẵn",
         "mua dừa xiêm online",
-        "dừa sọ bến tre",
         "dừa xiêm giao toàn quốc",
         "dừa xiêm thạnh phú",
+        "giá dừa xiêm bến tre",
       ],
-      ogTitle: "Dừa Xiêm Bến Tre — Dừa Sọ Gọt Sẵn Từ Vựa",
+      ogTitle: "Đặt Dừa Xiêm Bến Tre Online — Ship Lạnh Toàn Quốc Từ Vựa",
       ogDescription:
-        "Dừa sọ Bến Tre gọt sẵn, nước ngọt thanh, đóng gói premium. Giao lạnh toàn quốc từ vựa Thạnh Phú.",
+        "Đặt dừa xiêm Bến Tre online. Dừa sọ gọt sẵn, nước ngọt, ship lạnh toàn quốc. Sỉ 8-10k, lẻ 15-18k/trái.",
     },
     cta: {
       zaloMessage: "Mình muốn đặt Dừa Xiêm Bến Tre (dừa sọ)",
