@@ -67,7 +67,7 @@ function getHubPosts(): HubPost[] {
     date: a.frontmatter.publishedAt.slice(0, 10),
     category: a.frontmatter.pillar ?? "Tin tức",
     coverImage: {
-      src: a.frontmatter.ogImage ?? "/Xoai-2.jpg",
+      src: a.frontmatter.ogImage ?? "/images/xoai-real-2.jpg",
       alt: a.frontmatter.title,
     },
   }));
