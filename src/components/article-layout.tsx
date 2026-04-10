@@ -20,6 +20,7 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import { FadeIn } from "./fade-in";
 import { ShareButtons } from "./share-buttons";
+import { ArticleToc } from "./article-toc";
 
 interface ArticleLayoutProps {
   category: string;
@@ -123,8 +124,9 @@ export function ArticleLayout({
         </div>
       </article>
 
-      {/* === Article body — editorial reading column === */}
-      <section className="bg-brand-cream px-5 pt-14 pb-20">
+      {/* === Article body — editorial reading column with sticky TOC === */}
+      <section className="relative bg-brand-cream px-5 pt-14 pb-20">
+        <ArticleToc />
         <div className="mx-auto max-w-[720px]">
           <ShareButtons title={title} placement="top" />
           <div className="article-prose">{children}</div>
