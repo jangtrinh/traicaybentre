@@ -22,8 +22,7 @@ const TAG_ICONS: Record<string, Icon> = {
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
   const [hovered, setHovered] = useState(false);
-  const isCombo = !!product.unit;
-  const unitLabel = isCombo ? "/hộp" : "/kg";
+  const unitLabel = product.unit ? `/${product.unit}` : "/kg";
 
   return (
     <FadeIn delay={index * 0.12}>
@@ -129,7 +128,7 @@ export function ProductSection() {
               Hàng vựa đang có
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Xoài Đang Có
+              Đặc Sản <span className="text-mango">Bến Tre</span>
             </h2>
           </div>
         </FadeIn>
