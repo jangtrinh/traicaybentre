@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
     stock: "~500kg",
     stockUntil: "",
     tags: ["Không tì vết", "Trái lớn 600g+", "Quà tặng"],
-    image: "/images/xoai-real-2.jpg",
+    image: "/images/xoai-thuc-te/xoai-tu-quy-vip-trai-lon-tay-cam.jpg",
     sticker: "/images/vip.png",
   },
   {
@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     stock: "~2.2 tấn",
     stockUntil: "",
     tags: ["Ngọt đậm", "Trái to", "Vị mặn đặc trưng"],
-    image: "/images/xoai-real-3.jpg",
+    image: "/images/xoai-thuc-te/xoai-tu-quy-sot-xanh-can-canh.jpg",
     sticker: "/images/loai-1.png",
   },
   {
@@ -76,7 +76,7 @@ export const PRODUCTS: Product[] = [
     stock: "~3 tấn",
     stockUntil: "",
     tags: ["Giá tốt nhất", "Chất lượng ngon", "Làm gỏi"],
-    image: "/images/xoai-real-5.jpg",
+    image: "/images/xoai-thuc-te/xoai-tu-quy-sot-nhua-xanh-day.jpg",
     sticker: "/images/loai-2.png",
   },
   {

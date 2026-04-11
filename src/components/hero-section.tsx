@@ -16,11 +16,12 @@ const HERO_PHRASES: [string, string, string][] = [
 
 const HERO_IMAGES = [
   { src: "/images/vua-khai-truong.jpg", alt: "Vựa Trái Cây Bến Tre — ngày khai trương tại xã Đại Điền, Thạnh Phú" },
-  { src: "/images/xoai-real-2.jpg", alt: "Xoài Tứ Quý — tay cầm quả lớn tại vựa" },
-  { src: "/images/xoai-real-7.jpg", alt: "Rổ xoài xanh tươi mới hái — close-up" },
-  { src: "/images/xoai-real-3.jpg", alt: "Xoài Tứ Quý quả to, vựa đóng hàng" },
-  { src: "/images/xoai-real-5.jpg", alt: "Hàng trăm ký xoài trong rổ — chuẩn bị giao" },
-  { src: "/images/xoai-real-4.jpg", alt: "Xoài Tứ Quý quả dài, tay cầm" },
+  { src: "/images/xoai-thuc-te/xoai-tu-quy-bo-thit-vang-cam.jpg", alt: "Xoài Tứ Quý bổ ra thịt vàng cam — 3 trái tại vựa Thạnh Phú" },
+  { src: "/images/xoai-thuc-te/vua-xoai-phan-loai-nhieu-ro.jpg", alt: "Vựa xoài Thạnh Phú — đội ngũ phân loại hàng chục rổ xoài" },
+  { src: "/images/xoai-thuc-te/xoai-tu-quy-vip-cuong-la-tay-cam.jpg", alt: "Xoài Tứ Quý VIP trái to — tay cầm còn cuống lá tươi" },
+  { src: "/images/xoai-thuc-te/xoai-hoang-kim-ro-tre-01.jpg", alt: "Xoài Tứ Quý hoàng kim chín vàng trong rổ tre" },
+  { src: "/images/xoai-thuc-te/vua-xoai-ban-dem-khach-mua.jpg", alt: "Vựa xoài Thạnh Phú hoạt động ban đêm — khách mua sỉ" },
+  { src: "/images/xoai-thuc-te/xoai-tu-quy-boc-luoi-foam-01.jpg", alt: "Xoài Tứ Quý VIP bọc lưới foam — đóng gói cẩn thận" },
   { src: "/images/xoai-real-6.jpg", alt: "Rổ xoài xanh — thùng xốp chuẩn bị đóng gói" },
 ];
 

@@ -20,6 +20,7 @@ import {
   Package,
   ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
+import { XoaiHeroCarousel } from "@/components/product/xoai-hero-carousel";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
@@ -132,15 +133,7 @@ export function XoaiTuQuyLanding() {
             </FadeIn>
           </div>
           <FadeIn delay={0.1} className="flex justify-center">
-            <div className="relative aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-3xl shadow-2xl md:aspect-[4/5]">
-              <Image
-                src="/images/xoai-real-2.jpg"
-                alt="Xoài Tứ Quý Bến Tre — tay cầm quả lớn tại vựa"
-                fill
-                priority
-                className="object-cover"
-              />
-            </div>
+            <XoaiHeroCarousel />
           </FadeIn>
         </div>
       </section>
@@ -161,6 +154,60 @@ export function XoaiTuQuyLanding() {
               </div>
             </FadeIn>
           ))}
+        </div>
+      </section>
+
+      {/* Gallery — ảnh thực tế từ vựa */}
+      <section className="bg-brand-cream px-5 pb-20">
+        <div className="mx-auto max-w-[1200px]">
+          <FadeIn>
+            <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
+              Xoài tứ quý — từ vựa
+            </h2>
+            <p className="mb-12 text-center text-sm text-text/50">
+              Ảnh thực tế tại vựa Thạnh Phú — không chỉnh sửa
+            </p>
+          </FadeIn>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                src: "/images/xoai-thuc-te/xoai-tu-quy-vip-tay-cam-vua.jpg",
+                alt: "Xoài Tứ Quý VIP trái to — cầm tay tại vựa Thạnh Phú",
+              },
+              {
+                src: "/images/xoai-thuc-te/xoai-tu-quy-bo-thit-vang-tay-cam.jpg",
+                alt: "Xoài Tứ Quý bổ thịt vàng cam — tay cầm tại vựa",
+              },
+              {
+                src: "/images/xoai-thuc-te/vua-xoai-phan-loai-ngoai-troi.jpg",
+                alt: "Đội ngũ vựa phân loại xoài ngoài trời — sọt xanh vàng",
+              },
+              {
+                src: "/images/xoai-thuc-te/xoai-tu-quy-boc-luoi-foam-03.jpg",
+                alt: "Xoài Tứ Quý bọc lưới foam — đóng gói bảo vệ khi ship xa",
+              },
+              {
+                src: "/images/xoai-thuc-te/vua-xoai-dong-thung-xop-ban-ngay.jpg",
+                alt: "Đội ngũ vựa đóng thùng xốp — chuẩn bị giao hàng",
+              },
+              {
+                src: "/images/xoai-thuc-te/xoai-tu-quy-sot-xanh-nhieu-ro.jpg",
+                alt: "Nhiều rổ xoài tứ quý xanh — sọt xanh chờ đóng gói",
+              },
+            ].map((img, i) => (
+              <FadeIn key={img.src} delay={i * 0.05}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
