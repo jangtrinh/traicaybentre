@@ -17,6 +17,8 @@ export interface Product {
   stockUntil: string;
   tags: string[];
   image: string;
+  /** Additional images for product card carousel (first = primary) */
+  images?: string[];
   sticker: string;
   unit?: string;
 }
@@ -39,6 +41,11 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Không tì vết", "Trái lớn 600g+", "Quà tặng"],
     image: "/images/xoai-thuc-te/xoai-tu-quy-vip-trai-lon-tay-cam.jpg",
+    images: [
+      "/images/xoai-thuc-te/xoai-tu-quy-vip-trai-lon-tay-cam.jpg",
+      "/images/xoai-thuc-te/xoai-tu-quy-boc-luoi-foam-la.jpg",
+      "/images/xoai-thuc-te/xoai-tu-quy-vip-cuong-la-tay-cam.jpg",
+    ],
     sticker: "/images/vip.png",
   },
   {
@@ -58,6 +65,11 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Ngọt đậm", "Trái to", "Vị mặn đặc trưng"],
     image: "/images/xoai-thuc-te/xoai-tu-quy-sot-xanh-can-canh.jpg",
+    images: [
+      "/images/xoai-thuc-te/xoai-tu-quy-sot-xanh-can-canh.jpg",
+      "/images/xoai-thuc-te/xoai-tu-quy-bo-thit-vang-cam.jpg",
+      "/images/xoai-thuc-te/xoai-tu-quy-vip-tay-cam-vua.jpg",
+    ],
     sticker: "/images/loai-1.png",
   },
   {
@@ -77,6 +89,11 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Giá tốt nhất", "Chất lượng ngon", "Làm gỏi"],
     image: "/images/xoai-thuc-te/xoai-tu-quy-sot-nhua-xanh-day.jpg",
+    images: [
+      "/images/xoai-thuc-te/xoai-tu-quy-sot-nhua-xanh-day.jpg",
+      "/images/xoai-thuc-te/xoai-tu-quy-sot-nhua-xanh.jpg",
+      "/images/xoai-thuc-te/xoai-hoang-kim-ro-tre-03.jpg",
+    ],
     sticker: "/images/loai-2.png",
   },
   {
@@ -96,6 +113,11 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Nước ngọt", "Gọt sẵn", "Quanh năm"],
     image: "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
+    images: [
+      "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
+      "/images/dua/dua-xiem-xanh-nguyen-trai-dong-tai-vua.jpg",
+      "/images/dua/dua-xiem-so-tui-luoi-vang-van-chuyen.jpg",
+    ],
     sticker: "/images/loai-1.png",
     unit: "trái",
   },
@@ -116,6 +138,11 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Hút chân không", "Nước ngọt", "Gọt sẵn"],
     image: "/images/dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
+    images: [
+      "/images/dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
+      "/images/dua/dua-xiem-cong-nhan-che-bien-tai-vua.jpg",
+      "/images/dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+    ],
     sticker: "/images/loai-2.png",
     unit: "trái",
   },
@@ -136,6 +163,11 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Rau câu dừa", "Ăn liền", "Quà biếu"],
     image: "/images/dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+    images: [
+      "/images/dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+      "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
+      "/images/dua/dua-xiem-xanh-nguyen-trai-dong-tai-vua.jpg",
+    ],
     sticker: "/images/vip.png",
     unit: "trái",
   },

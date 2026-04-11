@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { MapPin, Clock, Drop, Leaf, Sparkle, Cookie, Basket, Gift } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
@@ -20,9 +20,65 @@ const TAG_ICONS: Record<string, Icon> = {
   "Tặng được ngay": Sparkle,
 };
 
+function ProductCardCarousel({ images, name }: { images: string[]; name: string }) {
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(next, 3000);
+    return () => clearInterval(timer);
+  }, [next, images.length]);
+
+  if (images.length <= 1) {
+    return (
+      <Image
+        src={images[0]}
+        alt={name}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className="object-cover"
+      />
+    );
+  }
+
+  return (
+    <>
+      {images.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt={`${name} — ảnh ${i + 1}`}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className={`object-cover transition-opacity duration-700 ${
+            i === current ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+      <div className="absolute bottom-3 left-3 z-10 flex gap-1.5">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={(e) => { e.preventDefault(); setCurrent(i); }}
+            aria-label={`Xem ảnh ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === current ? "w-4 bg-white/80" : "w-1.5 bg-white/40"
+            }`}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+
 function ProductCard({ product, index }: { product: Product; index: number }) {
   const [hovered, setHovered] = useState(false);
   const unitLabel = product.unit ? `/${product.unit}` : "/kg";
+  const cardImages = product.images?.length ? product.images : [product.image];
 
   return (
     <FadeIn delay={index * 0.12}>
@@ -33,25 +89,19 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           hovered ? "-translate-y-2 shadow-xl" : "shadow-md"
         }`}
       >
-        {/* Real photo + sticker overlay bottom-right */}
+        {/* Rotating photo carousel + sticker overlay */}
         <div className="relative h-64 overflow-hidden">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover"
-          />
+          <ProductCardCarousel images={cardImages} name={product.name} />
           {/* Sticker label — small, bottom right */}
           <Image
             src={product.sticker}
             alt=""
             width={72}
             height={72}
-            className="absolute bottom-3 right-3 h-auto w-[72px] drop-shadow-lg"
+            className="absolute bottom-3 right-3 z-10 h-auto w-[72px] drop-shadow-lg"
           />
           <span
-            className={`absolute top-4 left-4 rounded-full ${product.badgeColor} px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white`}
+            className={`absolute top-4 left-4 z-10 rounded-full ${product.badgeColor} px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white`}
           >
             {product.badge}
           </span>
