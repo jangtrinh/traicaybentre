@@ -1,0 +1,56 @@
+name: IndexNow — notify search engines of new/updated pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/articles/**/*.mdx'
+      - 'src/app/giao-hang/**'
+      - 'src/app/[product]/**'
+      - 'src/app/san-pham/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed URLs
+        id: urls
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD)
+          URLS=""
+
+          # MDX articles → product-scoped URLs
+          for f in $(echo "$CHANGED" | grep '\.mdx$'); do
+            # e.g. src/content/articles/xoai-tu-quy/kien-thuc/slug.mdx → /xoai-tu-quy/kien-thuc/slug
+            REL=$(echo "$f" | sed 's|src/content/articles/||' | sed 's|\.mdx$||')
+            if [ -n "$REL" ]; then
+              URLS="$URLS\"https://www.traicaybentre.com/$REL\","
+            fi
+          done
+
+          # City pages
+          for f in $(echo "$CHANGED" | grep 'giao-hang'); do
+            URLS="$URLS\"https://www.traicaybentre.com/giao-hang/\","
+          done
+
+          # Always include sitemap + homepage
+          URLS="$URLS\"https://www.traicaybentre.com/sitemap.xml\",\"https://www.traicaybentre.com/\""
+
+          echo "urls=[$URLS]" >> $GITHUB_OUTPUT
+
+      - name: Submit to IndexNow
+        if: steps.urls.outputs.urls != '[]'
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "www.traicaybentre.com",
+              "key": "cf377677cc8eda2f80f4db0988aa63ef",
+              "keyLocation": "https://www.traicaybentre.com/cf377677cc8eda2f80f4db0988aa63ef.txt",
+              "urlList": ${{ steps.urls.outputs.urls }}
+            }'
+          echo "Submitted to IndexNow"
