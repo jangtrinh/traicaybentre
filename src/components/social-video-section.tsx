@@ -27,6 +27,14 @@ const SOCIAL_EMBEDS: SocialEmbed[] = [
     title: "Video từ vườn xoài Tứ Quý",
   },
   {
+    id: "facebook-reel-3",
+    platform: "facebook",
+    type: "video",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F1Zt1h1xHVJ%2F&show_text=false&width=350",
+    title: "Video từ vườn trái cây Bến Tre",
+  },
+  {
     id: "facebook-post-review",
     platform: "facebook",
     type: "post",
