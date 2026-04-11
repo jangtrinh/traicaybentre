@@ -37,15 +37,17 @@ export default function FomoToastNotification() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
-  const showToast = useCallback(() => {
+  /** onDone called after toast finishes its display cycle */
+  const showToast = useCallback((onDone?: () => void) => {
     const order = generateRandomOrder();
     setNotification(order);
     setVisible(true);
 
-    // Auto-hide after 5s
+    // Show for 3s, then hide (0.5s animation), then signal done
     setTimeout(() => {
       setVisible(false);
-    }, 5000);
+      setTimeout(() => onDone?.(), 500);
+    }, 3000);
   }, []);
 
   useEffect(() => {
@@ -57,24 +59,30 @@ export default function FomoToastNotification() {
     // Don't show if user permanently dismissed
     if (dismissed) return;
 
-    // Initial delay: 8-15s
-    const initialDelay = 8000 + Math.random() * 7000;
-    let intervalId: ReturnType<typeof setInterval>;
+    // Chain: show toast → wait for it to finish → random pause → next toast
+    let timerId: ReturnType<typeof setTimeout>;
+    let cancelled = false;
 
-    const timeoutId = setTimeout(() => {
-      showToast();
-
-      // Recurring: every 20-40s
-      intervalId = setInterval(() => {
+    function scheduleNext() {
+      // Random pause between toasts: 3-5s
+      const pause = 3000 + Math.random() * 2000;
+      timerId = setTimeout(() => {
+        if (cancelled) return;
         if (document.visibilityState === "visible") {
-          showToast();
+          showToast(() => { if (!cancelled) scheduleNext(); });
+        } else {
+          // Tab hidden — retry after pause
+          scheduleNext();
         }
-      }, 20000 + Math.random() * 20000);
-    }, initialDelay);
+      }, pause);
+    }
+
+    // First toast after 3-5s
+    scheduleNext();
 
     return () => {
-      clearTimeout(timeoutId);
-      clearInterval(intervalId);
+      cancelled = true;
+      clearTimeout(timerId);
     };
   }, [showToast, dismissed]);
 
