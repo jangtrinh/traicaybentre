@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { Play } from "@phosphor-icons/react";
 import { BrandIcon } from "./brand-icon";
 import { FadeIn } from "./fade-in";
 
@@ -15,6 +11,30 @@ interface SocialEmbed {
 
 const SOCIAL_EMBEDS: SocialEmbed[] = [
   {
+    id: "facebook-video-1",
+    platform: "facebook",
+    type: "video",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1784376475873594&show_text=false&width=350",
+    title: "Video từ vườn xoài Tứ Quý",
+  },
+  {
+    id: "facebook-video-2",
+    platform: "facebook",
+    type: "video",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1612250740055362&show_text=false&width=350",
+    title: "Video từ vườn xoài Tứ Quý",
+  },
+  {
+    id: "facebook-post-review",
+    platform: "facebook",
+    type: "post",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhuyenlongbien95%2Fposts%2Fpfbid02sc7aQea6ukFrNNSGwQEBNJormtLuQ9u7DunLubSyViQbCA8n9H1XtEiTPw54Pfnzl&show_text=true&width=500",
+    title: "Khách review xoài Tứ Quý",
+  },
+  {
     id: "facebook-post-1",
     platform: "facebook",
     type: "post",
@@ -22,22 +42,6 @@ const SOCIAL_EMBEDS: SocialEmbed[] = [
       "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Gbu3Ea2eS6G2Mp8cExb6skGKikrsyRD8K8Gj6wR5UDvH3ByTCiUJzApzAYE7JE5ql%26id%3D61573415880985&show_text=true&width=500",
     title: "Bài viết từ Fanpage",
   },
-  // TODO: Thêm TikTok và Facebook Reel khi có video
-  // {
-  //   id: "tiktok-1",
-  //   platform: "tiktok",
-  //   type: "video",
-  //   embedUrl: "https://www.tiktok.com/embed/v2/7490599498871498017",
-  //   title: "Thu hoạch xoài Tứ Quý tại vườn Thạnh Phú",
-  // },
-  // {
-  //   id: "facebook-1",
-  //   platform: "facebook",
-  //   type: "video",
-  //   embedUrl:
-  //     "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F680323011294802&show_text=false&width=350",
-  //   title: "Đóng thùng xoài giao miền Bắc",
-  // },
   {
     id: "facebook-post-2",
     platform: "facebook",
@@ -63,35 +67,19 @@ const PLATFORM_LABEL: Record<string, string> = {
 };
 
 function EmbedCard({ embed }: { embed: SocialEmbed }) {
-  const [loaded, setLoaded] = useState(false);
-  const isPost = embed.type === "post";
-
   return (
     <div className="flex flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
-      {/* Embed area — fixed height, width auto-fills */}
+      {/* Embed area — Facebook iframe tự render thumbnail + play button */}
       <div className="relative h-[450px] w-full bg-text/5">
-        {!loaded && !isPost ? (
-          <button
-            onClick={() => setLoaded(true)}
-            className="absolute inset-0 flex flex-col items-center justify-center gap-3 transition-opacity hover:opacity-80"
-          >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/30">
-              <Play size={28} weight="fill" className="ml-1 text-white" />
-            </div>
-            <span className="text-sm font-medium text-text-secondary">
-              Bấm coi video
-            </span>
-          </button>
-        ) : (
-          <iframe
-            src={embed.embedUrl}
-            className="absolute inset-0 h-full w-full border-0"
-            scrolling="no"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen
-            title={embed.title}
-          />
-        )}
+        <iframe
+          src={embed.embedUrl}
+          className="absolute inset-0 h-full w-full border-0"
+          scrolling="no"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen
+          loading="lazy"
+          title={embed.title}
+        />
       </div>
 
       {/* Info bar */}
