@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getHomepageJsonLd } from "@/lib/structured-data";
+import FomoToastNotification from "@/components/fomo-toast-notification";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -91,6 +92,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen">
         {children}
+        <FomoToastNotification />
         <Analytics />
       </body>
     </html>
