@@ -41,6 +41,9 @@ jobs:
           WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           BLOGGER_ACCESS_TOKEN: ${{ secrets.BLOGGER_ACCESS_TOKEN }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
           TUMBLR_BLOG_NAME: ${{ secrets.TUMBLR_BLOG_NAME }}
           TUMBLR_ACCESS_TOKEN: ${{ secrets.TUMBLR_ACCESS_TOKEN }}
         run: node scripts/syndicate-articles.js ${{ steps.changed.outputs.files }}
@@ -52,6 +55,9 @@ jobs:
           WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           BLOGGER_ACCESS_TOKEN: ${{ secrets.BLOGGER_ACCESS_TOKEN }}
+          BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+          BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+          BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
           TUMBLR_BLOG_NAME: ${{ secrets.TUMBLR_BLOG_NAME }}
           TUMBLR_ACCESS_TOKEN: ${{ secrets.TUMBLR_ACCESS_TOKEN }}
         run: node scripts/syndicate-articles.js --all

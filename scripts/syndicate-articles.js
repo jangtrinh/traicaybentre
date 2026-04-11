@@ -144,12 +144,50 @@ async function publishToWordPress(article) {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Blogger (Google API v3)
+// Blogger (Google API v3 — auto-refresh via refresh token)
 // ─────────────────────────────────────────────────────────────────────
+
+let _bloggerAccessToken = null;
+
+async function getBloggerAccessToken() {
+  // Use cached token if available
+  if (_bloggerAccessToken) return _bloggerAccessToken;
+
+  // Try direct access token first
+  if (process.env.BLOGGER_ACCESS_TOKEN) {
+    _bloggerAccessToken = process.env.BLOGGER_ACCESS_TOKEN;
+    return _bloggerAccessToken;
+  }
+
+  // Auto-refresh from refresh token (long-lived, won't expire)
+  const refreshToken = process.env.BLOGGER_REFRESH_TOKEN;
+  const clientId = process.env.BLOGGER_CLIENT_ID;
+  const clientSecret = process.env.BLOGGER_CLIENT_SECRET;
+  if (!refreshToken || !clientId || !clientSecret) return null;
+
+  const res = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
+      grant_type: "refresh_token",
+    }),
+  });
+  const data = await res.json();
+  if (data.access_token) {
+    _bloggerAccessToken = data.access_token;
+    console.log("  🔑 Blogger token refreshed");
+    return _bloggerAccessToken;
+  }
+  console.error("  ✗ Blogger token refresh failed:", data.error_description || data.error);
+  return null;
+}
 
 async function publishToBlogger(article) {
   const blogId = process.env.BLOGGER_BLOG_ID;
-  const token = process.env.BLOGGER_ACCESS_TOKEN;
+  const token = await getBloggerAccessToken();
   if (!blogId || !token) { console.log("  ⏭ Blogger: not configured"); return; }
 
   const res = await fetch(
