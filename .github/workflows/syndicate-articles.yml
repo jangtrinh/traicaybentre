@@ -1,4 +1,4 @@
-name: Syndicate MDX articles → Dev.to + Hashnode + Blogger
+name: Syndicate MDX articles → WordPress.com + Blogger + Tumblr
 
 on:
   push:
@@ -37,19 +37,21 @@ jobs:
       - name: Syndicate changed articles
         if: github.event.inputs.mode != 'all' && steps.changed.outputs.files != ''
         env:
-          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
-          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
-          HASHNODE_PUB_ID: ${{ secrets.HASHNODE_PUB_ID }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           BLOGGER_ACCESS_TOKEN: ${{ secrets.BLOGGER_ACCESS_TOKEN }}
+          TUMBLR_BLOG_NAME: ${{ secrets.TUMBLR_BLOG_NAME }}
+          TUMBLR_ACCESS_TOKEN: ${{ secrets.TUMBLR_ACCESS_TOKEN }}
         run: node scripts/syndicate-articles.js ${{ steps.changed.outputs.files }}
 
       - name: Syndicate ALL articles
         if: github.event.inputs.mode == 'all'
         env:
-          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
-          HASHNODE_PAT: ${{ secrets.HASHNODE_PAT }}
-          HASHNODE_PUB_ID: ${{ secrets.HASHNODE_PUB_ID }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
           BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
           BLOGGER_ACCESS_TOKEN: ${{ secrets.BLOGGER_ACCESS_TOKEN }}
+          TUMBLR_BLOG_NAME: ${{ secrets.TUMBLR_BLOG_NAME }}
+          TUMBLR_ACCESS_TOKEN: ${{ secrets.TUMBLR_ACCESS_TOKEN }}
         run: node scripts/syndicate-articles.js --all

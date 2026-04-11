@@ -1,20 +1,21 @@
 #!/usr/bin/env node
 /**
- * Syndicate MDX articles to Dev.to + Hashnode + Blogger.
+ * Syndicate MDX articles to WordPress.com + Blogger + Tumblr.
+ * Platforms chosen for food/lifestyle content relevance (not dev platforms).
  *
  * Usage:
- *   node scripts/syndicate-articles.js src/content/articles/xoai-tu-quy/kien-thuc/slug.mdx
- *   node scripts/syndicate-articles.js --all   # syndicate all published articles
+ *   node scripts/syndicate-articles.js src/content/articles/.../slug.mdx
+ *   node scripts/syndicate-articles.js --all
  *
- * Env vars required:
- *   DEVTO_API_KEY       — Dev.to API key
- *   HASHNODE_PAT        — Hashnode personal access token
- *   HASHNODE_PUB_ID     — Hashnode publication ID
- *   BLOGGER_BLOG_ID     — Blogger blog ID (optional)
- *   BLOGGER_ACCESS_TOKEN — Google OAuth access token (optional)
+ * Env vars (set whichever platforms you have):
+ *   WORDPRESS_SITE_ID      — WordPress.com site ID or domain
+ *   WORDPRESS_ACCESS_TOKEN — OAuth Bearer token
+ *   BLOGGER_BLOG_ID        — Blogger blog ID
+ *   BLOGGER_ACCESS_TOKEN   — Google OAuth access token
+ *   TUMBLR_BLOG_NAME       — Tumblr blog name (e.g. "traicaybentre")
+ *   TUMBLR_ACCESS_TOKEN    — OAuth access token
  *
- * Each platform post includes canonical_url pointing back to traicaybentre.com
- * so Google treats our site as the original source.
+ * Each post includes canonical_url → traicaybentre.com.
  */
 
 const fs = require("fs");
@@ -33,7 +34,6 @@ function loadArticle(filePath) {
   const raw = fs.readFileSync(absPath, "utf8");
   const { data, content } = matter(raw);
 
-  // Derive product/type/slug from path
   const rel = path.relative(CONTENT_ROOT, absPath);
   const parts = rel.split(path.sep);
   if (parts.length < 3) throw new Error(`Invalid article path: ${filePath}`);
@@ -48,27 +48,24 @@ function loadArticle(filePath) {
     body: content,
     canonicalUrl: `${SITE_URL}${urlPath}`,
     keywords: [data.primaryKeyword, ...(data.secondaryKeywords || [])],
-    publishedAt: data.publishedAt,
     uxReviewed: data.uxReviewed,
-    filePath: absPath,
   };
 }
 
 function loadAllPublished() {
   const articles = [];
   if (!fs.existsSync(CONTENT_ROOT)) return articles;
-
   for (const product of fs.readdirSync(CONTENT_ROOT)) {
-    const productDir = path.join(CONTENT_ROOT, product);
-    if (!fs.statSync(productDir).isDirectory()) continue;
-    for (const type of fs.readdirSync(productDir)) {
-      const typeDir = path.join(productDir, type);
-      if (!fs.statSync(typeDir).isDirectory()) continue;
-      for (const file of fs.readdirSync(typeDir)) {
+    const pd = path.join(CONTENT_ROOT, product);
+    if (!fs.statSync(pd).isDirectory()) continue;
+    for (const type of fs.readdirSync(pd)) {
+      const td = path.join(pd, type);
+      if (!fs.statSync(td).isDirectory()) continue;
+      for (const file of fs.readdirSync(td)) {
         if (!file.endsWith(".mdx")) continue;
         try {
-          const article = loadArticle(path.join(typeDir, file));
-          if (article.uxReviewed) articles.push(article);
+          const a = loadArticle(path.join(td, file));
+          if (a.uxReviewed) articles.push(a);
         } catch (e) {
           console.warn(`⚠ Skip ${file}: ${e.message}`);
         }
@@ -79,112 +76,81 @@ function loadAllPublished() {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Dev.to
+// Markdown → basic HTML (for platforms that need HTML)
 // ─────────────────────────────────────────────────────────────────────
 
-async function publishToDevTo(article) {
-  const apiKey = process.env.DEVTO_API_KEY;
-  if (!apiKey) { console.log("⏭ Dev.to: DEVTO_API_KEY not set, skipping"); return; }
+function mdToHtml(md) {
+  return md
+    .replace(/^#### (.+)$/gm, "<h4>$1</h4>")
+    .replace(/^### (.+)$/gm, "<h3>$1</h3>")
+    .replace(/^## (.+)$/gm, "<h2>$1</h2>")
+    .replace(/^# (.+)$/gm, "<h1>$1</h1>")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
+    .replace(/^- (.+)$/gm, "<li>$1</li>")
+    .replace(/(<li>.*<\/li>\n?)+/g, (m) => `<ul>${m}</ul>`)
+    .replace(/\n\n/g, "</p>\n<p>")
+    .replace(/^(?!<)/, "<p>")
+    .replace(/(?!>)$/, "</p>");
+}
 
-  const tags = ["vietnam", "food", "agriculture", "bentre"]
-    .slice(0, 4); // Dev.to max 4 tags
+function wrapContent(article, format) {
+  const header = `Bài gốc: ${format === "md"
+    ? `[${article.title}](${article.canonicalUrl})`
+    : `<a href="${article.canonicalUrl}">${article.title}</a>`}`;
+  const footer = `Nguồn: ${format === "md"
+    ? `[Trái Cây Bến Tre](${SITE_URL})`
+    : `<a href="${SITE_URL}">Trái Cây Bến Tre</a>`}`;
 
-  const body = `*Bài gốc: [${article.title}](${article.canonicalUrl})*\n\n${article.body}\n\n---\n*Nguồn: [Trái Cây Bến Tre](${SITE_URL})*`;
+  if (format === "md") {
+    return `*${header}*\n\n${article.body}\n\n---\n*${footer}*`;
+  }
+  return `<p><em>${header}</em></p>${mdToHtml(article.body)}<hr/><p><em>${footer}</em></p>`;
+}
 
-  const res = await fetch("https://dev.to/api/articles", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "api-key": apiKey,
-    },
-    body: JSON.stringify({
-      article: {
-        title: article.title,
-        body_markdown: body,
-        canonical_url: article.canonicalUrl,
-        tags,
-        published: true,
+// ─────────────────────────────────────────────────────────────────────
+// WordPress.com (REST API v1.1 — free tier)
+// ─────────────────────────────────────────────────────────────────────
+
+async function publishToWordPress(article) {
+  const siteId = process.env.WORDPRESS_SITE_ID;
+  const token = process.env.WORDPRESS_ACCESS_TOKEN;
+  if (!siteId || !token) { console.log("  ⏭ WordPress.com: not configured"); return; }
+
+  const res = await fetch(
+    `https://public-api.wordpress.com/rest/v1.1/sites/${siteId}/posts/new`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
-    }),
-  });
+      body: JSON.stringify({
+        title: article.title,
+        content: wrapContent(article, "html"),
+        tags: article.keywords.slice(0, 5).join(","),
+        status: "publish",
+      }),
+    }
+  );
 
   if (!res.ok) {
-    const err = await res.text();
-    console.error(`✗ Dev.to FAIL: ${res.status} ${err}`);
+    console.error(`  ✗ WordPress FAIL: ${res.status} ${await res.text()}`);
     return;
   }
-
   const data = await res.json();
-  console.log(`✓ Dev.to: ${data.url}`);
+  console.log(`  ✓ WordPress: ${data.URL}`);
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Hashnode
-// ─────────────────────────────────────────────────────────────────────
-
-async function publishToHashnode(article) {
-  const pat = process.env.HASHNODE_PAT;
-  const pubId = process.env.HASHNODE_PUB_ID;
-  if (!pat || !pubId) { console.log("⏭ Hashnode: PAT/PUB_ID not set, skipping"); return; }
-
-  const mutation = `
-    mutation PublishPost($input: PublishPostInput!) {
-      publishPost(input: $input) {
-        post { id slug url }
-      }
-    }
-  `;
-
-  const contentMarkdown = `*Bài gốc: [${article.title}](${article.canonicalUrl})*\n\n${article.body}\n\n---\n*Nguồn: [Trái Cây Bến Tre](${SITE_URL})*`;
-
-  const res = await fetch("https://gql.hashnode.com", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: pat,
-    },
-    body: JSON.stringify({
-      query: mutation,
-      variables: {
-        input: {
-          title: article.title,
-          contentMarkdown,
-          publicationId: pubId,
-          originalArticleURL: article.canonicalUrl,
-          tags: [{ slug: "food", name: "Food" }, { slug: "vietnam", name: "Vietnam" }],
-        },
-      },
-    }),
-  });
-
-  const data = await res.json();
-  if (data.errors) {
-    console.error(`✗ Hashnode FAIL:`, data.errors[0]?.message);
-    return;
-  }
-  console.log(`✓ Hashnode: ${data.data?.publishPost?.post?.url || "published"}`);
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// Blogger (optional)
+// Blogger (Google API v3)
 // ─────────────────────────────────────────────────────────────────────
 
 async function publishToBlogger(article) {
   const blogId = process.env.BLOGGER_BLOG_ID;
   const token = process.env.BLOGGER_ACCESS_TOKEN;
-  if (!blogId || !token) { console.log("⏭ Blogger: BLOG_ID/TOKEN not set, skipping"); return; }
-
-  // Convert markdown to basic HTML (simple conversion)
-  const htmlContent = article.body
-    .replace(/^## (.+)$/gm, "<h2>$1</h2>")
-    .replace(/^### (.+)$/gm, "<h3>$1</h3>")
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
-    .replace(/\n\n/g, "</p><p>")
-    .replace(/^/, "<p>")
-    .replace(/$/, "</p>");
-
-  const content = `<p><em>Bài gốc: <a href="${article.canonicalUrl}" rel="canonical">${article.title}</a></em></p>${htmlContent}<hr/><p><em>Nguồn: <a href="${SITE_URL}">Trái Cây Bến Tre</a></em></p>`;
+  if (!blogId || !token) { console.log("  ⏭ Blogger: not configured"); return; }
 
   const res = await fetch(
     `https://www.googleapis.com/blogger/v3/blogs/${blogId}/posts`,
@@ -194,18 +160,54 @@ async function publishToBlogger(article) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ title: article.title, content }),
+      body: JSON.stringify({
+        title: article.title,
+        content: wrapContent(article, "html"),
+      }),
     }
   );
 
   if (!res.ok) {
-    const err = await res.text();
-    console.error(`✗ Blogger FAIL: ${res.status} ${err}`);
+    console.error(`  ✗ Blogger FAIL: ${res.status} ${await res.text()}`);
     return;
   }
-
   const data = await res.json();
-  console.log(`✓ Blogger: ${data.url}`);
+  console.log(`  ✓ Blogger: ${data.url}`);
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// Tumblr (REST API v2)
+// ─────────────────────────────────────────────────────────────────────
+
+async function publishToTumblr(article) {
+  const blogName = process.env.TUMBLR_BLOG_NAME;
+  const token = process.env.TUMBLR_ACCESS_TOKEN;
+  if (!blogName || !token) { console.log("  ⏭ Tumblr: not configured"); return; }
+
+  const res = await fetch(
+    `https://api.tumblr.com/v2/blog/${blogName}/post`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        type: "text",
+        title: article.title,
+        body: wrapContent(article, "html"),
+        tags: article.keywords.slice(0, 10).join(","),
+        source_url: article.canonicalUrl,
+        state: "published",
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    console.error(`  ✗ Tumblr FAIL: ${res.status} ${await res.text()}`);
+    return;
+  }
+  console.log(`  ✓ Tumblr: https://${blogName}.tumblr.com`);
 }
 
 // ─────────────────────────────────────────────────────────────────────
@@ -214,35 +216,49 @@ async function publishToBlogger(article) {
 
 async function syndicateArticle(article) {
   console.log(`\n📄 ${article.title}`);
-  console.log(`   canonical: ${article.canonicalUrl}`);
-  await publishToDevTo(article);
-  await publishToHashnode(article);
+  console.log(`   → ${article.canonicalUrl}`);
+  await publishToWordPress(article);
   await publishToBlogger(article);
+  await publishToTumblr(article);
 }
 
 async function main() {
   const args = process.argv.slice(2);
-
   let articles;
+
   if (args.includes("--all")) {
     articles = loadAllPublished();
     console.log(`Found ${articles.length} published articles`);
   } else if (args.length > 0) {
-    articles = args
-      .filter((f) => f.endsWith(".mdx"))
-      .map((f) => loadArticle(f));
+    articles = args.filter((f) => f.endsWith(".mdx")).map((f) => loadArticle(f));
   } else {
-    console.log("Usage: node syndicate-articles.js --all | <file1.mdx> [file2.mdx ...]");
+    console.log("Usage: node syndicate-articles.js --all | <file1.mdx> ...");
     process.exit(1);
   }
 
-  console.log(`\n🚀 Syndicating ${articles.length} articles to Dev.to + Hashnode + Blogger\n`);
+  const platforms = [
+    process.env.WORDPRESS_ACCESS_TOKEN && "WordPress.com",
+    process.env.BLOGGER_ACCESS_TOKEN && "Blogger",
+    process.env.TUMBLR_ACCESS_TOKEN && "Tumblr",
+  ].filter(Boolean);
+
+  if (platforms.length === 0) {
+    console.log("\n⚠ No platforms configured. Set env vars:");
+    console.log("  WORDPRESS_SITE_ID + WORDPRESS_ACCESS_TOKEN");
+    console.log("  BLOGGER_BLOG_ID + BLOGGER_ACCESS_TOKEN");
+    console.log("  TUMBLR_BLOG_NAME + TUMBLR_ACCESS_TOKEN");
+    process.exit(1);
+  }
+
+  console.log(`\n🚀 Syndicating ${articles.length} articles → ${platforms.join(" + ")}\n`);
 
   for (const article of articles) {
     await syndicateArticle(article);
+    // Rate limit: 2 sec between articles to avoid API throttle
+    await new Promise((r) => setTimeout(r, 2000));
   }
 
-  console.log(`\n✅ Done — ${articles.length} articles syndicated`);
+  console.log(`\n✅ Done — ${articles.length} articles × ${platforms.length} platforms`);
 }
 
 main().catch((e) => {
