@@ -21,10 +21,16 @@ const NAV_LINKS: NavLink[] = [
   { label: "Tin tức", href: "/tin-tuc" },
 ];
 
+// Links ẩn vào menu "···" khi compact pill (scrolled)
+const PRIMARY_LINKS = NAV_LINKS.slice(0, 3);
+const MORE_LINKS = NAV_LINKS.slice(3);
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const moreRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -33,9 +39,24 @@ export function Header() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // useCallback để tránh effect ở MobileMenuOverlay re-run mỗi lần Header re-render
-  // (vd khi scroll trigger setScrolled) — H2 từ audit review
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+
+  // Đóng dropdown "More" khi click ngoài
+  useEffect(() => {
+    if (!moreOpen) return;
+    const handler = (e: Event) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, [moreOpen]);
+
+  // Đóng "More" khi chuyển sang trạng thái không compact
+  useEffect(() => {
+    if (!scrolled) setMoreOpen(false);
+  }, [scrolled]);
 
   // Khi menu mở, force "không scrolled" để pill trắng không xuất hiện trên bg-brand
   const pillVisible = scrolled && !menuOpen;
@@ -94,7 +115,7 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex">
-            {NAV_LINKS.map((link) => (
+            {(pillVisible ? PRIMARY_LINKS : NAV_LINKS).map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
@@ -104,6 +125,39 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* "···" dropdown — chỉ hiện khi compact pill */}
+            {pillVisible && (
+              <div ref={moreRef} className="relative">
+                <button
+                  onClick={() => setMoreOpen((v) => !v)}
+                  className="flex h-7 w-7 items-center justify-center rounded-full text-text/70 transition-colors hover:bg-text/5 hover:text-text"
+                  aria-label="Thêm"
+                  aria-expanded={moreOpen}
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <circle cx="3" cy="8" r="1.5" />
+                    <circle cx="8" cy="8" r="1.5" />
+                    <circle cx="13" cy="8" r="1.5" />
+                  </svg>
+                </button>
+                {moreOpen && (
+                  <div className="absolute right-0 top-full mt-2 min-w-[140px] rounded-xl bg-white py-1 shadow-lg ring-1 ring-black/5">
+                    {MORE_LINKS.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => setMoreOpen(false)}
+                        className="block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-text/70 transition-colors hover:bg-text/5 hover:text-text"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             <Link
               href="/#contact"
               onClick={(e) => handleHashNav(e, "/#contact")}
