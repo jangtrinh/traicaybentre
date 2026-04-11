@@ -16,8 +16,9 @@ next-env.d.ts
 .DS_Store
 Thumbs.db
 
-# Raw GDrive originals (too large for deploy, resized copies kept)
+# Raw source images (extraction only, not deployed)
 public/images/gdrive/
+Hinh Anh/
 
 # IDE
 .vscode/
