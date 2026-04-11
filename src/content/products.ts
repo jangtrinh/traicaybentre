@@ -94,6 +94,36 @@ export const products: Record<string, ProductEntry> = {
       zaloMessage: "Mình muốn đặt Xoài Tứ Quý Thạnh Phú",
     },
   },
+  "xoai-hoang-kim": {
+    slug: "xoai-hoang-kim",
+    name: "Xoài Hoàng Kim Thạnh Phú",
+    shortName: "Xoài Hoàng Kim",
+    tagline: "Tứ Quý da vàng kim — ngọt lịm không xơ, hàng hiếm từ vựa",
+    heroImage: "/images/xoai-hoang-kim/xoai-hoang-kim-hero-da-vang.jpg",
+    heroImageAlt: "Xoài Hoàng Kim Thạnh Phú — hộp quà vàng kim, nơ satin, thịt bổ cắt khối",
+    season: [4, 5, 6, 7, 8],
+    status: "active",
+    order: 1.5, // hiển thị giữa Tứ Quý và Dừa Xiêm
+    seo: {
+      title: "Xoài Hoàng Kim Thạnh Phú — Da Vàng Kim, Ngọt Lịm, Không Xơ | Hàng Hiếm",
+      description:
+        "Xoài Hoàng Kim Thạnh Phú Bến Tre — biến thể premium Tứ Quý da vàng kim. Ngọt lịm như Cát Hòa Lộc, gần không xơ. Hàng hiếm 35-45k/kg. Gọi: 0932 585 533.",
+      keywords: [
+        "xoài hoàng kim",
+        "xoài tứ quý hoàng kim",
+        "xoài hoàng kim thạnh phú",
+        "xoài hoàng kim bến tre",
+        "xoài da vàng bến tre",
+        "xoài premium bến tre",
+      ],
+      ogTitle: "Xoài Hoàng Kim — Da Vàng, Ngọt Lịm, Hàng Hiếm Từ Vựa Thạnh Phú",
+      ogDescription:
+        "Biến thể premium Tứ Quý: da vàng kim, ngọt lịm không xơ. Hàng hiếm, 35-45k/kg. Giao lạnh toàn quốc.",
+    },
+    cta: {
+      zaloMessage: "Mình muốn đặt Xoài Hoàng Kim Thạnh Phú (hàng hiếm)",
+    },
+  },
   "dua-xiem-ben-tre": {
     slug: "dua-xiem-ben-tre",
     name: "Dừa Xiêm Bến Tre",

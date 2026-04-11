@@ -23,6 +23,7 @@ import {
   SITE_URL,
 } from "@/lib/structured-data";
 import { XoaiTuQuyLanding } from "@/components/product/xoai-tu-quy-landing";
+import { XoaiHoangKimLanding } from "@/components/product/xoai-hoang-kim-landing";
 import { DuaXiemBenTreLanding } from "@/components/product/dua-xiem-ben-tre-landing";
 
 type Props = { params: Promise<{ product: string }> };
@@ -83,6 +84,7 @@ export default async function ProductPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
       {slug === "xoai-tu-quy" && <XoaiTuQuyLanding />}
+      {slug === "xoai-hoang-kim" && <XoaiHoangKimLanding />}
       {slug === "dua-xiem-ben-tre" && <DuaXiemBenTreLanding />}
       {/* Future products: add sibling bespoke components here, or route through
           a shared `<GenericProductLanding product={product} />` template. */}
