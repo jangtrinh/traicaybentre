@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Nước ngọt", "Gọt sẵn", "Quanh năm"],
     image: "/images/gdrive/Dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
-    sticker: "/images/gdrive/Dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+    sticker: "/images/loai-1.png",
     unit: "trái",
   },
   {
@@ -116,7 +116,7 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Hút chân không", "Nước ngọt", "Gọt sẵn"],
     image: "/images/gdrive/Dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
-    sticker: "/images/gdrive/Dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+    sticker: "/images/loai-2.png",
     unit: "trái",
   },
   {
@@ -136,7 +136,7 @@ export const PRODUCTS: Product[] = [
     stockUntil: "",
     tags: ["Rau câu dừa", "Ăn liền", "Quà biếu"],
     image: "/images/gdrive/Dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
-    sticker: "/images/gdrive/Dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
+    sticker: "/images/vip.png",
     unit: "trái",
   },
 ];
