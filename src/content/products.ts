@@ -103,7 +103,7 @@ export const products: Record<string, ProductEntry> = {
     heroImageAlt: "Xoài Hoàng Kim Thạnh Phú — hộp quà vàng kim, nơ satin, thịt bổ cắt khối",
     season: [4, 5, 6, 7, 8],
     status: "active",
-    order: 1.5, // hiển thị giữa Tứ Quý và Dừa Xiêm
+    order: 0, // #1 premium — hiển thị đầu tiên
     seo: {
       title: "Xoài Hoàng Kim Thạnh Phú — Da Vàng Kim, Ngọt Lịm, Không Xơ | Hàng Hiếm",
       description:

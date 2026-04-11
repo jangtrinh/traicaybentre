@@ -13,8 +13,8 @@ import { usePathname } from "next/navigation";
 import { MobileMenuOverlay, type NavLink } from "./mobile-menu-overlay";
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
   { label: "Hoàng Kim", href: "/xoai-hoang-kim" },
+  { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
   { label: "Dừa Xiêm", href: "/dua-xiem-ben-tre" },
   { label: "Nguồn gốc", href: "/nguon-goc" },
   { label: "Kiến thức", href: "/kien-thuc" },
