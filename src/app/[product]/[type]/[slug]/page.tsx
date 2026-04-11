@@ -111,7 +111,11 @@ export default async function ArticlePage({ params }: Props) {
   const canonical = `${SITE_URL}${article.urlPath}`;
   const hubHref = article.type === "kien-thuc" ? "/kien-thuc" : "/tin-tuc";
   const hubLabel = article.type === "kien-thuc" ? "Kiến thức" : "Tin tức";
-  const heroImageSrc = fm.ogImage ?? "/images/xoai-real-2.jpg";
+  // Product-aware hero fallback: dừa articles → dừa image, xoài → xoài image
+  const defaultHero = article.product === "dua-xiem-ben-tre"
+    ? "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg"
+    : "/images/xoai-real-2.jpg";
+  const heroImageSrc = fm.ogImage ?? defaultHero;
 
   const articleJsonLd = getArticleJsonLd({
     title: fm.title,
