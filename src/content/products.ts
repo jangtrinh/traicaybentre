@@ -99,7 +99,7 @@ export const products: Record<string, ProductEntry> = {
     name: "Dừa Xiêm Bến Tre",
     shortName: "Dừa Xiêm",
     tagline: "Dừa sọ gọt sẵn — nước ngọt thanh, uống là ghiền",
-    heroImage: "/images/gdrive/Dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
+    heroImage: "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
     heroImageAlt: "Dừa Xiêm Bến Tre — dừa sọ gọt sẵn xếp hàng tại vựa Thạnh Phú",
     season: "year-round",
     status: "active",

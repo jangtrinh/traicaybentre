@@ -110,7 +110,7 @@ export function DuaXiemBenTreLanding() {
           <FadeIn delay={0.1} className="flex justify-center">
             <div className="relative aspect-[4/3] w-full max-w-[480px] overflow-hidden rounded-3xl shadow-2xl md:aspect-[4/5]">
               <Image
-                src="/images/gdrive/Dua/dua-xiem-so-goc-goi-san-hang-loat.jpg"
+                src="/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg"
                 alt="Dừa Xiêm Bến Tre — dừa sọ gọt sẵn xếp hàng tại vựa Thạnh Phú"
                 fill
                 priority
@@ -162,27 +162,27 @@ export function DuaXiemBenTreLanding() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "/images/gdrive/Dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
+                src: "/images/dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
                 alt: "Dừa sọ Bến Tre đóng gói hút chân không premium",
               },
               {
-                src: "/images/gdrive/Dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
+                src: "/images/dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
                 alt: "Dừa sọ chóp nhọn xếp rổ xanh tại vựa",
               },
               {
-                src: "/images/gdrive/Dua/dua-xiem-cong-nhan-che-bien-tai-vua.jpg",
+                src: "/images/dua/dua-xiem-cong-nhan-che-bien-tai-vua.jpg",
                 alt: "Công nhân vựa Thạnh Phú gọt dừa xiêm thành dừa sọ",
               },
               {
-                src: "/images/gdrive/Dua/dua-xiem-xanh-nguyen-trai-dong-tai-vua.jpg",
+                src: "/images/dua/dua-xiem-xanh-nguyen-trai-dong-tai-vua.jpg",
                 alt: "Dừa xiêm xanh nguyên trái đống tại vựa Bến Tre",
               },
               {
-                src: "/images/gdrive/Dua/dua-xiem-so-tui-luoi-vang-van-chuyen.jpg",
+                src: "/images/dua/dua-xiem-so-tui-luoi-vang-van-chuyen.jpg",
                 alt: "Dừa sọ đóng túi lưới vàng chuẩn bị vận chuyển",
               },
               {
-                src: "/images/gdrive/Dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
+                src: "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
                 alt: "Dừa sọ gọt sẵn xếp hàng loạt tại vựa",
               },
             ].map((img, i) => (
