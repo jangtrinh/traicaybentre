@@ -162,28 +162,28 @@ export function DuaXiemBenTreLanding() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "/images/dua/dua-xiem-so-goi-hut-chan-khong-premium.jpg",
-                alt: "Dừa sọ Bến Tre đóng gói hút chân không premium",
+                src: "/images/dua/dua-so-hut-chan-khong-tay-cam-premium.jpg",
+                alt: "Dừa sọ Bến Tre đóng gói hút chân không premium — tay cầm",
               },
               {
-                src: "/images/dua/dua-xiem-so-chop-nhon-ro-xanh.jpg",
-                alt: "Dừa sọ chóp nhọn xếp rổ xanh tại vựa",
+                src: "/images/dua/dua-so-hang-loat-khoan-nap-nhin-tu-tren.jpg",
+                alt: "Dừa sọ gọt sẵn khoan nắp xếp hàng loạt — nhìn từ trên",
               },
               {
-                src: "/images/dua/dua-xiem-cong-nhan-che-bien-tai-vua.jpg",
-                alt: "Công nhân vựa Thạnh Phú gọt dừa xiêm thành dừa sọ",
+                src: "/images/dua/cong-nhan-got-dua-may-chuyen-dung.jpg",
+                alt: "Công nhân vựa gọt dừa bằng máy chuyên dụng tại Thạnh Phú",
               },
               {
-                src: "/images/dua/dua-xiem-xanh-nguyen-trai-dong-tai-vua.jpg",
-                alt: "Dừa xiêm xanh nguyên trái đống tại vựa Bến Tre",
+                src: "/images/dua/dua-xiem-xanh-dong-lon-vua-ngoai-troi.jpg",
+                alt: "Dừa xiêm xanh nguyên trái đống lớn tại vựa ngoài trời",
               },
               {
-                src: "/images/dua/dua-xiem-so-tui-luoi-vang-van-chuyen.jpg",
-                alt: "Dừa sọ đóng túi lưới vàng chuẩn bị vận chuyển",
+                src: "/images/dua/dua-so-tui-luoi-vang-dong-goi-ship.jpg",
+                alt: "Dừa sọ đóng túi lưới vàng chuẩn bị ship toàn quốc",
               },
               {
-                src: "/images/dua/dua-xiem-so-goc-goi-san-hang-loat.jpg",
-                alt: "Dừa sọ gọt sẵn xếp hàng loạt tại vựa",
+                src: "/images/dua/dua-so-tron-day-ro-xanh-nhin-tu-tren.jpg",
+                alt: "Dừa sọ tròn đầy rổ xanh — nhìn từ trên xuống tại vựa",
               },
             ].map((img, i) => (
               <FadeIn key={img.src} delay={i * 0.05}>
