@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "hoangKim": "황금 망고",
+    "xoaiTuQuy": "뜨꿰이 망고",
+    "duaXiem": "영코코넛",
+    "nguonGoc": "우리 이야기",
+    "kienThuc": "정보",
+    "tinTuc": "소식",
+    "lienHe": "문의",
+    "more": "더보기",
+    "brandName": "벤째 과일",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기"
+  },
+  "hero": {
+    "phrases": {
+      "0": ["진한 달콤함", "은은한 짠맛", "혀끝에서"],
+      "1": ["모래 토양", "바닷가", "타인푸"],
+      "2": ["새벽에 수확", "오후에 출하", "내일 도착"],
+      "3": ["지리적 표시", "#00124", "인증 획득"]
+    },
+    "desc1": "벤째성 타인푸의 뜨꿰이 망고 — 해안 모래 토양에서 자라 자연 염분이 스며들어 혀끝에 은은한 짠맛이 느껴지는, 다른 지역에서는 재현할 수 없는 독특한 맛입니다.",
+    "desc2": "아침에 수확하여 오후에 냉장 배송합니다.",
+    "desc2Bold": "푹 씨가 새벽 4시부터 저녁까지 전화를 받습니다",
+    "desc2Prefix": "매일 아침 가격 업데이트 — ",
+    "scrollHint1": "아래로 스크롤",
+    "scrollHint2": "지금 확인하세요",
+    "viewImage": "이미지 보기"
+  },
+  "products": {
+    "sectionTag": "현재 재고 상품",
+    "sectionTitle": "벤째",
+    "sectionHighlight": "특산품",
+    "viewImage": "이미지 보기",
+    "getQuote": "견적 요청",
+    "priceUnit": "₫/kg",
+    "priceNote": "가격은 매일 변동 — 푹 씨에게 오늘 정확한 가격을 문의하세요",
+    "priceUntil": "가격 적용 기한"
+  },
+  "process": {
+    "sectionTag": "왜 타인푸만 가능한가",
+    "sectionTitle": "과수원에서 시장까지",
+    "sectionDesc": "껀터나 띠엔장에서 재배한 뜨꿰이 망고도 달지만 — 혀끝의 은은한 짠맛은 없습니다. 타인푸의 해�� 모래 토양만이 그 맛을 만들어냅니다."
+  },
+  "calendar": {
+    "sectionTitle": "수확 캘린더 — 제철을 알면, 제값에 구매",
+    "sectionDesc": "뜨꿰이 망고는 연 3회 결실 — 매월 재고 보유, 품절 걱정 없음",
+    "typeLabel": "품종",
+    "peakSeason": "성수기",
+    "earlySeason": "초/말기",
+    "currentMonth": "이번 달",
+    "months": ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+  },
+  "certification": {
+    "sectionTitle": "인증 및 검증",
+    "items": {
+      "cddl": { "title": "지리적 표시 #00124", "desc": "베트남 지적재산국 2022년 인증" },
+      "ocop": { "title": "OCOP 벤째", "desc": "일촌일품 프로그램" },
+      "gap": { "title": "GlobalGAP", "desc": "국제 농업 표준" },
+      "qr": { "title": "QR 추적", "desc": "농장명, 수확일, 수확자 정보" }
+    }
+  },
+  "wholesale": {
+    "sectionTag": "도매 파트너를 위한",
+    "sectionTitle1": "도매 직거래",
+    "sectionTitle2": "농장에서 직접",
+    "badgeLabel": "푹장 농장 · 타인푸",
+    "customerTypes": "소매상 · 유통업체 · 호텔 & 레스토랑",
+    "headline": "농장 직거래 — 중간 마진 없음",
+    "desc": "농장에서 직접 ���매, 중개인 없이, 추가 비용 없이. 매일 아침 가격 업데이트, 원하는 대로 포장 — 필요한 대로 맞춰드립니다.",
+    "items": [
+      "톤 단위 도매가, 매일 업데이트",
+      "최소 주문: 1박스 (20kg) — 먼저 시도해보세요",
+      "배송비 사전 안내 — 노선 및 포장에 따라 상이",
+      "3회 주문 후 외상 가능",
+      "VAT 세금계산서 발행 가능"
+    ],
+    "ctaPrimary": "도매가 확인",
+    "ctaPhone": "0932 585 533",
+    "ctaNote": "Zalo 5분 이내 답변 · 새벽 4시 – 오후 6시 · 푹 씨"
+  },
+  "testimonials": {
+    "sectionTag": "파트너들의 한마디",
+    "viewLabel": "{total}개 중 {current}번째 후기"
+  },
+  "social": {
+    "sectionTag": "SNS에서 만나보세요",
+    "sectionTitle": "실제 농장을 확인하세요",
+    "sectionDesc": "타인푸 과수원에서 촬영한 영상 — 수확, 포장, 배송. 연출 없음, 필터 없음."
+  },
+  "news": {
+    "sectionTag": "소식 & 시세",
+    "sectionTitle": "농장 최신 소식",
+    "sectionDesc": "월별 시세, 망고 레시피, 타인푸 농장 이야기 — 정기 업데이트",
+    "readMore": "더 읽기",
+    "viewAll": "모든 소식 보기"
+  },
+  "faq": {
+    "sectionTitle": "자주 묻는 질문"
+  },
+  "contact": {
+    "sectionTag": "문의하기",
+    "sectionTitle": "연락 드리겠습니다",
+    "zaloLabel": "Zalo (빠른 답변)",
+    "zaloValue": "0932 585 533",
+    "zaloSub": "푹 씨가 5분 이내 답변",
+    "phoneLabel": "직접 전화",
+    "phoneValue": "0932 585 533",
+    "phoneSub": "새벽 4시 – 오후 6시 · 푹 씨",
+    "addressLabel": "농장 주소",
+    "addressValue": "타인푸, 벤째",
+    "addressSub": "새벽 4시 오픈",
+    "tipTitle": "신규 파트너를 위한 팁",
+    "tipDesc": "20kg 1박스로 시작하여 2~3일 시험 판매 후, 기존 공급처와 고객 반응을 비교해보세요. 고객이 더 좋아하면 점차 물량을 늘리세요 — 강요하지 않습니다.",
+    "formName": "성함",
+    "formNamePlaceholder": "예: 홍길동",
+    "formPhone": "전화번호 / Zalo",
+    "formPhonePlaceholder": "0912 345 678",
+    "formType": "업종 선택",
+    "formTypes": ["소매상", "유통업체", "호텔 / 레스토랑"],
+    "formNote": "추가 메모",
+    "formNotePlaceholder": "예: 익은 1등급 망고 50kg, 매주 수요일 배송...",
+    "formSubmit": "정보 전송 — 연락 드리겠습니다",
+    "formSending": "전송 중...",
+    "formSuccessTitle": "전송 완료!",
+    "formSuccessMsg": "{name}님 감사합니다! 정보를 수신했습니다.",
+    "formSuccessCallback": "푹 씨가 {phone}로 15분 이내 연락 드리겠습니다 (영업시간 기준).",
+    "formSuccessReset": "다른 문의 보내기",
+    "formErrorDefault": "전송 실패 — 다시 시도하시거나, Zalo 0932 585 533으로 직접 연락해주세요."
+  },
+  "footer": {
+    "followUs": "팔로우하기",
+    "sanPham": "제품",
+    "officialSite": "타인푸 뜨꿰이 망고 농장 공식 웹사이트",
+    "copyright": "© 2026 뜨꿰이 망고 벤째 · 지리적 표시 #00124 · 타인푸, 벤째"
+  },
+  "common": {
+    "required": "*"
+  }
+}

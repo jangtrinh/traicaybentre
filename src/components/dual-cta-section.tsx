@@ -1,28 +1,24 @@
 import { CheckCircle, Phone, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { FadeIn } from "./fade-in";
+import { getTranslations } from "next-intl/server";
 
-const WHOLESALE_ITEMS = [
-  "Giá sỉ theo tấn, cập mỗi sáng",
-  "Lấy tối thiểu 1 thùng 20kg — thử trước rồi tính",
-  "Phí ship báo trước — tuỳ tuyến, tuỳ quy cách",
-  "Ghi sổ công nợ sau 3 đơn quen",
-  "Xuất hoá đơn VAT đầy đủ",
-];
+export async function DualCtaSection() {
+  const t = await getTranslations("wholesale");
+  const items = t.raw("items") as string[];
 
-export function DualCtaSection() {
   return (
     <section className="bg-brand px-5 py-24">
       <div className="mx-auto max-w-[1100px]">
         <FadeIn>
           <span className="block text-center text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-            Dành cho bạn hàng
+            {t("sectionTag")}
           </span>
           <h2 className="mt-3 text-center font-heading text-4xl font-bold uppercase leading-tight text-text sm:text-5xl lg:text-6xl">
-            Lấy Mối Sỉ
+            {t("sectionTitle1")}
             <br />
-            <span className="text-mango">Thẳng Từ Vựa</span>
+            <span className="text-mango">{t("sectionTitle2")}</span>
           </h2>
         </FadeIn>
 
@@ -43,7 +39,7 @@ export function DualCtaSection() {
               <div className="absolute bottom-5 left-5 right-5">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-wider text-text shadow-sm backdrop-blur-sm">
                   <span className="h-2 w-2 rounded-full bg-mango" />
-                  Vựa Phúc Giang · Thạnh Phú
+                  {t("badgeLabel")}
                 </span>
               </div>
             </div>
@@ -51,18 +47,17 @@ export function DualCtaSection() {
             {/* Content side */}
             <div className="flex flex-col p-8 sm:p-10 lg:col-span-3 lg:p-12">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-                Tiểu thương · Đại lý · Nhà hàng / Khách sạn
+                {t("customerTypes")}
               </span>
               <h3 className="mt-3 font-heading text-2xl font-bold text-text sm:text-3xl">
-                Giá tận gốc — không qua tay ai
+                {t("headline")}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-text/60 sm:text-base">
-                Bạn hàng lấy thẳng từ vựa, không qua trung gian, không đội giá.
-                Giá cập mỗi sáng, đóng thùng theo ý bạn hàng — cần sao vựa làm vậy.
+                {t("desc")}
               </p>
 
               <ul className="mt-6 space-y-3">
-                {WHOLESALE_ITEMS.map((item, j) => (
+                {items.map((item, j) => (
                   <li
                     key={j}
                     className="flex items-start gap-3 text-sm leading-snug text-text/80 sm:text-base"
@@ -82,7 +77,7 @@ export function DualCtaSection() {
                   href="#contact"
                   className="group inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-black px-6 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5 hover:bg-text"
                 >
-                  Xem giá sỉ
+                  {t("ctaPrimary")}
                   <ArrowRight
                     size={16}
                     weight="bold"
@@ -94,11 +89,11 @@ export function DualCtaSection() {
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-text/15 px-6 py-4 text-sm font-bold text-text transition-colors hover:border-text"
                 >
                   <Phone size={16} weight="bold" />
-                  0932 585 533
+                  {t("ctaPhone")}
                 </a>
               </div>
               <p className="mt-3 text-center text-xs text-text/40 sm:text-left">
-                Zalo trả trong 5 phút · 4h sáng – 18h · Anh Phúc nghe máy
+                {t("ctaNote")}
               </p>
             </div>
           </div>

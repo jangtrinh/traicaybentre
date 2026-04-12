@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "hoangKim": "Hoàng Kim",
+    "xoaiTuQuy": "Xoài Tứ Quý",
+    "duaXiem": "Dừa Xiêm",
+    "nguonGoc": "Nguồn gốc",
+    "kienThuc": "Kiến thức",
+    "tinTuc": "Tin tức",
+    "lienHe": "Liên hệ",
+    "more": "Thêm",
+    "brandName": "Trái Cây Bến Tre",
+    "openMenu": "Mở menu",
+    "closeMenu": "Đóng menu"
+  },
+  "hero": {
+    "phrases": {
+      "0": ["Ngọt Đậm", "Vị Mặn Nhẹ", "Cuối Lưỡi"],
+      "1": ["Đất Giồng Cát", "Ven Biển", "Thạnh Phú"],
+      "2": ["Sáng Hái", "Chiều Lên Xe", "Sáng Mai Tới"],
+      "3": ["CDĐL #00124", "Chỉ Dẫn", "Địa Lý Riêng"]
+    },
+    "desc1": "Xoài Tứ Quý Thạnh Phú, Bến Tre — trồng trên đất giồng cát ven biển, nhiễm mặn tự nhiên nên vị xoài có chút mặn nhẹ cuối lưỡi, không chỗ nào làm lại được.",
+    "desc2": "Sáng hái ngoài vườn, chiều lên xe lạnh ra Hà Nội.",
+    "desc2Bold": "Anh Phúc nghe máy từ 4h sáng tới tối",
+    "desc2Prefix": "Giá cập mỗi sáng — ",
+    "scrollHint1": "cuộn xuống",
+    "scrollHint2": "khám phá ngay",
+    "viewImage": "Xem ảnh"
+  },
+  "products": {
+    "sectionTag": "Hàng vựa đang có",
+    "sectionTitle": "Đặc Sản",
+    "sectionHighlight": "Bến Tre",
+    "viewImage": "Xem ảnh",
+    "getQuote": "Nhận báo giá",
+    "priceUnit": "đ/kg",
+    "priceNote": "Giá đổi mỗi sáng — gọi Anh Phúc lấy giá chuẩn ngày",
+    "priceUntil": "Giá áp dụng đến"
+  },
+  "process": {
+    "sectionTag": "Tại sao chỉ Thạnh Phú",
+    "sectionTitle": "Từ vườn ra tới sạp",
+    "sectionDesc": "Xoài Tứ Quý trồng Cần Thơ, Tiền Giang vẫn ngọt — nhưng không có cái mặn nhẹ cuối lưỡi. Chỉ đất giồng cát Thạnh Phú mới cho ra được."
+  },
+  "calendar": {
+    "sectionTitle": "Lịch Mùa — Biết Mùa, Lấy Đúng Giá",
+    "sectionDesc": "Xoài Tứ Quý ra trái 3 vụ/năm — tháng nào vựa cũng có hàng, bạn hàng khỏi lo đứt",
+    "typeLabel": "Loại",
+    "peakSeason": "Chính vụ",
+    "earlySeason": "Đầu/cuối vụ",
+    "currentMonth": "Tháng này",
+    "months": ["T1","T2","T3","T4","T5","T6","T7","T8","T9","T10","T11","T12"]
+  },
+  "certification": {
+    "sectionTitle": "Giấy Tờ Đàng Hoàng",
+    "items": {
+      "cddl": { "title": "CDĐL #00124", "desc": "Chỉ dẫn địa lý — Cục SHTT cấp 11/2022" },
+      "ocop": { "title": "OCOP Bến Tre", "desc": "Chương trình Mỗi Xã Một Sản Phẩm" },
+      "gap": { "title": "GlobalGAP", "desc": "Tiêu chuẩn nông nghiệp quốc tế" },
+      "qr": { "title": "QR Truy Xuất", "desc": "Tên vườn, ngày hái, người thu hoạch" }
+    }
+  },
+  "wholesale": {
+    "sectionTag": "Dành cho bạn hàng",
+    "sectionTitle1": "Lấy Mối Sỉ",
+    "sectionTitle2": "Thẳng Từ Vựa",
+    "badgeLabel": "Vựa Phúc Giang · Thạnh Phú",
+    "customerTypes": "Tiểu thương · Đại lý · Nhà hàng / Khách sạn",
+    "headline": "Giá tận gốc — không qua tay ai",
+    "desc": "Bạn hàng lấy thẳng từ vựa, không qua trung gian, không đội giá. Giá cập mỗi sáng, đóng thùng theo ý bạn hàng — cần sao vựa làm vậy.",
+    "items": [
+      "Giá sỉ theo tấn, cập mỗi sáng",
+      "Lấy tối thiểu 1 thùng 20kg — thử trước rồi tính",
+      "Phí ship báo trước — tuỳ tuyến, tuỳ quy cách",
+      "Ghi sổ công nợ sau 3 đơn quen",
+      "Xuất hoá đơn VAT đầy đủ"
+    ],
+    "ctaPrimary": "Xem giá sỉ",
+    "ctaPhone": "0932 585 533",
+    "ctaNote": "Zalo trả trong 5 phút · 4h sáng – 18h · Anh Phúc nghe máy"
+  },
+  "testimonials": {
+    "sectionTag": "Bạn hàng nói vầy",
+    "viewLabel": "Xem nhận xét {current} trên {total}"
+  },
+  "social": {
+    "sectionTag": "Vựa trên mạng xã hội",
+    "sectionTitle": "Coi thực tế tại vườn",
+    "sectionDesc": "Video quay tại vườn Thạnh Phú — thu hoạch, đóng thùng, giao hàng. Không dàn dựng, không filter."
+  },
+  "news": {
+    "sectionTag": "Tin tức & báo giá",
+    "sectionTitle": "Tin mới từ vựa",
+    "sectionDesc": "Báo giá tháng, món ngon từ xoài, và chuyện vựa Thạnh Phú — cập đều tay",
+    "readMore": "Đọc tiếp",
+    "viewAll": "Coi tất cả tin"
+  },
+  "faq": {
+    "sectionTitle": "Câu hỏi thường gặp"
+  },
+  "contact": {
+    "sectionTag": "Liên hệ lấy mối",
+    "sectionTitle": "Để Vựa Gọi Lại",
+    "zaloLabel": "Zalo (trả nhanh)",
+    "zaloValue": "0932 585 533",
+    "zaloSub": "Anh Phúc trả trong 5 phút",
+    "phoneLabel": "Gọi trực tiếp",
+    "phoneValue": "0932 585 533",
+    "phoneSub": "4h sáng – 18h · Anh Phúc nghe máy",
+    "addressLabel": "Địa chỉ vựa",
+    "addressValue": "Thạnh Phú, Bến Tre",
+    "addressSub": "Mở cửa 4h sáng",
+    "tipTitle": "Mẹo cho mối mới",
+    "tipDesc": "Lấy 1 thùng 20kg, bán thử 2–3 ngày, coi khách nói sao so với mối cũ. Khách khen hơn thì tăng đơn dần — vựa không ép.",
+    "formName": "Anh/chị tên gì",
+    "formNamePlaceholder": "VD: Anh Hùng",
+    "formPhone": "SĐT / Zalo",
+    "formPhonePlaceholder": "0912 345 678",
+    "formType": "Anh/chị là",
+    "formTypes": ["Tiểu thương", "Đại lý", "Nhà hàng / Khách sạn"],
+    "formNote": "Nhắn thêm",
+    "formNotePlaceholder": "VD: Cần 50kg xoài chín Loại 1, giao thứ 4 mỗi tuần...",
+    "formSubmit": "Gửi thông tin — vựa gọi lại",
+    "formSending": "Đang gửi...",
+    "formSuccessTitle": "Gửi thành công!",
+    "formSuccessMsg": "Cảm ơn anh/chị {name}! Vựa đã nhận thông tin.",
+    "formSuccessCallback": "Anh Phúc sẽ gọi vô {phone} trong vòng 15 phút (giờ làm việc).",
+    "formSuccessReset": "Gửi liên hệ khác",
+    "formErrorDefault": "Gửi không được rồi — anh/chị thử lại, hoặc Zalo 0932 585 533 để vựa nhận trực tiếp nha."
+  },
+  "footer": {
+    "followUs": "Theo dõi vựa",
+    "sanPham": "Sản phẩm",
+    "officialSite": "Trang chính thức của vựa Xoài Tứ Quý Thạnh Phú",
+    "copyright": "© 2026 Xoài Tứ Quý Bến Tre · CDĐL số 00124 · Thạnh Phú, Bến Tre"
+  },
+  "common": {
+    "required": "*"
+  }
+}

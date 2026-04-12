@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import { FadeIn } from "./fade-in";
 import { TESTIMONIALS } from "@/lib/landing-data";
+import { useTranslations } from "next-intl";
 
 export function TestimonialSection() {
+  const t = useTranslations("testimonials");
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export function TestimonialSection() {
       <div className="mx-auto max-w-[800px] text-center">
         <FadeIn>
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-            Bạn hàng nói vầy
+            {t("sectionTag")}
           </span>
         </FadeIn>
 
@@ -49,7 +51,7 @@ export function TestimonialSection() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              aria-label={`Xem nhận xét ${i + 1} trên ${TESTIMONIALS.length}`}
+              aria-label={t("viewLabel", { current: i + 1, total: TESTIMONIALS.length })}
               className={`h-2.5 rounded-full transition-all duration-300 ${
                 i === active
                   ? "w-8 bg-text"

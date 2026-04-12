@@ -1,8 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { BrandIcon } from "./brand-icon";
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
+
   return (
     <footer className="bg-brand px-5 pt-20 pb-10">
       <div className="mx-auto max-w-[1440px]">
@@ -18,7 +22,7 @@ export function Footer() {
             />
             <div className="mt-6">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-                Theo dõi vựa
+                {t("followUs")}
               </span>
               <div className="mt-3 flex items-center gap-4">
                 {(["facebook", "tiktok", "instagram"] as const).map((brand) => (
@@ -33,15 +37,15 @@ export function Footer() {
           {/* Nav links — jinzhenlian 2-column style */}
           <div className="flex gap-20">
             <div className="flex flex-col gap-4">
-              <Link href="/san-pham" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Sản phẩm</Link>
-              <a href="/xoai-tu-quy" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Xoài Tứ Quý</a>
-              <a href="/dua-xiem-ben-tre" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Dừa Xiêm</a>
-              <a href="/nguon-goc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Nguồn gốc</a>
+              <Link href="/san-pham" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{t("sanPham")}</Link>
+              <Link href="/xoai-tu-quy" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{tNav("xoaiTuQuy")}</Link>
+              <Link href="/dua-xiem-ben-tre" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{tNav("duaXiem")}</Link>
+              <Link href="/nguon-goc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{tNav("nguonGoc")}</Link>
             </div>
             <div className="flex flex-col gap-4">
-              <a href="/kien-thuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Kiến thức</a>
-              <a href="/tin-tuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Tin tức</a>
-              <a href="/#contact" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">Liên hệ</a>
+              <Link href="/kien-thuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{tNav("kienThuc")}</Link>
+              <Link href="/tin-tuc" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{tNav("tinTuc")}</Link>
+              <Link href="/#contact" className="text-base font-semibold uppercase text-text hover:text-text/60 transition-colors">{tNav("lienHe")}</Link>
             </div>
           </div>
         </div>
@@ -50,7 +54,7 @@ export function Footer() {
         {/* Official site promote */}
         <div className="mt-16 rounded-2xl bg-text/5 p-6 text-center">
           <p className="text-sm font-semibold text-text/70">
-            Trang chính thức của vựa Xoài Tứ Quý Thạnh Phú
+            {t("officialSite")}
           </p>
           <a
             href="https://xoaituquythanhphu.com"
@@ -64,7 +68,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-text/10 pt-6">
           <p className="text-sm text-text/30">
-            © 2026 Xoài Tứ Quý Bến Tre · CDĐL số 00124 · Thạnh Phú, Bến Tre
+            {t("copyright")}
           </p>
         </div>
       </div>

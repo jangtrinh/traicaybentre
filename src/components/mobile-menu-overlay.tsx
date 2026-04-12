@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, type RefObject } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 
 export type NavLink = { label: string; href: string };
 
@@ -33,6 +33,7 @@ export function MobileMenuOverlay({
   navLinks,
   hamburgerRef,
 }: MobileMenuOverlayProps) {
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
@@ -113,7 +114,7 @@ export function MobileMenuOverlay({
       id="mobile-menu"
       role="dialog"
       aria-modal="true"
-      aria-label="Menu điều hướng"
+      aria-label="Navigation menu"
       aria-hidden={!open}
       inert={!open}
       className={`fixed inset-0 z-40 bg-brand lg:hidden transition-opacity duration-300 ease-out ${
@@ -159,7 +160,7 @@ export function MobileMenuOverlay({
             open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Liên hệ
+          {t("lienHe")}
         </Link>
       </div>
     </div>

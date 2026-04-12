@@ -6,6 +6,7 @@ import { MapPin, Clock, Drop, Leaf, Sparkle, Cookie, Basket, Gift } from "@phosp
 import { FadeIn } from "./fade-in";
 import { PRODUCTS, type Product } from "@/lib/landing-data";
 import type { Icon } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 
 /* Map tag text → Phosphor icon */
 const TAG_ICONS: Record<string, Icon> = {
@@ -21,6 +22,7 @@ const TAG_ICONS: Record<string, Icon> = {
 };
 
 function ProductCardCarousel({ images, name }: { images: string[]; name: string }) {
+  const t = useTranslations("products");
   const [current, setCurrent] = useState(0);
 
   const next = useCallback(() => {
@@ -64,7 +66,7 @@ function ProductCardCarousel({ images, name }: { images: string[]; name: string 
           <button
             key={i}
             onClick={(e) => { e.preventDefault(); setCurrent(i); }}
-            aria-label={`Xem ảnh ${i + 1}`}
+            aria-label={t("viewImage")}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               i === current ? "w-4 bg-white/80" : "w-1.5 bg-white/40"
             }`}
@@ -76,8 +78,8 @@ function ProductCardCarousel({ images, name }: { images: string[]; name: string 
 }
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
+  const t = useTranslations("products");
   const [hovered, setHovered] = useState(false);
-  const unitLabel = product.unit ? `/${product.unit}` : "/kg";
   const cardImages = product.images?.length ? product.images : [product.image];
 
   return (
@@ -140,17 +142,17 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             <div className="font-heading text-3xl font-bold text-text">
               {product.priceSi}
               <span className="text-sm font-medium text-text-secondary">
-                đ/kg
+                {t("priceUnit")}
               </span>
             </div>
             <p className="mt-1 text-xs text-text-muted">
-              Giá đổi mỗi sáng — gọi Anh Phúc lấy giá chuẩn ngày
+              {t("priceNote")}
             </p>
           </div>
 
           {product.stockUntil && (
             <p className="mt-2 flex items-center gap-1 text-xs font-semibold text-red-600">
-              <Clock size={12} weight="bold" /> Giá áp dụng đến{" "}
+              <Clock size={12} weight="bold" /> {t("priceUntil")}{" "}
               {product.stockUntil}
             </p>
           )}
@@ -160,7 +162,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             href="#contact"
             className="mt-5 block w-full rounded-full bg-black py-4 text-center text-sm font-bold uppercase tracking-[0.15em] text-white hover:bg-text transition-colors"
           >
-            Nhận báo giá
+            {t("getQuote")}
           </a>
         </div>
       </div>
@@ -169,16 +171,18 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 }
 
 export function ProductSection() {
+  const t = useTranslations("products");
+
   return (
     <section id="products" className="bg-brand-cream px-5 py-24">
       <div className="mx-auto max-w-[1440px]">
         <FadeIn>
           <div className="mb-16 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Hàng vựa đang có
+              {t("sectionTag")}
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Đặc Sản <span className="text-mango">Bến Tre</span>
+              {t("sectionTitle")} <span className="text-mango">{t("sectionHighlight")}</span>
             </h2>
           </div>
         </FadeIn>

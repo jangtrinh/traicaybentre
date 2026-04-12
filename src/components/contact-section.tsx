@@ -3,31 +3,17 @@
 import { useState, useRef } from "react";
 import { ChatCircleDots, Phone, MapPin, Lightbulb, CheckCircle, CircleNotch } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
+import { useTranslations } from "next-intl";
+import type { Icon } from "@phosphor-icons/react";
 
-const CONTACT_INFO = [
-  {
-    Icon: ChatCircleDots,
-    label: "Zalo (trả nhanh)",
-    value: "0932 585 533",
-    sub: "Anh Phúc trả trong 5 phút",
-  },
-  {
-    Icon: Phone,
-    label: "Gọi trực tiếp",
-    value: "0932 585 533",
-    sub: "4h sáng – 18h · Anh Phúc nghe máy",
-  },
-  {
-    Icon: MapPin,
-    label: "Địa chỉ vựa",
-    value: "Thạnh Phú, Bến Tre",
-    sub: "Mở cửa 4h sáng",
-  },
-];
-
-const CUSTOMER_TYPES = ["Tiểu thương", "Đại lý", "Nhà hàng / Khách sạn"];
+const CONTACT_ICONS: Icon[] = [ChatCircleDots, Phone, MapPin];
+const CONTACT_KEYS = ["zalo", "phone", "address"] as const;
 
 export function ContactSection() {
+  const t = useTranslations("contact");
+  const tCommon = useTranslations("common");
+  const customerTypes = t.raw("formTypes") as string[];
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [customerType, setCustomerType] = useState("");
@@ -62,7 +48,7 @@ export function ContactSection() {
       setErrorMsg(
         err instanceof Error
           ? err.message
-          : "Gửi không được rồi — anh/chị thử lại, hoặc Zalo 0932 585 533 để vựa nhận trực tiếp nha.",
+          : t("formErrorDefault"),
       );
     }
   };
@@ -73,10 +59,10 @@ export function ContactSection() {
         <FadeIn>
           <div className="mb-16 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Liên hệ lấy mối
+              {t("sectionTag")}
             </span>
             <h2 className="mt-3 font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Để Vựa Gọi Lại
+              {t("sectionTitle")}
             </h2>
           </div>
         </FadeIn>
@@ -85,30 +71,33 @@ export function ContactSection() {
           {/* Contact info */}
           <FadeIn delay={0.08}>
             <div>
-              {CONTACT_INFO.map((c, i) => (
-                <div key={i} className="mb-8 flex gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-text/8">
-                    <c.Icon size={24} weight="duotone" className="text-text/70" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-text/40">
-                      {c.label}
+              {CONTACT_KEYS.map((key, i) => {
+                const ContactIcon = CONTACT_ICONS[i];
+                return (
+                  <div key={key} className="mb-8 flex gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-text/8">
+                      <ContactIcon size={24} weight="duotone" className="text-text/70" />
                     </div>
-                    <div className="mt-1 text-xl font-bold text-text">
-                      {c.value}
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-[0.2em] text-text/40">
+                        {t(`${key}Label`)}
+                      </div>
+                      <div className="mt-1 text-xl font-bold text-text">
+                        {t(`${key}Value`)}
+                      </div>
+                      <div className="mt-0.5 text-sm text-text/40">{t(`${key}Sub`)}</div>
                     </div>
-                    <div className="mt-0.5 text-sm text-text/40">{c.sub}</div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
 
               <div className="mt-4 rounded-2xl bg-brand-cream/80 p-6">
                 <p className="mb-2 flex items-center gap-2 text-sm font-bold text-text/70">
                   <Lightbulb size={16} weight="fill" />
-                  Mẹo cho mối mới
+                  {t("tipTitle")}
                 </p>
                 <p className="text-sm leading-relaxed text-text/50">
-                  Lấy 1 thùng 20kg, bán thử 2–3 ngày, coi khách nói sao so với mối cũ. Khách khen hơn thì tăng đơn dần — vựa không ép.
+                  {t("tipDesc")}
                 </p>
               </div>
             </div>
@@ -122,13 +111,13 @@ export function ContactSection() {
                   <CheckCircle size={48} weight="fill" className="text-green-600" />
                 </div>
                 <h3 className="mb-2 font-heading text-2xl font-bold text-text">
-                  Gửi thành công!
+                  {t("formSuccessTitle")}
                 </h3>
                 <p className="mb-1 text-text/60">
-                  Cảm ơn anh/chị <strong>{name}</strong>! Vựa đã nhận thông tin.
+                  {t("formSuccessMsg", { name })}
                 </p>
                 <p className="text-text/60">
-                  Anh Phúc sẽ gọi vô <strong>{phone}</strong> trong vòng 15 phút (giờ làm việc).
+                  {t("formSuccessCallback", { phone })}
                 </p>
                 <button
                   onClick={() => {
@@ -142,7 +131,7 @@ export function ContactSection() {
                   }}
                   className="mt-6 rounded-full border-2 border-text/15 px-6 py-2.5 text-sm font-semibold text-text/60 hover:border-text hover:text-text transition-colors"
                 >
-                  Gửi liên hệ khác
+                  {t("formSuccessReset")}
                 </button>
               </div>
             ) : (
@@ -163,38 +152,38 @@ export function ContactSection() {
 
                 <div className="mb-6">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Anh/chị tên gì <span className="text-red-500">*</span>
+                    {t("formName")} <span className="text-red-500">{tCommon("required")}</span>
                   </label>
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="VD: Anh Hùng"
+                    placeholder={t("formNamePlaceholder")}
                     className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
                   />
                 </div>
 
                 <div className="mb-6">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    SĐT / Zalo <span className="text-red-500">*</span>
+                    {t("formPhone")} <span className="text-red-500">{tCommon("required")}</span>
                   </label>
                   <input
                     type="tel"
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="0912 345 678"
+                    placeholder={t("formPhonePlaceholder")}
                     className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
                   />
                 </div>
 
                 <div className="mb-6">
                   <label className="mb-3 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Anh/chị là <span className="text-red-500">*</span>
+                    {t("formType")} <span className="text-red-500">{tCommon("required")}</span>
                   </label>
                   <div className="flex flex-wrap gap-2">
-                    {CUSTOMER_TYPES.map((opt) => (
+                    {customerTypes.map((opt) => (
                       <label
                         key={opt}
                         className={`flex cursor-pointer items-center gap-2 rounded-full border-2 px-5 py-2.5 text-sm font-semibold transition-colors ${
@@ -219,12 +208,12 @@ export function ContactSection() {
 
                 <div className="mb-6">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.15em] text-text/50">
-                    Nhắn thêm
+                    {t("formNote")}
                   </label>
                   <textarea
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
-                    placeholder="VD: Cần 50kg xoài chín Loại 1, giao thứ 4 mỗi tuần..."
+                    placeholder={t("formNotePlaceholder")}
                     rows={3}
                     className="w-full resize-none border-b-2 border-text/15 bg-transparent py-3 font-[inherit] text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
                   />
@@ -242,10 +231,10 @@ export function ContactSection() {
                   {status === "sending" ? (
                     <>
                       <CircleNotch size={18} className="animate-spin" />
-                      Đang gửi...
+                      {t("formSending")}
                     </>
                   ) : (
-                    "Gửi thông tin — vựa gọi lại"
+                    t("formSubmit")
                   )}
                 </button>
               </form>

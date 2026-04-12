@@ -1,5 +1,6 @@
 import { BrandIcon } from "./brand-icon";
 import { FadeIn } from "./fade-in";
+import { getTranslations } from "next-intl/server";
 
 interface SocialEmbed {
   id: string;
@@ -106,21 +107,22 @@ function EmbedCard({ embed }: { embed: SocialEmbed }) {
   );
 }
 
-export function SocialVideoSection() {
+export async function SocialVideoSection() {
+  const t = await getTranslations("social");
+
   return (
     <section className="bg-brand-cream px-5 py-24">
       <div className="mx-auto max-w-[1200px]">
         <FadeIn>
           <div className="mb-16 text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Vựa trên mạng xã hội
+              {t("sectionTag")}
             </span>
             <h2 className="mt-2 font-heading text-4xl font-extrabold text-text sm:text-5xl">
-              Coi thực tế tại vườn
+              {t("sectionTitle")}
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm text-text-secondary">
-              Video quay tại vườn Thạnh Phú — thu hoạch, đóng thùng, giao hàng.
-              Không dàn dựng, không filter.
+              {t("sectionDesc")}
             </p>
           </div>
         </FadeIn>

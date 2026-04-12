@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { FadeIn } from "./fade-in";
 import { FAQS } from "@/lib/landing-data";
+import { useTranslations } from "next-intl";
 
 export function FaqSection() {
+  const t = useTranslations("faq");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -12,7 +14,7 @@ export function FaqSection() {
       <div className="mx-auto max-w-[680px]">
         <FadeIn>
           <h2 className="mb-12 text-center font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-            Câu hỏi thường gặp
+            {t("sectionTitle")}
           </h2>
         </FadeIn>
 

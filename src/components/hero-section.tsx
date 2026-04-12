@@ -2,17 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { CaretDown } from "@phosphor-icons/react";
 import { FadeIn } from "./fade-in";
-
-// Phrases rotate trong h1 — mỗi phrase là 3 dòng tạo nên 1 thông điệp
-// Phrase đầu là SEO anchor (giữ nguyên "Ngọt Đậm / Vị Mặn Nhẹ / Cuối Lưỡi")
-const HERO_PHRASES: [string, string, string][] = [
-  ["Ngọt Đậm", "Vị Mặn Nhẹ", "Cuối Lưỡi"],
-  ["Đất Giồng Cát", "Ven Biển", "Thạnh Phú"],
-  ["Sáng Hái", "Chiều Lên Xe", "Sáng Mai Tới"],
-  ["CDĐL #00124", "Chỉ Dẫn", "Địa Lý Riêng"],
-];
 
 const HERO_IMAGES = [
   { src: "/images/vua-khai-truong.jpg", alt: "Vựa Trái Cây Bến Tre — ngày khai trương tại xã Đại Điền, Thạnh Phú" },
@@ -26,6 +18,7 @@ const HERO_IMAGES = [
 ];
 
 function HeroImageCarousel() {
+  const t = useTranslations("hero");
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -56,7 +49,7 @@ function HeroImageCarousel() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            aria-label={`Xem ảnh ${i + 1}`}
+            aria-label={`${t("viewImage")} ${i + 1}`}
             className={`h-2 rounded-full transition-all duration-500 ${
               i === current
                 ? "w-6 bg-text/80"
@@ -70,13 +63,21 @@ function HeroImageCarousel() {
 }
 
 function RotatingHeroTitle() {
+  const t = useTranslations("hero");
   const [phraseIndex, setPhraseIndex] = useState(0);
+
+  // Build phrases array from translation object keys 0–3
+  const HERO_PHRASES: [string, string, string][] = [0, 1, 2, 3].map((i) =>
+    t.raw(`phrases.${i}`) as [string, string, string]
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
       setPhraseIndex((prev) => (prev + 1) % HERO_PHRASES.length);
     }, 3800);
     return () => clearInterval(timer);
+  // HERO_PHRASES.length is constant (4) — no need to re-run on t change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -110,6 +111,8 @@ function RotatingHeroTitle() {
 }
 
 export function HeroSection() {
+  const t = useTranslations("hero");
+
   return (
     <section className="relative flex min-h-screen flex-col bg-brand px-5 pt-28 pb-24">
       <div className="relative z-10 mx-auto my-auto grid w-full max-w-[1440px] items-center gap-12 lg:grid-cols-2">
@@ -121,14 +124,12 @@ export function HeroSection() {
 
           <FadeIn delay={0.15}>
             <p className="mt-8 max-w-[485px] text-lg leading-7 text-text/70 lg:text-xl">
-              Xoài Tứ Quý Thạnh Phú, Bến Tre — trồng trên đất giồng cát ven
-              biển, nhiễm mặn tự nhiên nên vị xoài có chút mặn nhẹ cuối lưỡi,
-              không chỗ nào làm lại được.
+              {t("desc1")}
             </p>
             <p className="mt-4 max-w-[485px] text-lg leading-7 text-text/70 lg:text-xl">
-              Sáng hái ngoài vườn, chiều lên xe lạnh ra Hà Nội.
+              {t("desc2")}
               <br />
-              Giá cập mỗi sáng — <strong className="text-text">Anh Phúc nghe máy từ 4h sáng tới tối</strong>.
+              {t("desc2Prefix")}<strong className="text-text">{t("desc2Bold")}</strong>.
             </p>
           </FadeIn>
         </div>
@@ -141,8 +142,8 @@ export function HeroSection() {
 
       {/* Scroll hint */}
       <FadeIn delay={1.2} className="relative z-10 mt-auto flex flex-col items-center pt-8">
-        <span className="text-sm text-text/40">cuộn xuống</span>
-        <span className="text-sm text-text/40">khám phá ngay</span>
+        <span className="text-sm text-text/40">{t("scrollHint1")}</span>
+        <span className="text-sm text-text/40">{t("scrollHint2")}</span>
         <button className="mt-2 flex h-11 w-11 items-center justify-center rounded-full border border-text/30">
           <CaretDown size={18} weight="bold" className="animate-bounce text-text/50" />
         </button>

@@ -1,23 +1,26 @@
 "use client";
 
 import { FadeIn } from "./fade-in";
-import { CALENDAR, MONTH_LABELS } from "@/lib/landing-data";
+import { CALENDAR } from "@/lib/landing-data";
+import { useTranslations } from "next-intl";
 
 /* Dynamic current month — updates in browser */
 const CURRENT_MONTH = new Date().getMonth();
 
 export function CalendarSection() {
+  const t = useTranslations("calendar");
+  const months = t.raw("months") as string[];
+
   return (
     <section className="bg-brand-cream px-5 py-24">
       <div className="mx-auto max-w-[1200px]">
         <FadeIn>
           <div className="mb-16 text-center">
             <h2 className="font-heading text-4xl font-bold uppercase text-text sm:text-5xl">
-              Lịch Mùa — Biết Mùa, Lấy Đúng Giá
+              {t("sectionTitle")}
             </h2>
             <p className="mt-2 text-sm text-text-secondary">
-              Xoài Tứ Quý ra trái 3 vụ/năm — tháng nào vựa cũng có hàng,
-              bạn hàng khỏi lo đứt
+              {t("sectionDesc")}
             </p>
           </div>
         </FadeIn>
@@ -28,9 +31,9 @@ export function CalendarSection() {
               {/* Header */}
               <div className="grid grid-cols-[100px_repeat(12,1fr)] sm:grid-cols-[150px_repeat(12,1fr)] border-b border-border bg-bg">
                 <div className="px-2 sm:px-4 py-3 text-xs font-bold text-text-muted">
-                  Loại
+                  {t("typeLabel")}
                 </div>
-                {MONTH_LABELS.map((m, i) => (
+                {months.map((m, i) => (
                   <div
                     key={i}
                     className={`py-3 text-center text-xs ${
@@ -80,14 +83,14 @@ export function CalendarSection() {
               <div className="flex flex-wrap gap-5 border-t border-border bg-bg px-4 py-3">
                 <span className="flex items-center gap-2 text-xs text-text-muted">
                   <span className="h-1.5 w-5 rounded-full bg-gradient-to-r from-mango to-mango-dark" />
-                  Chính vụ
+                  {t("peakSeason")}
                 </span>
                 <span className="flex items-center gap-2 text-xs text-text-muted">
                   <span className="h-1.5 w-5 rounded-full bg-gradient-to-r from-accent-light to-accent" />
-                  Đầu/cuối vụ
+                  {t("earlySeason")}
                 </span>
                 <span className="text-xs font-semibold text-mango">
-                  ▼ T{CURRENT_MONTH + 1} — Tháng này
+                  ▼ T{CURRENT_MONTH + 1} — {t("currentMonth")}
                 </span>
               </div>
             </div>

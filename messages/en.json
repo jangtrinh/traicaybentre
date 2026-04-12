@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "hoangKim": "Hoang Kim",
+    "xoaiTuQuy": "Tu Quy Mango",
+    "duaXiem": "Young Coconut",
+    "nguonGoc": "Our Story",
+    "kienThuc": "Knowledge",
+    "tinTuc": "News",
+    "lienHe": "Contact",
+    "more": "More",
+    "brandName": "Ben Tre Fruits",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "phrases": {
+      "0": ["Rich Sweetness", "Subtle Saltiness", "On the Tongue"],
+      "1": ["Sandy Soil", "By the Sea", "Thanh Phu"],
+      "2": ["Picked at Dawn", "Shipped by Noon", "Arrives Tomorrow"],
+      "3": ["GI #00124", "Geographical", "Indication"]
+    },
+    "desc1": "Tu Quy Mango from Thanh Phu, Ben Tre — grown on sandy coastal soil with natural salinity, giving it a unique subtle saltiness on the finish that no other region can replicate.",
+    "desc2": "Picked fresh in the morning, cold-shipped to Hanoi by afternoon.",
+    "desc2Bold": "Mr. Phuc answers calls from 4 AM to evening",
+    "desc2Prefix": "Prices updated every morning — ",
+    "scrollHint1": "scroll down",
+    "scrollHint2": "discover now",
+    "viewImage": "View image"
+  },
+  "products": {
+    "sectionTag": "Currently in stock",
+    "sectionTitle": "Ben Tre",
+    "sectionHighlight": "Specialties",
+    "viewImage": "View image",
+    "getQuote": "Get a quote",
+    "priceUnit": "₫/kg",
+    "priceNote": "Prices change daily — call Mr. Phuc for today's exact price",
+    "priceUntil": "Price valid until"
+  },
+  "process": {
+    "sectionTag": "Why only Thanh Phu",
+    "sectionTitle": "From orchard to market",
+    "sectionDesc": "Tu Quy Mango grown in Can Tho or Tien Giang is still sweet — but it lacks the subtle saltiness on the finish. Only the sandy coastal soil of Thanh Phu produces that."
+  },
+  "calendar": {
+    "sectionTitle": "Harvest Calendar — Know the Season, Get the Right Price",
+    "sectionDesc": "Tu Quy Mango bears fruit 3 seasons per year — we have stock every month, never out of supply",
+    "typeLabel": "Variety",
+    "peakSeason": "Peak season",
+    "earlySeason": "Early/late season",
+    "currentMonth": "This month",
+    "months": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+  },
+  "certification": {
+    "sectionTitle": "Certified & Verified",
+    "items": {
+      "cddl": { "title": "GI #00124", "desc": "Geographical Indication — granted by Vietnam IP Office, 2022" },
+      "ocop": { "title": "OCOP Ben Tre", "desc": "One Commune One Product program" },
+      "gap": { "title": "GlobalGAP", "desc": "International agricultural standard" },
+      "qr": { "title": "QR Traceability", "desc": "Farm name, harvest date, picker identity" }
+    }
+  },
+  "wholesale": {
+    "sectionTag": "For wholesale partners",
+    "sectionTitle1": "Wholesale",
+    "sectionTitle2": "Direct from Farm",
+    "badgeLabel": "Phuc Giang Farm · Thanh Phu",
+    "customerTypes": "Retailers · Distributors · Hotels & Restaurants",
+    "headline": "Farm-gate price — no middlemen",
+    "desc": "Buy direct from the farm, no intermediaries, no markups. Prices updated every morning, packed to your specifications — whatever you need, we deliver.",
+    "items": [
+      "Wholesale pricing by ton, updated daily",
+      "Minimum order: 1 box (20kg) — try before committing",
+      "Shipping cost quoted upfront — varies by route & packaging",
+      "Credit terms available after 3 orders",
+      "Full VAT invoices available"
+    ],
+    "ctaPrimary": "View wholesale prices",
+    "ctaPhone": "0932 585 533",
+    "ctaNote": "Zalo reply within 5 min · 4 AM – 6 PM · Mr. Phuc"
+  },
+  "testimonials": {
+    "sectionTag": "What our partners say",
+    "viewLabel": "View testimonial {current} of {total}"
+  },
+  "social": {
+    "sectionTag": "Follow us on social media",
+    "sectionTitle": "See the real farm",
+    "sectionDesc": "Videos filmed at the Thanh Phu orchard — harvesting, packing, shipping. No staging, no filters."
+  },
+  "news": {
+    "sectionTag": "News & pricing",
+    "sectionTitle": "Latest from the farm",
+    "sectionDesc": "Monthly price updates, mango recipes, and stories from Thanh Phu farm — updated regularly",
+    "readMore": "Read more",
+    "viewAll": "View all news"
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions"
+  },
+  "contact": {
+    "sectionTag": "Get in touch",
+    "sectionTitle": "We'll Call You Back",
+    "zaloLabel": "Zalo (quick reply)",
+    "zaloValue": "0932 585 533",
+    "zaloSub": "Mr. Phuc replies within 5 minutes",
+    "phoneLabel": "Call directly",
+    "phoneValue": "0932 585 533",
+    "phoneSub": "4 AM – 6 PM · Mr. Phuc",
+    "addressLabel": "Farm address",
+    "addressValue": "Thanh Phu, Ben Tre",
+    "addressSub": "Open from 4 AM",
+    "tipTitle": "Tip for new partners",
+    "tipDesc": "Start with 1 box (20kg), test-sell for 2–3 days, see how your customers compare it to your current supplier. If they prefer it, scale up gradually — no pressure from us.",
+    "formName": "Your name",
+    "formNamePlaceholder": "e.g. John",
+    "formPhone": "Phone / Zalo",
+    "formPhonePlaceholder": "0912 345 678",
+    "formType": "You are a",
+    "formTypes": ["Retailer", "Distributor", "Hotel / Restaurant"],
+    "formNote": "Additional notes",
+    "formNotePlaceholder": "e.g. Need 50kg ripe Grade 1 mango, delivered every Wednesday...",
+    "formSubmit": "Submit — we'll call you back",
+    "formSending": "Sending...",
+    "formSuccessTitle": "Sent successfully!",
+    "formSuccessMsg": "Thank you {name}! We've received your information.",
+    "formSuccessCallback": "Mr. Phuc will call {phone} within 15 minutes (business hours).",
+    "formSuccessReset": "Send another inquiry",
+    "formErrorDefault": "Couldn't send — please try again, or Zalo 0932 585 533 to contact us directly."
+  },
+  "footer": {
+    "followUs": "Follow us",
+    "sanPham": "Products",
+    "officialSite": "Official website of Tu Quy Mango Farm, Thanh Phu",
+    "copyright": "© 2026 Tu Quy Mango Ben Tre · GI #00124 · Thanh Phu, Ben Tre"
+  },
+  "common": {
+    "required": "*"
+  }
+}

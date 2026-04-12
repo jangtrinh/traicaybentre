@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "hoangKim": "ホアンキム",
+    "xoaiTuQuy": "トゥクイマンゴー",
+    "duaXiem": "ヤシの実",
+    "nguonGoc": "私たちの物語",
+    "kienThuc": "豆知識",
+    "tinTuc": "ニュース",
+    "lienHe": "お問い合わせ",
+    "more": "もっと見る",
+    "brandName": "ベンチェフルーツ",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる"
+  },
+  "hero": {
+    "phrases": {
+      "0": ["濃厚な甘さ", "ほのかな塩味", "舌先に"],
+      "1": ["砂地の土壌", "海沿い", "タインフー"],
+      "2": ["朝摘み", "午後に出荷", "翌朝届く"],
+      "3": ["地理的表示", "#00124", "認証取得"]
+    },
+    "desc1": "ベンチェ省タインフーのトゥクイマンゴー — 海岸の砂地で育ち、自然の塩分が染み込むことで、舌先にほのかな塩味が感じられる、他の産地では再現できない独特の味わいです。",
+    "desc2": "朝に収穫し、午後に冷蔵便で出荷します。",
+    "desc2Bold": "フックさんが朝4時から夜まで電話対応",
+    "desc2Prefix": "毎朝価格更新 — ",
+    "scrollHint1": "下にスクロール",
+    "scrollHint2": "今すぐチェック",
+    "viewImage": "画像を見る"
+  },
+  "products": {
+    "sectionTag": "現在の在庫商品",
+    "sectionTitle": "ベンチェ",
+    "sectionHighlight": "特産品",
+    "viewImage": "画像を見る",
+    "getQuote": "見積もり依頼",
+    "priceUnit": "₫/kg",
+    "priceNote": "価格は毎日変動 — フックさんに今日の正��な価格をお問い合わせください",
+    "priceUntil": "価格適用期限"
+  },
+  "process": {
+    "sectionTag": "なぜタインフーだけなのか",
+    "sectionTitle": "果樹園から市場へ",
+    "sectionDesc": "カントーやティエンザンで栽培されたトゥクイマンゴーも甘いですが、舌先のほのかな塩味はありません。タインフーの���岸砂地だけがその味を生み出せます。"
+  },
+  "calendar": {
+    "sectionTitle": "収穫カレンダー — 旬を知って、適正価格で",
+    "sectionDesc": "トゥクイマンゴーは年3回結実 �� 毎月在庫あり、品切れの心配なし",
+    "typeLabel": "品種",
+    "peakSeason": "最盛期",
+    "earlySeason": "初期/終期",
+    "currentMonth": "今月",
+    "months": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+  },
+  "certification": {
+    "sectionTitle": "認証・検証済み",
+    "items": {
+      "cddl": { "title": "地理的表示 #00124", "desc": "ベトナム知的財産局 2022年認証" },
+      "ocop": { "title": "OCOP ベンチェ", "desc": "一村一品プログラム" },
+      "gap": { "title": "GlobalGAP", "desc": "国際農業基準" },
+      "qr": { "title": "QRトレーサビリティ", "desc": "農園名、収穫日、収穫者情報" }
+    }
+  },
+  "wholesale": {
+    "sectionTag": "卸売パートナー向け",
+    "sectionTitle1": "卸売直取引",
+    "sectionTitle2": "農園から直接",
+    "badgeLabel": "フックザン農園 · タインフー",
+    "customerTypes": "小売業者 · 卸売業者 · ホテル＆レストラン",
+    "headline": "農園直売価格 — 仲介マージンなし",
+    "desc": "農園から直接購入、仲介業者なし、上乗せなし。毎朝価格更新、ご要望通りに梱包 — お客様のニーズに合わせて対応します。",
+    "items": [
+      "トン単位の卸売価格、毎日更新",
+      "最小注文：1箱（20kg）— まずお試しください",
+      "送料は事前にお見積もり — ルートと梱包により異なります",
+      "3回注文後、掛け売り対応可能",
+      "VAT請求書発行可能"
+    ],
+    "ctaPrimary": "卸売価格を見る",
+    "ctaPhone": "0932 585 533",
+    "ctaNote": "Zalo 5分以内に返信 · 午前4時〜午後6時 · フックさん"
+  },
+  "testimonials": {
+    "sectionTag": "パートナーの声",
+    "viewLabel": "{total}件中{current}件目のレビュー"
+  },
+  "social": {
+    "sectionTag": "SNSで農園をフォロー",
+    "sectionTitle": "農園のリアルをご覧ください",
+    "sectionDesc": "タインフー果樹園で撮影した映像 — 収穫、梱包、出荷。演出なし、フィ��ターなし。"
+  },
+  "news": {
+    "sectionTag": "ニュース＆相場",
+    "sectionTitle": "農園の最新情報",
+    "sectionDesc": "月次相場、マンゴーレシピ、タインフー農園の話 — 定期更新",
+    "readMore": "続きを読む",
+    "viewAll": "すべてのニュースを見る"
+  },
+  "faq": {
+    "sectionTitle": "よくある質問"
+  },
+  "contact": {
+    "sectionTag": "お問い合わせ",
+    "sectionTitle": "折り返しご連絡します",
+    "zaloLabel": "Zalo（迅速対応）",
+    "zaloValue": "0932 585 533",
+    "zaloSub": "フックさんが5分以内に返信",
+    "phoneLabel": "直接電話",
+    "phoneValue": "0932 585 533",
+    "phoneSub": "午前4時〜午後6時 · フックさん",
+    "addressLabel": "農園住所",
+    "addressValue": "タインフー、ベンチェ",
+    "addressSub": "午前4時オープン",
+    "tipTitle": "新規パートナーへのアドバイス",
+    "tipDesc": "まず20kg 1箱から始めて2〜3日テスト販売し、既存の仕入先とお客様の反応を比較してください。お客様に好評なら徐々に増量を — 無理強いはしません。",
+    "formName": "お名前",
+    "formNamePlaceholder": "例：田中太郎",
+    "formPhone": "電話番号 / Zalo",
+    "formPhonePlaceholder": "0912 345 678",
+    "formType": "業種を選択",
+    "formTypes": ["小売業者", "卸売業者", "ホテル / レストラン"],
+    "formNote": "備考",
+    "formNotePlaceholder": "例：完熟1級マンゴー50kg、毎週水曜配送...",
+    "formSubmit": "情報を送信 — 折り返しご連絡します",
+    "formSending": "送信中...",
+    "formSuccessTitle": "送信完了！",
+    "formSuccessMsg": "{name}様、ありがとうございます！情報を��け取りました。",
+    "formSuccessCallback": "フックさ���が{phone}に15分以内にご連絡します（営業時間内）。",
+    "formSuccessReset": "別のお問い合わせを送信",
+    "formErrorDefault": "送信できませんでした — もう一度お試しいただくか、Zalo 0932 585 533に直接ご連絡ください。"
+  },
+  "footer": {
+    "followUs": "フォローする",
+    "sanPham": "製品",
+    "officialSite": "タインフー トゥクイマンゴー農園 公式サイト",
+    "copyright": "© 2026 トゥクイマンゴー ベンチェ · 地理的表示 #00124 · タインフー、ベンチェ"
+  },
+  "common": {
+    "required": "*"
+  }
+}

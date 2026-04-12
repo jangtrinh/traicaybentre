@@ -57,6 +57,9 @@ export const RESERVED_PATHS = [
   "images",
   "fonts",
   "public",
+  "en",
+  "ko",
+  "ja",
 ] as const;
 
 export const products: Record<string, ProductEntry> = {

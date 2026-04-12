@@ -8,30 +8,31 @@ import {
   type MouseEvent,
 } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { MobileMenuOverlay, type NavLink } from "./mobile-menu-overlay";
 
-const NAV_LINKS: NavLink[] = [
-  { label: "Hoàng Kim", href: "/xoai-hoang-kim" },
-  { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
-  { label: "Dừa Xiêm", href: "/dua-xiem-ben-tre" },
-  { label: "Nguồn gốc", href: "/nguon-goc" },
-  { label: "Kiến thức", href: "/kien-thuc" },
-  { label: "Tin tức", href: "/tin-tuc" },
-];
-
-// Links ẩn vào menu "···" khi compact pill (scrolled)
-const PRIMARY_LINKS = NAV_LINKS.slice(0, 3);
-const MORE_LINKS = NAV_LINKS.slice(3);
-
 export function Header() {
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const moreRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+
+  const NAV_LINKS: NavLink[] = [
+    { label: t("hoangKim"), href: "/xoai-hoang-kim" },
+    { label: t("xoaiTuQuy"), href: "/xoai-tu-quy" },
+    { label: t("duaXiem"), href: "/dua-xiem-ben-tre" },
+    { label: t("nguonGoc"), href: "/nguon-goc" },
+    { label: t("kienThuc"), href: "/kien-thuc" },
+    { label: t("tinTuc"), href: "/tin-tuc" },
+  ];
+
+  // Links ẩn vào menu "···" khi compact pill (scrolled)
+  const PRIMARY_LINKS = NAV_LINKS.slice(0, 3);
+  const MORE_LINKS = NAV_LINKS.slice(3);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50);
@@ -109,7 +110,7 @@ export function Header() {
                 pillVisible ? "text-xs" : "text-sm xl:text-base"
               }`}
             >
-              Trái Cây Bến Tre
+              {t("brandName")}
             </span>
           </Link>
 
@@ -132,7 +133,7 @@ export function Header() {
                 <button
                   onClick={() => setMoreOpen((v) => !v)}
                   className="flex h-7 w-7 items-center justify-center rounded-full text-text/70 transition-colors hover:bg-text/5 hover:text-text"
-                  aria-label="Thêm"
+                  aria-label={t("more")}
                   aria-expanded={moreOpen}
                 >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -163,7 +164,7 @@ export function Header() {
               onClick={(e) => handleHashNav(e, "/#contact")}
               className="ml-1 flex h-8 items-center justify-center rounded-full bg-black px-5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-text transition-colors"
             >
-              Liên hệ
+              {t("lienHe")}
             </Link>
           </nav>
 
@@ -172,7 +173,7 @@ export function Header() {
             ref={hamburgerRef}
             onClick={() => setMenuOpen((v) => !v)}
             className="relative flex h-9 w-9 items-center justify-center rounded-full bg-black lg:hidden"
-            aria-label={menuOpen ? "Đóng menu" : "Mở menu"}
+            aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
