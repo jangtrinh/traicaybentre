@@ -81,11 +81,22 @@ function RotatingHeroTitle() {
   }, []);
 
   return (
-    // min-h [3.45em] = 3 dòng × leading 1.15 → giữ chiều cao cố định, không layout shift
     <h1
-      className="relative min-h-[3.45em] font-heading text-[clamp(2rem,8vw,4.5rem)] font-semibold uppercase leading-[1.15] text-text"
+      className="relative font-heading text-[clamp(2rem,8vw,4.5rem)] font-semibold uppercase leading-[1.15] text-text"
       aria-live="polite"
     >
+      {/* Invisible sizer — tallest phrase stays in flow to reserve natural height */}
+      {HERO_PHRASES.map((phrase, i) => (
+        <span
+          key={`sizer-${i}`}
+          className={i === 0 ? "block invisible" : "hidden"}
+          aria-hidden="true"
+        >
+          {phrase[0]}<br />{phrase[1]}<br />{phrase[2]}
+        </span>
+      ))}
+
+      {/* Visible rotating phrase — absolute on top of sizer */}
       {HERO_PHRASES.map((phrase, i) => {
         const isActive = i === phraseIndex;
         return (
@@ -123,10 +134,10 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <p className="mt-8 max-w-[485px] text-lg leading-7 text-text/70 lg:text-xl">
+            <p className="mt-8 max-w-prose text-lg leading-7 text-text/70 lg:text-xl">
               {t("desc1")}
             </p>
-            <p className="mt-4 max-w-[485px] text-lg leading-7 text-text/70 lg:text-xl">
+            <p className="mt-4 max-w-prose text-lg leading-7 text-text/70 lg:text-xl">
               {t("desc2")}
               <br />
               {t("desc2Prefix")}<strong className="text-text">{t("desc2Bold")}</strong>.
