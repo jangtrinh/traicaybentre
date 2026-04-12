@@ -2,7 +2,7 @@
   "nav": {
     "hoangKim": "ホアンキム",
     "xoaiTuQuy": "トゥクイマンゴー",
-    "duaXiem": "ヤシの実",
+    "duaXiem": "ヤングココナッツ",
     "nguonGoc": "私たちの物語",
     "kienThuc": "豆知識",
     "tinTuc": "ニュース",
@@ -34,17 +34,17 @@
     "viewImage": "画像を見る",
     "getQuote": "見積もり依頼",
     "priceUnit": "₫/kg",
-    "priceNote": "価格は毎日変動 — フックさんに今日の正��な価格をお問い合わせください",
+    "priceNote": "価格は毎日変動 — フックさんに今日の正確な価格をお問い合わせください",
     "priceUntil": "価格適用期限"
   },
   "process": {
     "sectionTag": "なぜタインフーだけなのか",
     "sectionTitle": "果樹園から市場へ",
-    "sectionDesc": "カントーやティエンザンで栽培されたトゥクイマンゴーも甘いですが、舌先のほのかな塩味はありません。タインフーの���岸砂地だけがその味を生み出せます。"
+    "sectionDesc": "カントーやティエンザンで栽培されたトゥクイマンゴーも甘いですが、舌先のほのかな塩味はありません。タインフーの海岸砂地だけがその味を生み出せます。"
   },
   "calendar": {
     "sectionTitle": "収穫カレンダー — 旬を知って、適正価格で",
-    "sectionDesc": "トゥクイマンゴーは年3回結実 �� 毎月在庫あり、品切れの心配なし",
+    "sectionDesc": "トゥクイマンゴーは年3回結実 — 毎月在庫あり、品切れの心配なし",
     "typeLabel": "品種",
     "peakSeason": "最盛期",
     "earlySeason": "初期/終期",
@@ -86,7 +86,7 @@
   "social": {
     "sectionTag": "SNSで農園をフォロー",
     "sectionTitle": "農園のリアルをご覧ください",
-    "sectionDesc": "タインフー果樹園で撮影した映像 — 収穫、梱包、出荷。演出なし、フィ��ターなし。"
+    "sectionDesc": "タインフー果樹園で撮影した映像 — 収穫、梱包、出荷。演出なし、フィルターなし。"
   },
   "news": {
     "sectionTag": "ニュース＆相場",
@@ -123,8 +123,8 @@
     "formSubmit": "情報を送信 — 折り返しご連絡します",
     "formSending": "送信中...",
     "formSuccessTitle": "送信完了！",
-    "formSuccessMsg": "{name}様、ありがとうございます！情報を��け取りました。",
-    "formSuccessCallback": "フックさ���が{phone}に15分以内にご連絡します（営業時間内）。",
+    "formSuccessMsg": "{name}様、ありがとうございます！情報を受け取りました。",
+    "formSuccessCallback": "フックさんが{phone}に15分以内にご連絡します（営業時間内）。",
     "formSuccessReset": "別のお問い合わせを送信",
     "formErrorDefault": "送信できませんでした — もう一度お試しいただくか、Zalo 0932 585 533に直接ご連絡ください。"
   },
