@@ -14,10 +14,10 @@
   },
   "hero": {
     "phrases": {
-      "0": ["Rich Sweetness", "Subtle Saltiness", "On the Tongue"],
-      "1": ["Sandy Soil", "By the Sea", "Thanh Phu"],
-      "2": ["Picked at Dawn", "Shipped by Noon", "Arrives Tomorrow"],
-      "3": ["GI #00124", "Geographical", "Indication"]
+      "0": ["Deep Sweet", "Hint of Salt", "On the Tongue"],
+      "1": ["Coastal Sand", "Sea Breeze", "Thanh Phu"],
+      "2": ["Dawn Picked", "Noon Shipped", "Next Day"],
+      "3": ["GI #00124", "Protected", "Origin"]
     },
     "desc1": "Tu Quy Mango from Thanh Phu, Ben Tre — grown on sandy coastal soil with natural salinity, giving it a unique subtle saltiness on the finish that no other region can replicate.",
     "desc2": "Picked fresh in the morning, cold-shipped to Hanoi by afternoon.",

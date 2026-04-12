@@ -83,7 +83,7 @@ function RotatingHeroTitle() {
   return (
     // min-h [3.45em] = 3 dòng × leading 1.15 → giữ chiều cao cố định, không layout shift
     <h1
-      className="relative min-h-[3.45em] font-heading text-[40px] font-semibold uppercase leading-[1.15] text-text sm:text-5xl md:text-6xl lg:text-7xl"
+      className="relative min-h-[3.45em] font-heading text-[clamp(2rem,8vw,4.5rem)] font-semibold uppercase leading-[1.15] text-text"
       aria-live="polite"
     >
       {HERO_PHRASES.map((phrase, i) => {
