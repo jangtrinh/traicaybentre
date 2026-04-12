@@ -18,25 +18,38 @@ export const dynamic = "force-static";
 export const revalidate = 3600;
 
 const BASE = "https://www.traicaybentre.com";
+const LOCALES = ["vi", "en", "ko", "ja"] as const;
+
+/** Builds a sitemap entry with hreflang alternates for all 4 locales. */
+function localizedUrl(path: string) {
+  return {
+    url: `${BASE}${path}`,
+    alternates: {
+      languages: Object.fromEntries(
+        LOCALES.map((l) => [l, `${BASE}${l === "vi" ? "" : `/${l}`}${path}`])
+      ),
+    },
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   // Static routes that are neither products nor articles.
   const statics: MetadataRoute.Sitemap = [
-    { url: BASE, lastModified: now, changeFrequency: "daily", priority: 1 },
-    { url: `${BASE}/san-pham`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE}/nguon-goc`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/kien-thuc`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-    { url: `${BASE}/tin-tuc`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
-    { url: `${BASE}/giao-hang/ha-noi`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/giao-hang/tp-hcm`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/giao-hang/da-nang`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { ...localizedUrl(""), lastModified: now, changeFrequency: "daily", priority: 1 },
+    { ...localizedUrl("/san-pham"), lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { ...localizedUrl("/nguon-goc"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { ...localizedUrl("/kien-thuc"), lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { ...localizedUrl("/tin-tuc"), lastModified: now, changeFrequency: "weekly", priority: 0.6 },
+    { ...localizedUrl("/giao-hang/ha-noi"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { ...localizedUrl("/giao-hang/tp-hcm"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { ...localizedUrl("/giao-hang/da-nang"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
 
   // Active product landing pages (from registry).
   const productPages: MetadataRoute.Sitemap = getActiveProducts().map((p) => ({
-    url: `${BASE}/${p.slug}`,
+    ...localizedUrl(`/${p.slug}`),
     lastModified: now,
     changeFrequency: "daily" as const,
     priority: 0.95,
@@ -44,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Legacy kien-thuc articles (hardcoded TSX pages at /kien-thuc/{slug}).
   const legacyKnowledge: MetadataRoute.Sitemap = KNOWLEDGE_ARTICLES.map((a) => ({
-    url: `${BASE}${a.urlPath ?? `/kien-thuc/${a.slug}`}`,
+    ...localizedUrl(a.urlPath ?? `/kien-thuc/${a.slug}`),
     lastModified: new Date(a.date),
     changeFrequency: "monthly" as const,
     priority: 0.75,
@@ -52,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Legacy tin-tuc articles (hardcoded TSX pages at /tin-tuc/{slug}).
   const legacyBlog: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
-    url: `${BASE}${p.urlPath ?? `/tin-tuc/${p.slug}`}`,
+    ...localizedUrl(p.urlPath ?? `/tin-tuc/${p.slug}`),
     lastModified: new Date(p.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -60,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // New MDX articles (visible only when uxReviewed + publishedAt elapsed).
   const mdxArticles: MetadataRoute.Sitemap = getAllPublishedArticles().map((a) => ({
-    url: `${BASE}${a.urlPath}`,
+    ...localizedUrl(a.urlPath),
     lastModified: new Date(a.frontmatter.publishedAt),
     changeFrequency: a.type === "tin-tuc" ? ("weekly" as const) : ("monthly" as const),
     priority: a.type === "kien-thuc" ? 0.75 : 0.65,

@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { MobileMenuOverlay, type NavLink } from "./mobile-menu-overlay";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -159,6 +160,8 @@ export function Header() {
               </div>
             )}
 
+            <LanguageSwitcher />
+
             <Link
               href="/#contact"
               onClick={(e) => handleHashNav(e, "/#contact")}
@@ -168,11 +171,13 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* Mobile hamburger/close — toggle tại chỗ, icon morph */}
+          {/* Mobile: language switcher + hamburger */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher />
           <button
             ref={hamburgerRef}
             onClick={() => setMenuOpen((v) => !v)}
-            className="relative flex h-9 w-9 items-center justify-center rounded-full bg-black lg:hidden"
+            className="relative flex h-9 w-9 items-center justify-center rounded-full bg-black"
             aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
@@ -212,6 +217,7 @@ export function Header() {
               />
             </svg>
           </button>
+          </div>
         </div>
       </header>
     </>
