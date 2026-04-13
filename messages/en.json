@@ -86,7 +86,11 @@
   "social": {
     "sectionTag": "Follow us on social media",
     "sectionTitle": "See the real farm",
-    "sectionDesc": "Videos filmed at the Thanh Phu orchard — harvesting, packing, shipping. No staging, no filters."
+    "sectionDesc": "Videos filmed at the Thanh Phu orchard — harvesting, packing, shipping. No staging, no filters.",
+    "embedVideo": "Video from Tu Quy Mango orchard",
+    "embedFarmVideo": "Video from Ben Tre fruit farm",
+    "embedReview": "Customer review of Tu Quy Mango",
+    "embedPost": "Post from our Fanpage"
   },
   "news": {
     "sectionTag": "News & pricing",
@@ -136,6 +140,15 @@
   },
   "common": {
     "required": "*"
+  },
+  "meta": {
+    "title": "Tu Quy Mango Ben Tre — Rich sweetness, subtle saltiness on the tongue",
+    "description": "Tu Quy Mango, specialty of Thanh Phu, Ben Tre. Geographical Indication GI #00124. Nationwide cold shipping. Prices updated daily — call for exact quote.",
+    "ogTitle": "Tu Quy Mango Ben Tre — Rich sweetness, subtle saltiness",
+    "ogDescription": "Thanh Phu specialty — unique subtle saltiness. Nationwide cold shipping. GI #00124.",
+    "ogSiteName": "Ben Tre Fruits",
+    "ogImageAlt": "Tu Quy Mango Ben Tre — hand holding large fruit at the farm",
+    "twitterDescription": "Thanh Phu specialty — unique subtle saltiness. GI #00124."
   },
   "data": {
     "products": [
@@ -672,6 +685,360 @@
       "mien-trung": "Central Vietnam",
       "mien-bac": "Northern Vietnam",
       "tay-nguyen": "Central Highlands"
+    }
+  },
+  "kienThucPage": {
+    "metaTitle": "Tu Quy Mango Knowledge Hub — Complete Guide | Ben Tre Fruits",
+    "metaDesc": "Everything about Tu Quy Mango from Ben Tre: definition, GI #00124, growing regions, seasons, storage, and comparisons with other varieties.",
+    "metaKeywords": ["tu quy mango knowledge", "ben tre mango guide", "what is tu quy mango", "gi 00124 ben tre mango", "mekong delta mango regions"],
+    "ogTitle": "Tu Quy Mango Knowledge Hub — Complete Guide",
+    "ogDesc": "Everything you need to know about Tu Quy Mango from Ben Tre — from origins to storage tips.",
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Knowledge",
+    "heroEyebrow": "Complete guide",
+    "heroTitle1": "Knowledge Hub",
+    "heroTitle2": "Tu Quy Mango",
+    "heroDesc": "Everything you need to know about Tu Quy Mango from Ben Tre — origin, GI #00124, seasons, growing regions, storage, and comparisons with other varieties.",
+    "readMore": "Read more",
+    "exploreMore": "Explore more",
+    "defaultCategory": "Knowledge",
+    "exploreLinks": [
+      { "label": "Tu Quy Mango — Product", "href": "/xoai-tu-quy" },
+      { "label": "Today's mango price", "href": "/xoai-tu-quy#gia" },
+      { "label": "News & pricing", "href": "/tin-tuc" },
+      { "label": "Origin & certification", "href": "/nguon-goc" },
+      { "label": "Wholesale inquiry", "href": "/#contact" }
+    ]
+  },
+  "tinTucPage": {
+    "metaTitle": "Tu Quy Mango News & Pricing | Ben Tre",
+    "metaDesc": "Latest news and wholesale prices for Tu Quy Mango from Ben Tre. Wholesale price updates, harvest conditions, and news from Thanh Phu farm.",
+    "metaKeywords": ["tu quy mango news", "ben tre mango pricing", "tu quy mango latest price", "ben tre mango season"],
+    "ogTitle": "Tu Quy Mango News & Pricing",
+    "ogDesc": "Wholesale prices and harvest updates from Thanh Phu farm, Ben Tre.",
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "News",
+    "heroEyebrow": "Thanh Phu Farm, Ben Tre",
+    "heroTitle1": "News & Pricing",
+    "heroTitle2": "Tu Quy Mango",
+    "heroDesc": "Wholesale price updates, harvest conditions, and the latest from the farm.",
+    "readMore": "Read more",
+    "defaultCategory": "News"
+  },
+  "blogData": {
+    "posts": {
+      "7-mon-ngon-tu-xoai-tu-quy": {
+        "title": "7 Delicious Dishes from Tu Quy Mango — Salad, Smoothie, Jam, Mango Shake & More",
+        "description": "7 ways to cook with Tu Quy Mango: salad, smoothie, jam, mango shake, mango in broth, coconut dessert, chutney. Detailed recipes from Thanh Phu farm.",
+        "category": "Cuisine"
+      },
+      "nguon-goc-xoai-tu-quy-cau-chuyen-1982": {
+        "title": "Origin of Tu Quy Mango — The Story from 1982 to GI #00124",
+        "description": "History of Tu Quy Mango: discovered in 1982 in Cho Lach, spread to Thanh Phu on saline sandy soil, awarded GI #00124 in 2022.",
+        "category": "History"
+      },
+      "bao-gia-xoai-tu-quy-thang-04-2026": {
+        "title": "Tu Quy Mango Price List April 2026 — Season 1 VIP Quality",
+        "description": "Tu Quy Mango wholesale prices in Ben Tre for April 2026. Season 1 at peak quality, stable supply.",
+        "category": "Pricing"
+      }
+    }
+  },
+  "knowledgeData": {
+    "articles": {
+      "xoai-tu-quy-la-gi": {
+        "title": "What Is Tu Quy Mango? — Characteristics, Seasons, Price",
+        "description": "Complete guide to Tu Quy Mango: definition, characteristics, terroir, 3 seasons/year, grading, GI #00124, how to choose the best mango.",
+        "category": "Pillar"
+      },
+      "chi-dan-dia-ly-cd-dl-00124": {
+        "title": "Geographical Indication GI #00124 — Legal Protection",
+        "description": "GI #00124 issued 10/11/2022 by Vietnam's IP Office protects the name 'Xoài Tứ Quý Bến Tre' for 3 districts: Thanh Phu, Ba Tri, Binh Dai.",
+        "category": "Legal"
+      },
+      "xoai-tu-quy-vs-xoai-cat-hoa-loc": {
+        "title": "Tu Quy Mango vs Cat Hoa Loc Mango — Detailed Comparison",
+        "description": "Detailed comparison of 2 premium Mekong Delta mango varieties: flavor, season, price, growing region, storage, and best uses.",
+        "category": "Comparison"
+      },
+      "vung-trong-xoai-mien-tay": {
+        "title": "Mekong Delta Mango Growing Regions — Ben Tre, Tien Giang, Vinh Long, Tra Vinh",
+        "description": "Map of Mekong Delta mango regions: Ben Tre (Tu Quy GI #00124), Tien Giang (Cat Hoa Loc), Vinh Long, Tra Vinh.",
+        "category": "Growing Regions"
+      },
+      "mua-vu-xoai-tu-quy-3-vu-nam": {
+        "title": "Tu Quy Mango Seasons — 3 Seasons/Year + Monthly Price Guide",
+        "description": "Tu Quy Mango harvest calendar: season 1 (Feb–Apr), season 2 (Jul–Aug), season 3 (Nov–Jan, Tet season). Monthly price table + wholesale buying tips.",
+        "category": "Seasons"
+      },
+      "cach-bao-quan-lam-chin-xoai-tu-quy": {
+        "title": "How to Store & Ripen Tu Quy Mango at Home",
+        "description": "Guide to storing Tu Quy Mango for 7–14 days, 5 ways to ripen quickly, and common mistakes to avoid.",
+        "category": "Guide"
+      }
+    }
+  },
+  "articleMeta": {
+    "pillarLabels": {
+      "gia-thi-truong": "Price & Market",
+      "ky-thuat-bao-quan": "Storage Techniques",
+      "so-sanh-giong": "Mango Variety Comparison",
+      "giao-hang-theo-vung": "Regional Delivery",
+      "meo-thuong-thuc": "Tasting Tips",
+      "heritage-bentre": "Ben Tre Heritage"
+    },
+    "defaultKienThuc": "Knowledge",
+    "defaultTinTuc": "News"
+  },
+  "giaoHang": {
+    "hero": {
+      "tag": "Nationwide delivery · {region}",
+      "title": "Ben Tre Fruits Delivery",
+      "titleTo": "To {cityName}",
+      "desc": "{method} from Thanh Phu farm — {hours} hours to {cityName}. Tu Quy Mango GI #00124 + pre-peeled Young Coconut. Shock-resistant packaging, cold-chain end to end.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Order via Zalo"
+    },
+    "shippingDetails": {
+      "title": "Delivery Details — {cityName}",
+      "timeTitle": "Transit Time",
+      "timeUnit": "{hours}h",
+      "timeSub": "{method} from Thanh Phu farm",
+      "costTitle": "Est. Shipping Cost",
+      "costSub": "Per 20kg box (estimate)",
+      "packTitle": "Packaging",
+      "packDesc": "Foam mesh per fruit + cushioned carton + cold-chain 2–8°C end to end.",
+      "noteTitle": "Route Notes — {cityName}"
+    },
+    "products": {
+      "title": "Products Delivered to {cityName}"
+    },
+    "faq": {
+      "title": "FAQ — Delivery to {cityName}",
+      "q1": "How long does Ben Tre fruit delivery to {cityName} take?",
+      "a1": "Around {hours} hours via {method}. Goods are cold-packed and arrive fresh.",
+      "q2": "How much does shipping to {cityName} cost?",
+      "a2": "Estimated {cost}₫ per 20kg box. Exact cost confirmed at order — varies by weight and route. Call 0932 585 533.",
+      "q3": "Will Tu Quy Mango get bruised shipping to {cityName}?",
+      "a3": "No. Each fruit is individually foam-wrapped, packed in cushioned carton. 3 years nationwide delivery, damage rate under 2%. Bruised? Send photo on Zalo — refunded on next order.",
+      "q4": "Can I order Young Coconut shell shipped to {cityName}?",
+      "a4": "Yes — pre-peeled coconut shell, cold-packed. Wholesale 8–10k₫/coconut, retail 15–18k₫/coconut. Delivered via {method} in {hours}h."
+    },
+    "internalLinks": {
+      "xoai": "Tu Quy Mango",
+      "dua": "Ben Tre Young Coconut",
+      "allProducts": "All products",
+      "contactWholesale": "Wholesale inquiry"
+    }
+  },
+  "giaoHangTpHcm": {
+    "hero": {
+      "tag": "Nationwide delivery · Route Ben Tre – TP.HCM",
+      "title": "Tu Quy Mango Delivery TP.HCM",
+      "titleHighlight": "24h From Thanh Phu Farm",
+      "desc": "Closest city to the farm — refrigerated truck runs daily, lowest shipping cost, mangoes arrive within 24 hours. Delivered to markets, restaurants, supermarkets.",
+      "ctaCall": "Order now: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "Shipping Details",
+      "timeTitle": "Delivery Time",
+      "timeDesc": "24 hours from Thanh Phu farm to TP.HCM. Cold truck departs daily in the evening.",
+      "packTitle": "Packaging",
+      "packDesc": "Cardboard or foam box on request. Foam mesh per fruit, cushioned padding.",
+      "warrantyTitle": "Guarantee",
+      "warrantyDesc": "Under 2% damage rate. Bruised fruit → photo to Zalo, credited on next order. No questions asked."
+    },
+    "whyTitle": "Why TP.HCM buyers choose us",
+    "why": [
+      "Closest farm of the three major cities — lowest shipping cost, freshest mangoes",
+      "Cold truck runs every evening — arrives at TP.HCM next morning",
+      "Delivered to wholesale markets, supermarkets, restaurants, fruit shops — anywhere",
+      "Cardboard or foam box — your choice"
+    ],
+    "faq": {
+      "title": "FAQ — Delivery to TP.HCM",
+      "items": [
+        {
+          "q": "How long does TP.HCM shipping take?",
+          "a": "6–8 hours driving from Thanh Phu. Cold truck departs evening — arrives TP.HCM next morning. Under 24 hours total (orders before 3 PM)."
+        },
+        {
+          "q": "Do you deliver to markets?",
+          "a": "Yes. We deliver to Binh Dien, Hoc Mon, Thu Duc wholesale markets and inner-city districts. For large orders (5+ boxes), contact us first to arrange drop-off point."
+        },
+        {
+          "q": "Who do I contact for wholesale in TP.HCM?",
+          "a": "Contact Mr. Phuc directly — 0932 585 533 (call or Zalo). Give us quantity, delivery point, mango type — we'll quote and schedule within 15 minutes."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Order Mango Delivery to TP.HCM",
+      "desc": "Call or Zalo — we quote price & delivery time within 15 minutes.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo now"
+    },
+    "internalLinks": [
+      { "label": "About Tu Quy Mango", "href": "/xoai-tu-quy" },
+      { "label": "Today's mango price", "href": "/xoai-tu-quy#gia" },
+      { "label": "Wholesale inquiry", "href": "/#contact" }
+    ]
+  },
+  "giaoHangHaNoi": {
+    "hero": {
+      "tag": "Nationwide delivery · Route Ben Tre – Hà Nội",
+      "title": "Authentic Ben Tre Mango in Hà Nội",
+      "titleHighlight": "48h Cold Delivery From the Farm",
+      "desc": "Cold truck maintained at 8–12°C or same-day air freight if urgent. Shock-resistant packaging for long-haul routes. 95% of our mango goes north — we know this route well.",
+      "ctaCall": "Order now: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "Shipping Details",
+      "timeTitle": "Delivery Time",
+      "timeDesc": "48 hours from Thanh Phu farm to Hà Nội. Daily cold truck or express air freight.",
+      "packTitle": "Packaging",
+      "packDesc": "Ventilated foam box + foam mesh per fruit + shock-absorbing padding. Built for 48h+ routes.",
+      "warrantyTitle": "Guarantee",
+      "warrantyDesc": "Under 2% damage rate. Bruised fruit → photo to Zalo, credited on next order. No questions asked."
+    },
+    "whyTitle": "Why Hà Nội buyers choose us",
+    "why": [
+      "95% of our mango sold north — experienced with long-haul packaging",
+      "Cold truck 8–12°C throughout, or same-day air freight when urgent",
+      "Ventilated foam box + foam mesh per fruit + multi-layer padding — under 2% damage",
+      "Bruised on arrival? Photo to Zalo — credited on next order, no return needed"
+    ],
+    "faq": {
+      "title": "FAQ — Delivery to Hà Nội",
+      "items": [
+        {
+          "q": "Where to buy authentic Ben Tre mango in Hà Nội?",
+          "a": "Order direct from Ben Tre Fruits farm in Thanh Phu. Mangoes carry GI #00124 issued by Vietnam's IP Office — certified authentic. Call 0932 585 533 or Zalo, we quote and schedule within 15 minutes."
+        },
+        {
+          "q": "How do I know the mango is really from Ben Tre, not blended?",
+          "a": "Each box has GI #00124 label + QR traceability: farm name, harvest date, picker identity. Authentic Tu Quy Mango has a signature subtle saltiness on the finish — no other region has it."
+        },
+        {
+          "q": "How many days to Hà Nội?",
+          "a": "Usually 48 hours from packing at Thanh Phu farm. Cold truck departs daily 5–6 PM, arrives Hà Nội next morning. Need faster? Choose air freight — same day."
+        },
+        {
+          "q": "Will mangoes bruise on the long delivery?",
+          "a": "No. Each fruit individually foam-wrapped, placed in ventilated foam box with cushion layers. We've been shipping to northern customers for 3 years — under 2% damage rate."
+        },
+        {
+          "q": "What is the Hà Nội shipping cost?",
+          "a": "Cold truck from Ben Tre to Hà Nội approximately 35,000–50,000₫ per 20kg box (exact cost quoted at order). Air freight higher, depends on flight. Call 0932 585 533 for upfront quote."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Order Mango for Hà Nội",
+      "desc": "Call or Zalo — we quote price + delivery schedule within 15 minutes.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo now"
+    },
+    "internalLinks": [
+      { "label": "Tu Quy Mango", "href": "/xoai-tu-quy" },
+      { "label": "Ben Tre Young Coconut", "href": "/dua-xiem-ben-tre" },
+      { "label": "All products", "href": "/san-pham" },
+      { "label": "Wholesale inquiry", "href": "/#contact" }
+    ]
+  },
+  "giaoHangDaNang": {
+    "hero": {
+      "tag": "Nationwide delivery · Route Ben Tre – Central Vietnam",
+      "title": "Tu Quy Mango Delivery to Đà Nẵng",
+      "titleHighlight": "Cold Shipping Full Route",
+      "desc": "36-hour cold truck from Thanh Phu straight to Đà Nẵng. Serving restaurants, hotels and resorts across Central Vietnam.",
+      "ctaCall": "Order now: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "Shipping Details",
+      "timeTitle": "Delivery Time",
+      "timeDesc": "36 hours from Thanh Phu farm to Đà Nẵng. Direct cold truck, no intermediate warehouse.",
+      "packTitle": "Packaging",
+      "packDesc": "Long-haul foam box: foam mesh per fruit, multi-layer shock padding, maintained at 8–12°C.",
+      "warrantyTitle": "Guarantee",
+      "warrantyDesc": "Under 2% damage rate. Bruised fruit → photo to Zalo, credited on next order. Full VAT invoices available."
+    },
+    "whyTitle": "Why Đà Nẵng restaurants choose us",
+    "why": [
+      "Dedicated Central Vietnam cold truck, maintaining 8–12°C throughout 36 hours",
+      "Long-haul packaging: foam mesh per fruit, multi-layer shock padding",
+      "Partners include restaurants, hotels, resorts in Đà Nẵng, Hội An, Huế and neighboring provinces",
+      "Full VAT invoices for companies, restaurants, hotels"
+    ],
+    "faq": {
+      "title": "FAQ — Delivery to Đà Nẵng",
+      "items": [
+        {
+          "q": "How long does Đà Nẵng delivery take?",
+          "a": "Around 36 hours from packing at Thanh Phu, Ben Tre to Đà Nẵng. Direct cold truck, no intermediate warehouse. Order before noon — arrives next morning."
+        },
+        {
+          "q": "Do you deliver to other Central Vietnam provinces?",
+          "a": "Yes. We deliver to Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế and Quảng Trị on fixed cold truck routes. Contact 0932 585 533 to confirm schedule for your specific location."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Order Mango Delivery to Đà Nẵng",
+      "desc": "Call or Zalo — we quote price & Central Vietnam delivery schedule within 15 minutes.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo now"
+    },
+    "internalLinks": [
+      { "label": "About Tu Quy Mango", "href": "/xoai-tu-quy" },
+      { "label": "Today's mango price", "href": "/xoai-tu-quy#gia" },
+      { "label": "Wholesale inquiry", "href": "/#contact" }
+    ]
+  },
+  "productCatalog": {
+    "sectionTag": "Ben Tre farm specialties",
+    "title": "Fruits",
+    "titleHighlight": "from the Farm",
+    "desc": "Ben Tre Fruits Farm connects directly with Thanh Phu growers. Tu Quy Mango GI #00124 is our flagship, and we are expanding to other Ben Tre specialty fruits.",
+    "viewDetail": "View details",
+    "comingSoon": "Coming Soon",
+    "preparingLabel": "Preparing",
+    "seasonYearRound": "Year-round",
+    "seasonMonths": "Season: {months}"
+  },
+  "sanPhamPage": {
+    "metadata": {
+      "title": "Ben Tre Specialty Fruits — Tu Quy Mango, Young Coconut & More",
+      "description": "Ben Tre specialty fruits direct from the farm: Tu Quy Mango GI #00124, Ben Tre Young Coconut, and more coming soon.",
+      "ogTitle": "Ben Tre Specialty Fruits Direct From Farm",
+      "ogDescription": "Tu Quy Mango GI #00124 and other Ben Tre specialty fruits direct from the farm."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
+    }
+  },
+  "priceData": {
+    "note": "Prices fluctuate daily — call farm 0932 585 533 for exact current price.",
+    "tiers": {
+      "vip": {
+        "name": "Tu Quy Mango VIP",
+        "description": "Flawless fruits, smooth skin, 600g+ each. For gifts, premium restaurants, VIP buyers.",
+        "badge": "VIP"
+      },
+      "loai1": {
+        "name": "Tu Quy Mango Grade 1",
+        "description": "Same size as VIP, one lightly blemished side — same quality. Best seller.",
+        "badge": "Best Seller #1"
+      },
+      "loai2": {
+        "name": "Tu Quy Mango Grade 2",
+        "description": "Smaller, less uniform — tastes just as good. Ideal for retail, salad, mango shake stalls.",
+        "badge": "Best Value"
+      }
     }
   }
 }

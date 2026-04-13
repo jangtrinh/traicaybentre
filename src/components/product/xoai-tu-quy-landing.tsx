@@ -26,7 +26,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
-import { PRICE_DATA } from "@/lib/price-data";
+import { getPriceDataTranslated } from "@/lib/price-data";
 
 // Icons are not translatable — titles/descs come from messages.xoaiTuQuy.sellingPoints
 const SELLING_POINT_ICONS = [ShieldCheck, Leaf, Truck, Scales];
@@ -43,6 +43,8 @@ const SHIPPING_ROUTES = [
 
 export async function XoaiTuQuyLanding() {
   const t = await getTranslations("xoaiTuQuy");
+  const tPrice = await getTranslations("priceData");
+  const PRICE_DATA = getPriceDataTranslated(tPrice);
   type SellingPoint = { title: string; desc: string };
   type OrderItem = { title: string; desc: string };
   type InternalLink = { label: string; href: string };

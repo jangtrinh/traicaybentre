@@ -18,7 +18,7 @@ import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { getCity, getCitySlugs, getMethodLabel, REGION_LABELS } from "@/content/cities";
 import { getActiveProducts } from "@/lib/products";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
 type RouteParams = { city: string };
@@ -34,24 +34,25 @@ export function generateStaticParams(): RouteParams[] {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { city: slug } = await params;
+  const { locale, city: slug } = await params;
   const city = getCity(slug);
   if (!city) return {};
+  const t = await getTranslations({ locale, namespace: "giaoHang" });
+  const citiesT = await getTranslations({ locale, namespace: "cities" });
   const products = getActiveProducts().map((p) => p.shortName).join(" + ");
   const url = `${SITE_URL}/giao-hang/${slug}`;
+  const methodLabel = citiesT(`methodLabels.${city.method}`);
   return {
-    title: `Giao ${products} Bến Tre Đến ${city.name} — ${city.shippingHours}h Từ Vựa`,
-    description: `Giao trái cây Bến Tre đến ${city.name} trong ${city.shippingHours}h bằng ${getMethodLabel(city.method)}. Xoài Tứ Quý + Dừa Xiêm sọ gọt sẵn. Phí ship ~${city.costEstimate}₫/thùng. Gọi: 0932 585 533.`,
+    title: `${t("hero.title")} ${t("hero.titleTo", { cityName: city.name })} — ${city.shippingHours}h`,
+    description: `${t("hero.desc", { method: methodLabel, hours: city.shippingHours, cityName: city.name })}`,
     keywords: [
+      `ship ${products.toLowerCase()} ${city.name.toLowerCase()}`,
       `giao trái cây ${city.name.toLowerCase()}`,
-      `xoài bến tre ${city.name.toLowerCase()}`,
-      `dừa xiêm ${city.name.toLowerCase()}`,
-      `ship trái cây ${city.name.toLowerCase()}`,
     ],
     alternates: { canonical: url },
     openGraph: {
-      title: `Giao Trái Cây Bến Tre Đến ${city.name} — ${city.shippingHours}h`,
-      description: `${getMethodLabel(city.method)}. Phí ~${city.costEstimate}₫/thùng 20kg.`,
+      title: `${t("hero.title")} ${t("hero.titleTo", { cityName: city.name })}`,
+      description: `${methodLabel}. ${city.shippingHours}h.`,
       url,
     },
   };
@@ -63,30 +64,23 @@ export default async function CityShippingPage({ params }: Props) {
   const city = getCity(slug);
   if (!city) notFound();
 
+  const t = await getTranslations("giaoHang");
+  const citiesT = await getTranslations("cities");
+  const methodLabel = citiesT(`methodLabels.${city.method}`);
+  const regionLabel = citiesT(`regionLabels.${city.region}`);
+
   const products = getActiveProducts();
   const breadcrumb = getBreadcrumbJsonLd([
     { name: "Trang chủ", url: SITE_URL },
-    { name: "Giao hàng", url: `${SITE_URL}/giao-hang/${slug}` },
+    { name: t("hero.title"), url: `${SITE_URL}/giao-hang/${slug}` },
     { name: city.name, url: `${SITE_URL}/giao-hang/${slug}` },
   ]);
 
   const faq = [
-    {
-      q: `Giao trái cây Bến Tre đến ${city.name} mất bao lâu?`,
-      a: `Khoảng ${city.shippingHours} giờ bằng ${getMethodLabel(city.method).toLowerCase()}. Hàng đóng gói giữ lạnh, tươi khi đến nơi.`,
-    },
-    {
-      q: `Phí ship ${city.name} bao nhiêu?`,
-      a: `Ước tính ${city.costEstimate}₫/thùng 20kg. Phí chính xác báo khi đặt hàng — tùy trọng lượng và tuyến. Gọi 0932 585 533.`,
-    },
-    {
-      q: `Xoài Tứ Quý ship ${city.name} có bị dập không?`,
-      a: `Không. Mỗi trái bọc lưới xốp riêng, thùng carton đệm chống sốc. 3 năm giao toàn quốc, hàng hư < 2%. Dập → Zalo ảnh → bồi đơn sau.`,
-    },
-    {
-      q: `Mua dừa xiêm sọ ship ${city.name} được không?`,
-      a: `Được — dừa sọ gọt sẵn, đóng gói giữ lạnh. Sỉ 8-10k₫/trái, lẻ 15-18k₫/trái. Giao ${getMethodLabel(city.method).toLowerCase()} ${city.shippingHours}h.`,
-    },
+    { q: t("faq.q1", { cityName: city.name }), a: t("faq.a1", { hours: city.shippingHours, method: methodLabel.toLowerCase() }) },
+    { q: t("faq.q2", { cityName: city.name }), a: t("faq.a2", { cost: city.costEstimate }) },
+    { q: t("faq.q3", { cityName: city.name }), a: t("faq.a3") },
+    { q: t("faq.q4", { cityName: city.name }), a: t("faq.a4", { method: methodLabel.toLowerCase(), hours: city.shippingHours }) },
   ];
 
   const faqJsonLd = {
@@ -110,26 +104,25 @@ export default async function CityShippingPage({ params }: Props) {
         <div className="mx-auto max-w-[800px] text-center">
           <FadeIn>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Giao hàng toàn quốc · {REGION_LABELS[city.region]}
+              {t("hero.tag", { region: regionLabel })}
             </span>
             <h1 className="mt-3 font-heading text-[32px] font-bold uppercase leading-tight text-text sm:text-5xl">
-              Giao Trái Cây Bến Tre
+              {t("hero.title")}
               <br />
-              <span className="text-mango">Đến {city.name}</span>
+              <span className="text-mango">{t("hero.titleTo", { cityName: city.name })}</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-lg leading-7 text-text/70">
-              {getMethodLabel(city.method)} từ vựa Thạnh Phú — {city.shippingHours} giờ đến {city.name}.
-              Xoài Tứ Quý CDĐL #00124 + Dừa Xiêm sọ gọt sẵn. Đóng gói chống dập, giữ lạnh suốt tuyến.
+              {t("hero.desc", { method: methodLabel, hours: city.shippingHours, cityName: city.name })}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href="tel:0932585533" className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors">
                 <Phone size={18} weight="bold" />
-                0932 585 533
+                {t("hero.ctaCall")}
               </a>
               <a href={`https://zalo.me/0932585533?text=${encodeURIComponent(`Mình muốn đặt trái cây ship ${city.name}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors">
-                Zalo đặt hàng
+                {t("hero.ctaZalo")}
               </a>
             </div>
           </FadeIn>
@@ -143,31 +136,31 @@ export default async function CityShippingPage({ params }: Props) {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-10 text-center font-heading text-3xl font-bold uppercase text-text">
-              Chi tiết giao {city.name}
+              {t("shippingDetails.title", { cityName: city.name })}
             </h2>
           </FadeIn>
           <div className="grid gap-6 sm:grid-cols-3">
             <FadeIn delay={0.05}>
               <div className="rounded-2xl bg-white p-6 shadow-sm">
                 <Clock size={32} weight="duotone" className="text-mango" />
-                <h3 className="mt-3 font-heading text-lg font-bold text-text">Thời gian</h3>
-                <p className="mt-1 text-2xl font-bold text-text">{city.shippingHours}h</p>
-                <p className="mt-1 text-sm text-text/60">{getMethodLabel(city.method)} từ vựa Thạnh Phú</p>
+                <h3 className="mt-3 font-heading text-lg font-bold text-text">{t("shippingDetails.timeTitle")}</h3>
+                <p className="mt-1 text-2xl font-bold text-text">{t("shippingDetails.timeUnit", { hours: city.shippingHours })}</p>
+                <p className="mt-1 text-sm text-text/60">{t("shippingDetails.timeSub", { method: methodLabel })}</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="rounded-2xl bg-white p-6 shadow-sm">
                 <Package size={32} weight="duotone" className="text-mango" />
-                <h3 className="mt-3 font-heading text-lg font-bold text-text">Phí ship</h3>
+                <h3 className="mt-3 font-heading text-lg font-bold text-text">{t("shippingDetails.costTitle")}</h3>
                 <p className="mt-1 text-2xl font-bold text-text">{city.costEstimate}₫</p>
-                <p className="mt-1 text-sm text-text/60">Per thùng 20kg (ước tính)</p>
+                <p className="mt-1 text-sm text-text/60">{t("shippingDetails.costSub")}</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="rounded-2xl bg-white p-6 shadow-sm">
                 <Truck size={32} weight="duotone" className="text-mango" />
-                <h3 className="mt-3 font-heading text-lg font-bold text-text">Đóng gói</h3>
-                <p className="mt-1 text-sm text-text/60">Lưới xốp từng trái + thùng carton đệm chống sốc + giữ lạnh 2-8°C suốt tuyến.</p>
+                <h3 className="mt-3 font-heading text-lg font-bold text-text">{t("shippingDetails.packTitle")}</h3>
+                <p className="mt-1 text-sm text-text/60">{t("shippingDetails.packDesc")}</p>
               </div>
             </FadeIn>
           </div>
@@ -175,7 +168,7 @@ export default async function CityShippingPage({ params }: Props) {
           {/* City-specific note — unique content per page */}
           <FadeIn delay={0.2}>
             <div className="mt-8 rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="font-heading text-lg font-bold text-text">Ghi chú tuyến {city.name}</h3>
+              <h3 className="font-heading text-lg font-bold text-text">{t("shippingDetails.noteTitle", { cityName: city.name })}</h3>
               <p className="mt-2 text-sm leading-relaxed text-text/70">{city.note}</p>
             </div>
           </FadeIn>
@@ -189,7 +182,7 @@ export default async function CityShippingPage({ params }: Props) {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-8 text-center font-heading text-3xl font-bold uppercase text-text">
-              Sản phẩm giao {city.name}
+              {t("products.title", { cityName: city.name })}
             </h2>
           </FadeIn>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -215,7 +208,7 @@ export default async function CityShippingPage({ params }: Props) {
         <div className="mx-auto max-w-[800px]">
           <FadeIn>
             <h2 className="mb-8 font-heading text-3xl font-bold uppercase text-text">
-              Câu hỏi thường gặp — Giao {city.name}
+              {t("faq.title", { cityName: city.name })}
             </h2>
           </FadeIn>
           <div className="space-y-4">
@@ -237,10 +230,10 @@ export default async function CityShippingPage({ params }: Props) {
       <section className="bg-brand px-5 py-12">
         <div className="mx-auto flex max-w-[800px] flex-wrap justify-center gap-3">
           {[
-            { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
-            { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
-            { label: "Tất cả sản phẩm", href: "/san-pham" },
-            { label: "Liên hệ đặt sỉ", href: "/#contact" },
+            { label: t("internalLinks.xoai"), href: "/xoai-tu-quy" },
+            { label: t("internalLinks.dua"), href: "/dua-xiem-ben-tre" },
+            { label: t("internalLinks.allProducts"), href: "/san-pham" },
+            { label: t("internalLinks.contactWholesale"), href: "/#contact" },
           ].map((link) => (
             <Link key={link.href} href={link.href} className="rounded-full border-2 border-text/15 px-5 py-2.5 text-sm font-semibold text-text/70 hover:border-text hover:text-text transition-colors">
               {link.label}

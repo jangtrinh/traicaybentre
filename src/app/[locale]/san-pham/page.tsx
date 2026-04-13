@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Phone } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -10,41 +8,42 @@ import { ProductCatalog } from "@/components/product/product-catalog";
 import { getAllProducts } from "@/lib/products";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Các Loại Trái Cây Đặc Sản Bến Tre — Xoài Tứ Quý, Dừa Xiêm & Hơn Nữa",
-  description:
-    "Danh sách trái cây đặc sản Bến Tre từ vựa trực tiếp: Xoài Tứ Quý CDĐL #00124, Dừa Xiêm Bến Tre, và các loại trái cây đang chuẩn bị ra mắt.",
-  keywords: [
-    "trái cây bến tre",
-    "trái cây đặc sản bến tre",
-    "quà biếu trái cây đặc sản bến tre",
-    "vựa trái cây bến tre",
-    "xoài tứ quý",
-    "dừa xiêm bến tre",
-  ],
-  alternates: { canonical: `${SITE_URL}/san-pham` },
-  openGraph: {
-    title: "Các Loại Trái Cây Đặc Sản Bến Tre Từ Vựa",
-    description:
-      "Xoài Tứ Quý CDĐL #00124 và các loại trái cây đặc sản Bến Tre khác từ vựa trực tiếp.",
-    url: `${SITE_URL}/san-pham`,
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-const breadcrumbJsonLd = getBreadcrumbJsonLd([
-  { name: "Trang chủ", url: SITE_URL },
-  { name: "Sản phẩm", url: `${SITE_URL}/san-pham` },
-]);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "sanPhamPage" });
+  return {
+    title: t("metadata.title"),
+    description: t("metadata.description"),
+    keywords: [
+      "trái cây bến tre",
+      "trái cây đặc sản bến tre",
+      "quà biếu trái cây đặc sản bến tre",
+      "vựa trái cây bến tre",
+      "xoài tứ quý",
+      "dừa xiêm bến tre",
+    ],
+    alternates: { canonical: `${SITE_URL}/san-pham` },
+    openGraph: {
+      title: t("metadata.ogTitle"),
+      description: t("metadata.ogDescription"),
+      url: `${SITE_URL}/san-pham`,
+    },
+  };
+}
 
-export default async function CatalogPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function CatalogPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const products = getAllProducts();
   const t = await getTranslations("sanPham");
+  const tPage = await getTranslations("sanPhamPage");
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: tPage("breadcrumb.home"), url: SITE_URL },
+    { name: tPage("breadcrumb.products"), url: `${SITE_URL}/san-pham` },
+  ]);
 
   return (
     <>

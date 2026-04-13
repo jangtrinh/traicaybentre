@@ -3,25 +3,30 @@
  *
  * Rules:
  *  - Active products → clickable `<Link>` to `/{slug}`
- *  - Coming-soon products → non-clickable `<div>` with "Sắp ra mắt" badge (F12).
+ *  - Coming-soon products → non-clickable `<div>` with "coming soon" badge (F12).
  *    NEVER link to a coming-soon product's route; those routes 404 by design.
  */
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock } from "@phosphor-icons/react/dist/ssr";
+import { useTranslations } from "next-intl";
 import type { ProductEntry } from "@/content/products";
 import { FadeIn } from "@/components/fade-in";
-
-function formatSeason(season: ProductEntry["season"]): string {
-  if (season === "year-round") return "Quanh năm";
-  const months = season.map((m) => `T${m}`).join(", ");
-  return `Mùa: ${months}`;
-}
 
 type ProductCardProps = { product: ProductEntry; index: number };
 
 function ProductCard({ product, index }: ProductCardProps) {
+  const t = useTranslations("productCatalog");
   const isActive = product.status === "active";
+
+  function formatSeason(season: ProductEntry["season"]): string {
+    if (season === "year-round") return t("seasonYearRound");
+    const months = season.map((m) => `T${m}`).join(", ");
+    return t("seasonMonths", { months });
+  }
+
   const seasonLabel = formatSeason(product.season);
 
   const inner = (
@@ -36,7 +41,7 @@ function ProductCard({ product, index }: ProductCardProps) {
         />
         {!isActive && (
           <div className="absolute top-4 left-4 rounded-full bg-text px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-            Sắp ra mắt
+            {t("comingSoon")}
           </div>
         )}
       </div>
@@ -53,7 +58,7 @@ function ProductCard({ product, index }: ProductCardProps) {
         </p>
         {isActive ? (
           <span className="mt-5 inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-text group-hover:text-mango transition-colors">
-            Xem chi tiết
+            {t("viewDetail")}
             <ArrowRight
               size={14}
               weight="bold"
@@ -62,7 +67,7 @@ function ProductCard({ product, index }: ProductCardProps) {
           </span>
         ) : (
           <span className="mt-5 inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-text/40">
-            Đang chuẩn bị
+            {t("preparingLabel")}
           </span>
         )}
       </div>
@@ -82,7 +87,7 @@ function ProductCard({ product, index }: ProductCardProps) {
         <div
           className={`${cardClass} cursor-not-allowed opacity-80`}
           aria-disabled="true"
-          title="Sắp ra mắt — liên hệ vựa để đặt trước"
+          title={t("comingSoon")}
         >
           {inner}
         </div>
@@ -92,23 +97,23 @@ function ProductCard({ product, index }: ProductCardProps) {
 }
 
 export function ProductCatalog({ products }: { products: ProductEntry[] }) {
+  const t = useTranslations("productCatalog");
+
   return (
     <section className="bg-brand-cream px-5 py-20">
       <div className="mx-auto max-w-[1200px]">
         <FadeIn>
           <div className="text-center">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Trái cây đặc sản Bến Tre
+              {t("sectionTag")}
             </span>
             <h1 className="mt-3 font-heading text-4xl font-bold uppercase leading-tight text-text sm:text-5xl">
-              Các loại trái cây
+              {t("title")}
               <br />
-              <span className="text-mango">từ vựa</span>
+              <span className="text-mango">{t("titleHighlight")}</span>
             </h1>
             <p className="mt-6 mx-auto max-w-[640px] text-lg leading-7 text-text/60">
-              Vựa Trái Cây Bến Tre liên kết trực tiếp với nhà vườn Thạnh Phú.
-              Xoài Tứ Quý CDĐL #00124 là flagship, và vựa đang mở rộng thêm các
-              loại trái đặc sản khác của Bến Tre.
+              {t("desc")}
             </p>
           </div>
         </FadeIn>

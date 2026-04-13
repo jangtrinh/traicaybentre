@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
@@ -8,34 +7,31 @@ import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { BLOG_POSTS } from "@/lib/blog-data";
-import { getAllPublishedArticles, localizePillar } from "@/lib/articles";
+import { getAllPublishedArticles } from "@/lib/articles";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
 // ISR — refresh hub every 5 min so newly-published MDX articles appear
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-  title: "Tin Tức & Báo Giá Xoài Tứ Quý | Bến Tre",
-  description:
-    "Tin tức mới nhất và báo giá xoài Tứ Quý Bến Tre. Cập nhật giá sỉ, tình hình vụ mùa, và thông tin từ vựa Thạnh Phú.",
-  keywords: [
-    "tin tức xoài tứ quý",
-    "báo giá xoài bến tre",
-    "giá xoài tứ quý mới nhất",
-    "vụ mùa xoài bến tre",
-  ],
-  alternates: { canonical: `${SITE_URL}/tin-tuc` },
-  openGraph: {
-    title: "Tin Tức & Báo Giá Xoài Tứ Quý",
-    description: "Báo giá sỉ và tin tức vụ mùa từ vựa Thạnh Phú, Bến Tre.",
-    url: `${SITE_URL}/tin-tuc`,
-  },
-};
-
-const breadcrumbJsonLd = getBreadcrumbJsonLd([
-  { name: "Trang chủ", url: SITE_URL },
-  { name: "Tin tức", url: `${SITE_URL}/tin-tuc` },
-]);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "tinTucPage" });
+  return {
+    title: t("metaTitle"),
+    description: t("metaDesc"),
+    keywords: t.raw("metaKeywords") as string[],
+    alternates: { canonical: `${SITE_URL}/tin-tuc` },
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDesc"),
+      url: `${SITE_URL}/tin-tuc`,
+    },
+  };
+}
 
 function formatDate(iso: string) {
   const [y, m, d] = iso.split("-");
@@ -51,31 +47,6 @@ type HubPost = {
   coverImage: { src: string; alt: string };
 };
 
-function getHubPosts(): HubPost[] {
-  const legacy: HubPost[] = BLOG_POSTS.map((p) => ({
-    href: `/tin-tuc/${p.slug}`,
-    title: p.title,
-    description: p.description,
-    date: p.date,
-    category: p.category,
-    coverImage: p.coverImage,
-  }));
-
-  const mdx: HubPost[] = getAllPublishedArticles("tin-tuc").map((a) => ({
-    href: a.urlPath,
-    title: a.frontmatter.title,
-    description: a.frontmatter.metaDescription,
-    date: a.frontmatter.publishedAt.slice(0, 10),
-    category: a.frontmatter.pillar ? localizePillar(a.frontmatter.pillar) : "Tin tức",
-    coverImage: {
-      src: a.frontmatter.ogImage ?? "/images/xoai-real-2.jpg",
-      alt: a.frontmatter.title,
-    },
-  }));
-
-  return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
-}
-
 export default async function TinTucPage({
   params,
 }: {
@@ -83,7 +54,71 @@ export default async function TinTucPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: "tinTucPage" });
+  const tBlog = await getTranslations({ locale, namespace: "blogData" });
+  const tArticleMeta = await getTranslations({ locale, namespace: "articleMeta" });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: t("breadcrumbHome"), url: SITE_URL },
+    { name: t("breadcrumbCurrent"), url: `${SITE_URL}/tin-tuc` },
+  ]);
+
+  function getHubPosts(): HubPost[] {
+    const legacy: HubPost[] = BLOG_POSTS.map((p) => {
+      // Try translated title/description/category; fall back to source data
+      let title = p.title;
+      let description = p.description;
+      let category = p.category;
+      try {
+        title = tBlog(`posts.${p.slug}.title`);
+        description = tBlog(`posts.${p.slug}.description`);
+        category = tBlog(`posts.${p.slug}.category`);
+      } catch {
+        // slug not in translations — use original data
+      }
+      return {
+        href: `/tin-tuc/${p.slug}`,
+        title,
+        description,
+        date: p.date,
+        category,
+        coverImage: p.coverImage,
+      };
+    });
+
+    // MDX articles have Vietnamese-only frontmatter; only include them on the vi locale.
+    // Other locales show the translated static articles only until MDX i18n is added.
+    const mdx: HubPost[] =
+      locale === "vi"
+        ? getAllPublishedArticles("tin-tuc").map((a) => {
+            let category = t("defaultCategory");
+            if (a.frontmatter.pillar) {
+              try {
+                category = tArticleMeta(`pillarLabels.${a.frontmatter.pillar}`);
+              } catch {
+                // unknown pillar — use default
+              }
+            }
+            return {
+              href: a.urlPath,
+              title: a.frontmatter.title,
+              description: a.frontmatter.metaDescription,
+              date: a.frontmatter.publishedAt.slice(0, 10),
+              category,
+              coverImage: {
+                src: a.frontmatter.ogImage ?? "/images/xoai-real-2.jpg",
+                alt: a.frontmatter.title,
+              },
+            };
+          })
+        : [];
+
+    return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
+  }
+
   const posts = getHubPosts();
+
   return (
     <>
       <script
@@ -97,15 +132,15 @@ export default async function TinTucPage({
         <div className="mx-auto max-w-[800px] text-center">
           <FadeIn>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Vựa Thạnh Phú, Bến Tre
+              {t("heroEyebrow")}
             </span>
             <h1 className="mt-3 font-heading text-[36px] font-bold uppercase leading-tight text-text sm:text-5xl">
-              Tin Tức &amp; Báo Giá
+              {t("heroTitle1")}
               <br />
-              <span className="text-mango">Xoài Tứ Quý</span>
+              <span className="text-mango">{t("heroTitle2")}</span>
             </h1>
             <p className="mt-4 text-sm text-text/60">
-              Cập nhật giá sỉ, tình hình vụ mùa, và thông tin mới nhất từ vựa.
+              {t("heroDesc")}
             </p>
           </FadeIn>
         </div>
@@ -113,7 +148,7 @@ export default async function TinTucPage({
 
       <SectionDivider from="brand" to="brand-cream" />
 
-      {/* Post list — mỗi card là Link clickable toàn bộ */}
+      {/* Post list */}
       <section className="bg-brand-cream px-5 py-20">
         <div className="mx-auto max-w-[900px]">
           <div className="flex flex-col gap-6">
@@ -123,7 +158,7 @@ export default async function TinTucPage({
                   href={post.href}
                   className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:grid sm:grid-cols-[240px_1fr]"
                 >
-                  {/* Cover image — full width trên mobile, cột trái trên sm+ */}
+                  {/* Cover image */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-cream sm:aspect-auto sm:h-full">
                     <Image
                       src={post.coverImage.src}
@@ -154,7 +189,7 @@ export default async function TinTucPage({
                       {post.description}
                     </p>
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-text/70 transition-colors group-hover:text-mango">
-                      Đọc tiếp
+                      {t("readMore")}
                       <ArrowRight
                         size={14}
                         weight="bold"

@@ -86,7 +86,11 @@
   "social": {
     "sectionTag": "SNS에서 만나보세요",
     "sectionTitle": "실제 농장을 확인하세요",
-    "sectionDesc": "타인푸 과수원에서 촬영한 영상 — 수확, 포장, 배송. 연출 없음, 필터 없음."
+    "sectionDesc": "타인푸 과수원에서 촬영한 영상 — 수확, 포장, 배송. 연출 없음, 필터 없음.",
+    "embedVideo": "뜨꾸이 망고 과수원 영상",
+    "embedFarmVideo": "벤째 과일 농장 영상",
+    "embedReview": "뜨꾸이 망고 고객 리뷰",
+    "embedPost": "팬페이지 게시물"
   },
   "news": {
     "sectionTag": "소식 & 시세",
@@ -136,6 +140,15 @@
   },
   "common": {
     "required": "*"
+  },
+  "meta": {
+    "title": "뜨꾸이 망고 벤째 — 진한 달콤함, 혀끝의 은은한 짠맛",
+    "description": "벤째성 타인푸 특산 뜨꾸이 망고. 지리적 표시 #00124. 전국 냉장 배송. 매일 가격 업데이트 — 정확한 견적은 전화로.",
+    "ogTitle": "뜨꾸이 망고 벤째 — 진한 달콤함, 은은한 짠맛",
+    "ogDescription": "타인푸 특산 — 다른 곳에서 맛볼 수 없는 은은한 짠맛. 전국 냉장 배송. 지리적 표시 #00124.",
+    "ogSiteName": "벤째 과일",
+    "ogImageAlt": "뜨꾸이 망고 벤째 — 농장에서 큰 과일을 손에 들고",
+    "twitterDescription": "타인푸 특산 — 은은한 짠맛이 특별한 망고. 지리적 표시 #00124."
   },
   "data": {
     "products": [
@@ -672,6 +685,330 @@
       "mien-trung": "중부 베트남",
       "mien-bac": "북부 베트남",
       "tay-nguyen": "중부 고원"
+    }
+  },
+  "kienThucPage": {
+    "metaTitle": "뜨꾸이 망고 지식 허브 — 완벽 가이드 | 벤째 과일",
+    "metaDesc": "벤째 뜨꾸이 망고에 대한 모든 것: 정의, 지리적 표시 #00124, 재배 지역, 수확 시즌, 보관법, 다른 품종과의 비교.",
+    "metaKeywords": ["뜨꾸이 망고 정보", "벤째 망고 가이드", "뜨꾸이 망고란", "gi 00124 벤째 망고", "메콩 델타 망고 지역"],
+    "ogTitle": "뜨꾸이 망고 지식 허브 — 완벽 가이드",
+    "ogDesc": "벤째 뜨꾸이 망고에 대해 알아야 할 모든 것 — 기원부터 보관 팁까지.",
+    "breadcrumbHome": "홈",
+    "breadcrumbCurrent": "정보",
+    "heroEyebrow": "완벽 가이드",
+    "heroTitle1": "지식 허브",
+    "heroTitle2": "뜨꾸이 망고",
+    "heroDesc": "벤째 뜨꾸이 망고에 대해 알아야 할 모든 것 — 기원, 지리적 표시 #00124, 수확 시즌, 재배 지역, 보관법, 다른 품종과의 비교.",
+    "readMore": "더 읽기",
+    "exploreMore": "더 탐색하기",
+    "defaultCategory": "정보",
+    "exploreLinks": [
+      { "label": "뜨꾸이 망고 — 상품", "href": "/xoai-tu-quy" },
+      { "label": "오늘의 망고 가격", "href": "/xoai-tu-quy#gia" },
+      { "label": "소식 & 가격", "href": "/tin-tuc" },
+      { "label": "원산지 & 인증", "href": "/nguon-goc" },
+      { "label": "도매 문의", "href": "/#contact" }
+    ]
+  },
+  "tinTucPage": {
+    "metaTitle": "뜨꾸이 망고 소식 & 가격 | 벤째",
+    "metaDesc": "벤째 뜨꾸이 망고 최신 소식 및 도매 가격. 도매가 업데이트, 수확 현황, 타인푸 농장 소식.",
+    "metaKeywords": ["뜨꾸이 망고 소식", "벤째 망고 가격", "뜨꾸이 망고 최신 가격", "벤째 망고 시즌"],
+    "ogTitle": "뜨꾸이 망고 소식 & 가격",
+    "ogDesc": "타인푸 농장의 도매 가격 및 수확 업데이트.",
+    "breadcrumbHome": "홈",
+    "breadcrumbCurrent": "소식",
+    "heroEyebrow": "타인푸 농장, 벤째",
+    "heroTitle1": "소식 & 가격",
+    "heroTitle2": "뜨꾸이 망고",
+    "heroDesc": "도매 가격 업데이트, 수확 현황, 농장 최신 소식.",
+    "readMore": "더 읽기",
+    "defaultCategory": "소식"
+  },
+  "blogData": {
+    "posts": {
+      "7-mon-ngon-tu-xoai-tu-quy": {
+        "title": "뜨꾸이 망고로 만드는 7가지 요리 — 샐러드, 스무디, 잼, 망고 쉐이크 외",
+        "description": "뜨꾸이 망고 활용 7가지: 샐러드, 스무디, 잼, 망고 쉐이크, 망고 디핑, 코코넛 디저트, 처트니. 타인푸 농장의 상세 레시피.",
+        "category": "요리"
+      },
+      "nguon-goc-xoai-tu-quy-cau-chuyen-1982": {
+        "title": "뜨꾸이 망고의 기원 — 1982년부터 지리적 표시 #00124까지",
+        "description": "뜨꾸이 망고의 역사: 1982년 쪼락에서 발견, 염분 함유 모래 토양의 타인푸로 전파, 2022년 지리적 표시 #00124 획득.",
+        "category": "역사"
+      },
+      "bao-gia-xoai-tu-quy-thang-04-2026": {
+        "title": "2026년 4월 뜨꾸이 망고 가격표 — 시즌 1 VIP 품질",
+        "description": "2026년 4월 벤째 뜨꾸이 망고 도매 가격. 시즌 1 최고 품질, 안정적인 공급.",
+        "category": "가격"
+      }
+    }
+  },
+  "knowledgeData": {
+    "articles": {
+      "xoai-tu-quy-la-gi": {
+        "title": "뜨꾸이 망고란? — 특징, 시즌, 가격",
+        "description": "뜨꾸이 망고 완벽 가이드: 정의, 특징, 테루아, 연 3회 수확, 등급 분류, 지리적 표시 #00124, 맛있는 망고 고르는 법.",
+        "category": "핵심 정보"
+      },
+      "chi-dan-dia-ly-cd-dl-00124": {
+        "title": "지리적 표시 GI #00124 — 법적 보호",
+        "description": "지리적 표시 #00124: 2022년 11월 10일 베트남 지식재산청 발급, '뜨꾸이 망고 벤째' 명칭을 타인푸, 바트리, 빈다이 3개 구에 보호.",
+        "category": "법률"
+      },
+      "xoai-tu-quy-vs-xoai-cat-hoa-loc": {
+        "title": "뜨꾸이 망고 vs 캇호아록 망고 — 상세 비교",
+        "description": "메콩 델타 프리미엄 망고 2품종 상세 비교: 맛, 시즌, 가격, 재배 지역, 보관, 활용도.",
+        "category": "비교"
+      },
+      "vung-trong-xoai-mien-tay": {
+        "title": "메콩 델타 망고 재배 지역 — 벤째, 띠엔쟝, 빈롱, 짜빈",
+        "description": "메콩 델타 망고 지역 지도: 벤째(뜨꾸이 지리적 표시 #00124), 띠엔쟝(캇호아록), 빈롱, 짜빈.",
+        "category": "재배 지역"
+      },
+      "mua-vu-xoai-tu-quy-3-vu-nam": {
+        "title": "뜨꾸이 망고 시즌 — 연 3회 + 월별 가격 안내",
+        "description": "뜨꾸이 망고 수확 캘린더: 시즌 1 (2-4월), 시즌 2 (7-8월), 시즌 3 (11-1월, 뗏 시즌). 월별 가격표 + 도매 구매 팁.",
+        "category": "시즌"
+      },
+      "cach-bao-quan-lam-chin-xoai-tu-quy": {
+        "title": "집에서 뜨꾸이 망고 보관 & 숙성시키는 방법",
+        "description": "뜨꾸이 망고 7-14일 보관 가이드, 빠르게 숙성시키는 5가지 방법, 흔한 실수 피하기.",
+        "category": "가이드"
+      }
+    }
+  },
+  "articleMeta": {
+    "pillarLabels": {
+      "gia-thi-truong": "가격 & 시장",
+      "ky-thuat-bao-quan": "보관 기술",
+      "so-sanh-giong": "망고 품종 비교",
+      "giao-hang-theo-vung": "지역별 배송",
+      "meo-thuong-thuc": "맛보기 팁",
+      "heritage-bentre": "벤째 헤리티지"
+    },
+    "defaultKienThuc": "정보",
+    "defaultTinTuc": "소식"
+  },
+  "giaoHang": {
+    "hero": {
+      "tag": "전국 배송 · {region}",
+      "title": "벤째 과일 배송",
+      "titleTo": "{cityName}으로",
+      "desc": "{method}으로 탄푸 농장에서 {cityName}까지 {hours}시간. Tứ Quý 망고 GI #00124 + 껍질 벗긴 영 코코넛. 충격 방지 포장, 완전 콜드체인.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo로 주문"
+    },
+    "shippingDetails": {
+      "title": "{cityName} 배송 세부사항",
+      "timeTitle": "배송 시간",
+      "timeUnit": "{hours}시간",
+      "timeSub": "{method} (탄푸 농장 출발)",
+      "costTitle": "예상 배송비",
+      "costSub": "20kg 박스당 (예상)",
+      "packTitle": "포장",
+      "packDesc": "과일 개별 폼 네트 포장 + 쿠션 카톤 + 2~8°C 콜드체인.",
+      "noteTitle": "{cityName} 노선 메모"
+    },
+    "products": {
+      "title": "{cityName} 배송 상품"
+    },
+    "faq": {
+      "title": "자주 묻는 질문 — {cityName} 배송",
+      "q1": "벤째 과일이 {cityName}에 도착하는 데 얼마나 걸리나요?",
+      "a1": "{method}으로 약 {hours}시간. 냉장 포장으로 신선하게 배달됩니다.",
+      "q2": "{cityName} 배송비는 얼마인가요?",
+      "a2": "20kg 박스당 약 {cost}₫. 정확한 배송비는 주문 시 확인됩니다. 전화: 0932 585 533.",
+      "q3": "{cityName}으로 배송 시 망고가 상하지 않나요?",
+      "a3": "아닙니다. 각 과일은 폼 네트로 개별 포장되고 쿠션 카톤에 포장됩니다. 3년간 전국 배송 손상률 2% 미만. 손상된 경우 Zalo로 사진을 보내면 다음 주문 시 보상됩니다.",
+      "q4": "{cityName}으로 영 코코넛 배송이 가능한가요?",
+      "a4": "가능합니다. 껍질 벗긴 코코넛, 냉장 포장. 도매 8,000~10,000₫/개, 소매 15,000~18,000₫/개. {method}으로 {hours}시간 배송."
+    },
+    "internalLinks": {
+      "xoai": "Tứ Quý 망고",
+      "dua": "벤째 영 코코넛",
+      "allProducts": "전체 상품",
+      "contactWholesale": "도매 문의"
+    }
+  },
+  "giaoHangTpHcm": {
+    "hero": {
+      "tag": "전국 배송 · 벤째 – TP.HCM 노선",
+      "title": "Tứ Quý 망고 TP.HCM 배송",
+      "titleHighlight": "탄푸 농장에서 24시간",
+      "desc": "농장에서 가장 가까운 도시 — 매일 냉장 트럭 운행, 최저 배송비, 24시간 이내 도착. 시장·레스토랑·슈퍼마켓까지 배송.",
+      "ctaCall": "지금 주문: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "배송 세부사항",
+      "timeTitle": "배송 시간",
+      "timeDesc": "탄푸 농장에서 TP.HCM까지 24시간. 냉장 트럭 매일 저녁 출발.",
+      "packTitle": "포장",
+      "packDesc": "요청에 따라 카톤박스 또는 스티로폼 박스. 과일 개별 폼 네트, 완충재.",
+      "warrantyTitle": "보증",
+      "warrantyDesc": "손상률 2% 미만. 손상된 과일→Zalo로 사진 전송, 다음 주문 보상. 질문 없음."
+    },
+    "whyTitle": "TP.HCM 고객이 선택하는 이유",
+    "why": [
+      "3대 도시 중 농장과 가장 가까움 — 최저 배송비, 가장 신선한 망고",
+      "매일 저녁 냉장 트럭 운행 — 다음 날 아침 TP.HCM 도착",
+      "도매시장·슈퍼마켓·레스토랑·과일가게 등 어디든 배송",
+      "카톤박스 또는 스티로폼 박스 — 원하는 대로"
+    ],
+    "faq": {
+      "title": "자주 묻는 질문 — TP.HCM 배송",
+      "items": [
+        { "q": "TP.HCM 배송은 몇 시간 걸리나요?", "a": "탄푸에서 6~8시간. 냉장 트럭은 저녁 출발, 다음날 아침 TP.HCM 도착. 주문부터 24시간 이내 (오후 3시 이전 주문)." },
+        { "q": "시장 직접 배송이 가능한가요?", "a": "가능합니다. 빈디엔, 혹몬, 투득 도매시장 및 시내 각 구에 배송. 5박스 이상 대량 주문은 미리 연락 주세요." },
+        { "q": "TP.HCM 도매 주문 연락처는?", "a": "Phuc 씨에게 직접 연락 — 0932 585 533 (전화 또는 Zalo). 수량·배송지·망고 종류 알려주시면 15분 이내 도매가와 스케줄 안내드립니다." }
+      ]
+    },
+    "cta": {
+      "title": "TP.HCM 망고 배송 주문",
+      "desc": "전화 또는 Zalo — 15분 이내 가격과 배송 시간 안내.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "지금 Zalo"
+    },
+    "internalLinks": [
+      { "label": "Tứ Quý 망고 소개", "href": "/xoai-tu-quy" },
+      { "label": "오늘의 망고 가격", "href": "/xoai-tu-quy#gia" },
+      { "label": "도매 문의", "href": "/#contact" }
+    ]
+  },
+  "giaoHangHaNoi": {
+    "hero": {
+      "tag": "전국 배송 · 벤째 – 하노이 노선",
+      "title": "하노이에서 정통 벤째 망고",
+      "titleHighlight": "농장에서 48시간 콜드 배송",
+      "desc": "8~12°C 유지 냉장 트럭, 급한 경우 당일 항공편 가능. 장거리 충격 방지 포장. 농장 망고의 95%가 북부로 — 이 노선은 잘 압니다.",
+      "ctaCall": "지금 주문: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "배송 세부사항",
+      "timeTitle": "배송 시간",
+      "timeDesc": "탄푸 농장에서 하노이까지 48시간. 매일 냉장 트럭 또는 급행 항공편.",
+      "packTitle": "포장",
+      "packDesc": "통풍구 스티로폼 + 과일 개별 폼 네트 + 완충재. 48시간 이상 장거리 대응.",
+      "warrantyTitle": "보증",
+      "warrantyDesc": "손상률 2% 미만. 손상된 과일→Zalo로 사진 전송, 다음 주문 보상. 질문 없음."
+    },
+    "whyTitle": "하노이 고객이 선택하는 이유",
+    "why": [
+      "농장 망고의 95%가 북부로 — 장거리 포장 전문",
+      "노선 전체 8~12°C 유지, 급한 경우 당일 항공편",
+      "통풍구 스티로폼 + 폼 네트 + 다층 완충재 — 손상률 2% 미만",
+      "손상품 확인 → Zalo 사진 전송 — 다음 주문 보상, 반품 불필요"
+    ],
+    "faq": {
+      "title": "자주 묻는 질문 — 하노이 배송",
+      "items": [
+        { "q": "하노이에서 정통 벤째 망고를 어디서 살 수 있나요?", "a": "탄푸 Ben Tre Fruits 농장에 직접 주문. 망고는 베트남 지식재산청 GI #00124 인증 — 정품 보증. 0932 585 533 전화 또는 Zalo로 15분 이내 가격과 스케줄 안내." },
+        { "q": "정통 벤째 망고인지 어떻게 알 수 있나요?", "a": "각 박스에 GI #00124 라벨 + QR 추적성(농원명, 수확일, 수확자) 부착. 정통 Tứ Quý 망고는 피니시에 독특한 소금맛이 있습니다 — 다른 산지에는 없습니다." },
+        { "q": "하노이까지 며칠 걸리나요?", "a": "탄푸 농장 포장부터 보통 48시간. 냉장 트럭은 매일 오후 5~6시 출발, 다음날 아침 하노이 도착. 급한 경우 항공편 선택 — 당일 도착." },
+        { "q": "장거리 배송에서 망고가 상하지 않나요?", "a": "아닙니다. 각 과일은 폼 네트로 개별 포장되고 통풍구 스티로폼에 완충재와 함께 배치. 하노이 고객에게 3년 실적 — 손상률 2% 미만." },
+        { "q": "하노이 배송비는 얼마인가요?", "a": "벤째~하노이 냉장 트럭 배송비는 20kg 박스당 약 35,000~50,000₫ (주문 시 정확히 안내). 항공편은 더 비쌈, 편에 따라 다름. 0932 585 533 전화로 사전 견적 문의." }
+      ]
+    },
+    "cta": {
+      "title": "하노이 망고 주문",
+      "desc": "전화 또는 Zalo — 15분 이내 가격과 배송 스케줄 안내.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "지금 Zalo"
+    },
+    "internalLinks": [
+      { "label": "Tứ Quý 망고", "href": "/xoai-tu-quy" },
+      { "label": "벤째 영 코코넛", "href": "/dua-xiem-ben-tre" },
+      { "label": "전체 상품", "href": "/san-pham" },
+      { "label": "도매 문의", "href": "/#contact" }
+    ]
+  },
+  "giaoHangDaNang": {
+    "hero": {
+      "tag": "전국 배송 · 벤째 – 중부 베트남 노선",
+      "title": "Tứ Quý 망고 다낭 배송",
+      "titleHighlight": "완전 콜드 배송",
+      "desc": "탄푸에서 다낭까지 36시간 냉장 트럭 직송. 중부 베트남 레스토랑·호텔·리조트 서비스.",
+      "ctaCall": "지금 주문: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "배송 세부사항",
+      "timeTitle": "배송 시간",
+      "timeDesc": "탄푸 농장에서 다낭까지 36시간. 중간 창고 없이 냉장 트럭 직송.",
+      "packTitle": "포장",
+      "packDesc": "장거리 스티로폼: 폼 네트 + 다층 완충재, 8~12°C 유지.",
+      "warrantyTitle": "보증",
+      "warrantyDesc": "손상률 2% 미만. 손상된 과일→Zalo로 사진 전송, 다음 주문 보상. VAT 영수증 발행 가능."
+    },
+    "whyTitle": "다낭 레스토랑이 선택하는 이유",
+    "why": [
+      "중부 베트남 전용 냉장 트럭, 36시간 내내 8~12°C 유지",
+      "장거리 포장: 폼 네트 + 다층 완충재",
+      "다낭·호이안·후에 및 인근 성의 레스토랑·호텔·리조트에 서비스",
+      "기업·레스토랑·호텔용 완전 VAT 영수증 발행"
+    ],
+    "faq": {
+      "title": "자주 묻는 질문 — 다낭 배송",
+      "items": [
+        { "q": "다낭 배송은 얼마나 걸리나요?", "a": "벤째 탄푸 농장 포장부터 다낭까지 약 36시간. 중간 창고 없이 냉장 트럭 직송. 정오 이전 주문 — 다음날 아침 도착." },
+        { "q": "다른 중부 베트남 성으로도 배송이 가능한가요?", "a": "가능합니다. 광남·광응아이·빈딘·푸옌·후에·광찌로 정기 냉장 트럭편 운행. 특정 위치 스케줄 확인은 0932 585 533으로 연락 주세요." }
+      ]
+    },
+    "cta": {
+      "title": "다낭 망고 배송 주문",
+      "desc": "전화 또는 Zalo — 15분 이내 가격과 중부 베트남 배송 스케줄 안내.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "지금 Zalo"
+    },
+    "internalLinks": [
+      { "label": "Tứ Quý 망고 소개", "href": "/xoai-tu-quy" },
+      { "label": "오늘의 망고 가격", "href": "/xoai-tu-quy#gia" },
+      { "label": "도매 문의", "href": "/#contact" }
+    ]
+  },
+  "productCatalog": {
+    "sectionTag": "벤째 농장 특산품",
+    "title": "농장의",
+    "titleHighlight": "과일",
+    "desc": "Ben Tre Fruits 농장은 탄푸 농가와 직접 연계합니다. Tứ Quý 망고 GI #00124가 플래그십 상품이며, 다른 벤째 특산 과일도 확장 중입니다.",
+    "viewDetail": "자세히 보기",
+    "comingSoon": "출시 예정",
+    "preparingLabel": "준비 중",
+    "seasonYearRound": "연중",
+    "seasonMonths": "제철: {months}"
+  },
+  "sanPhamPage": {
+    "metadata": {
+      "title": "벤째 특산 과일 — Tứ Quý 망고·영 코코넛 외",
+      "description": "농장 직송 벤째 특산 과일: Tứ Quý 망고 GI #00124, 벤째 영 코코넛, 출시 예정 과일.",
+      "ogTitle": "농장 직송 벤째 특산 과일",
+      "ogDescription": "Tứ Quý 망고 GI #00124와 기타 벤째 특산 과일을 농장에서 직접 배송."
+    },
+    "breadcrumb": {
+      "home": "홈",
+      "products": "상품"
+    }
+  },
+  "priceData": {
+    "note": "가격은 매일 변동됩니다 — 정확한 가격은 농장(0932 585 533)에 문의하세요.",
+    "tiers": {
+      "vip": {
+        "name": "Tứ Quý 망고 VIP",
+        "description": "흠집 없는 과일, 매끈한 껍질, 개당 600g 이상. 선물·고급 레스토랑·VIP용.",
+        "badge": "VIP"
+      },
+      "loai1": {
+        "name": "Tứ Quý 망고 1등급",
+        "description": "VIP와 같은 크기, 한쪽 면에 가벼운 흠집 — 품질은 동일. 베스트셀러.",
+        "badge": "베스트셀러 #1"
+      },
+      "loai2": {
+        "name": "Tứ Quý 망고 2등급",
+        "description": "약간 작고 불균일 — 맛은 VIP와 동일. 소매·샐러드·쉐이크용 최적.",
+        "badge": "최고의 가성비"
+      }
     }
   }
 }

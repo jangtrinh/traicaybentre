@@ -1,5 +1,6 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
@@ -28,64 +29,64 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  metadataBase: new URL("https://www.traicaybentre.com"),
-  title: "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
-  description:
-    "Xoài Tứ Quý đặc sản Thạnh Phú, Bến Tre. Chỉ dẫn địa lý CDĐL #00124. Giao lạnh toàn quốc. Giá cập nhật mỗi ngày — gọi vựa để có giá chính xác.",
-  keywords: [
-    "xoài tứ quý",
-    "xoài Bến Tre",
-    "xoài Thạnh Phú",
-    "trái cây đặc sản",
-    "xoài sỉ",
-    "xoài tứ quý Thạnh Phú",
-    "mua xoài sỉ Bến Tre",
-  ],
-  openGraph: {
-    title: "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
-    description:
-      "Đặc sản Thạnh Phú, Bến Tre — vị mặn nhẹ không đâu có. Giao lạnh toàn quốc. CDĐL #00124.",
-    url: "https://www.traicaybentre.com",
-    siteName: "Trái Cây Bến Tre",
-    type: "website",
-    locale: "vi_VN",
-    images: [
-      {
-        url: "https://www.traicaybentre.com/images/xoai-real-2.jpg",
-        width: 1200,
-        height: 1500,
-        alt: "Xoài Tứ Quý Bến Tre — tay cầm quả lớn tại vựa",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image" as const,
-    title: "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
-    description: "Đặc sản Thạnh Phú — vị mặn nhẹ không đâu có. CDĐL #00124.",
-    images: ["https://www.traicaybentre.com/images/xoai-real-2.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+const LOCALE_TO_OG: Record<string, string> = { vi: "vi_VN", en: "en_US", ko: "ko_KR", ja: "ja_JP" };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+
+  return {
+    metadataBase: new URL("https://www.traicaybentre.com"),
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDescription"),
+      url: "https://www.traicaybentre.com",
+      siteName: t("ogSiteName"),
+      type: "website",
+      locale: LOCALE_TO_OG[locale] ?? "vi_VN",
+      images: [
+        {
+          url: "https://www.traicaybentre.com/images/xoai-real-2.jpg",
+          width: 1200,
+          height: 1500,
+          alt: t("ogImageAlt"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("ogTitle"),
+      description: t("twitterDescription"),
+      images: ["https://www.traicaybentre.com/images/xoai-real-2.jpg"],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large" as const,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+      },
     },
-  },
-  alternates: {
-    canonical: "https://www.traicaybentre.com",
-    languages: {
-      "vi": "https://www.traicaybentre.com",
-      "en": "https://www.traicaybentre.com/en",
-      "ko": "https://www.traicaybentre.com/ko",
-      "ja": "https://www.traicaybentre.com/ja",
-      "x-default": "https://www.traicaybentre.com",
+    alternates: {
+      canonical: "https://www.traicaybentre.com",
+      languages: {
+        vi: "https://www.traicaybentre.com",
+        en: "https://www.traicaybentre.com/en",
+        ko: "https://www.traicaybentre.com/ko",
+        ja: "https://www.traicaybentre.com/ja",
+        "x-default": "https://www.traicaybentre.com",
+      },
     },
-  },
-};
+  };
+}
 
 const jsonLd = getHomepageJsonLd();
 

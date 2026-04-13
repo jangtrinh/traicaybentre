@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Truck, Package, Phone, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -7,57 +7,48 @@ import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Xoài Tứ Quý Giao Đà Nẵng — Ship Lạnh Toàn Tuyến Miền Trung | Trái Cây Bến Tre",
-  description:
-    "Giao xoài Tứ Quý Bến Tre đến Đà Nẵng trong 36h bằng xe lạnh. Phục vụ nhà hàng, khách sạn khu vực miền Trung. Gọi đặt sỉ: 0932 585 533.",
-  keywords: [
-    "xoài tứ quý giao đà nẵng",
-    "xoài bến tre miền trung",
-    "ship xoài bến tre đà nẵng",
-    "xoài sỉ đà nẵng",
-    "xoài tứ quý nhà hàng đà nẵng",
-  ],
-  alternates: { canonical: `${SITE_URL}/giao-hang/da-nang` },
-  openGraph: {
-    title: "Xoài Tứ Quý Giao Đà Nẵng — Ship Lạnh Toàn Tuyến",
-    description: "36h xe lạnh từ Thạnh Phú. Phục vụ nhà hàng, khách sạn miền Trung.",
-    url: `${SITE_URL}/giao-hang/da-nang`,
-    images: [{ url: `${SITE_URL}/images/xoai-real-2.jpg`, width: 1200, height: 1500 }],
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-const breadcrumbJsonLd = getBreadcrumbJsonLd([
-  { name: "Trang chủ", url: SITE_URL },
-  { name: "Giao hàng", url: `${SITE_URL}/giao-hang/da-nang` },
-  { name: "Đà Nẵng", url: `${SITE_URL}/giao-hang/da-nang` },
-]);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "giaoHangDaNang" });
+  return {
+    title: "Xoài Tứ Quý Giao Đà Nẵng — Ship Lạnh Toàn Tuyến Miền Trung | Trái Cây Bến Tre",
+    description:
+      "Giao xoài Tứ Quý Bến Tre đến Đà Nẵng trong 36h bằng xe lạnh. Phục vụ nhà hàng, khách sạn khu vực miền Trung. Gọi đặt sỉ: 0932 585 533.",
+    keywords: [
+      "xoài tứ quý giao đà nẵng",
+      "xoài bến tre miền trung",
+      "ship xoài bến tre đà nẵng",
+      "xoài sỉ đà nẵng",
+      "xoài tứ quý nhà hàng đà nẵng",
+    ],
+    alternates: { canonical: `${SITE_URL}/giao-hang/da-nang` },
+    openGraph: {
+      title: t("hero.title") + " — " + t("hero.titleHighlight"),
+      description: t("hero.desc"),
+      url: `${SITE_URL}/giao-hang/da-nang`,
+      images: [{ url: `${SITE_URL}/images/xoai-real-2.jpg`, width: 1200, height: 1500 }],
+    },
+  };
+}
 
-const WHY_CHOOSE = [
-  "Xe lạnh chuyên tuyến miền Trung, giữ nhiệt độ 8–12°C suốt 36 giờ",
-  "Đóng gói thùng xốp chuẩn ship xa: lưới xốp từng trái, đệm lót chống sốc nhiều lớp",
-  "Bạn hàng là nhà hàng, khách sạn, resort khu vực Đà Nẵng, Hội An, Huế và các tỉnh miền Trung",
-  "Xuất hoá đơn VAT đầy đủ cho công ty, nhà hàng, khách sạn",
-];
-
-const FAQ = [
-  {
-    q: "Ship Đà Nẵng mất bao lâu?",
-    a: "Khoảng 36 giờ từ khi đóng hàng tại vựa Thạnh Phú, Bến Tre đến Đà Nẵng. Xe lạnh chạy thẳng tuyến, không qua kho trung chuyển. Đặt hàng trước 12h — hàng đến sáng ngày kế tiếp.",
-  },
-  {
-    q: "Có giao các tỉnh miền Trung khác không?",
-    a: "Có. Vựa giao đến Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế và Quảng Trị theo tuyến xe lạnh cố định. Liên hệ 0932 585 533 để xác nhận lịch giao cho địa điểm cụ thể.",
-  },
-];
-
-export default async function GiaoHangDaNangPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function GiaoHangDaNangPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations("giaoHangDaNang");
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Trang chủ", url: SITE_URL },
+    { name: "Giao hàng", url: `${SITE_URL}/giao-hang/da-nang` },
+    { name: "Đà Nẵng", url: `${SITE_URL}/giao-hang/da-nang` },
+  ]);
+
+  const whyItems = t.raw("why") as string[];
+  const faqItems = t.raw("faq.items") as { q: string; a: string }[];
+  const internalLinks = t.raw("internalLinks") as { label: string; href: string }[];
+
   return (
     <>
       <script
@@ -71,18 +62,17 @@ export default async function GiaoHangDaNangPage({
         <div className="mx-auto max-w-[800px] text-center">
           <FadeIn>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Giao hàng toàn quốc · Tuyến Bến Tre – Miền Trung
+              {t("hero.tag")}
             </span>
             <h1 className="mt-3 font-heading text-[32px] font-bold uppercase leading-tight text-text sm:text-5xl">
-              Xoài Tứ Quý Giao Đà Nẵng
+              {t("hero.title")}
               <br />
-              <span className="text-mango">Ship Lạnh Toàn Tuyến</span>
+              <span className="text-mango">{t("hero.titleHighlight")}</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-lg leading-7 text-text/70">
-              Xe lạnh 36 giờ từ Thạnh Phú thẳng ra Đà Nẵng. Bạn hàng là nhà
-              hàng, khách sạn, resort khu vực miền Trung.
+              {t("hero.desc")}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
@@ -90,7 +80,7 @@ export default async function GiaoHangDaNangPage({
                 className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
                 <Phone size={18} weight="bold" />
-                Gọi đặt hàng: 0932 585 533
+                {t("hero.ctaCall")}
               </a>
               <a
                 href="https://zalo.me/0932585533"
@@ -98,7 +88,7 @@ export default async function GiaoHangDaNangPage({
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"
               >
-                Zalo: 0932 585 533
+                {t("hero.ctaZalo")}
               </a>
             </div>
           </FadeIn>
@@ -112,14 +102,14 @@ export default async function GiaoHangDaNangPage({
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-10 text-center font-heading text-3xl font-bold uppercase text-text">
-              Chi tiết vận chuyển
+              {t("shipping.title")}
             </h2>
           </FadeIn>
           <div className="grid gap-6 sm:grid-cols-3">
             {[
-              { Icon: Truck, title: "Thời gian giao", desc: "36 giờ từ vựa Thạnh Phú đến Đà Nẵng. Xe lạnh chạy thẳng tuyến, không qua kho trung chuyển." },
-              { Icon: Package, title: "Đóng gói", desc: "Thùng xốp chuẩn ship xa: lưới xốp từng trái, đệm lót chống sốc nhiều lớp, duy trì 8–12°C." },
-              { Icon: CheckCircle, title: "Bảo hành", desc: "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Xuất VAT cho công ty." },
+              { Icon: Truck, title: t("shipping.timeTitle"), desc: t("shipping.timeDesc") },
+              { Icon: Package, title: t("shipping.packTitle"), desc: t("shipping.packDesc") },
+              { Icon: CheckCircle, title: t("shipping.warrantyTitle"), desc: t("shipping.warrantyDesc") },
             ].map(({ Icon, title, desc }, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm">
@@ -140,11 +130,11 @@ export default async function GiaoHangDaNangPage({
         <div className="mx-auto max-w-[800px]">
           <FadeIn>
             <h2 className="mb-8 font-heading text-3xl font-bold uppercase text-text">
-              Vì sao nhà hàng Đà Nẵng chọn vựa này?
+              {t("whyTitle")}
             </h2>
           </FadeIn>
           <ul className="space-y-4">
-            {WHY_CHOOSE.map((item, i) => (
+            {whyItems.map((item, i) => (
               <FadeIn key={i} delay={i * 0.07}>
                 <li className="flex items-start gap-3 rounded-2xl bg-text/5 p-4">
                   <CheckCircle size={20} weight="fill" className="mt-0.5 shrink-0 text-text" />
@@ -163,11 +153,11 @@ export default async function GiaoHangDaNangPage({
         <div className="mx-auto max-w-[800px]">
           <FadeIn>
             <h2 className="mb-8 font-heading text-3xl font-bold uppercase text-text">
-              Câu hỏi thường gặp — Giao Đà Nẵng
+              {t("faq.title")}
             </h2>
           </FadeIn>
           <div className="space-y-4">
-            {FAQ.map(({ q, a }, i) => (
+            {faqItems.map(({ q, a }, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm">
                   <h3 className="font-heading text-base font-bold text-text">{q}</h3>
@@ -186,10 +176,10 @@ export default async function GiaoHangDaNangPage({
         <div className="mx-auto max-w-[600px]">
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold uppercase text-text">
-              Đặt xoài giao Đà Nẵng ngay
+              {t("cta.title")}
             </h2>
             <p className="mt-4 text-text/70">
-              Gọi hoặc nhắn Zalo — vựa báo giá & lịch giao tuyến miền Trung trong 15 phút.
+              {t("cta.desc")}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
@@ -197,7 +187,7 @@ export default async function GiaoHangDaNangPage({
                 className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
                 <Phone size={18} weight="bold" />
-                0932 585 533
+                {t("cta.ctaCall")}
               </a>
               <a
                 href="https://zalo.me/0932585533"
@@ -205,7 +195,7 @@ export default async function GiaoHangDaNangPage({
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"
               >
-                Zalo ngay
+                {t("cta.ctaZalo")}
               </a>
             </div>
           </FadeIn>
@@ -216,11 +206,7 @@ export default async function GiaoHangDaNangPage({
       <SectionDivider from="brand" to="brand-cream" />
       <section className="bg-brand-cream px-5 py-12">
         <div className="mx-auto flex max-w-[800px] flex-wrap justify-center gap-3">
-          {[
-            { label: "Tìm hiểu về Xoài Tứ Quý", href: "/xoai-tu-quy" },
-            { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
-            { label: "Liên hệ đặt sỉ", href: "/#contact" },
-          ].map((link) => (
+          {internalLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}

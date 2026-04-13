@@ -18,6 +18,20 @@ export interface PriceData {
   tiers: PriceTier[];
 }
 
+/**
+ * SKU keys for the three price tiers — used to look up translations.
+ * Consumers that need translated names/descriptions/badges should call
+ * `getPriceDataTranslated(t)` instead of reading PRICE_DATA directly.
+ */
+export type PriceTierSku = "xoai-tu-quy-vip" | "xoai-tu-quy-loai-1" | "xoai-tu-quy-loai-2";
+
+/** Maps SKU → priceData.tiers translation key */
+export const PRICE_TIER_TRANSLATION_KEYS: Record<PriceTierSku, "vip" | "loai1" | "loai2"> = {
+  "xoai-tu-quy-vip": "vip",
+  "xoai-tu-quy-loai-1": "loai1",
+  "xoai-tu-quy-loai-2": "loai2",
+};
+
 /** Current price data — edit this file to update daily prices */
 export const PRICE_DATA: PriceData = {
   lastUpdated: "2026-04-09",
@@ -61,3 +75,34 @@ export const PRICE_DATA: PriceData = {
     },
   ],
 };
+
+/**
+ * Returns price tiers with translated name/description/badge overlaid.
+ * The `t` function must be scoped to the "priceData" namespace.
+ *
+ * Usage (server component):
+ *   const t = await getTranslations("priceData");
+ *   const tiers = getPriceDataTranslated(t);
+ *
+ * Usage (client component):
+ *   const t = useTranslations("priceData");
+ *   const tiers = getPriceDataTranslated(t);
+ */
+export function getPriceDataTranslated(
+  t: (key: string) => string
+): PriceData {
+  return {
+    ...PRICE_DATA,
+    note: t("note"),
+    tiers: PRICE_DATA.tiers.map((tier) => {
+      const key = PRICE_TIER_TRANSLATION_KEYS[tier.sku as PriceTierSku];
+      if (!key) return tier;
+      return {
+        ...tier,
+        name: t(`tiers.${key}.name`),
+        description: t(`tiers.${key}.description`),
+        badge: t(`tiers.${key}.badge`),
+      };
+    }),
+  };
+}

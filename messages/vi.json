@@ -86,7 +86,11 @@
   "social": {
     "sectionTag": "Vựa trên mạng xã hội",
     "sectionTitle": "Coi thực tế tại vườn",
-    "sectionDesc": "Video quay tại vườn Thạnh Phú — thu hoạch, đóng thùng, giao hàng. Không dàn dựng, không filter."
+    "sectionDesc": "Video quay tại vườn Thạnh Phú — thu hoạch, đóng thùng, giao hàng. Không dàn dựng, không filter.",
+    "embedVideo": "Video từ vườn xoài Tứ Quý",
+    "embedFarmVideo": "Video từ vườn trái cây Bến Tre",
+    "embedReview": "Khách review xoài Tứ Quý",
+    "embedPost": "Bài viết từ Fanpage"
   },
   "news": {
     "sectionTag": "Tin tức & báo giá",
@@ -136,6 +140,15 @@
   },
   "common": {
     "required": "*"
+  },
+  "meta": {
+    "title": "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
+    "description": "Xoài Tứ Quý đặc sản Thạnh Phú, Bến Tre. Chỉ dẫn địa lý CDĐL #00124. Giao lạnh toàn quốc. Giá cập nhật mỗi ngày — gọi vựa để có giá chính xác.",
+    "ogTitle": "Xoài Tứ Quý Bến Tre — Ngọt đậm, vị mặn nhẹ cuối lưỡi",
+    "ogDescription": "Đặc sản Thạnh Phú, Bến Tre — vị mặn nhẹ không đâu có. Giao lạnh toàn quốc. CDĐL #00124.",
+    "ogSiteName": "Trái Cây Bến Tre",
+    "ogImageAlt": "Xoài Tứ Quý Bến Tre — tay cầm quả lớn tại vựa",
+    "twitterDescription": "Đặc sản Thạnh Phú — vị mặn nhẹ không đâu có. CDĐL #00124."
   },
   "data": {
     "products": [
@@ -672,6 +685,360 @@
       "mien-trung": "Miền Trung",
       "mien-bac": "Miền Bắc",
       "tay-nguyen": "Tây Nguyên"
+    }
+  },
+  "kienThucPage": {
+    "metaTitle": "Kiến Thức Xoài Tứ Quý — Hướng Dẫn Đầy Đủ | Trái Cây Bến Tre",
+    "metaDesc": "Tổng hợp kiến thức xoài Tứ Quý Bến Tre: định nghĩa, CDĐL #00124, vùng trồng miền Tây, mùa vụ, bảo quản, so sánh với các giống khác.",
+    "metaKeywords": ["kiến thức xoài tứ quý", "hướng dẫn xoài bến tre", "xoài tứ quý là gì", "cdđl xoài bến tre", "vùng trồng xoài miền tây"],
+    "ogTitle": "Kiến Thức Xoài Tứ Quý — Hướng Dẫn Đầy Đủ",
+    "ogDesc": "Tất cả những điều bạn cần biết về xoài Tứ Quý Bến Tre — từ nguồn gốc đến cách bảo quản.",
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbCurrent": "Kiến thức",
+    "heroEyebrow": "Hướng dẫn đầy đủ",
+    "heroTitle1": "Kiến Thức",
+    "heroTitle2": "Xoài Tứ Quý",
+    "heroDesc": "Tất cả những điều bạn cần biết về xoài Tứ Quý Bến Tre — từ nguồn gốc, CDĐL #00124, mùa vụ, vùng trồng đến cách bảo quản và so sánh với các giống xoài khác.",
+    "readMore": "Đọc tiếp",
+    "exploreMore": "Khám phá thêm",
+    "defaultCategory": "Kiến thức",
+    "exploreLinks": [
+      { "label": "Xoài Tứ Quý — Sản phẩm", "href": "/xoai-tu-quy" },
+      { "label": "Giá xoài hôm nay", "href": "/xoai-tu-quy#gia" },
+      { "label": "Tin tức & báo giá", "href": "/tin-tuc" },
+      { "label": "Nguồn gốc & chứng nhận", "href": "/nguon-goc" },
+      { "label": "Liên hệ đặt sỉ", "href": "/#contact" }
+    ]
+  },
+  "tinTucPage": {
+    "metaTitle": "Tin Tức & Báo Giá Xoài Tứ Quý | Bến Tre",
+    "metaDesc": "Tin tức mới nhất và báo giá xoài Tứ Quý Bến Tre. Cập nhật giá sỉ, tình hình vụ mùa, và thông tin từ vựa Thạnh Phú.",
+    "metaKeywords": ["tin tức xoài tứ quý", "báo giá xoài bến tre", "giá xoài tứ quý mới nhất", "vụ mùa xoài bến tre"],
+    "ogTitle": "Tin Tức & Báo Giá Xoài Tứ Quý",
+    "ogDesc": "Báo giá sỉ và tin tức vụ mùa từ vựa Thạnh Phú, Bến Tre.",
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbCurrent": "Tin tức",
+    "heroEyebrow": "Vựa Thạnh Phú, Bến Tre",
+    "heroTitle1": "Tin Tức & Báo Giá",
+    "heroTitle2": "Xoài Tứ Quý",
+    "heroDesc": "Cập nhật giá sỉ, tình hình vụ mùa, và thông tin mới nhất từ vựa.",
+    "readMore": "Đọc tiếp",
+    "defaultCategory": "Tin tức"
+  },
+  "blogData": {
+    "posts": {
+      "7-mon-ngon-tu-xoai-tu-quy": {
+        "title": "7 Món Ngon Từ Xoài Tứ Quý — Gỏi, Sinh Tố, Mứt, Xoài Lắc & Hơn Nữa",
+        "description": "7 cách chế biến xoài Tứ Quý: gỏi, sinh tố, mứt, xoài lắc, xoài dầm, chè dừa, chutney. Công thức chi tiết từ vựa Thạnh Phú.",
+        "category": "Ẩm thực"
+      },
+      "nguon-goc-xoai-tu-quy-cau-chuyen-1982": {
+        "title": "Nguồn Gốc Xoài Tứ Quý — Câu Chuyện Từ 1982 Đến CDĐL #00124",
+        "description": "Lịch sử xoài Tứ Quý: phát hiện 1982 ở Chợ Lách, lan tới Thạnh Phú với đất giồng cát nhiễm mặn, được cấp CDĐL #00124 năm 2022.",
+        "category": "Lịch sử"
+      },
+      "bao-gia-xoai-tu-quy-thang-04-2026": {
+        "title": "Báo Giá Xoài Tứ Quý Tháng 4/2026 — Vụ 1 Chất Lượng VIP",
+        "description": "Tổng hợp giá xoài Tứ Quý Bến Tre tháng 4/2026. Vụ 1 đạt chất lượng cao, nguồn cung ổn định.",
+        "category": "Báo giá"
+      }
+    }
+  },
+  "knowledgeData": {
+    "articles": {
+      "xoai-tu-quy-la-gi": {
+        "title": "Xoài Tứ Quý Là Gì? — Đặc Điểm, Mùa Vụ, Giá",
+        "description": "Hướng dẫn đầy đủ về xoài Tứ Quý: định nghĩa, đặc điểm, terroir, 3 vụ/năm, phân loại, CDĐL #00124, cách chọn xoài ngon.",
+        "category": "Pillar"
+      },
+      "chi-dan-dia-ly-cd-dl-00124": {
+        "title": "Chỉ Dẫn Địa Lý CDĐL #00124 — Bảo Hộ Pháp Lý",
+        "description": "CDĐL #00124 cấp 10/11/2022 bởi Cục SHTT bảo hộ tên 'Xoài Tứ Quý Bến Tre' cho 3 huyện Thạnh Phú, Ba Tri, Bình Đại.",
+        "category": "Pháp lý"
+      },
+      "xoai-tu-quy-vs-xoai-cat-hoa-loc": {
+        "title": "Xoài Tứ Quý vs Xoài Cát Hòa Lộc — So Sánh Chi Tiết",
+        "description": "So sánh chi tiết 2 giống xoài đặc sản miền Tây: vị, mùa vụ, giá, vùng trồng, bảo quản, mục đích sử dụng.",
+        "category": "So sánh"
+      },
+      "vung-trong-xoai-mien-tay": {
+        "title": "Vùng Trồng Xoài Miền Tây — Bến Tre, Tiền Giang, Vĩnh Long, Trà Vinh",
+        "description": "Bản đồ vùng trồng xoài miền Tây: Bến Tre (Tứ Quý CDĐL #00124), Tiền Giang (Cát Hòa Lộc), Vĩnh Long, Trà Vinh.",
+        "category": "Vùng trồng"
+      },
+      "mua-vu-xoai-tu-quy-3-vu-nam": {
+        "title": "Mùa Vụ Xoài Tứ Quý — 3 Vụ/Năm + Bảng Giá Theo Tháng",
+        "description": "Lịch mùa vụ xoài Tứ Quý: vụ 1 (T2-4), vụ 2 (T7-8), vụ 3 (T11-1, vụ Tết). Bảng giá theo tháng + mẹo mua sỉ.",
+        "category": "Mùa vụ"
+      },
+      "cach-bao-quan-lam-chin-xoai-tu-quy": {
+        "title": "Cách Bảo Quản & Làm Chín Xoài Tứ Quý Tại Nhà",
+        "description": "Hướng dẫn bảo quản xoài Tứ Quý 7-14 ngày, 5 cách làm chín nhanh, tránh sai lầm thường gặp.",
+        "category": "Hướng dẫn"
+      }
+    }
+  },
+  "articleMeta": {
+    "pillarLabels": {
+      "gia-thi-truong": "Giá & thị trường",
+      "ky-thuat-bao-quan": "Kỹ thuật bảo quản",
+      "so-sanh-giong": "So sánh giống xoài",
+      "giao-hang-theo-vung": "Giao hàng theo vùng",
+      "meo-thuong-thuc": "Mẹo thưởng thức",
+      "heritage-bentre": "Di sản Bến Tre"
+    },
+    "defaultKienThuc": "Kiến thức",
+    "defaultTinTuc": "Tin tức"
+  },
+  "giaoHang": {
+    "hero": {
+      "tag": "Giao hàng toàn quốc · {region}",
+      "title": "Giao Trái Cây Bến Tre",
+      "titleTo": "Đến {cityName}",
+      "desc": "{method} từ vựa Thạnh Phú — {hours} giờ đến {cityName}. Xoài Tứ Quý CDĐL #00124 + Dừa Xiêm sọ gọt sẵn. Đóng gói chống dập, giữ lạnh suốt tuyến.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo đặt hàng"
+    },
+    "shippingDetails": {
+      "title": "Chi tiết giao {cityName}",
+      "timeTitle": "Thời gian",
+      "timeUnit": "{hours}h",
+      "timeSub": "{method} từ vựa Thạnh Phú",
+      "costTitle": "Phí ship",
+      "costSub": "Per thùng 20kg (ước tính)",
+      "packTitle": "Đóng gói",
+      "packDesc": "Lưới xốp từng trái + thùng carton đệm chống sốc + giữ lạnh 2–8°C suốt tuyến.",
+      "noteTitle": "Ghi chú tuyến {cityName}"
+    },
+    "products": {
+      "title": "Sản phẩm giao {cityName}"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp — Giao {cityName}",
+      "q1": "Giao trái cây Bến Tre đến {cityName} mất bao lâu?",
+      "a1": "Khoảng {hours} giờ bằng {method}. Hàng đóng gói giữ lạnh, tươi khi đến nơi.",
+      "q2": "Phí ship {cityName} bao nhiêu?",
+      "a2": "Ước tính {cost}₫/thùng 20kg. Phí chính xác báo khi đặt hàng — tùy trọng lượng và tuyến. Gọi 0932 585 533.",
+      "q3": "Xoài Tứ Quý ship {cityName} có bị dập không?",
+      "a3": "Không. Mỗi trái bọc lưới xốp riêng, thùng carton đệm chống sốc. 3 năm giao toàn quốc, hàng hư < 2%. Dập → Zalo ảnh → bồi đơn sau.",
+      "q4": "Mua dừa xiêm sọ ship {cityName} được không?",
+      "a4": "Được — dừa sọ gọt sẵn, đóng gói giữ lạnh. Sỉ 8-10k₫/trái, lẻ 15-18k₫/trái. Giao {method} {hours}h."
+    },
+    "internalLinks": {
+      "xoai": "Xoài Tứ Quý",
+      "dua": "Dừa Xiêm Bến Tre",
+      "allProducts": "Tất cả sản phẩm",
+      "contactWholesale": "Liên hệ đặt sỉ"
+    }
+  },
+  "giaoHangTpHcm": {
+    "hero": {
+      "tag": "Giao hàng toàn quốc · Tuyến Bến Tre – TP.HCM",
+      "title": "Xoài Tứ Quý Giao TP.HCM",
+      "titleHighlight": "24h Từ Vựa Thạnh Phú",
+      "desc": "Thành phố gần vựa nhất — xe lạnh đi mỗi chiều, phí ship rẻ nhất, xoài tới tay trong 24 giờ. Giao tận chợ, nhà hàng, siêu thị.",
+      "ctaCall": "Gọi đặt hàng: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "Chi tiết vận chuyển",
+      "timeTitle": "Thời gian giao",
+      "timeDesc": "24 giờ từ vựa Thạnh Phú đến TP.HCM. Xe lạnh xuất bến hằng ngày buổi chiều tối.",
+      "packTitle": "Đóng gói",
+      "packDesc": "Thùng carton hoặc thùng xốp tùy yêu cầu. Lưới xốp từng trái, lót đệm chống va đập.",
+      "warrantyTitle": "Bảo hành",
+      "warrantyDesc": "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Không hỏi nhiều."
+    },
+    "whyTitle": "Vì sao khách TP.HCM chọn vựa này?",
+    "why": [
+      "Gần vựa nhất trong 3 thành phố lớn — ship rẻ nhất, xoài tươi nhất",
+      "Xe lạnh đi mỗi chiều, sáng hôm sau là tới TP.HCM",
+      "Giao tận chợ đầu mối, siêu thị, nhà hàng, quán trái cây — chỗ nào cũng tới",
+      "Đóng thùng carton hay xốp — tuỳ ý bạn hàng"
+    ],
+    "faq": {
+      "title": "Câu hỏi thường gặp — Giao TP.HCM",
+      "items": [
+        {
+          "q": "Ship TP.HCM mấy tiếng?",
+          "a": "Xe chạy 6–8 tiếng từ Thạnh Phú. Xe lạnh đi chiều tối, sáng sớm hôm sau tới TP.HCM — tính từ lúc đặt không quá 24 giờ (đơn đặt trước 15h)."
+        },
+        {
+          "q": "Có giao tận chợ không?",
+          "a": "Có. Vựa giao tận chợ đầu mối Bình Điền, Hóc Môn, Thủ Đức và các quận nội thành. Nếu số lượng lớn (từ 5 thùng trở lên), liên hệ trước để sắp xếp điểm giao phù hợp."
+        },
+        {
+          "q": "Lấy sỉ TP.HCM liên hệ ai?",
+          "a": "Liên hệ trực tiếp A Phúc — 0932 585 533 (gọi hoặc Zalo). Báo số lượng, điểm giao, loại xoài cần — vựa báo giá sỉ và lịch giao trong 15 phút."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Đặt xoài giao TP.HCM ngay",
+      "desc": "Gọi hoặc nhắn Zalo — vựa báo giá & thời gian giao trong 15 phút.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo ngay"
+    },
+    "internalLinks": [
+      { "label": "Tìm hiểu về Xoài Tứ Quý", "href": "/xoai-tu-quy" },
+      { "label": "Giá xoài hôm nay", "href": "/xoai-tu-quy#gia" },
+      { "label": "Liên hệ đặt sỉ", "href": "/#contact" }
+    ]
+  },
+  "giaoHangHaNoi": {
+    "hero": {
+      "tag": "Giao hàng toàn quốc · Tuyến Bến Tre – Hà Nội",
+      "title": "Xoài Tứ Quý Giao Hà Nội",
+      "titleHighlight": "48h Từ Vựa Thạnh Phú",
+      "desc": "Xe lạnh duy trì 8–12°C hoặc gửi bay trong ngày nếu gấp. Đóng gói chống dập chuẩn tuyến xa. 95% xoài vựa bán cho mối ngoài Bắc — quen tuyến lắm rồi.",
+      "ctaCall": "Gọi đặt hàng: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "Chi tiết vận chuyển",
+      "timeTitle": "Thời gian giao",
+      "timeDesc": "48 giờ từ vựa Thạnh Phú đến Hà Nội. Xe lạnh hằng ngày hoặc gửi bay hỏa tốc.",
+      "packTitle": "Đóng gói",
+      "packDesc": "Thùng xốp đục lỗ + lưới xốp từng trái + đệm chống sốc. Chuẩn tuyến xa 48h+",
+      "warrantyTitle": "Bảo hành",
+      "warrantyDesc": "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Không hỏi nhiều."
+    },
+    "whyTitle": "Vì sao khách Hà Nội chọn vựa này?",
+    "why": [
+      "95% xoài vựa bán ra Bắc — đóng gói ship xa đã quen tay",
+      "Xe lạnh giữ 8–12°C suốt tuyến, hoặc gửi bay trong ngày nếu gấp",
+      "Thùng xốp đục lỗ + lưới xốp từng trái + đệm chống sốc — hàng hư không tới 2%",
+      "Nhận thấy hàng hư → chụp hình gửi Zalo, đơn sau vựa bồi liền, không hỏi nhiều"
+    ],
+    "faq": {
+      "title": "Câu hỏi thường gặp — Giao Hà Nội",
+      "items": [
+        {
+          "q": "Mua xoài Bến Tre chính gốc ở đâu Hà Nội?",
+          "a": "Đặt trực tiếp từ vựa Trái Cây Bến Tre tại Thạnh Phú. Xoài có Chỉ dẫn địa lý CDĐL #00124 do Cục SHTT cấp — đảm bảo chính gốc. Gọi 0932 585 533 hoặc nhắn Zalo, vựa báo giá + lịch giao trong 15 phút."
+        },
+        {
+          "q": "Làm sao biết xoài Bến Tre chính gốc, không phải hàng trộn?",
+          "a": "Mỗi thùng có tem CDĐL #00124 + QR truy xuất nguồn gốc: tên vườn, ngày hái, người thu hoạch. Xoài Tứ Quý chính gốc có vị mặn nhẹ cuối lưỡi đặc trưng — chỗ khác không có."
+        },
+        {
+          "q": "Ship Hà Nội mấy ngày?",
+          "a": "Thông thường 48 giờ từ khi đóng hàng tại vựa Thạnh Phú. Xe lạnh khởi hành mỗi ngày 17h–18h, đến Hà Nội sáng ngày kế. Nếu cần gấp hơn, chọn phương án gửi bay — hàng đến trong ngày."
+        },
+        {
+          "q": "Xoài có bị dập khi giao xa không?",
+          "a": "Không. Mỗi trái bọc lưới xốp riêng, đặt thùng xốp đục lỗ thoáng khí, giữa các lớp có đệm lót. Cách đóng này vựa làm 3 năm cho khách Hà Nội rồi — hàng hư không tới 2%."
+        },
+        {
+          "q": "Phí ship Hà Nội bao nhiêu?",
+          "a": "Phí ship xe lạnh tuyến Bến Tre – Hà Nội khoảng 35.000–50.000đ/thùng 20kg (báo chính xác khi đặt hàng). Gửi bay cao hơn, phụ thuộc chuyến. Gọi 0932 585 533 để báo giá trước."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Lấy xoài ra Hà Nội",
+      "desc": "Gọi hoặc nhắn Zalo — vựa báo giá + lịch giao trong 15 phút.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo ngay"
+    },
+    "internalLinks": [
+      { "label": "Xoài Tứ Quý", "href": "/xoai-tu-quy" },
+      { "label": "Dừa Xiêm Bến Tre", "href": "/dua-xiem-ben-tre" },
+      { "label": "Tất cả sản phẩm", "href": "/san-pham" },
+      { "label": "Liên hệ đặt sỉ", "href": "/#contact" }
+    ]
+  },
+  "giaoHangDaNang": {
+    "hero": {
+      "tag": "Giao hàng toàn quốc · Tuyến Bến Tre – Miền Trung",
+      "title": "Xoài Tứ Quý Giao Đà Nẵng",
+      "titleHighlight": "Ship Lạnh Toàn Tuyến",
+      "desc": "Xe lạnh 36 giờ từ Thạnh Phú thẳng ra Đà Nẵng. Bạn hàng là nhà hàng, khách sạn, resort khu vực miền Trung.",
+      "ctaCall": "Gọi đặt hàng: 0932 585 533",
+      "ctaZalo": "Zalo: 0932 585 533"
+    },
+    "shipping": {
+      "title": "Chi tiết vận chuyển",
+      "timeTitle": "Thời gian giao",
+      "timeDesc": "36 giờ từ vựa Thạnh Phú đến Đà Nẵng. Xe lạnh chạy thẳng tuyến, không qua kho trung chuyển.",
+      "packTitle": "Đóng gói",
+      "packDesc": "Thùng xốp chuẩn ship xa: lưới xốp từng trái, đệm lót chống sốc nhiều lớp, duy trì 8–12°C.",
+      "warrantyTitle": "Bảo hành",
+      "warrantyDesc": "Hàng hư không tới 2%. Trái dập → gửi ảnh Zalo, đơn sau bồi liền. Xuất VAT cho công ty."
+    },
+    "whyTitle": "Vì sao nhà hàng Đà Nẵng chọn vựa này?",
+    "why": [
+      "Xe lạnh chuyên tuyến miền Trung, giữ nhiệt độ 8–12°C suốt 36 giờ",
+      "Đóng gói thùng xốp chuẩn ship xa: lưới xốp từng trái, đệm lót chống sốc nhiều lớp",
+      "Bạn hàng là nhà hàng, khách sạn, resort khu vực Đà Nẵng, Hội An, Huế và các tỉnh miền Trung",
+      "Xuất hoá đơn VAT đầy đủ cho công ty, nhà hàng, khách sạn"
+    ],
+    "faq": {
+      "title": "Câu hỏi thường gặp — Giao Đà Nẵng",
+      "items": [
+        {
+          "q": "Ship Đà Nẵng mất bao lâu?",
+          "a": "Khoảng 36 giờ từ khi đóng hàng tại vựa Thạnh Phú, Bến Tre đến Đà Nẵng. Xe lạnh chạy thẳng tuyến, không qua kho trung chuyển. Đặt hàng trước 12h — hàng đến sáng ngày kế tiếp."
+        },
+        {
+          "q": "Có giao các tỉnh miền Trung khác không?",
+          "a": "Có. Vựa giao đến Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế và Quảng Trị theo tuyến xe lạnh cố định. Liên hệ 0932 585 533 để xác nhận lịch giao cho địa điểm cụ thể."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Đặt xoài giao Đà Nẵng ngay",
+      "desc": "Gọi hoặc nhắn Zalo — vựa báo giá & lịch giao tuyến miền Trung trong 15 phút.",
+      "ctaCall": "0932 585 533",
+      "ctaZalo": "Zalo ngay"
+    },
+    "internalLinks": [
+      { "label": "Tìm hiểu về Xoài Tứ Quý", "href": "/xoai-tu-quy" },
+      { "label": "Giá xoài hôm nay", "href": "/xoai-tu-quy#gia" },
+      { "label": "Liên hệ đặt sỉ", "href": "/#contact" }
+    ]
+  },
+  "productCatalog": {
+    "sectionTag": "Trái cây đặc sản Bến Tre",
+    "title": "Các loại trái cây",
+    "titleHighlight": "từ vựa",
+    "desc": "Vựa Trái Cây Bến Tre liên kết trực tiếp với nhà vườn Thạnh Phú. Xoài Tứ Quý CDĐL #00124 là flagship, và vựa đang mở rộng thêm các loại trái đặc sản khác của Bến Tre.",
+    "viewDetail": "Xem chi tiết",
+    "comingSoon": "Sắp ra mắt",
+    "preparingLabel": "Đang chuẩn bị",
+    "seasonYearRound": "Quanh năm",
+    "seasonMonths": "Mùa: {months}"
+  },
+  "sanPhamPage": {
+    "metadata": {
+      "title": "Các Loại Trái Cây Đặc Sản Bến Tre — Xoài Tứ Quý, Dừa Xiêm & Hơn Nữa",
+      "description": "Danh sách trái cây đặc sản Bến Tre từ vựa trực tiếp: Xoài Tứ Quý CDĐL #00124, Dừa Xiêm Bến Tre, và các loại trái cây đang chuẩn bị ra mắt.",
+      "ogTitle": "Các Loại Trái Cây Đặc Sản Bến Tre Từ Vựa",
+      "ogDescription": "Xoài Tứ Quý CDĐL #00124 và các loại trái cây đặc sản Bến Tre khác từ vựa trực tiếp."
+    },
+    "breadcrumb": {
+      "home": "Trang chủ",
+      "products": "Sản phẩm"
+    }
+  },
+  "priceData": {
+    "note": "Giá dao động theo ngày, gọi vựa 0932 585 533 để có giá chính xác.",
+    "tiers": {
+      "vip": {
+        "name": "Xoài Tứ Quý VIP",
+        "description": "Trái đẹp không tì vết, da mịn, size lớn từ 600g. Quà tặng, nhà hàng cao cấp.",
+        "badge": "VIP"
+      },
+      "loai1": {
+        "name": "Xoài Tứ Quý Loại 1",
+        "description": "Trái to, có 1 mặt xấu nhẹ nhưng chất lượng tương đương VIP. Bán chạy nhất.",
+        "badge": "Bán chạy #1"
+      },
+      "loai2": {
+        "name": "Xoài Tứ Quý Loại 2",
+        "description": "Trái nhỏ hơn, visual không đều — nhưng ngon không kém. Lý tưởng cho tiểu thương, làm gỏi.",
+        "badge": "Giá tốt"
+      }
     }
   }
 }

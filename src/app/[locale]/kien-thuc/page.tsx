@@ -1,62 +1,34 @@
-import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { KNOWLEDGE_ARTICLES } from "@/lib/knowledge-data";
-import { getAllPublishedArticles, localizePillar } from "@/lib/articles";
+import { getAllPublishedArticles } from "@/lib/articles";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
 // ISR — refresh hub every 5 min so newly-published MDX articles appear
 export const revalidate = 300;
 
-export const metadata: Metadata = {
-  title: "Kiến Thức Xoài Tứ Quý — Hướng Dẫn Đầy Đủ | Trái Cây Bến Tre",
-  description:
-    "Tổng hợp kiến thức xoài Tứ Quý Bến Tre: định nghĩa, CDĐL #00124, vùng trồng miền Tây, mùa vụ, bảo quản, so sánh với các giống khác.",
-  keywords: [
-    "kiến thức xoài tứ quý",
-    "hướng dẫn xoài bến tre",
-    "xoài tứ quý là gì",
-    "cdđl xoài bến tre",
-    "vùng trồng xoài miền tây",
-  ],
-  alternates: { canonical: `${SITE_URL}/kien-thuc` },
-  openGraph: {
-    title: "Kiến Thức Xoài Tứ Quý — Hướng Dẫn Đầy Đủ",
-    description:
-      "Tất cả những điều bạn cần biết về xoài Tứ Quý Bến Tre — từ nguồn gốc đến cách bảo quản.",
-    url: `${SITE_URL}/kien-thuc`,
-  },
-};
-
-const breadcrumbJsonLd = getBreadcrumbJsonLd([
-  { name: "Trang chủ", url: SITE_URL },
-  { name: "Kiến thức", url: `${SITE_URL}/kien-thuc` },
-]);
-
-// Merge legacy knowledge articles with new MDX articles (product-scoped)
-function getHubItems() {
-  const legacy = KNOWLEDGE_ARTICLES.map((a) => ({
-    href: `/kien-thuc/${a.slug}`,
-    title: a.title,
-    description: a.description,
-    date: a.date,
-    category: a.category,
-  }));
-
-  const mdx = getAllPublishedArticles("kien-thuc").map((a) => ({
-    href: a.urlPath,
-    title: a.frontmatter.title,
-    description: a.frontmatter.metaDescription,
-    date: a.frontmatter.publishedAt.slice(0, 10),
-    category: a.frontmatter.pillar ? localizePillar(a.frontmatter.pillar) : "Kiến thức",
-  }));
-
-  // Newest first — both sources use ISO-like date strings
-  return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "kienThucPage" });
+  return {
+    title: t("metaTitle"),
+    description: t("metaDesc"),
+    keywords: t.raw("metaKeywords") as string[],
+    alternates: { canonical: `${SITE_URL}/kien-thuc` },
+    openGraph: {
+      title: t("ogTitle"),
+      description: t("ogDesc"),
+      url: `${SITE_URL}/kien-thuc`,
+    },
+  };
 }
 
 export default async function KienThucIndexPage({
@@ -66,7 +38,69 @@ export default async function KienThucIndexPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations({ locale, namespace: "kienThucPage" });
+  const tKnowledge = await getTranslations({ locale, namespace: "knowledgeData" });
+  const tArticleMeta = await getTranslations({ locale, namespace: "articleMeta" });
+
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: t("breadcrumbHome"), url: SITE_URL },
+    { name: t("breadcrumbCurrent"), url: `${SITE_URL}/kien-thuc` },
+  ]);
+
+  // Merge legacy knowledge articles with new MDX articles
+  function getHubItems() {
+    const legacy = KNOWLEDGE_ARTICLES.map((a) => {
+      // Try to get translated title/description/category; fall back to source data
+      let title = a.title;
+      let description = a.description;
+      let category = a.category;
+      try {
+        title = tKnowledge(`articles.${a.slug}.title`);
+        description = tKnowledge(`articles.${a.slug}.description`);
+        category = tKnowledge(`articles.${a.slug}.category`);
+      } catch {
+        // slug not in translations — use original data
+      }
+      return {
+        href: `/kien-thuc/${a.slug}`,
+        title,
+        description,
+        date: a.date,
+        category,
+      };
+    });
+
+    // MDX articles have Vietnamese-only frontmatter; only include them on the vi locale.
+    // Other locales show the translated static articles only until MDX i18n is added.
+    const mdx =
+      locale === "vi"
+        ? getAllPublishedArticles("kien-thuc").map((a) => {
+            let category = t("defaultCategory");
+            if (a.frontmatter.pillar) {
+              try {
+                category = tArticleMeta(`pillarLabels.${a.frontmatter.pillar}`);
+              } catch {
+                // unknown pillar — use default
+              }
+            }
+            return {
+              href: a.urlPath,
+              title: a.frontmatter.title,
+              description: a.frontmatter.metaDescription,
+              date: a.frontmatter.publishedAt.slice(0, 10),
+              category,
+            };
+          })
+        : [];
+
+    // Newest first — both sources use ISO-like date strings
+    return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
+  }
+
   const items = getHubItems();
+  const exploreLinks = t.raw("exploreLinks") as { label: string; href: string }[];
+
   return (
     <>
       <script
@@ -80,17 +114,15 @@ export default async function KienThucIndexPage({
         <div className="mx-auto max-w-[820px] text-center">
           <FadeIn>
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-              Hướng dẫn đầy đủ
+              {t("heroEyebrow")}
             </span>
             <h1 className="mt-3 font-heading text-[36px] font-bold uppercase leading-tight text-text sm:text-5xl">
-              Kiến Thức
+              {t("heroTitle1")}
               <br />
-              <span className="text-mango">Xoài Tứ Quý</span>
+              <span className="text-mango">{t("heroTitle2")}</span>
             </h1>
             <p className="mt-6 text-lg leading-7 text-text/60">
-              Tất cả những điều bạn cần biết về xoài Tứ Quý Bến Tre — từ nguồn
-              gốc, CDĐL #00124, mùa vụ, vùng trồng đến cách bảo quản và so sánh
-              với các giống xoài khác.
+              {t("heroDesc")}
             </p>
           </FadeIn>
         </div>
@@ -120,7 +152,7 @@ export default async function KienThucIndexPage({
                   <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
                     <span className="text-xs text-text/40">{article.date}</span>
                     <span className="flex items-center gap-1 text-sm font-semibold text-text group-hover:text-mango transition-colors">
-                      Đọc tiếp
+                      {t("readMore")}
                       <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
@@ -136,16 +168,10 @@ export default async function KienThucIndexPage({
       <section className="bg-brand px-5 py-16">
         <div className="mx-auto max-w-[820px]">
           <h3 className="mb-6 text-center font-heading text-2xl font-bold uppercase text-text">
-            Khám phá thêm
+            {t("exploreMore")}
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {[
-              { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
-              { label: "Tin tức & báo giá", href: "/tin-tuc" },
-              { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
-              { label: "Liên hệ đặt sỉ", href: "/#contact" },
-            ].map((link) => (
+            {exploreLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
