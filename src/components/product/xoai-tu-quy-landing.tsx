@@ -20,6 +20,7 @@ import {
   Package,
   ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
+import { getTranslations } from "next-intl/server";
 import { XoaiHeroCarousel } from "@/components/product/xoai-hero-carousel";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -27,65 +28,27 @@ import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { PRICE_DATA } from "@/lib/price-data";
 
-const SELLING_POINTS = [
-  {
-    Icon: ShieldCheck,
-    title: "CDĐL #00124",
-    desc: "Chỉ xoài Thạnh Phú mới được gọi tên này",
-  },
-  {
-    Icon: Leaf,
-    title: "Đất giồng cát nhiễm mặn",
-    desc: "Cho vị mặn nhẹ cuối lưỡi — chỗ khác không có",
-  },
-  {
-    Icon: Truck,
-    title: "Giao lạnh toàn quốc",
-    desc: "HCM 24h · Hà Nội 48h · hàng hư không tới 2%",
-  },
-  {
-    Icon: Scales,
-    title: "Cân dư 2%",
-    desc: "Cân dư bù hao. Hàng hư — đơn sau bồi liền",
-  },
-];
+// Icons are not translatable — titles/descs come from messages.xoaiTuQuy.sellingPoints
+const SELLING_POINT_ICONS = [ShieldCheck, Leaf, Truck, Scales];
 
-const ORDER_INFO = [
-  {
-    Icon: Package,
-    title: "Lấy tối thiểu",
-    desc: "1 thùng 20kg. Đóng thùng theo ý bạn hàng.",
-  },
-  {
-    Icon: TrendUp,
-    title: "Thanh toán",
-    desc: "COD hoặc chuyển khoản trước. Mối quen 3 đơn → mở sổ. Xuất VAT đầy đủ.",
-  },
-  {
-    Icon: Clock,
-    title: "Giờ vựa làm",
-    desc: "4h sáng – 18h mỗi ngày. Zalo trả 5 phút.",
-  },
-];
+// Icons are not translatable — titles/descs come from messages.xoaiTuQuy.orderInfo.items
+const ORDER_INFO_ICONS = [Package, TrendUp, Clock];
 
+// Shipping routes — city/time/method are data (not translatable), hrefs are fixed
 const SHIPPING_ROUTES = [
   { city: "TP.HCM", time: "24h", method: "Xe lạnh", href: "/giao-hang/tp-hcm" },
   { city: "Hà Nội", time: "48h", method: "Xe lạnh / Bay", href: "/giao-hang/ha-noi" },
   { city: "Đà Nẵng", time: "36h", method: "Xe lạnh", href: "/giao-hang/da-nang" },
 ];
 
-const INTERNAL_LINKS = [
-  { label: "Nguồn gốc & chứng nhận", href: "/nguon-goc" },
-  { label: "Xoài Bến Tre có gì đặc biệt?", href: "/xoai-tu-quy/kien-thuc/xoai-ben-tre-co-gi-dac-biet" },
-  { label: "1 kg bao nhiêu trái?", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-1-kg-bao-nhieu-trai" },
-  { label: "Giá Loại 1 Thạnh Phú", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-thanh-phu-loai-1-gia-bao-nhieu" },
-  { label: "Xoài Hoàng Kim (premium)", href: "/xoai-hoang-kim" },
-  { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
-  { label: "Tất cả sản phẩm", href: "/san-pham" },
-  { label: "Liên hệ đặt sỉ", href: "/#contact" },
-];
-
-export function XoaiTuQuyLanding() {
+export async function XoaiTuQuyLanding() {
+  const t = await getTranslations("xoaiTuQuy");
+  type SellingPoint = { title: string; desc: string };
+  type OrderItem = { title: string; desc: string };
+  type InternalLink = { label: string; href: string };
+  const sellingPoints = t.raw("sellingPoints") as SellingPoint[];
+  const orderItems = t.raw("orderInfo.items") as OrderItem[];
+  const internalLinks = t.raw("internalLinks") as InternalLink[];
   return (
     <>
       <Header />
@@ -96,32 +59,30 @@ export function XoaiTuQuyLanding() {
           <div className="px-0 md:pl-10">
             <FadeIn>
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-                Đặc sản Thạnh Phú, Bến Tre
+                {t("hero.badge")}
               </span>
               <h1 className="mt-3 font-heading text-4xl font-bold uppercase leading-tight text-text sm:text-5xl lg:text-6xl">
-                Xoài Tứ Quý
+                {t("hero.title1")}
                 <br />
-                <span className="text-mango">Lấy Thẳng</span>
+                <span className="text-mango">{t("hero.title2")}</span>
                 <br />
-                Từ Vựa
+                {t("hero.title3")}
               </h1>
               <p className="mt-4 flex items-center gap-2 text-sm text-text/50">
                 <Clock size={16} weight="bold" />
-                Giá cập nhật: {PRICE_DATA.lastUpdated}
+                {t("hero.priceUpdated")} {PRICE_DATA.lastUpdated}
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mt-6 max-w-[480px] text-lg leading-7 text-text/70">
-                Trồng trên đất giồng cát ven biển, nhiễm mặn tự nhiên — cho ra
-                cái vị mặn nhẹ cuối lưỡi mà không chỗ nào làm lại được. Có Chỉ
-                dẫn địa lý CDĐL #00124 do Cục SHTT cấp.
+                {t("hero.desc")}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="#gia"
                   className="rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
                 >
-                  Xem giá hôm nay
+                  {t("hero.ctaPrice")}
                 </Link>
                 <a
                   href="tel:0932585533"
@@ -144,17 +105,20 @@ export function XoaiTuQuyLanding() {
       {/* Selling points */}
       <section className="bg-brand-cream px-5 py-20">
         <div className="mx-auto grid max-w-[1200px] gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SELLING_POINTS.map((sp, i) => (
-            <FadeIn key={i} delay={i * 0.08}>
-              <div className="rounded-2xl bg-white p-6 shadow-sm">
-                <sp.Icon size={32} weight="duotone" className="text-mango" />
-                <h3 className="mt-3 font-heading text-lg font-bold text-text">
-                  {sp.title}
-                </h3>
-                <p className="mt-1 text-sm text-text/60">{sp.desc}</p>
-              </div>
-            </FadeIn>
-          ))}
+          {sellingPoints.map((sp, i) => {
+            const Icon = SELLING_POINT_ICONS[i];
+            return (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="rounded-2xl bg-white p-6 shadow-sm">
+                  {Icon && <Icon size={32} weight="duotone" className="text-mango" />}
+                  <h3 className="mt-3 font-heading text-lg font-bold text-text">
+                    {sp.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-text/60">{sp.desc}</p>
+                </div>
+              </FadeIn>
+            );
+          })}
         </div>
       </section>
 
@@ -163,10 +127,10 @@ export function XoaiTuQuyLanding() {
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Xoài tứ quý — từ vựa
+              {t("gallery.title")}
             </h2>
             <p className="mb-12 text-center text-sm text-text/50">
-              Ảnh thực tế tại vựa Thạnh Phú — không chỉnh sửa
+              {t("gallery.desc")}
             </p>
           </FadeIn>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -217,11 +181,11 @@ export function XoaiTuQuyLanding() {
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-4xl font-bold uppercase text-text">
-              Bảng giá hôm nay
+              {t("price.title")}
             </h2>
             <p className="mb-10 flex items-center justify-center gap-2 text-center text-sm text-text/50">
               <Clock size={14} weight="bold" />
-              Cập nhật: {PRICE_DATA.lastUpdated}
+              {t("price.updated")} {PRICE_DATA.lastUpdated}
             </p>
           </FadeIn>
           <div className="grid gap-6 sm:grid-cols-3">
@@ -244,7 +208,7 @@ export function XoaiTuQuyLanding() {
                       </span>
                     </div>
                     <p className="mt-1 text-xs text-text/40">
-                      Trọng lượng: {tier.weight}
+                      {t("price.weightLabel")} {tier.weight}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-text/60">
                       {tier.description}
@@ -253,7 +217,7 @@ export function XoaiTuQuyLanding() {
                       href="/#contact"
                       className="mt-5 block w-full rounded-full bg-black py-3 text-center text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
                     >
-                      Đặt hàng
+                      {t("price.ctaOrder")}
                     </Link>
                   </div>
                 </div>
@@ -267,7 +231,7 @@ export function XoaiTuQuyLanding() {
               className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
             >
               <Phone size={18} weight="bold" />
-              Gọi vựa: 0932 585 533
+              {t("price.ctaCall")}
             </a>
           </div>
         </div>
@@ -279,25 +243,30 @@ export function XoaiTuQuyLanding() {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-10 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Thông tin đặt hàng
+              {t("orderInfo.title")}
             </h2>
           </FadeIn>
           <div className="grid gap-6 sm:grid-cols-3">
-            {ORDER_INFO.map((item, i) => (
-              <FadeIn key={item.title} delay={i * 0.08}>
-                <div className="rounded-2xl bg-text/5 p-6 text-center">
-                  <item.Icon
-                    size={32}
-                    weight="duotone"
-                    className="mx-auto text-mango"
-                  />
-                  <h3 className="mt-3 font-heading text-lg font-bold text-text">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-text/60">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            {orderItems.map((item, i) => {
+              const Icon = ORDER_INFO_ICONS[i];
+              return (
+                <FadeIn key={item.title} delay={i * 0.08}>
+                  <div className="rounded-2xl bg-text/5 p-6 text-center">
+                    {Icon && (
+                      <Icon
+                        size={32}
+                        weight="duotone"
+                        className="mx-auto text-mango"
+                      />
+                    )}
+                    <h3 className="mt-3 font-heading text-lg font-bold text-text">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-text/60">{item.desc}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -307,12 +276,12 @@ export function XoaiTuQuyLanding() {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Vựa xoài Tứ Quý Bến Tre
+              {t("wholesale.title1")}
               <br />
-              <span className="text-mango">giá sỉ</span>
+              <span className="text-mango">{t("wholesale.title2")}</span>
             </h2>
             <p className="mb-8 text-center text-sm text-text/50">
-              Trực tiếp từ vựa Thạnh Phú — cắt trung gian, giá tốt nhất
+              {t("wholesale.desc")}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -331,10 +300,10 @@ export function XoaiTuQuyLanding() {
             </div>
             <div className="mt-6 rounded-2xl bg-text/5 p-5">
               <ul className="space-y-2 text-sm text-text/70">
-                <li>• Tối thiểu <strong>1 thùng 20kg</strong>. Đóng thùng theo ý mối.</li>
-                <li>• <strong>COD</strong> hoặc chuyển khoản trước. Mối quen 3 đơn → mở sổ <strong>công nợ</strong>.</li>
-                <li>• Xuất <strong>VAT</strong> đầy đủ cho nhà hàng, doanh nghiệp.</li>
-                <li>• Giao lạnh toàn quốc: HCM 24h, Hà Nội 48h.</li>
+                <li>• {t("wholesale.bulletMin")}</li>
+                <li>• {t("wholesale.bulletPayment")}</li>
+                <li>• {t("wholesale.bulletVat")}</li>
+                <li>• {t("wholesale.bulletShip")}</li>
               </ul>
             </div>
             <div className="mt-6 text-center">
@@ -344,7 +313,7 @@ export function XoaiTuQuyLanding() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
-                Zalo báo giá sỉ
+                {t("wholesale.ctaZalo")}
               </a>
             </div>
           </FadeIn>
@@ -357,10 +326,10 @@ export function XoaiTuQuyLanding() {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-4xl font-bold uppercase text-text">
-              Vận chuyển
+              {t("shipping.title")}
             </h2>
             <p className="mb-10 text-center text-sm text-text/50">
-              Bấm vào thành phố để coi chi tiết giao hàng
+              {t("shipping.desc")}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -383,7 +352,7 @@ export function XoaiTuQuyLanding() {
                     {route.time} · {route.method}
                   </div>
                   <div className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-text/50 transition-colors group-hover:text-text">
-                    Xem chi tiết
+                    {t("shipping.viewDetail")}
                     <ArrowRight
                       size={14}
                       weight="bold"
@@ -394,8 +363,7 @@ export function XoaiTuQuyLanding() {
               ))}
             </div>
             <p className="mt-8 text-center text-sm text-text/50">
-              Mỗi trái bọc lưới xốp riêng, xếp thùng carton có lót đệm. Hàng
-              hư không tới 2%. Có trái dập → chụp gửi Zalo, đơn sau bồi liền.
+              {t("shipping.note")}
             </p>
           </FadeIn>
         </div>
@@ -405,7 +373,7 @@ export function XoaiTuQuyLanding() {
       <SectionDivider from="brand-cream" to="brand" />
       <section className="bg-brand px-5 py-16">
         <div className="mx-auto flex max-w-[800px] flex-wrap justify-center gap-4">
-          {INTERNAL_LINKS.map((link) => (
+          {internalLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}

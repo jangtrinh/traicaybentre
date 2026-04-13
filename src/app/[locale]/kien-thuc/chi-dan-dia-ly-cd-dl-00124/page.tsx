@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { ArticleLayout } from "@/components/article-layout";
 import { VUA_XOAI_IMAGES } from "@/lib/vua-xoai-images";
 import {
@@ -52,7 +53,13 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "CDĐL #00124 Xoài Tứ Quý", url: PAGE_URL },
 ]);
 
-export default function ChiDanDiaLyCdDl00124Page() {
+export default async function ChiDanDiaLyCdDl00124Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <ArticleLayout
       category="Kiến thức — Pháp lý & Chứng nhận"

@@ -136,5 +136,542 @@
   },
   "common": {
     "required": "*"
+  },
+  "data": {
+    "products": [
+      {
+        "name": "Xoài Tứ Quý — VIP",
+        "farm": "Vườn ông Ba, Thạnh Phú",
+        "desc": "Trái đẹp nhất vựa — da mịn, không trầy, mỗi trái 600g trở lên. Dân làm quà Tết, nhà hàng, khách sộp lấy loại này.",
+        "tags": ["Không tì vết", "Trái lớn 600g+", "Quà tặng"],
+        "badge": "VIP",
+        "weight": "600–800g+/trái",
+        "moq": "20kg (1 thùng)",
+        "stock": "~500kg"
+      },
+      {
+        "name": "Xoài Tứ Quý — Loại 1",
+        "farm": "Vườn ông Ba, Thạnh Phú",
+        "desc": "To y loại VIP, chỉ có 1 mặt bị nắng ăn hoặc trầy nhẹ — ăn vô ngon y vậy. Ngọt đậm, mặn nhẹ cuối lưỡi. Sạp nào bán cũng chạy.",
+        "tags": ["Ngọt đậm", "Trái to", "Vị mặn đặc trưng"],
+        "badge": "Bán chạy #1",
+        "weight": "600–800g+/trái",
+        "moq": "20kg (1 thùng)",
+        "stock": "~2.2 tấn"
+      },
+      {
+        "name": "Xoài Tứ Quý — Loại 2",
+        "farm": "Vườn chú Tám, Ba Tri",
+        "desc": "Trái nhỏ hơn, nhìn không đều tay — ngon y như VIP. Lấy bán lẻ, làm gỏi, xoài lắc là hết sảy.",
+        "tags": ["Giá tốt nhất", "Chất lượng ngon", "Làm gỏi"],
+        "badge": "Giá tốt",
+        "weight": "400–600g/trái",
+        "moq": "20kg (1 thùng)",
+        "stock": "~3 tấn"
+      },
+      {
+        "name": "Xoài Hoàng Kim — Premium",
+        "farm": "Vườn liên kết, Thạnh Phú",
+        "desc": "Tứ Quý da vàng kim hiếm — ngọt lịm như Cát Hòa Lộc, gần không xơ. Trái to đẹp, da vàng óng. Quà biếu VIP, nhà hàng cao cấp.",
+        "tags": ["Không xơ", "Da vàng kim", "Quà biếu VIP"],
+        "badge": "Hoàng Kim",
+        "weight": "800g–1.5kg/trái",
+        "moq": "10kg",
+        "stock": "Hàng hiếm"
+      },
+      {
+        "name": "Dừa Xiêm — Sỉ",
+        "farm": "Nhà vườn Thạnh Phú",
+        "desc": "Dừa sọ gọt sẵn, nước ngọt thanh, mở nắp uống liền. Đóng túi lưới, ship lạnh toàn quốc. Quanh năm có hàng.",
+        "tags": ["Nước ngọt", "Gọt sẵn", "Quanh năm"],
+        "badge": "Mới",
+        "weight": "500–700g/trái (sọ)",
+        "moq": "50 trái",
+        "stock": "Quanh năm"
+      },
+      {
+        "name": "Dừa Xiêm — Lẻ",
+        "farm": "Nhà vườn Thạnh Phú",
+        "desc": "Dừa sọ gọt sẵn đóng gói hút chân không. Nước ngọt tự nhiên từ Bến Tre. Lẻ từ 10 trái — phù hợp gia đình, quán nước.",
+        "tags": ["Hút chân không", "Nước ngọt", "Gọt sẵn"],
+        "badge": "Lẻ",
+        "weight": "500–700g/trái (sọ)",
+        "moq": "10 trái",
+        "stock": "Quanh năm"
+      },
+      {
+        "name": "Dừa Xiêm — Rau Câu Dừa",
+        "farm": "Nhà vườn Thạnh Phú",
+        "desc": "Dừa sọ Bến Tre nhồi rau câu dừa — thạch dừa mát lạnh bên trong sọ dừa tươi. Ăn liền, không cần chế biến. Quà biếu, tiệc, tráng miệng sang.",
+        "tags": ["Rau câu dừa", "Ăn liền", "Quà biếu"],
+        "badge": "Hot",
+        "weight": "500–700g/trái (sọ)",
+        "moq": "10 trái",
+        "stock": "Quanh năm"
+      }
+    ],
+    "processSteps": [
+      {
+        "title": "Đất cát ven biển",
+        "desc": "Vùng giồng cát nhiễm mặn Thạnh Phú — cho vị mặn nhẹ không đâu có. Có Chỉ dẫn địa lý do Cục SHTT cấp."
+      },
+      {
+        "title": "Bao trái từ nhỏ",
+        "desc": "Mỗi trái bao túi vải riêng từ khi bằng ngón tay — đẹp mã, không sâu bệnh, chín đều."
+      },
+      {
+        "title": "Đóng thùng theo ý mối",
+        "desc": "Bạn hàng muốn thùng carton, xốp, hay bao lưới đều được. Cân dư 2% bù hao — ai quen vựa cũng biết."
+      },
+      {
+        "title": "Giao tuỳ chọn",
+        "desc": "Xe lạnh, xe thường, hay gửi bay — tuỳ ngân sách bạn hàng. Bến Tre → Hà Nội khoảng 2 ngày · → Vinh 1,5 ngày. Giao tận chợ hay tận sạp đều được."
+      }
+    ],
+    "testimonials": [
+      {
+        "text": "Lấy 3 đợt rồi, hàng đều hơn mối cũ, size không lẫn. Sạp tôi tuần nào cũng hết trước 2 ngày.",
+        "name": "Chị Lan",
+        "detail": "Sạp 23, chợ Vinh, Nghệ An",
+        "since": "Khách từ 08/2025"
+      },
+      {
+        "text": "Khách Hà Nội sành ăn lắm, xoài Úc xoài Đài họ chê — nhưng xoài Tứ Quý Bến Tre thì hết veo. Vị mặn nhẹ cuối lưỡi khác hẳn.",
+        "name": "Anh Toàn",
+        "detail": "Chuỗi 3 cửa hàng trái cây, Cầu Giấy, Hà Nội",
+        "since": "Khách từ 03/2025"
+      },
+      {
+        "text": "Đặt combo hộp quà tặng đối tác dịp Tết, ai cũng hỏi mua ở đâu. Đóng gói đẹp, xoài thơm, giao đúng hẹn.",
+        "name": "Chị Hương",
+        "detail": "Giám đốc công ty XNK, Thanh Xuân, Hà Nội",
+        "since": "Khách từ 12/2025"
+      },
+      {
+        "text": "Tôi so sánh 3 mối rồi mới chốt. Ở đây cân dư 2%, hàng lỗi thì bồi đơn sau không cần gửi trả. Làm ăn thẳng thắn.",
+        "name": "Anh Hùng",
+        "detail": "Tiểu thương chợ Phủ, Thanh Hóa",
+        "since": "Khách từ 06/2025"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Xoài Tứ Quý là gì?",
+        "a": "Xoài Tứ Quý là giống xoài đặc sản Bến Tre, cho trái quanh năm (3 vụ/năm). Trồng trên đất giồng cát ven biển nhiễm mặn tại Thạnh Phú, cho ra vị mặn nhẹ cuối lưỡi — chỗ khác không làm lại được. Có Chỉ dẫn địa lý CDĐL #00124 do Cục Sở hữu trí tuệ cấp năm 2022."
+      },
+      {
+        "q": "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
+        "a": "Giá đổi mỗi ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi Anh Phúc 0932 585 533 lấy giá chuẩn trong ngày — giá cập mỗi sáng."
+      },
+      {
+        "q": "Ship xa xoài có bị dập không?",
+        "a": "Không. Mỗi trái bọc lưới xốp riêng, xếp thùng carton có lót đệm. Ba năm giao ra Bắc, hàng hư không tới 2%. Nếu có trái dập — chụp hình gửi Zalo, đơn sau vựa bồi liền, không hỏi nhiều."
+      },
+      {
+        "q": "Sao biết là xoài Bến Tre thật?",
+        "a": "Mỗi thùng có QR truy xuất nguồn gốc: tên vườn, ngày hái, người thu hoạch. Sản phẩm thuộc vùng Chỉ dẫn địa lý \"Bến Tre\" do Cục SHTT cấp 2022. Dùng tên gọi này cho xoài vùng khác là vi phạm pháp luật."
+      },
+      {
+        "q": "Xoài Tứ Quý ăn chín hay xanh ngon hơn?",
+        "a": "Cả hai đều ngon, tuỳ khẩu vị. Miền Bắc thích ăn chín — ngọt đậm, thơm hắc, vị mặn nhẹ. Miền Nam thích ăn xanh — giòn sần sật, chua thanh. Vựa có cả hai loại."
+      },
+      {
+        "q": "Mua xoài sỉ Bến Tre cần bao nhiêu?",
+        "a": "Lấy tối thiểu 1 thùng 20kg. Đóng thùng theo ý bạn hàng — carton, xốp, bao lưới đều được. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá."
+      },
+      {
+        "q": "Thanh toán và hóa đơn?",
+        "a": "COD khi nhận hàng, hoặc chuyển khoản trước. Mối quen lấy 3 đơn vựa mở sổ công nợ. Xuất hoá đơn VAT đầy đủ cho nhà hàng, công ty."
+      },
+      {
+        "q": "Mùa xoài Tứ Quý khi nào?",
+        "a": "Xoài Tứ Quý ra trái quanh năm, 3 vụ chính: tháng 4 âm, tháng 8 âm, tháng 12 âm (vụ Tết). Xoài xanh có quanh năm. Tháng nào vựa cũng có hàng — khỏi lo đứt."
+      }
+    ],
+    "calendar": [
+      { "name": "Xoài Tứ Quý (chín vụ 1)" },
+      { "name": "Xoài Tứ Quý (chín vụ 2)" },
+      { "name": "Xoài Tứ Quý (vụ 3 + Tết)" },
+      { "name": "Xoài xanh (quanh năm)" }
+    ]
+  },
+  "xoaiTuQuy": {
+    "hero": {
+      "badge": "Đặc sản Thạnh Phú, Bến Tre",
+      "title1": "Xoài Tứ Quý",
+      "title2": "Lấy Thẳng",
+      "title3": "Từ Vựa",
+      "priceUpdated": "Giá cập nhật:",
+      "ctaPrice": "Xem giá hôm nay",
+      "desc": "Trồng trên đất giồng cát ven biển, nhiễm mặn tự nhiên — cho ra cái vị mặn nhẹ cuối lưỡi mà không chỗ nào làm lại được. Có Chỉ dẫn địa lý CDĐL #00124 do Cục SHTT cấp."
+    },
+    "sellingPoints": [
+      { "title": "CDĐL #00124", "desc": "Chỉ xoài Thạnh Phú mới được gọi tên này" },
+      { "title": "Đất giồng cát nhiễm mặn", "desc": "Cho vị mặn nhẹ cuối lưỡi — chỗ khác không có" },
+      { "title": "Giao lạnh toàn quốc", "desc": "HCM 24h · Hà Nội 48h · hàng hư không tới 2%" },
+      { "title": "Cân dư 2%", "desc": "Cân dư bù hao. Hàng hư — đơn sau bồi liền" }
+    ],
+    "gallery": {
+      "title": "Xoài tứ quý — từ vựa",
+      "desc": "Ảnh thực tế tại vựa Thạnh Phú — không chỉnh sửa"
+    },
+    "price": {
+      "title": "Bảng giá hôm nay",
+      "updated": "Cập nhật:",
+      "weightLabel": "Trọng lượng:",
+      "ctaOrder": "Đặt hàng",
+      "ctaCall": "Gọi vựa: 0932 585 533"
+    },
+    "orderInfo": {
+      "title": "Thông tin đặt hàng",
+      "items": [
+        { "title": "Lấy tối thiểu", "desc": "1 thùng 20kg. Đóng thùng theo ý bạn hàng." },
+        { "title": "Thanh toán", "desc": "COD hoặc chuyển khoản trước. Mối quen 3 đơn → mở sổ. Xuất VAT đầy đủ." },
+        { "title": "Giờ vựa làm", "desc": "4h sáng – 18h mỗi ngày. Zalo trả 5 phút." }
+      ]
+    },
+    "wholesale": {
+      "title1": "Vựa xoài Tứ Quý Bến Tre",
+      "title2": "giá sỉ",
+      "desc": "Trực tiếp từ vựa Thạnh Phú — cắt trung gian, giá tốt nhất",
+      "bulletMin": "Tối thiểu 1 thùng 20kg. Đóng thùng theo ý mối.",
+      "bulletPayment": "COD hoặc chuyển khoản trước. Mối quen 3 đơn → mở sổ công nợ.",
+      "bulletVat": "Xuất VAT đầy đủ cho nhà hàng, doanh nghiệp.",
+      "bulletShip": "Giao lạnh toàn quốc: HCM 24h, Hà Nội 48h.",
+      "ctaZalo": "Zalo báo giá sỉ"
+    },
+    "shipping": {
+      "title": "Vận chuyển",
+      "desc": "Bấm vào thành phố để coi chi tiết giao hàng",
+      "viewDetail": "Xem chi tiết",
+      "note": "Mỗi trái bọc lưới xốp riêng, xếp thùng carton có lót đệm. Hàng hư không tới 2%. Có trái dập → chụp gửi Zalo, đơn sau bồi liền."
+    },
+    "internalLinks": [
+      { "label": "Nguồn gốc & chứng nhận", "href": "/nguon-goc" },
+      { "label": "Xoài Bến Tre có gì đặc biệt?", "href": "/xoai-tu-quy/kien-thuc/xoai-ben-tre-co-gi-dac-biet" },
+      { "label": "1 kg bao nhiêu trái?", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-1-kg-bao-nhieu-trai" },
+      { "label": "Giá Loại 1 Thạnh Phú", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-thanh-phu-loai-1-gia-bao-nhieu" },
+      { "label": "Xoài Hoàng Kim (premium)", "href": "/xoai-hoang-kim" },
+      { "label": "Dừa Xiêm Bến Tre", "href": "/dua-xiem-ben-tre" },
+      { "label": "Tất cả sản phẩm", "href": "/san-pham" },
+      { "label": "Liên hệ đặt sỉ", "href": "/#contact" }
+    ]
+  },
+  "hoangKim": {
+    "hero": {
+      "badge": "Premium · Hàng Hiếm",
+      "title1": "Xoài Hoàng Kim",
+      "title2": "Thạnh Phú",
+      "price": "35.000 – 45.000₫/kg",
+      "desc": "Biến thể premium của Tứ Quý — da vàng kim đẹp mắt, thịt ngọt lịm như Cát Hòa Lộc, gần không có xơ. Cùng vùng đất giồng cát nhiễm mặn Thạnh Phú, nhưng hiếm hơn — hết là đợi vụ sau.",
+      "ctaZalo": "Đặt Hoàng Kim qua Zalo"
+    },
+    "sellingPoints": [
+      { "title": "Da vàng kim đẹp", "desc": "Chín vàng óng — đẹp mắt hơn Tứ Quý thường. Trái to 800g-1.5kg, da mịn không tì vết." },
+      { "title": "Ngọt lịm, không xơ", "desc": "Ăn chín ngọt lịm như Cát Hòa Lộc. Gần không có xơ — thịt mịn tan trong miệng." },
+      { "title": "Vị mặn nhẹ Thạnh Phú", "desc": "Giữ nguyên vị mặn nhẹ cuối lưỡi từ đất giồng cát nhiễm mặn — DNA Tứ Quý chính gốc." },
+      { "title": "Hàng hiếm, giao lạnh", "desc": "Sản lượng ít, hết là đợi vụ sau. Giao lạnh toàn quốc — HCM 24h, HN 48h." }
+    ],
+    "compare": {
+      "title": "Hoàng Kim vs Tứ Quý thường",
+      "colCriteria": "Tiêu chí",
+      "colTuQuy": "Tứ Quý",
+      "colHoangKim": "Hoàng Kim ⭐",
+      "rows": [
+        { "feature": "Da", "tuQuy": "Xanh → vàng nhẹ", "hoangKim": "Vàng kim đậm, óng ả" },
+        { "feature": "Thịt", "tuQuy": "Ngọt đậm, ít xơ", "hoangKim": "Ngọt lịm, gần KHÔNG xơ" },
+        { "feature": "Trọng lượng", "tuQuy": "400-800g/trái", "hoangKim": "800g-1.5kg/trái" },
+        { "feature": "Vị mặn đặc trưng", "tuQuy": "✓ Có", "hoangKim": "✓ Có (nhẹ hơn)" },
+        { "feature": "Giá", "tuQuy": "16-25k/kg", "hoangKim": "35-45k/kg" },
+        { "feature": "Phù hợp", "tuQuy": "Ăn tươi, bán lẻ, chế biến", "hoangKim": "Quà biếu VIP, nhà hàng cao cấp" },
+        { "feature": "Sản lượng", "tuQuy": "Dồi dào quanh năm", "hoangKim": "Hàng hiếm, có mùa" }
+      ]
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp — Xoài Hoàng Kim",
+      "items": [
+        { "q": "Xoài Hoàng Kim là gì?", "a": "Biến thể premium của Xoài Tứ Quý — da vàng kim khi chín, thịt ngọt lịm gần không xơ. Cùng giống Tứ Quý, cùng vùng Thạnh Phú, nhưng hiếm hơn nhiều." },
+        { "q": "Hoàng Kim khác Tứ Quý thường sao?", "a": "Da vàng đậm (thay vì xanh-vàng). Thịt mịn hơn, ngọt lịm hơn, gần không xơ. Trái to hơn (800g-1.5kg). Giá 35-45k/kg (gấp 1.5-2x)." },
+        { "q": "Tại sao Hoàng Kim đắt hơn?", "a": "Sản lượng rất ít — chỉ một số vườn có giống này. Trái to đẹp, chất lượng thịt vượt trội. Hàng hiếm = giá premium." },
+        { "q": "Hoàng Kim có quanh năm không?", "a": "Không — theo mùa vụ Tứ Quý (T4-6, T8-10, T12-2) nhưng sản lượng ít hơn nhiều. Hết là đợi vụ sau. Đặt sớm để giữ hàng." },
+        { "q": "Dùng Hoàng Kim làm quà biếu được không?", "a": "Rất phù hợp — trái vàng kim đẹp, to nặng tay (800g+), ngọt lịm. Đóng hộp 5kg = 4-6 trái, ấn tượng hơn VIP thường." }
+      ]
+    },
+    "internalLinks": [
+      { "label": "Xoài Tứ Quý (giá sỉ)", "href": "/xoai-tu-quy#gia" },
+      { "label": "Dừa Xiêm Bến Tre", "href": "/dua-xiem-ben-tre" },
+      { "label": "Tất cả sản phẩm", "href": "/san-pham" },
+      { "label": "Quà biếu đặc sản", "href": "/san-pham#qua-bieu-ben-tre" }
+    ]
+  },
+  "duaXiem": {
+    "hero": {
+      "badge": "Đặc sản Bến Tre · Quanh năm",
+      "title1": "Dừa Xiêm",
+      "title2": "Bến Tre",
+      "title3": "Dừa Sọ Gọt Sẵn",
+      "desc": "Dừa xiêm xanh chín tới, gọt sạch vỏ thành dừa sọ — mở nắp uống liền. Lấy thẳng từ nhà vườn Thạnh Phú, Bến Tre. Nước ngọt thanh, không pha trộn, không chất bảo quản.",
+      "ctaZalo": "Đặt qua Zalo"
+    },
+    "sellingPoints": {
+      "title": "Tại sao chọn dừa từ vựa",
+      "items": [
+        { "title": "100% Bến Tre", "desc": "Lấy thẳng từ nhà vườn Thạnh Phú — không qua trung gian, không pha trộn" },
+        { "title": "Nước ngọt thanh", "desc": "Dừa xiêm xanh chín tới — vị ngọt tự nhiên, không gắt, không nhạt" },
+        { "title": "Gọt sẵn premium", "desc": "Dạng dừa sọ — gọt sạch vỏ, đóng gói đẹp, mở nắp uống liền" },
+        { "title": "Giao lạnh toàn quốc", "desc": "HCM 24h · Hà Nội 48h · giữ lạnh đá khô từ vựa tới khách" }
+      ]
+    },
+    "gallery": {
+      "title": "Dừa sọ — từ vựa",
+      "desc": "Quy trình gọt thủ công tại vựa Thạnh Phú"
+    },
+    "order": {
+      "title1": "Đặt dừa xiêm Bến Tre online",
+      "title2": "ship toàn quốc",
+      "desc": "Đặt qua Zalo hoặc gọi — vựa báo giá + lịch giao trong 15 phút",
+      "wholesale": "Sỉ",
+      "wholesalePrice": "8.000 – 10.000",
+      "wholesaleUnit": "₫/trái",
+      "wholesaleDesc": "Từ 50 trái trở lên. Đóng túi lưới, ship xe lạnh.",
+      "retail": "Lẻ",
+      "retailPrice": "15.000 – 18.000",
+      "retailUnit": "₫/trái",
+      "retailDesc": "Từ 10 trái. Đóng gói hút chân không hoặc túi lưới.",
+      "steps": [
+        { "step": "1", "title": "Nhắn Zalo/Gọi", "desc": "Báo số lượng + địa chỉ giao. Vựa báo giá + lịch giao ngay." },
+        { "step": "2", "title": "Chuyển khoản / COD", "desc": "Chuyển khoản trước hoặc COD khi nhận hàng. Mối quen → mở sổ công nợ." },
+        { "step": "3", "title": "Nhận hàng", "desc": "Dừa giao tận nơi xe lạnh. HCM 24h, HN 48h. Hàng lỗi → bồi đơn sau." }
+      ],
+      "ctaZalo": "Đặt dừa qua Zalo"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp — Dừa Xiêm Bến Tre",
+      "items": [
+        { "q": "Đặt dừa xiêm Bến Tre online ship toàn quốc được không?", "a": "Được. Vựa giao lạnh toàn quốc: TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Đặt qua Zalo hoặc gọi 0932 585 533." },
+        { "q": "Dừa sọ khác dừa xiêm nguyên trái sao?", "a": "Dừa sọ là dừa xiêm đã gọt sạch vỏ xanh, chỉ còn sọ trắng + nước bên trong. Mở nắp uống liền, đóng gói đẹp, dễ ship xa." },
+        { "q": "Giá dừa xiêm Bến Tre bao nhiêu?", "a": "Sỉ từ 50 trái: 8.000-10.000₫/trái. Lẻ từ 10 trái: 15.000-18.000₫/trái. Giá có thể thay đổi theo mùa, gọi vựa báo giá chính xác." },
+        { "q": "Nước dừa có ngọt không?", "a": "Dừa xiêm Bến Tre nước ngọt thanh tự nhiên, không gắt. Vựa chọn trái chín tới — ngọt nhất." },
+        { "q": "Bảo quản dừa sọ được bao lâu?", "a": "Dừa sọ chưa khui: ngăn mát 5-7 ngày. Đã khui: uống trong ngày. Dừa gói hút chân không: 10-14 ngày ngăn mát." }
+      ]
+    },
+    "shipping": {
+      "title": "Vận chuyển",
+      "desc": "Bấm vào thành phố để coi chi tiết giao hàng",
+      "viewDetail": "Xem chi tiết"
+    },
+    "internalLinks": [
+      { "label": "Tất cả sản phẩm", "href": "/san-pham" },
+      { "label": "Xoài Tứ Quý", "href": "/xoai-tu-quy" },
+      { "label": "Dừa Xiêm vs Miền Tây", "href": "/dua-xiem-ben-tre/kien-thuc/dua-xiem-ben-tre-vs-dua-xiem-mien-tay" },
+      { "label": "Nguồn gốc & vựa", "href": "/nguon-goc" }
+    ]
+  },
+  "nguonGoc": {
+    "hero": {
+      "title1": "Nguồn",
+      "title2": "Gốc",
+      "desc": "Cả nước chỉ Thạnh Phú trồng được xoài Tứ Quý ngon và đều tay — nhờ đất giồng cát ven biển nhiễm mặn tự nhiên.",
+      "mapTitle": "Vị trí Thạnh Phong, Thạnh Phú, Bến Tre"
+    },
+    "stats": [
+      { "value": "> 400 ha", "label": "Diện tích trồng" },
+      { "value": "700+", "label": "Hộ dân trồng" },
+      { "value": "30 tấn/ha", "label": "Năng suất / năm" },
+      { "value": "3 vụ/năm", "label": "Thu hoạch quanh năm" },
+      { "value": "86 ha", "label": "Mã số vùng trồng XK" },
+      { "value": "95%", "label": "Bán ra miền Bắc" }
+    ],
+    "vuongTrong": {
+      "label": "Phần A",
+      "title": "Vùng Trồng Thạnh Phú",
+      "locationTitle": "Vị trí địa lý",
+      "locationDesc": "Huyện Thạnh Phú — một trong ba huyện ven biển Bến Tre, nằm ở hạ lưu sông Mekong. Vùng trồng nằm trên các giồng cát ven biển, cao 2–4m so với mực nước biển.",
+      "tableWard": "Xã",
+      "tableArea": "Diện tích",
+      "tableNote": "Đặc điểm",
+      "rows": [
+        { "ward": "Thạnh Phong", "area": "~300 ha", "note": "Vùng lớn nhất, trụ sở HTX" },
+        { "ward": "Thạnh Hải", "area": "~50 ha", "note": "Đất giồng cát điển hình" },
+        { "ward": "Giao Thạnh", "area": "~50 ha", "note": "Vùng mở rộng" }
+      ],
+      "historyTitle": "Lịch sử",
+      "historyDesc1": "Giống xoài Tứ Quý có nguồn gốc từ năm 1982, do nông dân ở ấp Phú Đa, xã Vĩnh Bình, huyện Chợ Lách lai tạo. Qua thực tế canh tác, chỉ có vùng đất giồng cát ven biển nhiễm mặn ở Thạnh Phú mới cho ra trái có chất lượng tốt nhất.",
+      "historyDesc2": "Trước đây vùng Thạnh Phú trồng sắn, dưa hấu — thu nhập bấp bênh. Từ 2010 nhiều hộ bỏ dưa trồng xoài, thu nhập tăng gấp 3–4 lần."
+    },
+    "biMat": {
+      "label": "Phần B",
+      "title": "Bí Mật Hương Vị",
+      "factors": [
+        { "title": "Hàm lượng nước thấp", "subtitle": "Thịt giòn & chắc", "desc": "Đất cát giữ nước kém → hàm lượng H₂O trong quả thấp → thịt giòn khi xanh, chắc khi chín. Lợi thế tự nhiên không cần kỹ thuật siết gốc." },
+        { "title": "Đất nhiễm mặn", "subtitle": "Vị mặn nhẹ đặc trưng", "desc": "Muối tan 0,009–0,022% trong đất → chất Natri (Na) tích trong quả → vị mặn nhẹ cuối lưỡi. Đặc điểm này chỗ khác không sao làm lại được." },
+        { "title": "Giao thoa ngọt-mặn", "subtitle": "Cân bằng vị giác", "desc": "Nước ngọt từ sông Mekong + nước mặn từ biển Đông → ngọt đậm hoà với mặn nhẹ — không đâu có." }
+      ],
+      "soilTitle": "Thông số đất",
+      "soilSpecs": [
+        { "label": "Hàm lượng cát", "value": "60–70%" },
+        { "label": "Hàm lượng muối tan", "value": "0,009–0,022%" },
+        { "label": "Độ xốp", "value": "16–20%" },
+        { "label": "Địa hình", "value": "Cao 2–4m, ven biển" }
+      ],
+      "fruitTitle": "Thông số quả",
+      "fruitSpecs": [
+        { "label": "Trọng lượng/quả", "value": "1,0–1,5 kg (max 2 kg)" },
+        { "label": "Độ chắc thịt chín", "value": "20,2–21,1 N" },
+        { "label": "Hàm lượng Na", "value": "1,58–2,02%" },
+        { "label": "Hạt", "value": "Nhỏ, lép — tỉ lệ thịt cao" }
+      ]
+    },
+    "quyTrinh": {
+      "label": "Phần C",
+      "title": "Quy Trình Sản Xuất",
+      "steps": [
+        { "step": "01", "title": "Chuẩn bị đất", "desc": "Chọn vùng giồng cát cao, bón lót phân hữu cơ, lắp hệ thống tưới nhỏ giọt." },
+        { "step": "02", "title": "Trồng & chăm sóc", "desc": "Cây giống ghép, 15–18 tháng cho trái. Tưới đều, bón phân hữu cơ, cắt tỉa tán." },
+        { "step": "03", "title": "Bao trái từ nhỏ", "desc": "Bao túi vải đa màu khi quả bằng ngón tay. Mỗi đợt 1 màu để phân biệt độ tuổi." },
+        { "step": "04", "title": "Thu hoạch & phân loại", "desc": "Thu theo màu túi bao, cắt cuống, phân loại tại vườn theo size VIP/Loại 1/Loại 2." },
+        { "step": "05", "title": "Sơ chế & đóng gói", "desc": "Lau sạch, phân loại lần 2, đóng thùng carton có lót xốp, dán tem truy xuất." },
+        { "step": "06", "title": "Vận chuyển", "desc": "Xe lạnh, xe thường hoặc gửi bay — tuỳ nhu cầu bạn hàng. BT→HN: ~2 ngày." }
+      ],
+      "bagTechTitle": "Kỹ thuật bao trái — Đặc trưng Thạnh Phú",
+      "bagTechDesc": "Cây ra trái quanh năm — trên cùng 1 cây có đủ độ tuổi quả. Nông dân bao từng trái bằng túi vải từ khi bằng ngón tay, mỗi đợt dùng 1 màu để phân biệt. Nhờ vậy trái đẹp, đồng đều, giảm 5–10 kg thuốc BVTV/ha, lợi nhuận tăng 18–20 triệu đồng/ha."
+    },
+    "chungNhan": {
+      "label": "Phần D",
+      "title": "Chứng Nhận & Pháp Lý",
+      "items": [
+        { "title": "Chỉ dẫn địa lý #00124", "org": "Cục Sở hữu trí tuệ — Bộ KH&CN", "detail": "QĐ số 5371/QĐ-SHTT ngày 10/11/2022. Chỉ xoài Tứ Quý trồng tại Thạnh Phú, Ba Tri, Bình Đại mới được gọi là 'Xoài Tứ Quý Bến Tre'." },
+        { "title": "Nhãn hiệu chứng nhận", "org": "UBND huyện Thạnh Phú", "detail": "Nhãn hiệu 'Xoài Tứ Quý Thạnh Phú' được bảo hộ từ năm 2020. Phân phối qua chợ, siêu thị và sàn TMĐT." },
+        { "title": "VietGAP — 100+ ha", "org": "Chi cục Trồng trọt & BVTV tỉnh Bến Tre", "detail": "Hơn 100 ha tại xã Thạnh Phong sản xuất theo tiêu chuẩn VietGAP. Tập huấn định kỳ cho nông dân." },
+        { "title": "GlobalGAP — 16 ha", "org": "Tổ chức chứng nhận quốc tế", "detail": "HTX Thạnh Phong có 16 ha đạt GlobalGAP. Sản phẩm được bao tiêu giá cao hơn thị trường 1.500–2.000đ/kg." },
+        { "title": "Mã số vùng trồng XK", "org": "Cục Bảo vệ thực vật — Bộ NN&PTNT", "detail": "86 ha tại Thạnh Phong đã được cấp mã PUC — xuất khẩu chính ngạch sang Mỹ, Hàn Quốc, Úc." },
+        { "title": "OCOP Bến Tre", "org": "Chương trình OCOP quốc gia", "detail": "Xoài Tứ Quý Thạnh Phú là sản phẩm OCOP tiêu biểu của tỉnh Bến Tre." }
+      ]
+    },
+    "htx": {
+      "label": "Phần E",
+      "title": "HTX Thạnh Phong",
+      "orgName": "Hợp tác xã Dịch vụ Sản xuất Nông nghiệp Thạnh Phong",
+      "info": [
+        { "label": "Tên", "value": "HTX Dịch vụ Sản xuất Nông nghiệp Thạnh Phong" },
+        { "label": "Thành lập", "value": "2017" },
+        { "label": "Giám đốc", "value": "Ông Nguyễn Văn Trường" },
+        { "label": "Thành viên", "value": "148 thành viên" },
+        { "label": "Diện tích", "value": "65 ha" }
+      ],
+      "benefitsTitle": "Quyền lợi thành viên",
+      "benefits": [
+        "Hỗ trợ lắp hệ thống tưới nhỏ giọt",
+        "Tập huấn VietGAP/GlobalGAP định kỳ",
+        "Bao tiêu 100% sản phẩm theo hợp đồng",
+        "Giá thu mua cao hơn thị trường 1.500–2.000đ/kg",
+        "Hỗ trợ vay vốn Quỹ hỗ trợ nông dân"
+      ]
+    },
+    "veVua": {
+      "title1": "Về vựa",
+      "title2": "Trái Cây Bến Tre",
+      "desc": "Từ xoài Tứ Quý đến dừa xiêm — tất cả từ vựa Thạnh Phú",
+      "body1": "Vựa Trái Cây Bến Tre bắt đầu từ xoài Tứ Quý — giống xoài đặc sản CDĐL #00124 chỉ có ở Thạnh Phú, Ba Tri, Bình Đại. Sau 3 năm giao hàng toàn quốc, vựa mở rộng thêm Dừa Xiêm Bến Tre (dừa sọ gọt sẵn) và Dừa Xiêm Rau Câu Dừa — đặc sản vùng dừa nổi tiếng nhất Việt Nam.",
+      "body2": "Cam kết vựa: lấy thẳng từ nhà vườn, không qua trung gian, cân dư 2% bù hao, hàng hư bồi đơn sau. Mối nào cũng nói vậy — nhưng ở đây làm thật, 3 năm rồi.",
+      "productsTitle": "Các loại trái cây tại vựa",
+      "links": [
+        { "label": "Xoài Tứ Quý", "href": "/xoai-tu-quy" },
+        { "label": "Dừa Xiêm Bến Tre", "href": "/dua-xiem-ben-tre" },
+        { "label": "Tất cả sản phẩm", "href": "/san-pham" }
+      ]
+    }
+  },
+  "sanPham": {
+    "gift": {
+      "title1": "Quà biếu trái cây",
+      "title2": "đặc sản Bến Tre",
+      "desc": "Xoài Tứ Quý CDĐL #00124 + Dừa Xiêm — combo quà biếu từ vựa",
+      "box5kg": {
+        "badge": "Hộp 5kg",
+        "title": "Xoài VIP 5kg — Hộp Đẹp",
+        "desc": "6-8 trái VIP 600-800g, hộp carton in logo, lót xốp từng trái. Lý tưởng quà biếu sếp, đối tác.",
+        "cta": "Đặt hộp 5kg qua Zalo"
+      },
+      "box10kg": {
+        "badge": "Hộp 10kg",
+        "title": "Xoài VIP 10kg — Hộp Đẹp",
+        "desc": "12-16 trái VIP, hộp lớn cao cấp. Phù hợp quà Tết, biếu cơ quan, quà doanh nghiệp số lượng lớn.",
+        "cta": "Đặt hộp 10kg qua Zalo"
+      },
+      "comboNote": "Cần combo đặc biệt (xoài + dừa, thiệp kèm, giao đúng ngày)? Nhắn Zalo hoặc gọi"
+    }
+  },
+  "articleLayout": {
+    "updatedLabel": "Cập nhật:",
+    "readingTime": "{n} phút đọc",
+    "brandLabel": "Trái Cây Bến Tre",
+    "exploreBadge": "Khám phá thêm",
+    "exploreTitle": "Đừng bỏ lỡ",
+    "exploreLinks": [
+      { "label": "Xoài Tứ Quý", "sub": "Sản phẩm chính" },
+      { "label": "Dừa Xiêm", "sub": "Dừa sọ Bến Tre" },
+      { "label": "Nguồn gốc", "sub": "Vườn & chứng nhận" },
+      { "label": "Tin tức", "sub": "Báo giá & bài viết" },
+      { "label": "Đặt sỉ", "sub": "Liên hệ ngay" }
+    ],
+    "viewNow": "Xem ngay"
+  },
+  "priceTicker": {
+    "title": "Giá tham khảo thị trường",
+    "updatedLabel": "Cập nhật:",
+    "staleNote": "(dữ liệu phiên trước)",
+    "noData": "Giá cập nhật hằng ngày từ chợ đầu mối và vựa sỉ.",
+    "disclaimer": "Đây chỉ là giá tham khảo theo thị trường chung. Để nhận báo giá chính xác theo số lượng và loại cụ thể, vui lòng gọi vựa trực tiếp — tụi mình sẽ báo giá theo từng đơn hàng nha."
+  },
+  "shareButtons": {
+    "shareLabel": "Chia sẻ bài viết:",
+    "copyLink": "Sao chép link",
+    "copied": "Đã sao chép!",
+    "shareOther": "Khác",
+    "facebook": "Chia sẻ lên Facebook",
+    "zalo": "Chia sẻ lên Zalo",
+    "messenger": "Chia sẻ qua Messenger",
+    "x": "Chia sẻ lên X",
+    "telegram": "Chia sẻ lên Telegram",
+    "nativeShare": "Chia sẻ qua ứng dụng khác"
+  },
+  "fomo": {
+    "timeAgo": ["vừa xong", "1 phút trước", "2 phút trước", "3 phút trước", "5 phút trước", "7 phút trước", "10 phút trước", "12 phút trước", "15 phút trước", "20 phút trước", "25 phút trước", "30 phút trước"],
+    "orderTemplates": {
+      "xoai-tu-quy": [
+        "đặt 5kg Xoài Tứ Quý", "đặt 10kg Xoài Tứ Quý VIP", "đặt 20kg Xoài Tứ Quý",
+        "đặt 3kg Xoài Tứ Quý ăn thử", "đặt thùng 10kg Xoài Tứ Quý", "đặt 15kg Xoài Tứ Quý Loại 1",
+        "đặt 30kg Xoài Tứ Quý sỉ", "đặt 7kg Xoài Tứ Quý làm quà", "đặt 2 thùng Xoài Tứ Quý",
+        "đặt 50kg Xoài Tứ Quý cho quán", "đặt 5kg Xoài Tứ Quý gửi Bắc", "mua 10kg Xoài Tứ Quý biếu sếp",
+        "đặt 8kg Xoài Tứ Quý ship nhanh"
+      ],
+      "xoai-hoang-kim": [
+        "đặt 5kg Xoài Hoàng Kim", "đặt 3kg Xoài Hoàng Kim hàng hiếm", "đặt 10kg Xoài Hoàng Kim VIP",
+        "đặt hộp quà Xoài Hoàng Kim", "đặt 7kg Xoài Hoàng Kim tặng đối tác", "đặt 2kg Xoài Hoàng Kim ăn thử",
+        "đặt 15kg Xoài Hoàng Kim", "mua 5kg Xoài Hoàng Kim làm quà", "đặt 20kg Xoài Hoàng Kim cho công ty",
+        "đặt 3kg Xoài Hoàng Kim premium", "đặt 10kg Xoài Hoàng Kim biếu Tết"
+      ],
+      "dua-xiem-ben-tre": [
+        "đặt 20 trái Dừa Xiêm", "đặt 50 trái Dừa Xiêm sỉ", "đặt 10 trái Dừa Xiêm gọt sẵn",
+        "đặt 30 trái Dừa Xiêm cho quán", "đặt 100 trái Dừa Xiêm", "đặt 15 trái Dừa Xiêm ship HCM",
+        "mua 5 trái Dừa Xiêm ăn thử", "đặt 40 trái Dừa Xiêm cho tiệc", "đặt 200 trái Dừa Xiêm sỉ",
+        "đặt 12 trái Dừa Xiêm tươi", "đặt 25 trái Dừa Xiêm gọt sẵn", "mua 8 trái Dừa Xiêm uống tuần"
+      ]
+    }
+  },
+  "cities": {
+    "methodLabels": {
+      "xe-lanh": "Xe lạnh",
+      "xe-thuong": "Xe thường",
+      "bay": "Gửi bay",
+      "xe-lanh-bay": "Xe lạnh hoặc bay"
+    },
+    "regionLabels": {
+      "mien-nam": "Miền Nam",
+      "mien-trung": "Miền Trung",
+      "mien-bac": "Miền Bắc",
+      "tay-nguyen": "Tây Nguyên"
+    }
   }
 }

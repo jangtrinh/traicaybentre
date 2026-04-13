@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { Phone } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -68,7 +69,13 @@ const PRICE_TIERS = [
   },
 ];
 
-export default function BaoGiaThang04Page() {
+export default async function BaoGiaThang04Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <script

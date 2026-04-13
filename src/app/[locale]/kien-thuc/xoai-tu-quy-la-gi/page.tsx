@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
@@ -70,7 +71,13 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "Xoài Tứ Quý là gì?", url: PAGE_URL },
 ]);
 
-export default function XoaiTuQuyLaGiPage() {
+export default async function XoaiTuQuyLaGiPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />

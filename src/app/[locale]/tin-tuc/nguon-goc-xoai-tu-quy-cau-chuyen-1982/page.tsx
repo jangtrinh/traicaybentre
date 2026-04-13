@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { ArticleLayout } from "@/components/article-layout";
 import { VUA_XOAI_IMAGES } from "@/lib/vua-xoai-images";
 import {
@@ -53,7 +54,13 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "Nguồn gốc xoài Tứ Quý", url: PAGE_URL },
 ]);
 
-export default function NguonGocXoaiTuQuyPage() {
+export default async function NguonGocXoaiTuQuyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <ArticleLayout
       category="Tin tức — Lịch sử đặc sản"

@@ -15,6 +15,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { setRequestLocale } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import remarkGfm from "remark-gfm";
 import { ArticleLayout } from "@/components/article-layout";
@@ -34,7 +35,7 @@ import {
 } from "@/lib/structured-data";
 
 type RouteParams = { product: string; type: string; slug: string };
-type Props = { params: Promise<RouteParams> };
+type Props = { params: Promise<{ locale: string } & RouteParams> };
 
 export const dynamicParams = false; // 404 anything outside generateStaticParams
 export const revalidate = 60;        // ISR — re-check publishedAt gate every 60s
@@ -100,7 +101,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const { product, type, slug } = await params;
+  const { locale, product, type, slug } = await params;
+  setRequestLocale(locale);
   if (!isValidType(type)) notFound();
 
   const article = getArticleByUrlPath(`/${product}/${type}/${slug}`);

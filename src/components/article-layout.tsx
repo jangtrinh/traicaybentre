@@ -16,6 +16,7 @@ import {
   Phone,
   ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
+import { getTranslations } from "next-intl/server";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { FadeIn } from "./fade-in";
@@ -34,15 +35,16 @@ interface ArticleLayoutProps {
   children: React.ReactNode;
 }
 
-const EXPLORE_LINKS = [
-  { label: "Xoài Tứ Quý", sub: "Sản phẩm chính", href: "/xoai-tu-quy", Icon: Storefront },
-  { label: "Dừa Xiêm", sub: "Dừa sọ Bến Tre", href: "/dua-xiem-ben-tre", Icon: Storefront },
-  { label: "Nguồn gốc", sub: "Vườn & chứng nhận", href: "/nguon-goc", Icon: Certificate },
-  { label: "Tin tức", sub: "Báo giá & bài viết", href: "/tin-tuc", Icon: Newspaper },
-  { label: "Đặt sỉ", sub: "Liên hệ ngay", href: "/#contact", Icon: Phone },
+// href and Icon are not translatable — labels/subs come from messages.articleLayout.exploreLinks
+const EXPLORE_LINK_META = [
+  { href: "/xoai-tu-quy", Icon: Storefront },
+  { href: "/dua-xiem-ben-tre", Icon: Storefront },
+  { href: "/nguon-goc", Icon: Certificate },
+  { href: "/tin-tuc", Icon: Newspaper },
+  { href: "/#contact", Icon: Phone },
 ];
 
-export function ArticleLayout({
+export async function ArticleLayout({
   category,
   title,
   subtitle,
@@ -52,6 +54,9 @@ export function ArticleLayout({
   readingTime = 5,
   children,
 }: ArticleLayoutProps) {
+  const t = await getTranslations("articleLayout");
+  type ExploreLink = { label: string; sub: string };
+  const exploreLinks = t.raw("exploreLinks") as ExploreLink[];
   return (
     <>
       {jsonLd.map((schema, i) => (
@@ -108,15 +113,15 @@ export function ArticleLayout({
                 <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/75">
                   <span className="inline-flex items-center gap-1.5">
                     <CalendarBlank size={16} weight="regular" />
-                    Cập nhật: {publishDate}
+                    {t("updatedLabel")} {publishDate}
                   </span>
                   <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden />
                   <span className="inline-flex items-center gap-1.5">
                     <Clock size={16} weight="regular" />
-                    {readingTime} phút đọc
+                    {t("readingTime", { n: readingTime })}
                   </span>
                   <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden />
-                  <span className="font-semibold text-mango">Trái Cây Bến Tre</span>
+                  <span className="font-semibold text-mango">{t("brandLabel")}</span>
                 </div>
               </FadeIn>
             </div>
@@ -140,31 +145,34 @@ export function ArticleLayout({
           <div className="mb-10 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-text/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-text/70">
               <Compass size={14} weight="fill" />
-              Khám phá thêm
+              {t("exploreBadge")}
             </span>
             <h3 className="mt-4 font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Đừng bỏ lỡ
+              {t("exploreTitle")}
             </h3>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {EXPLORE_LINKS.map(({ label, sub, href, Icon }) => (
-              <Link
-                key={href}
-                href={href}
-                className="group relative flex flex-col justify-between rounded-2xl border-2 border-text/10 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-mango hover:shadow-lg"
-              >
-                <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-mango/10 text-mango-dark transition-colors group-hover:bg-mango group-hover:text-white">
-                  <Icon size={22} weight="duotone" />
-                </div>
-                <div>
-                  <div className="font-heading text-base font-bold text-text">{label}</div>
-                  <div className="mt-0.5 text-xs text-text/55">{sub}</div>
-                  <div className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-mango-dark opacity-0 transition-opacity group-hover:opacity-100">
-                    Xem ngay <ArrowRight size={12} weight="bold" />
+            {EXPLORE_LINK_META.map(({ href, Icon }, idx) => {
+              const linkData = exploreLinks[idx];
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className="group relative flex flex-col justify-between rounded-2xl border-2 border-text/10 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-mango hover:shadow-lg"
+                >
+                  <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-mango/10 text-mango-dark transition-colors group-hover:bg-mango group-hover:text-white">
+                    <Icon size={22} weight="duotone" />
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div>
+                    <div className="font-heading text-base font-bold text-text">{linkData?.label}</div>
+                    <div className="mt-0.5 text-xs text-text/55">{linkData?.sub}</div>
+                    <div className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-mango-dark opacity-0 transition-opacity group-hover:opacity-100">
+                      {t("viewNow")} <ArrowRight size={12} weight="bold" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

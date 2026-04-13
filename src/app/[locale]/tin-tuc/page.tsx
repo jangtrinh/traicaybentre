@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
@@ -75,7 +76,13 @@ function getHubPosts(): HubPost[] {
   return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
 }
 
-export default function TinTucPage() {
+export default async function TinTucPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const posts = getHubPosts();
   return (
     <>

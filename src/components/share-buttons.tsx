@@ -7,6 +7,7 @@
  */
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { BrandIcon } from "./brand-icon";
 
 interface ShareButtonsProps {
@@ -73,6 +74,7 @@ const TARGETS: ShareTarget[] = [
 ];
 
 export function ShareButtons({ title, url, placement = "bottom" }: ShareButtonsProps) {
+  const t = useTranslations("shareButtons");
   const [currentUrl, setCurrentUrl] = useState(url ?? "");
   const [copied, setCopied] = useState(false);
   const [canNativeShare, setCanNativeShare] = useState(false);
@@ -122,44 +124,56 @@ export function ShareButtons({ title, url, placement = "bottom" }: ShareButtonsP
       ? "mb-8 border-b border-text/10 pb-6"
       : "mt-8 border-t border-text/10 pt-6";
 
+  // Build translated labels map — TARGETS is module-level, labels come from i18n
+  const labelMap: Record<string, string> = {
+    facebook: t("facebook"),
+    zalo: t("zalo"),
+    messenger: t("messenger"),
+    x: t("x"),
+    telegram: t("telegram"),
+  };
+
   return (
     <div className={wrapperClass}>
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-sm font-semibold text-text/60">Chia sẻ bài viết:</span>
+        <span className="text-sm font-semibold text-text/60">{t("shareLabel")}</span>
 
-        {TARGETS.map((t) => (
-          <button
-            key={t.name}
-            type="button"
-            onClick={() => openPopup(t.buildHref(currentUrl, title))}
-            aria-label={t.label}
-            title={t.label}
-            className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-white transition-transform hover:scale-110 ${t.bg}`}
-          >
-            {t.icon}
-          </button>
-        ))}
+        {TARGETS.map((target) => {
+          const label = labelMap[target.name] ?? target.label;
+          return (
+            <button
+              key={target.name}
+              type="button"
+              onClick={() => openPopup(target.buildHref(currentUrl, title))}
+              aria-label={label}
+              title={label}
+              className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-white transition-transform hover:scale-110 ${target.bg}`}
+            >
+              {target.icon}
+            </button>
+          );
+        })}
 
         <button
           type="button"
           onClick={handleCopy}
-          aria-label="Sao chép liên kết"
-          title="Sao chép liên kết"
+          aria-label={t("copyLink")}
+          title={t("copyLink")}
           className="flex h-10 items-center gap-2 rounded-full border-2 border-text/15 bg-white px-4 text-sm font-semibold text-text/70 transition-colors hover:border-text hover:text-text"
         >
           <svg viewBox="0 0 24 24" width={16} height={16} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
-          {copied ? "Đã sao chép!" : "Sao chép link"}
+          {copied ? t("copied") : t("copyLink")}
         </button>
 
         {canNativeShare && (
           <button
             type="button"
             onClick={handleNativeShare}
-            aria-label="Chia sẻ qua ứng dụng khác"
-            title="Chia sẻ qua ứng dụng khác"
+            aria-label={t("nativeShare")}
+            title={t("nativeShare")}
             className="flex h-10 items-center gap-2 rounded-full border-2 border-text/15 bg-white px-4 text-sm font-semibold text-text/70 transition-colors hover:border-text hover:text-text sm:hidden"
           >
             <svg viewBox="0 0 24 24" width={16} height={16} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -169,7 +183,7 @@ export function ShareButtons({ title, url, placement = "bottom" }: ShareButtonsP
               <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
               <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
             </svg>
-            Khác
+            {t("shareOther")}
           </button>
         )}
       </div>

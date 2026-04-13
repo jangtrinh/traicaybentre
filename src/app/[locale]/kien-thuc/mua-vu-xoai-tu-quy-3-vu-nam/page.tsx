@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
@@ -60,7 +61,13 @@ const MONTHLY_PRICES = [
   { thang: "T12", gia: "25–35k", muavu: "Vụ Tết, tăng cao", tag: "Tết", tagColor: "bg-red-600" },
 ];
 
-export default function MuaVuXoaiTuQuy3VuNamPage() {
+export default async function MuaVuXoaiTuQuy3VuNamPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <script

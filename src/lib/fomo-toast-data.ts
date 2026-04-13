@@ -44,14 +44,14 @@ export type OrderScenario = {
   timeAgo: string;
 };
 
-/** Generate a random "time ago" string */
-function randomTimeAgo(): string {
-  const options = [
-    "vừa xong", "1 phút trước", "2 phút trước", "3 phút trước",
-    "5 phút trước", "7 phút trước", "10 phút trước", "12 phút trước",
-    "15 phút trước", "20 phút trước", "25 phút trước", "30 phút trước",
-  ];
-  return options[Math.floor(Math.random() * options.length)];
+/** Translated fomo data passed from component (from message files) */
+export type FomoTranslations = {
+  timeAgo: string[];
+  orderTemplates: Record<string, string[]>;
+};
+
+function randomTimeAgo(timeAgoOptions: string[]): string {
+  return timeAgoOptions[Math.floor(Math.random() * timeAgoOptions.length)];
 }
 
 /** All possible order text templates per product */
@@ -121,8 +121,8 @@ export const TOAST_CITIES = [
   "Nghệ An", "Thái Nguyên",
 ];
 
-/** Generate a random order notification */
-export function generateRandomOrder(): {
+/** Generate a random order notification using translated content */
+export function generateRandomOrder(translations?: FomoTranslations): {
   name: string;
   city: string;
   text: string;
@@ -132,16 +132,20 @@ export function generateRandomOrder(): {
   const name = CUSTOMER_NAMES[Math.floor(Math.random() * CUSTOMER_NAMES.length)];
   const city = TOAST_CITIES[Math.floor(Math.random() * TOAST_CITIES.length)];
 
-  const productKeys = Object.keys(ORDER_TEMPLATES);
+  const templates = translations?.orderTemplates ?? ORDER_TEMPLATES;
+  const productKeys = Object.keys(templates);
   const product = productKeys[Math.floor(Math.random() * productKeys.length)];
-  const templates = ORDER_TEMPLATES[product];
-  const text = templates[Math.floor(Math.random() * templates.length)];
+  const productTemplates = templates[product];
+  const text = productTemplates[Math.floor(Math.random() * productTemplates.length)];
+
+  const defaultTimeAgo = ["vừa xong", "1 phút trước", "2 phút trước", "3 phút trước", "5 phút trước"];
+  const timeAgoOptions = translations?.timeAgo ?? defaultTimeAgo;
 
   return {
     name,
     city,
     text,
-    timeAgo: randomTimeAgo(),
+    timeAgo: randomTimeAgo(timeAgoOptions),
     product,
   };
 }

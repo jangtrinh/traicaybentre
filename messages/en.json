@@ -136,5 +136,542 @@
   },
   "common": {
     "required": "*"
+  },
+  "data": {
+    "products": [
+      {
+        "name": "Xoài Tứ Quý — VIP",
+        "farm": "Vườn ông Ba, Thạnh Phú",
+        "desc": "The finest fruits in the warehouse — smooth skin, no blemishes, each fruit 600g or more. The go-to choice for Tet gifts, restaurants, and premium buyers.",
+        "tags": ["Blemish-free", "Large 600g+", "Gift quality"],
+        "badge": "VIP",
+        "weight": "600–800g+/fruit",
+        "moq": "20kg (1 box)",
+        "stock": "~500kg"
+      },
+      {
+        "name": "Xoài Tứ Quý — Grade 1",
+        "farm": "Vườn ông Ba, Thạnh Phú",
+        "desc": "Same size as VIP, just one sun-touched or lightly blemished side — tastes exactly the same. Rich sweet with a hint of salt at the finish. Sells out at any stall.",
+        "tags": ["Rich sweet", "Large fruit", "Signature saltiness"],
+        "badge": "Best Seller #1",
+        "weight": "600–800g+/fruit",
+        "moq": "20kg (1 box)",
+        "stock": "~2.2 tons"
+      },
+      {
+        "name": "Xoài Tứ Quý — Grade 2",
+        "farm": "Vườn chú Tám, Ba Tri",
+        "desc": "Smaller, less uniform in appearance — but tastes just like VIP. Perfect for retail, mango salad, and mango shake stalls.",
+        "tags": ["Best value", "Great flavor", "Salad grade"],
+        "badge": "Best Value",
+        "weight": "400–600g/fruit",
+        "moq": "20kg (1 box)",
+        "stock": "~3 tons"
+      },
+      {
+        "name": "Xoài Hoàng Kim — Premium",
+        "farm": "Vườn liên kết, Thạnh Phú",
+        "desc": "Rare golden-skinned Tu Quy — as sweet as Cat Hoa Loc, nearly fiber-free. Large, beautiful fruits with lustrous golden skin. For VIP gifts and fine dining.",
+        "tags": ["Fiber-free", "Golden skin", "VIP gift"],
+        "badge": "Golden",
+        "weight": "800g–1.5kg/fruit",
+        "moq": "10kg",
+        "stock": "Limited supply"
+      },
+      {
+        "name": "Dừa Xiêm — Wholesale",
+        "farm": "Nhà vườn Thạnh Phú",
+        "desc": "Pre-peeled coconut shell, sweet refreshing water, ready to drink. Packed in mesh bags, cold-shipped nationwide. Available year-round.",
+        "tags": ["Sweet water", "Pre-peeled", "Year-round"],
+        "badge": "New",
+        "weight": "500–700g/fruit (shell)",
+        "moq": "50 fruits",
+        "stock": "Year-round"
+      },
+      {
+        "name": "Dừa Xiêm — Retail",
+        "farm": "Nhà vườn Thạnh Phú",
+        "desc": "Pre-peeled coconut shell, vacuum-packed. Naturally sweet water from Ben Tre. From 10 fruits — ideal for families and beverage stalls.",
+        "tags": ["Vacuum packed", "Sweet water", "Pre-peeled"],
+        "badge": "Retail",
+        "weight": "500–700g/fruit (shell)",
+        "moq": "10 fruits",
+        "stock": "Year-round"
+      },
+      {
+        "name": "Dừa Xiêm — Coconut Jelly",
+        "farm": "Nhà vườn Thạnh Phú",
+        "desc": "Ben Tre coconut shell filled with coconut jelly — chilled jelly inside a fresh coconut. Ready to eat, no prep needed. Perfect for gifts, parties, and elegant desserts.",
+        "tags": ["Coconut jelly", "Ready to eat", "Gift worthy"],
+        "badge": "Hot",
+        "weight": "500–700g/fruit (shell)",
+        "moq": "10 fruits",
+        "stock": "Year-round"
+      }
+    ],
+    "processSteps": [
+      {
+        "title": "Coastal Sandy Soil",
+        "desc": "The saline sandy dunes of Thanh Phu — giving a subtle saltiness no other region can match. Holds a Geographical Indication from Vietnam's IP Office."
+      },
+      {
+        "title": "Bagged from Bud",
+        "desc": "Each fruit is individually bagged in fabric from the size of a fingertip — ensuring flawless skin, no pests, and even ripening."
+      },
+      {
+        "title": "Packed Your Way",
+        "desc": "Cardboard box, foam, or mesh bag — whatever your buyers need. We add 2% extra weight to cover loss in transit — every regular customer knows this."
+      },
+      {
+        "title": "Flexible Delivery",
+        "desc": "Refrigerated truck, standard truck, or air freight — depending on your budget. Ben Tre → Hanoi ~2 days · → Vinh ~1.5 days. Delivered to your market stall or shop."
+      }
+    ],
+    "testimonials": [
+      {
+        "text": "Third order now — produce is more consistent than my old supplier, no mixed sizes. My stall sells out 2 days early every week.",
+        "name": "Chị Lan",
+        "detail": "Stall 23, Vinh Market, Nghệ An",
+        "since": "Customer since 08/2025"
+      },
+      {
+        "text": "Hanoi customers are picky — they pass on Australian and Taiwanese mangoes, but Ben Tre Tu Quy flies off the shelves. That subtle saltiness at the finish is completely different.",
+        "name": "Anh Toàn",
+        "detail": "3-store fruit chain, Cầu Giấy, Hanoi",
+        "since": "Customer since 03/2025"
+      },
+      {
+        "text": "Ordered gift boxes for business partners at Tet — everyone asked where to buy them. Beautiful packaging, fragrant mangoes, delivered on time.",
+        "name": "Chị Hương",
+        "detail": "Director, Import-Export Company, Thanh Xuân, Hanoi",
+        "since": "Customer since 12/2025"
+      },
+      {
+        "text": "I compared 3 suppliers before committing. Here they add 2% extra weight, and if something's damaged they credit the next order — no return needed. Straight-up business.",
+        "name": "Anh Hùng",
+        "detail": "Market vendor, Phủ Market, Thanh Hóa",
+        "since": "Customer since 06/2025"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is Xoài Tứ Quý?",
+        "a": "Xoài Tứ Quý (Tu Quy Mango) is a specialty mango variety from Ben Tre that bears fruit year-round (3 seasons/year). Grown on saline sandy coastal soil in Thanh Phu, it develops a unique subtle saltiness on the finish that no other region can replicate. It holds Geographical Indication GI #00124 from Vietnam's Intellectual Property Office, issued in 2022."
+      },
+      {
+        "q": "How much does Ben Tre Tu Quy Mango cost?",
+        "a": "Prices change daily: VIP 23,000–25,000₫/kg, Grade 1 20,000–22,000₫/kg, Grade 2 16,000–18,000₫/kg. Call Mr. Phuc at 0932 585 533 for today's exact price — updated every morning."
+      },
+      {
+        "q": "Will mangoes bruise during long-distance shipping?",
+        "a": "No. Each fruit is individually wrapped in foam mesh and packed in padded cardboard boxes. Three years shipping to Northern Vietnam, damage rate under 2%. If a fruit is bruised — photo to Zalo, we credit your next order immediately, no questions asked."
+      },
+      {
+        "q": "How do I know the mango is really from Ben Tre?",
+        "a": "Each box has a QR traceability code: farm name, harvest date, picker identity. The product falls under the Geographical Indication zone \"Ben Tre\" granted by the IP Office in 2022. Using this designation for mangoes from other regions is illegal."
+      },
+      {
+        "q": "Is Tu Quy Mango better ripe or unripe?",
+        "a": "Both are delicious — it depends on preference. Northern Vietnamese prefer ripe — rich sweetness, strong aroma, subtle saltiness. Southern Vietnamese prefer unripe — crisp, pleasantly tart. We carry both."
+      },
+      {
+        "q": "What is the minimum for wholesale Ben Tre mango?",
+        "a": "Minimum 1 box of 20kg. Packed to your preference — cardboard, foam, or mesh bag. Shipping quoted upfront by route. Call 0932 585 533 for pricing."
+      },
+      {
+        "q": "Payment and invoicing?",
+        "a": "COD on delivery, or bank transfer upfront. Regular buyers who've placed 3 orders can open a credit account. Full VAT invoices available for restaurants and businesses."
+      },
+      {
+        "q": "When is Tu Quy Mango season?",
+        "a": "Tu Quy Mango bears fruit year-round with 3 main seasons: lunar month 4, lunar month 8, and lunar month 12 (Tet season). Green mango is available year-round. We have stock every month — never out."
+      }
+    ],
+    "calendar": [
+      { "name": "Tu Quy Mango (ripe — season 1)" },
+      { "name": "Tu Quy Mango (ripe — season 2)" },
+      { "name": "Tu Quy Mango (season 3 + Tet)" },
+      { "name": "Green mango (year-round)" }
+    ]
+  },
+  "xoaiTuQuy": {
+    "hero": {
+      "badge": "Specialty of Thanh Phu, Ben Tre",
+      "title1": "Tu Quy Mango",
+      "title2": "Direct",
+      "title3": "From Farm",
+      "priceUpdated": "Price updated:",
+      "ctaPrice": "See today's price",
+      "desc": "Grown on salt-infused coastal sandy soil — producing a distinctive subtle saltiness on the finish that no other region can replicate. Certified with Geographical Indication GI #00124 issued by the IP Office."
+    },
+    "sellingPoints": [
+      { "title": "GI #00124", "desc": "Only Thanh Phu mangoes earn this name" },
+      { "title": "Salt-touched sandy soil", "desc": "Unique subtle saltiness on the finish — no other region has it" },
+      { "title": "Cold-chain nationwide", "desc": "HCM 24h · Hanoi 48h · under 2% damage rate" },
+      { "title": "2% weight bonus", "desc": "Extra weight covers natural loss. Damaged fruit — refunded on next order" }
+    ],
+    "gallery": {
+      "title": "Tu Quy Mango — straight from the farm",
+      "desc": "Real photos at the Thanh Phu farm — unedited"
+    },
+    "price": {
+      "title": "Today's Price List",
+      "updated": "Updated:",
+      "weightLabel": "Weight:",
+      "ctaOrder": "Order now",
+      "ctaCall": "Call farm: 0932 585 533"
+    },
+    "orderInfo": {
+      "title": "Ordering Information",
+      "items": [
+        { "title": "Minimum order", "desc": "1 box (20kg). Packaged to your specifications." },
+        { "title": "Payment", "desc": "COD or bank transfer. After 3 orders → credit terms. Full VAT invoices available." },
+        { "title": "Farm hours", "desc": "4 AM – 6 PM daily. Zalo replies within 5 minutes." }
+      ]
+    },
+    "wholesale": {
+      "title1": "Tu Quy Mango Ben Tre",
+      "title2": "wholesale",
+      "desc": "Direct from Thanh Phu farm — cut the middleman, best price guaranteed",
+      "bulletMin": "Minimum 1 box (20kg). Packed to your preference.",
+      "bulletPayment": "COD or bank transfer upfront. After 3 orders → credit terms.",
+      "bulletVat": "Full VAT invoices for restaurants and businesses.",
+      "bulletShip": "Cold-chain nationwide: HCM 24h, Hanoi 48h.",
+      "ctaZalo": "Zalo for wholesale price"
+    },
+    "shipping": {
+      "title": "Shipping",
+      "desc": "Click a city to see full shipping details",
+      "viewDetail": "View details",
+      "note": "Each mango wrapped in foam mesh, packed in cushioned carton. Under 2% damage rate. Bruised fruit? Photo to Zalo — refunded on next order."
+    },
+    "internalLinks": [
+      { "label": "Origin & Certifications", "href": "/nguon-goc" },
+      { "label": "What makes Ben Tre mango special?", "href": "/xoai-tu-quy/kien-thuc/xoai-ben-tre-co-gi-dac-biet" },
+      { "label": "How many mangoes per kg?", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-1-kg-bao-nhieu-trai" },
+      { "label": "Grade 1 Thanh Phu price", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-thanh-phu-loai-1-gia-bao-nhieu" },
+      { "label": "Hoang Kim Mango (premium)", "href": "/xoai-hoang-kim" },
+      { "label": "Ben Tre Young Coconut", "href": "/dua-xiem-ben-tre" },
+      { "label": "All products", "href": "/san-pham" },
+      { "label": "Contact for wholesale", "href": "/#contact" }
+    ]
+  },
+  "hoangKim": {
+    "hero": {
+      "badge": "Premium · Rare Variety",
+      "title1": "Hoang Kim Mango",
+      "title2": "Thanh Phu",
+      "price": "35,000 – 45,000₫/kg",
+      "desc": "The premium variant of Tu Quy — stunning golden skin, melt-in-the-mouth sweetness like Cat Hoa Loc, almost no fiber. Same salt-touched Thanh Phu soil, but far rarer — when it's gone, wait for next season.",
+      "ctaZalo": "Order Hoang Kim via Zalo"
+    },
+    "sellingPoints": [
+      { "title": "Beautiful golden skin", "desc": "Deep golden when ripe — more stunning than regular Tu Quy. Fruits 800g-1.5kg, flawless smooth skin." },
+      { "title": "Melt-sweet, fiber-free", "desc": "Ripe sweetness like Cat Hoa Loc. Almost zero fiber — silky flesh melts on the tongue." },
+      { "title": "Thanh Phu subtle saltiness", "desc": "Retains the characteristic subtle saltiness from salt-infused sandy soil — authentic Tu Quy DNA." },
+      { "title": "Rare variety, cold delivery", "desc": "Limited harvest — when it's gone, wait for next season. Cold-chain nationwide — HCM 24h, HN 48h." }
+    ],
+    "compare": {
+      "title": "Hoang Kim vs Regular Tu Quy",
+      "colCriteria": "Feature",
+      "colTuQuy": "Tu Quy",
+      "colHoangKim": "Hoang Kim ⭐",
+      "rows": [
+        { "feature": "Skin", "tuQuy": "Green → light yellow", "hoangKim": "Deep golden, lustrous" },
+        { "feature": "Flesh", "tuQuy": "Rich sweet, low fiber", "hoangKim": "Melt-sweet, near ZERO fiber" },
+        { "feature": "Weight", "tuQuy": "400-800g/fruit", "hoangKim": "800g-1.5kg/fruit" },
+        { "feature": "Signature saltiness", "tuQuy": "✓ Yes", "hoangKim": "✓ Yes (milder)" },
+        { "feature": "Price", "tuQuy": "16-25k/kg", "hoangKim": "35-45k/kg" },
+        { "feature": "Best for", "tuQuy": "Fresh eating, retail, processing", "hoangKim": "VIP gifts, fine dining" },
+        { "feature": "Availability", "tuQuy": "Year-round abundant", "hoangKim": "Rare, seasonal" }
+      ]
+    },
+    "faq": {
+      "title": "FAQ — Hoang Kim Mango",
+      "items": [
+        { "q": "What is Hoang Kim Mango?", "a": "The premium variant of Tu Quy Mango — deep golden skin when ripe, melt-sweet flesh with almost no fiber. Same Tu Quy variety, same Thanh Phu origin, but far rarer." },
+        { "q": "How is Hoang Kim different from regular Tu Quy?", "a": "Deep golden skin (vs green-yellow). Smoother flesh, sweeter, near zero fiber. Larger fruit (800g-1.5kg). Price 35-45k/kg (1.5-2x more expensive)." },
+        { "q": "Why is Hoang Kim more expensive?", "a": "Very limited harvest — only select orchards have this variety. Beautiful large fruit, superior flesh quality. Rare = premium pricing." },
+        { "q": "Is Hoang Kim available year-round?", "a": "No — follows Tu Quy seasons (Apr-Jun, Aug-Oct, Dec-Feb) but with far less volume. When it's gone, wait for next season. Order early to reserve." },
+        { "q": "Can I use Hoang Kim as a gift?", "a": "Perfect for gifting — gorgeous golden fruit, substantial weight (800g+), melt-sweet. A 5kg box holds 4-6 fruits, more impressive than regular VIP." }
+      ]
+    },
+    "internalLinks": [
+      { "label": "Tu Quy Mango (wholesale)", "href": "/xoai-tu-quy#gia" },
+      { "label": "Ben Tre Young Coconut", "href": "/dua-xiem-ben-tre" },
+      { "label": "All products", "href": "/san-pham" },
+      { "label": "Specialty gift sets", "href": "/san-pham#qua-bieu-ben-tre" }
+    ]
+  },
+  "duaXiem": {
+    "hero": {
+      "badge": "Ben Tre Specialty · Year-round",
+      "title1": "Young Coconut",
+      "title2": "Ben Tre",
+      "title3": "Pre-peeled Shell",
+      "desc": "Ripe young coconuts, fully peeled to the shell — open the cap and drink immediately. Sourced directly from Thanh Phu growers, Ben Tre. Naturally sweet water, no additives, no preservatives.",
+      "ctaZalo": "Order via Zalo"
+    },
+    "sellingPoints": {
+      "title": "Why choose coconuts from our farm",
+      "items": [
+        { "title": "100% Ben Tre", "desc": "Straight from Thanh Phu growers — no middlemen, no blending" },
+        { "title": "Naturally sweet water", "desc": "Ripe young coconuts — naturally sweet, not astringent, not bland" },
+        { "title": "Premium pre-peeled", "desc": "Shell-only coconut — fully peeled, beautifully packaged, open-and-drink" },
+        { "title": "Cold-chain nationwide", "desc": "HCM 24h · Hanoi 48h · dry ice kept cold from farm to customer" }
+      ]
+    },
+    "gallery": {
+      "title": "Coconut shells — from the farm",
+      "desc": "Hand-peeling process at Thanh Phu farm"
+    },
+    "order": {
+      "title1": "Order Ben Tre Young Coconut online",
+      "title2": "nationwide shipping",
+      "desc": "Order via Zalo or call — farm quotes price + delivery schedule within 15 min",
+      "wholesale": "Wholesale",
+      "wholesalePrice": "8,000 – 10,000",
+      "wholesaleUnit": "₫/coconut",
+      "wholesaleDesc": "50+ coconuts. Net bag packaging, cold-chain delivery.",
+      "retail": "Retail",
+      "retailPrice": "15,000 – 18,000",
+      "retailUnit": "₫/coconut",
+      "retailDesc": "From 10 coconuts. Vacuum-packed or net bag.",
+      "steps": [
+        { "step": "1", "title": "Message Zalo / Call", "desc": "Tell us quantity + delivery address. Farm quotes price + schedule immediately." },
+        { "step": "2", "title": "Bank transfer / COD", "desc": "Pay upfront or COD on delivery. Regular buyers → credit terms available." },
+        { "step": "3", "title": "Receive delivery", "desc": "Cold-chain delivery to your door. HCM 24h, HN 48h. Defective → refunded on next order." }
+      ],
+      "ctaZalo": "Order coconuts via Zalo"
+    },
+    "faq": {
+      "title": "FAQ — Ben Tre Young Coconut",
+      "items": [
+        { "q": "Can I order Ben Tre young coconut online with nationwide shipping?", "a": "Yes. We ship cold-chain nationwide: HCM 24h, Hanoi 48h, Da Nang 36h. Order via Zalo or call 0932 585 533." },
+        { "q": "How is a coconut shell different from a whole coconut?", "a": "A coconut shell is a young coconut fully peeled of its green husk — just the white shell with water inside. Open the cap and drink immediately. Beautifully packaged, easy to ship long distance." },
+        { "q": "How much does Ben Tre young coconut cost?", "a": "Wholesale 50+: 8,000-10,000₫/coconut. Retail 10+: 15,000-18,000₫/coconut. Prices may vary seasonally — call for accurate quote." },
+        { "q": "Is the coconut water sweet?", "a": "Ben Tre young coconut water is naturally sweet, not astringent. We select coconuts at peak ripeness — sweetest possible." },
+        { "q": "How long can coconut shells be stored?", "a": "Unopened shell: 5-7 days refrigerated. Once opened: drink same day. Vacuum-packed: 10-14 days refrigerated." }
+      ]
+    },
+    "shipping": {
+      "title": "Shipping",
+      "desc": "Click a city to see full shipping details",
+      "viewDetail": "View details"
+    },
+    "internalLinks": [
+      { "label": "All products", "href": "/san-pham" },
+      { "label": "Tu Quy Mango", "href": "/xoai-tu-quy" },
+      { "label": "Ben Tre vs Mekong Delta Coconut", "href": "/dua-xiem-ben-tre/kien-thuc/dua-xiem-ben-tre-vs-dua-xiem-mien-tay" },
+      { "label": "Origin & farm", "href": "/nguon-goc" }
+    ]
+  },
+  "nguonGoc": {
+    "hero": {
+      "title1": "Our",
+      "title2": "Story",
+      "desc": "Only Thanh Phu in Vietnam consistently produces top-quality Tu Quy Mango — thanks to naturally salt-infused coastal sandy soil.",
+      "mapTitle": "Thanh Phong, Thanh Phu, Ben Tre location"
+    },
+    "stats": [
+      { "value": "> 400 ha", "label": "Growing area" },
+      { "value": "700+", "label": "Farming households" },
+      { "value": "30 t/ha", "label": "Yield per year" },
+      { "value": "3 seasons", "label": "Year-round harvests" },
+      { "value": "86 ha", "label": "Export-certified area" },
+      { "value": "95%", "label": "Sold to northern Vietnam" }
+    ],
+    "vuongTrong": {
+      "label": "Part A",
+      "title": "Thanh Phu Growing Region",
+      "locationTitle": "Geography",
+      "locationDesc": "Thanh Phu district — one of three coastal districts in Ben Tre province, at the Mekong Delta estuary. The growing area sits on coastal sand ridges 2–4m above sea level.",
+      "tableWard": "Ward",
+      "tableArea": "Area",
+      "tableNote": "Notes",
+      "rows": [
+        { "ward": "Thanh Phong", "area": "~300 ha", "note": "Largest zone, co-op headquarters" },
+        { "ward": "Thanh Hai", "area": "~50 ha", "note": "Classic sandy soil terrain" },
+        { "ward": "Giao Thanh", "area": "~50 ha", "note": "Expansion zone" }
+      ],
+      "historyTitle": "History",
+      "historyDesc1": "The Tu Quy Mango variety originated in 1982, bred by farmers in Phu Da hamlet, Vinh Binh commune, Cho Lach district. Through farming experience, only the salt-infused coastal sandy soil of Thanh Phu produces the highest-quality fruit.",
+      "historyDesc2": "Thanh Phu previously grew cassava and watermelon — unstable income. From 2010, many families switched to mango farming, increasing income 3–4 times."
+    },
+    "biMat": {
+      "label": "Part B",
+      "title": "The Flavor Secret",
+      "factors": [
+        { "title": "Low water content", "subtitle": "Crisp & firm flesh", "desc": "Sandy soil retains little water → low H₂O in the fruit → crisp when green, firm when ripe. A natural advantage requiring no root-restriction techniques." },
+        { "title": "Salt-infused soil", "subtitle": "Signature subtle saltiness", "desc": "0.009–0.022% dissolved salt in soil → sodium (Na) accumulates in fruit → subtle saltiness on the finish. This characteristic cannot be replicated elsewhere." },
+        { "title": "Sweet-salt interplay", "subtitle": "Perfect flavor balance", "desc": "Fresh water from the Mekong + salt water from the East Sea → rich sweetness blended with subtle saltiness — found nowhere else." }
+      ],
+      "soilTitle": "Soil specifications",
+      "soilSpecs": [
+        { "label": "Sand content", "value": "60–70%" },
+        { "label": "Dissolved salt", "value": "0.009–0.022%" },
+        { "label": "Porosity", "value": "16–20%" },
+        { "label": "Terrain", "value": "2–4m elevation, coastal" }
+      ],
+      "fruitTitle": "Fruit specifications",
+      "fruitSpecs": [
+        { "label": "Weight per fruit", "value": "1.0–1.5 kg (max 2 kg)" },
+        { "label": "Ripe flesh firmness", "value": "20.2–21.1 N" },
+        { "label": "Sodium content", "value": "1.58–2.02%" },
+        { "label": "Seed", "value": "Small, flat — high flesh ratio" }
+      ]
+    },
+    "quyTrinh": {
+      "label": "Part C",
+      "title": "Production Process",
+      "steps": [
+        { "step": "01", "title": "Soil preparation", "desc": "Select elevated sandy terrain, apply organic base fertilizer, install drip irrigation system." },
+        { "step": "02", "title": "Planting & care", "desc": "Grafted seedlings, fruiting in 15–18 months. Regular watering, organic fertilizer, canopy pruning." },
+        { "step": "03", "title": "Early fruit bagging", "desc": "Bag each fruit in colored cloth bags when thumbnail-sized. Each batch gets one color to distinguish maturity." },
+        { "step": "04", "title": "Harvest & sorting", "desc": "Harvest by bag color, cut stems, sort at the orchard by size: VIP/Grade 1/Grade 2." },
+        { "step": "05", "title": "Processing & packing", "desc": "Wipe clean, second-sort, pack in foam-lined carton boxes, attach traceability sticker." },
+        { "step": "06", "title": "Shipping", "desc": "Cold truck, standard truck or air freight — per buyer preference. Ben Tre → Hanoi: ~2 days." }
+      ],
+      "bagTechTitle": "Fruit Bagging Technique — Thanh Phu's Signature",
+      "bagTechDesc": "Trees fruit year-round — a single tree holds fruits at all stages simultaneously. Farmers bag each fruit in cloth from thumbnail size, using different colors per batch. The result: beautiful uniform fruit, 5–10 kg less pesticide per hectare, 18–20 million VND profit increase per hectare."
+    },
+    "chungNhan": {
+      "label": "Part D",
+      "title": "Certifications & Legal",
+      "items": [
+        { "title": "Geographical Indication #00124", "org": "Vietnam IP Office — Ministry of Science & Technology", "detail": "Decision No. 5371/QD-SHTT dated 10/11/2022. Only Tu Quy Mango grown in Thanh Phu, Ba Tri, Binh Dai may be called 'Tu Quy Mango Ben Tre'." },
+        { "title": "Certification trademark", "org": "Thanh Phu District People's Committee", "detail": "The 'Xoai Tu Quy Thanh Phu' trademark has been protected since 2020. Distributed through markets, supermarkets, and e-commerce platforms." },
+        { "title": "VietGAP — 100+ ha", "org": "Ben Tre Department of Crop Production & Plant Protection", "detail": "Over 100 ha in Thanh Phong commune meet VietGAP standards. Regular farmer training conducted." },
+        { "title": "GlobalGAP — 16 ha", "org": "International certification body", "detail": "Thanh Phong Co-op has 16 ha certified GlobalGAP. Products sell at 1,500–2,000₫/kg premium above market." },
+        { "title": "Export growing area code", "org": "Plant Protection Department — Ministry of Agriculture", "detail": "86 ha in Thanh Phong granted PUC codes — officially exported to the US, South Korea, and Australia." },
+        { "title": "OCOP Ben Tre", "org": "National OCOP program", "detail": "Xoai Tu Quy Thanh Phu is a flagship OCOP product of Ben Tre province." }
+      ]
+    },
+    "htx": {
+      "label": "Part E",
+      "title": "Thanh Phong Cooperative",
+      "orgName": "Thanh Phong Agricultural Production Services Cooperative",
+      "info": [
+        { "label": "Name", "value": "Thanh Phong Agricultural Production Services Co-op" },
+        { "label": "Founded", "value": "2017" },
+        { "label": "Director", "value": "Mr. Nguyen Van Truong" },
+        { "label": "Members", "value": "148 member households" },
+        { "label": "Area", "value": "65 ha" }
+      ],
+      "benefitsTitle": "Member benefits",
+      "benefits": [
+        "Drip irrigation system installation support",
+        "Regular VietGAP/GlobalGAP training",
+        "100% crop offtake guarantee per contract",
+        "Purchase price 1,500–2,000₫/kg above market rate",
+        "Farmer fund loan support"
+      ]
+    },
+    "veVua": {
+      "title1": "About",
+      "title2": "Ben Tre Fruits Farm",
+      "desc": "From Tu Quy Mango to young coconut — everything from Thanh Phu farm",
+      "body1": "Ben Tre Fruits Farm started with Tu Quy Mango — the GI #00124 specialty variety found only in Thanh Phu, Ba Tri, and Binh Dai. After 3 years of nationwide delivery, we expanded to Ben Tre Young Coconut (pre-peeled shell) and Coconut Jelly Coconut — specialties from Vietnam's most famous coconut region.",
+      "body2": "Our promise: direct from growers, no middlemen, 2% extra weight to cover natural loss, damaged goods refunded on next order. Everyone says this — but we've been doing it for real, 3 years running.",
+      "productsTitle": "Products at our farm",
+      "links": [
+        { "label": "Tu Quy Mango", "href": "/xoai-tu-quy" },
+        { "label": "Ben Tre Young Coconut", "href": "/dua-xiem-ben-tre" },
+        { "label": "All products", "href": "/san-pham" }
+      ]
+    }
+  },
+  "sanPham": {
+    "gift": {
+      "title1": "Fruit gift sets",
+      "title2": "Ben Tre specialties",
+      "desc": "Tu Quy Mango GI #00124 + Young Coconut — premium gift combo from the farm",
+      "box5kg": {
+        "badge": "5kg Box",
+        "title": "VIP Mango 5kg — Gift Box",
+        "desc": "6-8 VIP fruits 600-800g each, logo-printed carton box, foam-wrapped individually. Perfect for gifting bosses and business partners.",
+        "cta": "Order 5kg box via Zalo"
+      },
+      "box10kg": {
+        "badge": "10kg Box",
+        "title": "VIP Mango 10kg — Gift Box",
+        "desc": "12-16 VIP fruits, large premium box. Ideal for Tet gifts, corporate gifting, bulk business orders.",
+        "cta": "Order 10kg box via Zalo"
+      },
+      "comboNote": "Need a custom combo (mango + coconut, greeting card, exact delivery date)? Message Zalo or call"
+    }
+  },
+  "articleLayout": {
+    "updatedLabel": "Updated:",
+    "readingTime": "{n} min read",
+    "brandLabel": "Ben Tre Fruits",
+    "exploreBadge": "Explore more",
+    "exploreTitle": "Don't miss",
+    "exploreLinks": [
+      { "label": "Tu Quy Mango", "sub": "Main product" },
+      { "label": "Young Coconut", "sub": "Ben Tre coconut shell" },
+      { "label": "Our Story", "sub": "Orchard & certifications" },
+      { "label": "News", "sub": "Prices & articles" },
+      { "label": "Order wholesale", "sub": "Contact us" }
+    ],
+    "viewNow": "View now"
+  },
+  "priceTicker": {
+    "title": "Market reference prices",
+    "updatedLabel": "Updated:",
+    "staleNote": "(previous session data)",
+    "noData": "Prices updated daily from wholesale markets and farms.",
+    "disclaimer": "These are reference prices based on general market rates. For accurate pricing by volume and specific grade, please call the farm directly — we'll quote per order."
+  },
+  "shareButtons": {
+    "shareLabel": "Share this article:",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "shareOther": "More",
+    "facebook": "Share on Facebook",
+    "zalo": "Share on Zalo",
+    "messenger": "Share via Messenger",
+    "x": "Share on X",
+    "telegram": "Share on Telegram",
+    "nativeShare": "Share via other apps"
+  },
+  "fomo": {
+    "timeAgo": ["just now", "1 min ago", "2 min ago", "3 min ago", "5 min ago", "7 min ago", "10 min ago", "12 min ago", "15 min ago", "20 min ago", "25 min ago", "30 min ago"],
+    "orderTemplates": {
+      "xoai-tu-quy": [
+        "ordered 5kg Tu Quy Mango", "ordered 10kg VIP Tu Quy Mango", "ordered 20kg Tu Quy Mango",
+        "ordered 3kg Tu Quy Mango to try", "ordered a 10kg box of Tu Quy", "ordered 15kg Grade 1 Tu Quy",
+        "ordered 30kg Tu Quy wholesale", "ordered 7kg Tu Quy as a gift", "ordered 2 boxes of Tu Quy Mango",
+        "ordered 50kg Tu Quy for a restaurant", "ordered 5kg Tu Quy to ship north", "bought 10kg Tu Quy as a boss gift",
+        "ordered 8kg Tu Quy express delivery"
+      ],
+      "xoai-hoang-kim": [
+        "ordered 5kg Hoang Kim Mango", "ordered 3kg rare Hoang Kim", "ordered 10kg VIP Hoang Kim",
+        "ordered a Hoang Kim gift box", "ordered 7kg Hoang Kim for clients", "ordered 2kg Hoang Kim to try",
+        "ordered 15kg Hoang Kim Mango", "bought 5kg Hoang Kim as a gift", "ordered 20kg Hoang Kim for the office",
+        "ordered 3kg premium Hoang Kim", "ordered 10kg Hoang Kim for Tet"
+      ],
+      "dua-xiem-ben-tre": [
+        "ordered 20 young coconuts", "ordered 50 wholesale coconuts", "ordered 10 pre-peeled coconuts",
+        "ordered 30 coconuts for a restaurant", "ordered 100 young coconuts", "ordered 15 coconuts to HCM",
+        "bought 5 young coconuts to try", "ordered 40 coconuts for a party", "ordered 200 wholesale coconuts",
+        "ordered 12 fresh young coconuts", "ordered 25 pre-peeled coconuts", "bought 8 coconuts for the week"
+      ]
+    }
+  },
+  "cities": {
+    "methodLabels": {
+      "xe-lanh": "Cold truck",
+      "xe-thuong": "Standard truck",
+      "bay": "Air freight",
+      "xe-lanh-bay": "Cold truck or air"
+    },
+    "regionLabels": {
+      "mien-nam": "Southern Vietnam",
+      "mien-trung": "Central Vietnam",
+      "mien-bac": "Northern Vietnam",
+      "tay-nguyen": "Central Highlands"
+    }
   }
 }

@@ -9,6 +9,7 @@
  * Graceful degradation: if no rows or query fails, renders the disclaimer alone.
  */
 import "server-only";
+import { getTranslations } from "next-intl/server";
 import { supabasePublic } from "@/lib/supabase-public";
 
 type PriceRow = {
@@ -48,7 +49,10 @@ function formatDate(iso: string): string {
 }
 
 export async function PriceTickerFooter() {
-  const rows = await getLatestPrices();
+  const [rows, t] = await Promise.all([
+    getLatestPrices(),
+    getTranslations("priceTicker"),
+  ]);
   const hasPrices = rows.length > 0;
   const latestDate = hasPrices ? formatDate(rows[0].crawled_at) : "";
   const isStale = hasPrices && rows[0].is_stale;
@@ -56,11 +60,11 @@ export async function PriceTickerFooter() {
   return (
     <aside className="mt-12 rounded-2xl border border-neutral-200 bg-neutral-50 p-5 text-sm">
       <header className="mb-3 flex items-baseline justify-between gap-2">
-        <h3 className="font-semibold text-neutral-900">Giá tham khảo thị trường</h3>
+        <h3 className="font-semibold text-neutral-900">{t("title")}</h3>
         {hasPrices && (
           <span className="text-xs text-neutral-500">
-            Cập nhật: {latestDate}
-            {isStale && " (dữ liệu phiên trước)"}
+            {t("updatedLabel")} {latestDate}
+            {isStale && ` ${t("staleNote")}`}
           </span>
         )}
       </header>
@@ -84,15 +88,11 @@ export async function PriceTickerFooter() {
           ))}
         </ul>
       ) : (
-        <p className="text-neutral-500">
-          Giá cập nhật hằng ngày từ chợ đầu mối và vựa sỉ.
-        </p>
+        <p className="text-neutral-500">{t("noData")}</p>
       )}
 
       <p className="mt-4 border-t border-neutral-200 pt-3 text-xs text-neutral-600">
-        💬 Đây chỉ là <strong>giá tham khảo</strong> theo thị trường chung. Để nhận
-        báo giá chính xác theo số lượng và loại cụ thể, vui lòng{" "}
-        <strong>gọi vựa</strong> trực tiếp — tụi mình sẽ báo giá theo từng đơn hàng nha.
+        {t("disclaimer")}
       </p>
     </aside>
   );

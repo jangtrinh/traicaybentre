@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { ShoppingCart, X, MapPin } from "@phosphor-icons/react";
-import { generateRandomOrder } from "@/lib/fomo-toast-data";
+import { generateRandomOrder, type FomoTranslations } from "@/lib/fomo-toast-data";
 
 /**
  * FOMO toast — shows fake "someone just ordered" notifications
@@ -33,13 +34,19 @@ const PRODUCT_EMOJI: Record<string, string> = {
 };
 
 export default function FomoToastNotification() {
+  const t = useTranslations("fomo");
   const [notification, setNotification] = useState<OrderNotification | null>(null);
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
+  const fomoTranslations = useMemo<FomoTranslations>(() => ({
+    timeAgo: t.raw("timeAgo") as string[],
+    orderTemplates: t.raw("orderTemplates") as Record<string, string[]>,
+  }), [t]);
+
   /** onDone called after toast finishes its display cycle */
   const showToast = useCallback((onDone?: () => void) => {
-    const order = generateRandomOrder();
+    const order = generateRandomOrder(fomoTranslations);
     setNotification(order);
     setVisible(true);
 
@@ -111,7 +118,7 @@ export default function FomoToastNotification() {
           <p className="text-sm font-semibold text-text leading-snug">
             {notification.name}{" "}
             <span className="font-normal text-text-secondary">
-              vừa {notification.text} {emoji}
+              {notification.text} {emoji}
             </span>
           </p>
           <div className="flex items-center gap-1 mt-1">
@@ -126,7 +133,7 @@ export default function FomoToastNotification() {
         <button
           onClick={() => setDismissed(true)}
           className="flex-shrink-0 p-1 rounded-full hover:bg-primary-light transition-colors"
-          aria-label="Đóng thông báo"
+          aria-label="Close"
         >
           <X size={14} className="text-text-muted" />
         </button>

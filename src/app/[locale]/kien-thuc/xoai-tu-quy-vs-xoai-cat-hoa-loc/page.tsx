@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
@@ -68,7 +69,13 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "Xoài Tứ Quý vs Cát Hòa Lộc", url: PAGE_URL },
 ]);
 
-export default function XoaiSoSanhPage() {
+export default async function XoaiSoSanhPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />

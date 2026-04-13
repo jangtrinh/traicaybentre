@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { ArticleLayout } from "@/components/article-layout";
 import { VUA_XOAI_IMAGES } from "@/lib/vua-xoai-images";
 import { getArticleJsonLd, getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
@@ -141,7 +142,13 @@ const COMMON_MISTAKES = [
   },
 ];
 
-export default function BaoQuanLamChinXoaiPage() {
+export default async function BaoQuanLamChinXoaiPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <ArticleLayout
       category="Kiến thức — Bảo quản & chế biến"

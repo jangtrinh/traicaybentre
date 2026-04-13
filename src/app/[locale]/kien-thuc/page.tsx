@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -58,7 +59,13 @@ function getHubItems() {
   return [...legacy, ...mdx].sort((a, b) => b.date.localeCompare(a.date));
 }
 
-export default function KienThucIndexPage() {
+export default async function KienThucIndexPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const items = getHubItems();
   return (
     <>

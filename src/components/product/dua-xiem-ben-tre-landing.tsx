@@ -15,6 +15,7 @@ import {
   Package,
   ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
+import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
@@ -24,44 +25,26 @@ const ZALO_LINK =
   "https://zalo.me/0932585533?text=" +
   encodeURIComponent("Mình muốn đặt Dừa Xiêm Bến Tre (dừa sọ)");
 
-const SELLING_POINTS = [
-  {
-    Icon: MapPin,
-    title: "100% Bến Tre",
-    desc: "Lấy thẳng từ nhà vườn Thạnh Phú — không qua trung gian, không pha trộn",
-  },
-  {
-    Icon: Drop,
-    title: "Nước ngọt thanh",
-    desc: "Dừa xiêm xanh chín tới — vị ngọt tự nhiên, không gắt, không nhạt",
-  },
-  {
-    Icon: Package,
-    title: "Gọt sẵn premium",
-    desc: "Dạng dừa sọ — gọt sạch vỏ, đóng gói đẹp, mở nắp uống liền",
-  },
-  {
-    Icon: Truck,
-    title: "Giao lạnh toàn quốc",
-    desc: "HCM 24h · Hà Nội 48h · giữ lạnh đá khô từ vựa tới khách",
-  },
-];
+// Icons are not translatable — titles/descs come from messages.duaXiem.sellingPoints.items
+const SELLING_POINT_ICONS = [MapPin, Drop, Package, Truck];
 
+// Shipping routes — city/time/method are data (not translatable), hrefs are fixed
 const SHIPPING_ROUTES = [
   { city: "TP.HCM", time: "24h", method: "Xe lạnh", href: "/giao-hang/tp-hcm" },
   { city: "Hà Nội", time: "48h", method: "Xe lạnh / Bay", href: "/giao-hang/ha-noi" },
   { city: "Đà Nẵng", time: "36h", method: "Xe lạnh", href: "/giao-hang/da-nang" },
 ];
 
-const INTERNAL_LINKS = [
-  { label: "Tất cả sản phẩm", href: "/san-pham" },
-  { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
-  { label: "Dừa Xiêm vs Miền Tây", href: "/dua-xiem-ben-tre/kien-thuc/dua-xiem-ben-tre-vs-dua-xiem-mien-tay" },
-  { label: "Nguồn gốc & vựa", href: "/nguon-goc" },
-  { label: "Liên hệ Zalo", href: ZALO_LINK },
-];
-
-export function DuaXiemBenTreLanding() {
+export async function DuaXiemBenTreLanding() {
+  const t = await getTranslations("duaXiem");
+  type SellingPointItem = { title: string; desc: string };
+  type OrderStep = { step: string; title: string; desc: string };
+  type FaqItem = { q: string; a: string };
+  type InternalLink = { label: string; href: string };
+  const sellingItems = t.raw("sellingPoints.items") as SellingPointItem[];
+  const orderSteps = t.raw("order.steps") as OrderStep[];
+  const faqItems = t.raw("faq.items") as FaqItem[];
+  const internalLinks = t.raw("internalLinks") as InternalLink[];
   return (
     <>
       <Header />
@@ -72,21 +55,19 @@ export function DuaXiemBenTreLanding() {
           <div className="px-0 md:pl-10">
             <FadeIn>
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-text/50">
-                Đặc sản Bến Tre · Quanh năm
+                {t("hero.badge")}
               </span>
               <h1 className="mt-3 font-heading text-4xl font-bold uppercase leading-tight text-text sm:text-5xl lg:text-6xl">
-                Dừa Xiêm
+                {t("hero.title1")}
                 <br />
-                <span className="text-mango">Bến Tre</span>
+                <span className="text-mango">{t("hero.title2")}</span>
                 <br />
-                Dừa Sọ Gọt Sẵn
+                {t("hero.title3")}
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mt-6 max-w-[480px] text-lg leading-7 text-text/70">
-                Dừa xiêm xanh chín tới, gọt sạch vỏ thành dừa sọ — mở nắp uống
-                liền. Lấy thẳng từ nhà vườn Thạnh Phú, Bến Tre. Nước ngọt
-                thanh, không pha trộn, không chất bảo quản.
+                {t("hero.desc")}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -95,7 +76,7 @@ export function DuaXiemBenTreLanding() {
                   rel="noopener noreferrer"
                   className="rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
                 >
-                  Đặt qua Zalo
+                  {t("hero.ctaZalo")}
                 </a>
                 <a
                   href="tel:0932585533"
@@ -128,21 +109,24 @@ export function DuaXiemBenTreLanding() {
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
             <h2 className="mb-12 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Tại sao chọn dừa từ vựa
+              {t("sellingPoints.title")}
             </h2>
           </FadeIn>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {SELLING_POINTS.map((sp, i) => (
-              <FadeIn key={sp.title} delay={i * 0.08}>
-                <div className="rounded-2xl bg-white p-6 shadow-sm">
-                  <sp.Icon size={32} weight="duotone" className="text-mango" />
-                  <h3 className="mt-3 font-heading text-lg font-bold text-text">
-                    {sp.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-text/60">{sp.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            {sellingItems.map((sp, i) => {
+              const Icon = SELLING_POINT_ICONS[i];
+              return (
+                <FadeIn key={sp.title} delay={i * 0.08}>
+                  <div className="rounded-2xl bg-white p-6 shadow-sm">
+                    {Icon && <Icon size={32} weight="duotone" className="text-mango" />}
+                    <h3 className="mt-3 font-heading text-lg font-bold text-text">
+                      {sp.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-text/60">{sp.desc}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -153,10 +137,10 @@ export function DuaXiemBenTreLanding() {
         <div className="mx-auto max-w-[1200px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Dừa sọ — từ vựa
+              {t("gallery.title")}
             </h2>
             <p className="mb-12 text-center text-sm text-text/50">
-              Quy trình gọt thủ công tại vựa Thạnh Phú
+              {t("gallery.desc")}
             </p>
           </FadeIn>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -208,12 +192,12 @@ export function DuaXiemBenTreLanding() {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Đặt dừa xiêm Bến Tre online
+              {t("order.title1")}
               <br />
-              <span className="text-mango">ship toàn quốc</span>
+              <span className="text-mango">{t("order.title2")}</span>
             </h2>
             <p className="mb-10 text-center text-sm text-text/50">
-              Đặt qua Zalo hoặc gọi — vựa báo giá + lịch giao trong 15 phút
+              {t("order.desc")}
             </p>
           </FadeIn>
 
@@ -222,26 +206,26 @@ export function DuaXiemBenTreLanding() {
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="rounded-3xl bg-white p-6 shadow-md">
                 <span className="inline-block rounded-full bg-mango/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-mango-dark">
-                  Sỉ
+                  {t("order.wholesale")}
                 </span>
                 <div className="mt-3 font-heading text-3xl font-bold text-text">
-                  8.000 – 10.000
-                  <span className="text-sm font-medium text-text/50">₫/trái</span>
+                  {t("order.wholesalePrice")}
+                  <span className="text-sm font-medium text-text/50">{t("order.wholesaleUnit")}</span>
                 </div>
                 <p className="mt-2 text-sm text-text/60">
-                  Từ 50 trái trở lên. Đóng túi lưới, ship xe lạnh.
+                  {t("order.wholesaleDesc")}
                 </p>
               </div>
               <div className="rounded-3xl bg-white p-6 shadow-md">
                 <span className="inline-block rounded-full bg-text/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-text/70">
-                  Lẻ
+                  {t("order.retail")}
                 </span>
                 <div className="mt-3 font-heading text-3xl font-bold text-text">
-                  15.000 – 18.000
-                  <span className="text-sm font-medium text-text/50">₫/trái</span>
+                  {t("order.retailPrice")}
+                  <span className="text-sm font-medium text-text/50">{t("order.retailUnit")}</span>
                 </div>
                 <p className="mt-2 text-sm text-text/60">
-                  Từ 10 trái. Đóng gói hút chân không hoặc túi lưới.
+                  {t("order.retailDesc")}
                 </p>
               </div>
             </div>
@@ -250,11 +234,7 @@ export function DuaXiemBenTreLanding() {
           {/* Ordering steps */}
           <FadeIn delay={0.2}>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {[
-                { step: "1", title: "Nhắn Zalo/Gọi", desc: "Báo số lượng + địa chỉ giao. Vựa báo giá + lịch giao ngay." },
-                { step: "2", title: "Chuyển khoản / COD", desc: "Chuyển khoản trước hoặc COD khi nhận hàng. Mối quen → mở sổ công nợ." },
-                { step: "3", title: "Nhận hàng", desc: "Dừa giao tận nơi xe lạnh. HCM 24h, HN 48h. Hàng lỗi → bồi đơn sau." },
-              ].map((item) => (
+              {orderSteps.map((item) => (
                 <div key={item.step} className="rounded-2xl bg-white p-6 text-center shadow-sm">
                   <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-mango font-heading text-lg font-bold text-white">
                     {item.step}
@@ -275,7 +255,7 @@ export function DuaXiemBenTreLanding() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
-                Đặt dừa qua Zalo
+                {t("order.ctaZalo")}
               </a>
             </div>
           </FadeIn>
@@ -287,17 +267,11 @@ export function DuaXiemBenTreLanding() {
         <div className="mx-auto max-w-[800px]">
           <FadeIn>
             <h2 className="mb-8 font-heading text-3xl font-bold uppercase text-text">
-              Câu hỏi thường gặp — Dừa Xiêm Bến Tre
+              {t("faq.title")}
             </h2>
           </FadeIn>
           <div className="space-y-4">
-            {[
-              { q: "Đặt dừa xiêm Bến Tre online ship toàn quốc được không?", a: "Được. Vựa giao lạnh toàn quốc: TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Đặt qua Zalo hoặc gọi 0932 585 533." },
-              { q: "Dừa sọ khác dừa xiêm nguyên trái sao?", a: "Dừa sọ là dừa xiêm đã gọt sạch vỏ xanh, chỉ còn sọ trắng + nước bên trong. Mở nắp uống liền, đóng gói đẹp, dễ ship xa." },
-              { q: "Giá dừa xiêm Bến Tre bao nhiêu?", a: "Sỉ từ 50 trái: 8.000-10.000₫/trái. Lẻ từ 10 trái: 15.000-18.000₫/trái. Giá có thể thay đổi theo mùa, gọi vựa báo giá chính xác." },
-              { q: "Nước dừa có ngọt không?", a: "Dừa xiêm Bến Tre nước ngọt thanh tự nhiên, không gắt. Vựa chọn trái chín tới — ngọt nhất." },
-              { q: "Bảo quản dừa sọ được bao lâu?", a: "Dừa sọ chưa khui: ngăn mát 5-7 ngày. Đã khui: uống trong ngày. Dừa gói hút chân không: 10-14 ngày ngăn mát." },
-            ].map(({ q, a }, i) => (
+            {faqItems.map(({ q, a }, i) => (
               <FadeIn key={i} delay={i * 0.06}>
                 <div className="rounded-2xl bg-white p-6 shadow-sm">
                   <h3 className="font-heading text-base font-bold text-text">{q}</h3>
@@ -315,10 +289,10 @@ export function DuaXiemBenTreLanding() {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-4xl font-bold uppercase text-text">
-              Vận chuyển
+              {t("shipping.title")}
             </h2>
             <p className="mb-10 text-center text-sm text-text/50">
-              Bấm vào thành phố để coi chi tiết giao hàng
+              {t("shipping.desc")}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -337,7 +311,7 @@ export function DuaXiemBenTreLanding() {
                     {route.time} · {route.method}
                   </div>
                   <div className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-text/50 transition-colors group-hover:text-text">
-                    Xem chi tiết
+                    {t("shipping.viewDetail")}
                     <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
@@ -351,7 +325,7 @@ export function DuaXiemBenTreLanding() {
       <SectionDivider from="brand-cream" to="brand" />
       <section className="bg-brand px-5 py-16">
         <div className="mx-auto flex max-w-[800px] flex-wrap justify-center gap-4">
-          {INTERNAL_LINKS.map((link) => (
+          {internalLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}

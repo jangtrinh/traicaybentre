@@ -120,8 +120,8 @@ export default async function LocaleLayout({
         <GoogleTagManagerNoscript />
         <NextIntlClientProvider>
           {children}
+          <FomoToastNotification />
         </NextIntlClientProvider>
-        <FomoToastNotification />
         <Analytics />
       </body>
     </html>

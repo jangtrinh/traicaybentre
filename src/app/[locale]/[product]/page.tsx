@@ -12,6 +12,7 @@
  */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 import {
   getActiveProductSlugs,
   getProduct,
@@ -26,7 +27,7 @@ import { XoaiTuQuyLanding } from "@/components/product/xoai-tu-quy-landing";
 import { XoaiHoangKimLanding } from "@/components/product/xoai-hoang-kim-landing";
 import { DuaXiemBenTreLanding } from "@/components/product/dua-xiem-ben-tre-landing";
 
-type Props = { params: Promise<{ product: string }> };
+type Props = { params: Promise<{ locale: string; product: string }> };
 
 export function generateStaticParams() {
   return getActiveProductSlugs().map((slug) => ({ product: slug }));
@@ -55,7 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProductPage({ params }: Props) {
-  const { product: slug } = await params;
+  const { locale, product: slug } = await params;
+  setRequestLocale(locale);
   if (isReservedPath(slug)) notFound();
 
   const product = getProduct(slug);

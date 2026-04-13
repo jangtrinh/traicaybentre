@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { setRequestLocale } from "next-intl/server";
 import { ArticleLayout } from "@/components/article-layout";
 import { VUA_XOAI_IMAGES } from "@/lib/vua-xoai-images";
 import { MON_XOAI_IMAGES, type MonXoaiImage } from "@/lib/mon-xoai-images";
@@ -70,7 +71,13 @@ const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "7 món ngon từ xoài Tứ Quý", url: PAGE_URL },
 ]);
 
-export default function MonNgonTuXoaiPage() {
+export default async function MonNgonTuXoaiPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <ArticleLayout
       category="Tin tức — Ẩm thực & công thức"

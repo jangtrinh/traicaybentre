@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { Certificate, Leaf, ShieldCheck, QrCode, Truck, Drop, Waves, Bag, MapPin, Users, Factory, FileText } from "@phosphor-icons/react/dist/ssr";
+import { Certificate, Leaf, ShieldCheck, QrCode, Drop, Waves, Bag, MapPin, Factory } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/fade-in";
 import { ImageCarousel } from "@/components/image-carousel";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SectionDivider } from "@/components/section-divider";
 
 /* Carousel image groups */
@@ -37,84 +37,8 @@ export const metadata: Metadata = {
 
 /* ═══════ Data ═══════ */
 
-const KEY_STATS = [
-  { value: "> 400 ha", label: "Diện tích trồng" },
-  { value: "700+", label: "Hộ dân trồng" },
-  { value: "30 tấn/ha", label: "Năng suất / năm" },
-  { value: "3 vụ/năm", label: "Thu hoạch quanh năm" },
-  { value: "86 ha", label: "Mã số vùng trồng XK" },
-  { value: "95%", label: "Bán ra miền Bắc" },
-];
-
-const SOIL_SPECS = [
-  { label: "Hàm lượng cát", value: "60–70%" },
-  { label: "Hàm lượng muối tan", value: "0,009–0,022%" },
-  { label: "Độ xốp", value: "16–20%" },
-  { label: "Địa hình", value: "Cao 2–4m, ven biển" },
-];
-
-const FRUIT_SPECS = [
-  { label: "Trọng lượng/quả", value: "1,0–1,5 kg (max 2 kg)" },
-  { label: "Độ chắc thịt chín", value: "20,2–21,1 N" },
-  { label: "Hàm lượng Na", value: "1,58–2,02%" },
-  { label: "Hạt", value: "Nhỏ, lép — tỉ lệ thịt cao" },
-];
-
-const FARMING_STEPS = [
-  { step: "01", title: "Chuẩn bị đất", desc: "Chọn vùng giồng cát cao, bón lót phân hữu cơ, lắp hệ thống tưới nhỏ giọt." },
-  { step: "02", title: "Trồng & chăm sóc", desc: "Cây giống ghép, 15–18 tháng cho trái. Tưới đều, bón phân hữu cơ, cắt tỉa tán." },
-  { step: "03", title: "Bao trái từ nhỏ", desc: "Bao túi vải đa màu khi quả bằng ngón tay. Mỗi đợt 1 màu để phân biệt độ tuổi." },
-  { step: "04", title: "Thu hoạch & phân loại", desc: "Thu theo màu túi bao, cắt cuống, phân loại tại vườn theo size VIP/Loại 1/Loại 2." },
-  { step: "05", title: "Sơ chế & đóng gói", desc: "Lau sạch, phân loại lần 2, đóng thùng carton có lót xốp, dán tem truy xuất." },
-  { step: "06", title: "Vận chuyển", desc: "Xe lạnh, xe thường hoặc gửi bay — tuỳ nhu cầu bạn hàng. BT→HN: ~2 ngày." },
-];
-
-const CERTIFICATIONS = [
-  {
-    Icon: Certificate,
-    title: "Chỉ dẫn địa lý #00124",
-    org: "Cục Sở hữu trí tuệ — Bộ KH&CN",
-    detail: "QĐ số 5371/QĐ-SHTT ngày 10/11/2022. Chỉ xoài Tứ Quý trồng tại Thạnh Phú, Ba Tri, Bình Đại mới được gọi là 'Xoài Tứ Quý Bến Tre'.",
-  },
-  {
-    Icon: ShieldCheck,
-    title: "Nhãn hiệu chứng nhận",
-    org: "UBND huyện Thạnh Phú",
-    detail: "Nhãn hiệu 'Xoài Tứ Quý Thạnh Phú' được bảo hộ từ năm 2020. Phân phối qua chợ, siêu thị và sàn TMĐT.",
-  },
-  {
-    Icon: Leaf,
-    title: "VietGAP — 100+ ha",
-    org: "Chi cục Trồng trọt & BVTV tỉnh Bến Tre",
-    detail: "Hơn 100 ha tại xã Thạnh Phong sản xuất theo tiêu chuẩn VietGAP. Tập huấn định kỳ cho nông dân.",
-  },
-  {
-    Icon: ShieldCheck,
-    title: "GlobalGAP — 16 ha",
-    org: "Tổ chức chứng nhận quốc tế",
-    detail: "HTX Thạnh Phong có 16 ha đạt GlobalGAP. Sản phẩm được bao tiêu giá cao hơn thị trường 1.500–2.000đ/kg.",
-  },
-  {
-    Icon: QrCode,
-    title: "Mã số vùng trồng XK",
-    org: "Cục Bảo vệ thực vật — Bộ NN&PTNT",
-    detail: "86 ha tại Thạnh Phong đã được cấp mã PUC — xuất khẩu chính ngạch sang Mỹ, Hàn Quốc, Úc.",
-  },
-  {
-    Icon: Leaf,
-    title: "OCOP Bến Tre",
-    org: "Chương trình OCOP quốc gia",
-    detail: "Xoài Tứ Quý Thạnh Phú là sản phẩm OCOP tiêu biểu của tỉnh Bến Tre.",
-  },
-];
-
-const HTX_INFO = [
-  { label: "Tên", value: "HTX Dịch vụ Sản xuất Nông nghiệp Thạnh Phong" },
-  { label: "Thành lập", value: "2017" },
-  { label: "Giám đốc", value: "Ông Nguyễn Văn Trường" },
-  { label: "Thành viên", value: "148 thành viên" },
-  { label: "Diện tích", value: "65 ha" },
-];
+// Icons for certifications (not translatable) — text comes from messages.nguonGoc.chungNhan.items
+const CERT_ICONS = [Certificate, ShieldCheck, Leaf, ShieldCheck, QrCode, Leaf];
 
 /* ═══════ Components ═══════ */
 
@@ -135,7 +59,34 @@ function SectionHeading({ label, title }: { label: string; title: string }) {
 
 /* ═══════ Page ═══════ */
 
-export default function NguonGocPage() {
+export default async function NguonGocPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("nguonGoc");
+
+  type StatItem = { value: string; label: string };
+  type SpecItem = { label: string; value: string };
+  type FarmingStep = { step: string; title: string; desc: string };
+  type CertItem = { title: string; org: string; detail: string };
+  type HtxInfoItem = { label: string; value: string };
+  type FactorItem = { title: string; subtitle: string; desc: string };
+  type VuonTrongRow = { ward: string; area: string; note: string };
+  type VeVuaLink = { label: string; href: string };
+
+  const keyStats = t.raw("stats") as StatItem[];
+  const farmingSteps = t.raw("quyTrinh.steps") as FarmingStep[];
+  const certItems = t.raw("chungNhan.items") as CertItem[];
+  const htxInfo = t.raw("htx.info") as HtxInfoItem[];
+  const htxBenefits = t.raw("htx.benefits") as string[];
+  const biMatFactors = t.raw("biMat.factors") as FactorItem[];
+  const soilSpecs = t.raw("biMat.soilSpecs") as SpecItem[];
+  const fruitSpecs = t.raw("biMat.fruitSpecs") as SpecItem[];
+  const vuonTrongRows = t.raw("vuongTrong.rows") as VuonTrongRow[];
+  const veVuaLinks = t.raw("veVua.links") as VeVuaLink[];
   return (
     <>
     <Header />
@@ -146,13 +97,12 @@ export default function NguonGocPage() {
           <div>
             <FadeIn>
               <h1 className="font-heading text-5xl font-bold uppercase text-text sm:text-6xl lg:text-7xl">
-                Nguồn
+                {t("hero.title1")}
                 <br />
-                Gốc
+                {t("hero.title2")}
               </h1>
               <p className="mt-6 max-w-[500px] text-lg leading-relaxed text-text/60">
-                Cả nước chỉ Thạnh Phú trồng được xoài Tứ Quý ngon và đều tay —
-                nhờ đất giồng cát ven biển nhiễm mặn tự nhiên.
+                {t("hero.desc")}
               </p>
             </FadeIn>
           </div>
@@ -166,7 +116,7 @@ export default function NguonGocPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Vị trí Thạnh Phong, Thạnh Phú, Bến Tre"
+                title={t("hero.mapTitle")}
                 className="h-[400px] w-full"
               />
             </div>
@@ -180,7 +130,7 @@ export default function NguonGocPage() {
       <section className="bg-brand-cream px-5 py-24">
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-            {KEY_STATS.map((stat, i) => (
+            {keyStats.map((stat, i) => (
               <FadeIn key={i} delay={i * 0.06}>
                 <div className="text-center">
                   <div className="font-heading text-3xl font-bold text-text">
@@ -199,43 +149,34 @@ export default function NguonGocPage() {
       {/* Vùng trồng */}
       <section className="bg-brand px-5 py-24">
         <div className="mx-auto max-w-[1200px]">
-          <SectionHeading label="Phần A" title="Vùng Trồng Thạnh Phú" />
+          <SectionHeading label={t("vuongTrong.label")} title={t("vuongTrong.title")} />
 
           <div className="grid gap-10 lg:grid-cols-2">
             <FadeIn>
               <div className="rounded-3xl bg-white p-8 shadow-md">
                 <h3 className="mb-4 flex items-center gap-2 font-heading text-xl font-bold text-text">
-                  <MapPin size={24} weight="duotone" /> Vị trí địa lý
+                  <MapPin size={24} weight="duotone" /> {t("vuongTrong.locationTitle")}
                 </h3>
                 <p className="mb-4 text-sm leading-relaxed text-text/60">
-                  Huyện Thạnh Phú — một trong ba huyện ven biển Bến Tre, nằm ở hạ lưu sông Mekong.
-                  Vùng trồng nằm trên các giồng cát ven biển, cao 2–4m so với mực nước biển.
+                  {t("vuongTrong.locationDesc")}
                 </p>
                 <div className="overflow-hidden rounded-2xl">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-brand/30">
-                        <th className="px-4 py-3 text-left font-semibold text-text">Xã</th>
-                        <th className="px-4 py-3 text-left font-semibold text-text">Diện tích</th>
-                        <th className="px-4 py-3 text-left font-semibold text-text">Đặc điểm</th>
+                        <th className="px-4 py-3 text-left font-semibold text-text">{t("vuongTrong.tableWard")}</th>
+                        <th className="px-4 py-3 text-left font-semibold text-text">{t("vuongTrong.tableArea")}</th>
+                        <th className="px-4 py-3 text-left font-semibold text-text">{t("vuongTrong.tableNote")}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-t border-border">
-                        <td className="px-4 py-3 font-semibold text-text">Thạnh Phong</td>
-                        <td className="px-4 py-3 text-text/70">~300 ha</td>
-                        <td className="px-4 py-3 text-text/70">Vùng lớn nhất, trụ sở HTX</td>
-                      </tr>
-                      <tr className="border-t border-border">
-                        <td className="px-4 py-3 font-semibold text-text">Thạnh Hải</td>
-                        <td className="px-4 py-3 text-text/70">~50 ha</td>
-                        <td className="px-4 py-3 text-text/70">Đất giồng cát điển hình</td>
-                      </tr>
-                      <tr className="border-t border-border">
-                        <td className="px-4 py-3 font-semibold text-text">Giao Thạnh</td>
-                        <td className="px-4 py-3 text-text/70">~50 ha</td>
-                        <td className="px-4 py-3 text-text/70">Vùng mở rộng</td>
-                      </tr>
+                      {vuonTrongRows.map((row, i) => (
+                        <tr key={i} className="border-t border-border">
+                          <td className="px-4 py-3 font-semibold text-text">{row.ward}</td>
+                          <td className="px-4 py-3 text-text/70">{row.area}</td>
+                          <td className="px-4 py-3 text-text/70">{row.note}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -254,17 +195,13 @@ export default function NguonGocPage() {
                 />
                 <div className="p-8">
                 <h3 className="mb-4 flex items-center gap-2 font-heading text-xl font-bold text-text">
-                  <Waves size={24} weight="duotone" /> Lịch sử
+                  <Waves size={24} weight="duotone" /> {t("vuongTrong.historyTitle")}
                 </h3>
                 <p className="text-sm leading-relaxed text-text/60">
-                  Giống xoài Tứ Quý có nguồn gốc từ <strong className="text-text">năm 1982</strong>,
-                  do nông dân ở ấp Phú Đa, xã Vĩnh Bình, huyện Chợ Lách lai tạo. Qua thực tế canh tác,
-                  <strong className="text-text"> chỉ có vùng đất giồng cát ven biển nhiễm mặn ở Thạnh Phú
-                  mới cho ra trái có chất lượng tốt nhất</strong>.
+                  {t("vuongTrong.historyDesc1")}
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-text/60">
-                  Trước đây vùng Thạnh Phú trồng sắn, dưa hấu — thu nhập bấp bênh.
-                  Từ 2010 nhiều hộ bỏ dưa trồng xoài, thu nhập tăng gấp 3–4 lần.
+                  {t("vuongTrong.historyDesc2")}
                 </p>
                 </div>
               </div>
@@ -283,50 +220,35 @@ export default function NguonGocPage() {
       {/* Đặc điểm tự nhiên */}
       <section className="bg-brand-cream px-5 py-24">
         <div className="mx-auto max-w-[1200px]">
-          <SectionHeading label="Phần B" title="Bí Mật Hương Vị" />
+          <SectionHeading label={t("biMat.label")} title={t("biMat.title")} />
 
           {/* 3 yếu tố tạo vị */}
+          {/* Icons are code-level: Drop, Waves, Waves — match factors order */}
           <div className="mb-16 grid gap-8 lg:grid-cols-3">
-            {[
-              {
-                Icon: Drop,
-                title: "Hàm lượng nước thấp",
-                subtitle: "Thịt giòn & chắc",
-                desc: "Đất cát giữ nước kém → hàm lượng H₂O trong quả thấp → thịt giòn khi xanh, chắc khi chín. Lợi thế tự nhiên không cần kỹ thuật siết gốc.",
-              },
-              {
-                Icon: Waves,
-                title: "Đất nhiễm mặn",
-                subtitle: "Vị mặn nhẹ đặc trưng",
-                desc: "Muối tan 0,009–0,022% trong đất → chất Natri (Na) tích trong quả → vị mặn nhẹ cuối lưỡi. Đặc điểm này chỗ khác không sao làm lại được.",
-              },
-              {
-                Icon: Waves,
-                title: "Giao thoa ngọt-mặn",
-                subtitle: "Cân bằng vị giác",
-                desc: "Nước ngọt từ sông Mekong + nước mặn từ biển Đông → ngọt đậm hoà với mặn nhẹ — không đâu có.",
-              },
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-md">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand">
-                    <item.Icon size={28} weight="duotone" className="text-text" />
+            {biMatFactors.map((item, i) => {
+              const FactorIcon = i === 0 ? Drop : Waves;
+              return (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-md">
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand">
+                      <FactorIcon size={28} weight="duotone" className="text-text" />
+                    </div>
+                    <h3 className="font-heading text-lg font-bold text-text">{item.title}</h3>
+                    <p className="mb-3 text-sm font-semibold text-text/50">{item.subtitle}</p>
+                    <p className="flex-1 text-sm leading-relaxed text-text/60">{item.desc}</p>
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-text">{item.title}</h3>
-                  <p className="mb-3 text-sm font-semibold text-text/50">{item.subtitle}</p>
-                  <p className="flex-1 text-sm leading-relaxed text-text/60">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
 
           {/* Thông số kỹ thuật */}
           <div className="grid gap-8 lg:grid-cols-2">
             <FadeIn>
               <div className="rounded-3xl bg-white p-8 shadow-md">
-                <h3 className="mb-6 font-heading text-xl font-bold text-text">Thông số đất</h3>
+                <h3 className="mb-6 font-heading text-xl font-bold text-text">{t("biMat.soilTitle")}</h3>
                 <div className="space-y-4">
-                  {SOIL_SPECS.map((s, i) => (
+                  {soilSpecs.map((s, i) => (
                     <div key={i} className="flex items-center justify-between border-b border-border pb-3">
                       <span className="text-sm text-text/60">{s.label}</span>
                       <span className="font-heading text-base font-bold text-text">{s.value}</span>
@@ -337,9 +259,9 @@ export default function NguonGocPage() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="rounded-3xl bg-white p-8 shadow-md">
-                <h3 className="mb-6 font-heading text-xl font-bold text-text">Thông số quả</h3>
+                <h3 className="mb-6 font-heading text-xl font-bold text-text">{t("biMat.fruitTitle")}</h3>
                 <div className="space-y-4">
-                  {FRUIT_SPECS.map((s, i) => (
+                  {fruitSpecs.map((s, i) => (
                     <div key={i} className="flex items-center justify-between border-b border-border pb-3">
                       <span className="text-sm text-text/60">{s.label}</span>
                       <span className="font-heading text-base font-bold text-text">{s.value}</span>
@@ -357,10 +279,10 @@ export default function NguonGocPage() {
       {/* Quy trình sản xuất */}
       <section className="bg-brand px-5 py-24">
         <div className="mx-auto max-w-[1200px]">
-          <SectionHeading label="Phần C" title="Quy Trình Sản Xuất" />
+          <SectionHeading label={t("quyTrinh.label")} title={t("quyTrinh.title")} />
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {FARMING_STEPS.map((s, i) => (
+            {farmingSteps.map((s, i) => (
               <FadeIn key={i} delay={i * 0.08}>
                 <div className="relative flex h-full flex-col rounded-3xl bg-white p-8 shadow-md">
                   <span className="absolute top-4 right-5 font-heading text-4xl font-extrabold text-brand/40">
@@ -386,13 +308,10 @@ export default function NguonGocPage() {
                 </div>
                 <div>
                   <h3 className="font-heading text-2xl font-bold text-text">
-                    Kỹ thuật bao trái — Đặc trưng Thạnh Phú
+                    {t("quyTrinh.bagTechTitle")}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-text/60">
-                    Cây ra trái quanh năm — trên cùng 1 cây có đủ độ tuổi quả.
-                    Nông dân bao từng trái bằng túi vải từ khi bằng ngón tay, mỗi
-                    đợt dùng 1 màu để phân biệt. Nhờ vậy trái đẹp, đồng đều, giảm
-                    5–10 kg thuốc BVTV/ha, lợi nhuận tăng 18–20 triệu đồng/ha.
+                    {t("quyTrinh.bagTechDesc")}
                   </p>
                 </div>
               </div>
@@ -411,25 +330,28 @@ export default function NguonGocPage() {
       {/* Chứng nhận */}
       <section className="bg-brand-cream px-5 py-24">
         <div className="mx-auto max-w-[1200px]">
-          <SectionHeading label="Phần D" title="Chứng Nhận & Pháp Lý" />
+          <SectionHeading label={t("chungNhan.label")} title={t("chungNhan.title")} />
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {CERTIFICATIONS.map((cert, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-md">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand">
-                    <cert.Icon size={28} weight="duotone" className="text-text" />
+            {certItems.map((cert, i) => {
+              const CertIcon = CERT_ICONS[i];
+              return (
+                <FadeIn key={i} delay={i * 0.08}>
+                  <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-md">
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand">
+                      {CertIcon && <CertIcon size={28} weight="duotone" className="text-text" />}
+                    </div>
+                    <h3 className="font-heading text-base font-bold uppercase text-text">
+                      {cert.title}
+                    </h3>
+                    <p className="mt-1 text-xs font-semibold text-text/40">{cert.org}</p>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-text/60">
+                      {cert.detail}
+                    </p>
                   </div>
-                  <h3 className="font-heading text-base font-bold uppercase text-text">
-                    {cert.title}
-                  </h3>
-                  <p className="mt-1 text-xs font-semibold text-text/40">{cert.org}</p>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-text/60">
-                    {cert.detail}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
 
           {/* Photo carousel at bottom */}
@@ -444,19 +366,19 @@ export default function NguonGocPage() {
       {/* HTX Thạnh Phong */}
       <section className="bg-brand px-5 py-24">
         <div className="mx-auto max-w-[900px]">
-          <SectionHeading label="Phần E" title="HTX Thạnh Phong" />
+          <SectionHeading label={t("htx.label")} title={t("htx.title")} />
 
           <FadeIn>
             <div className="rounded-3xl bg-white p-10 shadow-md">
               <div className="mb-8 flex items-center gap-3">
                 <Factory size={28} weight="duotone" className="text-text/70" />
                 <h3 className="font-heading text-xl font-bold text-text">
-                  Hợp tác xã Dịch vụ Sản xuất Nông nghiệp Thạnh Phong
+                  {t("htx.orgName")}
                 </h3>
               </div>
 
               <div className="mb-8 space-y-3">
-                {HTX_INFO.map((item, i) => (
+                {htxInfo.map((item, i) => (
                   <div key={i} className="flex items-center justify-between border-b border-border pb-3">
                     <span className="text-sm text-text/50">{item.label}</span>
                     <span className="text-sm font-semibold text-text">{item.value}</span>
@@ -464,15 +386,9 @@ export default function NguonGocPage() {
                 ))}
               </div>
 
-              <h4 className="mb-4 font-heading text-base font-bold text-text">Quyền lợi thành viên</h4>
+              <h4 className="mb-4 font-heading text-base font-bold text-text">{t("htx.benefitsTitle")}</h4>
               <div className="space-y-2">
-                {[
-                  "Hỗ trợ lắp hệ thống tưới nhỏ giọt",
-                  "Tập huấn VietGAP/GlobalGAP định kỳ",
-                  "Bao tiêu 100% sản phẩm theo hợp đồng",
-                  "Giá thu mua cao hơn thị trường 1.500–2.000đ/kg",
-                  "Hỗ trợ vay vốn Quỹ hỗ trợ nông dân",
-                ].map((item, i) => (
+                {htxBenefits.map((item, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-text/60">
                     <ShieldCheck size={16} weight="fill" className="mt-0.5 shrink-0 text-text/40" />
                     {item}
@@ -490,40 +406,25 @@ export default function NguonGocPage() {
         <div className="mx-auto max-w-[1000px]">
           <FadeIn>
             <h2 className="mb-3 text-center font-heading text-3xl font-bold uppercase text-text sm:text-4xl">
-              Về vựa <span className="text-mango">Trái Cây Bến Tre</span>
+              {t("veVua.title1")} <span className="text-mango">{t("veVua.title2")}</span>
             </h2>
             <p className="mb-10 text-center text-sm text-text/50">
-              Từ xoài Tứ Quý đến dừa xiêm — tất cả từ vựa Thạnh Phú
+              {t("veVua.desc")}
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="rounded-2xl bg-text/5 p-6 text-sm leading-relaxed text-text/70 sm:p-8 sm:text-base">
-              <p>
-                Vựa Trái Cây Bến Tre bắt đầu từ xoài Tứ Quý — giống xoài đặc sản
-                CDĐL #00124 chỉ có ở Thạnh Phú, Ba Tri, Bình Đại. Sau 3 năm giao
-                hàng toàn quốc, vựa mở rộng thêm{" "}
-                <strong>Dừa Xiêm Bến Tre (dừa sọ gọt sẵn)</strong> và{" "}
-                <strong>Dừa Xiêm Rau Câu Dừa</strong> — đặc sản vùng dừa nổi tiếng
-                nhất Việt Nam.
-              </p>
-              <p className="mt-4">
-                Cam kết vựa: lấy thẳng từ nhà vườn, không qua trung gian, cân dư 2%
-                bù hao, hàng hư bồi đơn sau. Mối nào cũng nói vậy — nhưng ở đây làm
-                thật, 3 năm rồi.
-              </p>
+              <p>{t("veVua.body1")}</p>
+              <p className="mt-4">{t("veVua.body2")}</p>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <h3 className="mb-6 mt-12 text-center font-heading text-2xl font-bold uppercase text-text">
-              Các loại trái cây tại vựa
+              {t("veVua.productsTitle")}
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { label: "Xoài Tứ Quý", href: "/xoai-tu-quy" },
-                { label: "Dừa Xiêm Bến Tre", href: "/dua-xiem-ben-tre" },
-                { label: "Tất cả sản phẩm", href: "/san-pham" },
-              ].map((link) => (
+              {veVuaLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}

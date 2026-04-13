@@ -18,14 +18,16 @@ import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
 import { getCity, getCitySlugs, getMethodLabel, REGION_LABELS } from "@/content/cities";
 import { getActiveProducts } from "@/lib/products";
+import { setRequestLocale } from "next-intl/server";
 import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
 
-type Props = { params: Promise<{ city: string }> };
+type RouteParams = { city: string };
+type Props = { params: Promise<{ locale: string } & RouteParams> };
 
 // Static pages that already exist — exclude from dynamic generation
 const STATIC_CITIES = ["ha-noi", "tp-hcm", "da-nang"];
 
-export function generateStaticParams() {
+export function generateStaticParams(): RouteParams[] {
   return getCitySlugs()
     .filter((s) => !STATIC_CITIES.includes(s))
     .map((city) => ({ city }));
@@ -56,7 +58,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CityShippingPage({ params }: Props) {
-  const { city: slug } = await params;
+  const { locale, city: slug } = await params;
+  setRequestLocale(locale);
   const city = getCity(slug);
   if (!city) notFound();
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Truck, Package, Phone, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -54,7 +55,13 @@ const FAQ = [
   },
 ];
 
-export default function GiaoHangTpHcmPage() {
+export default async function GiaoHangTpHcmPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <script
