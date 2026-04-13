@@ -2,20 +2,23 @@
 
 import { useState, useEffect } from "react";
 import { FadeIn } from "./fade-in";
-import { TESTIMONIALS } from "@/lib/landing-data";
 import { useTranslations } from "next-intl";
+
+type TestimonialItem = { text: string; name: string; detail: string; since: string };
 
 export function TestimonialSection() {
   const t = useTranslations("testimonials");
+  const tData = useTranslations();
+  const testimonials = tData.raw("data.testimonials") as TestimonialItem[];
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(
-      () => setActive((prev) => (prev + 1) % TESTIMONIALS.length),
+      () => setActive((prev) => (prev + 1) % testimonials.length),
       6000
     );
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section id="testimonials" className="bg-brand px-5 py-24">
@@ -27,7 +30,7 @@ export function TestimonialSection() {
         </FadeIn>
 
         <div className="relative mt-12 min-h-[220px]" aria-live="polite" aria-atomic="true">
-          {TESTIMONIALS.map((item, i) => (
+          {testimonials.map((item, i) => (
             <div
               key={i}
               className={`transition-all duration-500 ${
@@ -47,11 +50,11 @@ export function TestimonialSection() {
         </div>
 
         <div className="mt-10 flex justify-center gap-2">
-          {TESTIMONIALS.map((_, i) => (
+          {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              aria-label={t("viewLabel", { current: i + 1, total: TESTIMONIALS.length })}
+              aria-label={t("viewLabel", { current: i + 1, total: testimonials.length })}
               className={`h-2.5 rounded-full transition-all duration-300 ${
                 i === active
                   ? "w-8 bg-text"

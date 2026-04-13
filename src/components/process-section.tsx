@@ -4,10 +4,13 @@ import { FadeIn } from "./fade-in";
 import { PROCESS_STEPS } from "@/lib/landing-data";
 import { getTranslations } from "next-intl/server";
 
+type StepTranslation = { title: string; desc: string };
 const STEP_ICONS = [Waves, Bag, Snowflake, Truck];
 
 export async function ProcessSection() {
   const t = await getTranslations("process");
+  const tData = await getTranslations();
+  const steps = tData.raw("data.processSteps") as StepTranslation[];
 
   return (
     <section id="process" className="bg-brand px-5 py-24">
@@ -41,10 +44,10 @@ export async function ProcessSection() {
                     </div>
                   </div>
                   <h3 className="font-heading text-lg font-bold uppercase text-text">
-                    {step.title}
+                    {steps[i]?.title ?? step.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-text/60">
-                    {step.desc}
+                    {steps[i]?.desc ?? step.desc}
                   </p>
                 </div>
               </FadeIn>

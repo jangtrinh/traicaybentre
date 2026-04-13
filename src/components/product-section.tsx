@@ -77,7 +77,9 @@ function ProductCardCarousel({ images, name }: { images: string[]; name: string 
   );
 }
 
-function ProductCard({ product, index }: { product: Product; index: number }) {
+type TranslatedProduct = { name: string; farm: string; desc: string; tags: string[]; badge: string };
+
+function ProductCard({ product, translated, index }: { product: Product; translated: TranslatedProduct; index: number }) {
   const t = useTranslations("products");
   const [hovered, setHovered] = useState(false);
   const cardImages = product.images?.length ? product.images : [product.image];
@@ -93,8 +95,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       >
         {/* Rotating photo carousel + sticker overlay */}
         <div className="relative h-64 overflow-hidden">
-          <ProductCardCarousel images={cardImages} name={product.name} />
-          {/* Sticker label — small, bottom right */}
+          <ProductCardCarousel images={cardImages} name={translated.name} />
           <Image
             src={product.sticker}
             alt=""
@@ -105,21 +106,20 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           <span
             className={`absolute top-4 left-4 z-10 rounded-full ${product.badgeColor} px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white`}
           >
-            {product.badge}
+            {translated.badge}
           </span>
         </div>
 
         <div className="p-6">
           <h3 className="font-heading text-2xl font-bold uppercase text-text">
-            {product.name}
+            {translated.name}
           </h3>
           <p className="mt-2 flex items-center gap-1 text-xs text-text-muted">
-            <MapPin size={12} weight="fill" /> {product.farm}
+            <MapPin size={12} weight="fill" /> {translated.farm}
           </p>
 
-          {/* Tag pills with icons — gentle style */}
           <div className="mt-4 flex flex-wrap gap-1.5">
-            {product.tags.map((tag) => {
+            {translated.tags.map((tag) => {
               const Icon = TAG_ICONS[tag] || Leaf;
               return (
                 <span
@@ -134,7 +134,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
           </div>
 
           <p className="mt-5 text-sm leading-relaxed text-text-secondary">
-            {product.desc}
+            {translated.desc}
           </p>
 
           {/* Price range — call for exact daily price */}
@@ -172,6 +172,8 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
 export function ProductSection() {
   const t = useTranslations("products");
+  const tData = useTranslations();
+  const translatedProducts = tData.raw("data.products") as TranslatedProduct[];
 
   return (
     <section id="products" className="bg-brand-cream px-5 py-24">
@@ -189,7 +191,7 @@ export function ProductSection() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
+            <ProductCard key={product.id} product={product} translated={translatedProducts[i]} index={i} />
           ))}
         </div>
       </div>

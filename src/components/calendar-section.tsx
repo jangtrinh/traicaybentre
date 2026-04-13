@@ -7,9 +7,13 @@ import { useTranslations } from "next-intl";
 /* Dynamic current month — updates in browser */
 const CURRENT_MONTH = new Date().getMonth();
 
+type CalendarTranslation = { name: string };
+
 export function CalendarSection() {
   const t = useTranslations("calendar");
+  const tData = useTranslations();
   const months = t.raw("months") as string[];
+  const calendarNames = tData.raw("data.calendar") as CalendarTranslation[];
 
   return (
     <section className="bg-brand-cream px-5 py-24">
@@ -56,7 +60,7 @@ export function CalendarSection() {
                   }`}
                 >
                   <div className="px-2 sm:px-4 py-3 text-xs font-semibold text-text leading-tight">
-                    {item.name}
+                    {calendarNames[idx]?.name ?? item.name}
                   </div>
                   {item.months.map((v, mi) => (
                     <div

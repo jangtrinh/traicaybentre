@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import { FadeIn } from "./fade-in";
-import { FAQS } from "@/lib/landing-data";
 import { useTranslations } from "next-intl";
+
+type FaqItem = { q: string; a: string };
 
 export function FaqSection() {
   const t = useTranslations("faq");
+  const tData = useTranslations();
+  const faqs = tData.raw("data.faqs") as FaqItem[];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -18,7 +21,7 @@ export function FaqSection() {
           </h2>
         </FadeIn>
 
-        {FAQS.map((faq, i) => (
+        {faqs.map((faq, i) => (
           <FadeIn key={i} delay={i * 0.04}>
             <div className="border-b border-border">
               <button
