@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
 import { getOgFonts } from "@/lib/og/og-fonts";
-import { OG, getFontFamily, truncate } from "@/lib/og/og-utils";
+import { OG, truncate } from "@/lib/og/og-utils";
 import { OgBaseLayout } from "@/lib/og/og-base-layout";
 import { products } from "@/content/products";
 
-export const alt = "Product — Trái Cây Bến Tre";
+export const alt = "Sản phẩm — Trái Cây Bến Tre";
 export const size = { width: OG.width, height: OG.height };
 export const contentType = "image/png";
 export const revalidate = 600;
@@ -14,63 +14,41 @@ export default async function Image({
 }: {
   params: Promise<{ locale: string; product: string }>;
 }) {
-  const { locale, product: slug } = await params;
-  const ff = getFontFamily(locale);
+  const { product: slug } = await params;
   const entry = products[slug];
-
-  if (!entry) {
-    // Fallback — generic brand OG
-    return new ImageResponse(
-      (
-        <OgBaseLayout locale={locale}>
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", flex: 1 }}>
-            <div style={{ fontSize: 48, fontWeight: 700, color: OG.colors.text, fontFamily: ff }}>
-              🥭
-            </div>
-          </div>
-        </OgBaseLayout>
-      ),
-      { ...size, fonts: getOgFonts(locale) },
-    );
-  }
+  const name = entry?.shortName ?? "Trái Cây Bến Tre";
+  const tagline = entry?.tagline ?? "";
 
   return new ImageResponse(
     (
-      <OgBaseLayout locale={locale}>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", flex: 1, gap: 12 }}>
-          {/* Product name */}
-          <div style={{ fontSize: 52, fontWeight: 700, color: OG.colors.text, fontFamily: ff, lineHeight: 1.2 }}>
-            {truncate(entry.name, 50)}
+      <OgBaseLayout>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ fontSize: 52, fontWeight: 800, color: OG.text, lineHeight: 1.1, textTransform: "uppercase" }}>
+            {truncate(name, 30)}
           </div>
-
-          {/* Tagline */}
-          <div style={{ fontSize: 26, color: OG.colors.textSecondary, fontFamily: ff, lineHeight: 1.4 }}>
-            {truncate(entry.tagline, 80)}
-          </div>
-
-          {/* Price pill */}
-          <div style={{ display: "flex", marginTop: 16, gap: 12, alignItems: "center" }}>
+          {tagline && (
+            <div style={{ fontSize: 22, color: OG.textMuted, marginTop: 4, lineHeight: 1.4 }}>
+              {truncate(tagline, 70)}
+            </div>
+          )}
+          <div style={{ display: "flex", marginTop: 12 }}>
             <div
               style={{
                 display: "flex",
-                background: OG.colors.mango,
-                color: OG.colors.white,
+                background: OG.mango,
+                color: OG.white,
                 padding: "8px 20px",
                 borderRadius: 999,
-                fontSize: 22,
-                fontWeight: 700,
-                fontFamily: "Heading",
+                fontSize: 20,
+                fontWeight: 800,
               }}
             >
-              {entry.seo.title.match(/\d[\d.]+đ/)?.[0] ?? "Giá cập nhật mỗi ngày"}
-            </div>
-            <div style={{ fontSize: 18, color: OG.colors.textSecondary, fontFamily: "Heading" }}>
-              CDĐL #00124
+              Giao lạnh toàn quốc
             </div>
           </div>
         </div>
       </OgBaseLayout>
     ),
-    { ...size, fonts: getOgFonts(locale) },
+    { ...size, fonts: getOgFonts() },
   );
 }

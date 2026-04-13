@@ -1,14 +1,13 @@
-import { OG, BRAND_NAME, getFontFamily } from "./og-utils";
+import { OG, loadImageBase64 } from "./og-utils";
 
-/** Shared OG image base — gradient bg, mango accent bar, brand mark bottom-right */
-export function OgBaseLayout({
-  locale,
-  children,
-}: {
-  locale: string;
-  children: React.ReactNode;
-}) {
-  const ff = getFontFamily(locale);
+const logoSrc = loadImageBase64("images/logo.png");
+const mangoSrc = loadImageBase64("images/xoai-real-2.jpg");
+
+/**
+ * Shared OG base — solid yellow bg, mango photo right, brand logo bottom-left.
+ * Vietnamese only. Bold, minimal text. Mango image always visible.
+ */
+export function OgBaseLayout({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
@@ -16,55 +15,50 @@ export function OgBaseLayout({
         height: OG.height,
         display: "flex",
         flexDirection: "row",
-        background: `linear-gradient(135deg, ${OG.colors.brand} 0%, ${OG.colors.brandCream} 100%)`,
-        fontFamily: ff,
+        background: OG.bg,
+        fontFamily: "Heading",
+        overflow: "hidden",
       }}
     >
-      {/* Mango accent bar left */}
-      <div
-        style={{
-          width: 8,
-          height: OG.height,
-          background: OG.colors.mango,
-          flexShrink: 0,
-        }}
-      />
-
-      {/* Content area */}
+      {/* Left — text content */}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          flex: 1,
-          padding: OG.pad,
+          width: "60%",
+          padding: "50px 50px 40px 50px",
           justifyContent: "space-between",
         }}
       >
-        {/* Main content */}
-        <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+        <div style={{ display: "flex", flexDirection: "column", flex: 1, justifyContent: "center" }}>
           {children}
         </div>
 
-        {/* Brand mark bottom-right */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            gap: 8,
-          }}
-        >
-          <span style={{ fontSize: 28 }}>🥭</span>
-          <span
-            style={{
-              fontSize: 20,
-              color: OG.colors.textSecondary,
-              fontFamily: ff,
-            }}
-          >
-            {BRAND_NAME[locale] ?? BRAND_NAME.vi}
-          </span>
-        </div>
+        {/* Brand logo bottom-left */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logoSrc}
+          width={120}
+          height={48}
+          style={{ objectFit: "contain" }}
+        />
+      </div>
+
+      {/* Right — mango photo */}
+      <div
+        style={{
+          display: "flex",
+          width: "40%",
+          overflow: "hidden",
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={mangoSrc}
+          width={480}
+          height={630}
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
       </div>
     </div>
   );

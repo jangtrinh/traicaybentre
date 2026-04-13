@@ -13,29 +13,14 @@ function loadFont(filename: string): ArrayBuffer {
   return fontCache.get(filename)!;
 }
 
-/** Load fonts for OG image generation — locale-aware for CJK support */
-export function getOgFonts(locale: string) {
-  const heading = {
-    name: "Heading",
-    data: loadFont("plus-jakarta-sans-700.ttf"),
-    weight: 700 as const,
-    style: "normal" as const,
-  };
-
-  if (locale === "ja") {
-    return [
-      heading,
-      { name: "CJK", data: loadFont("noto-sans-jp-700.ttf"), weight: 700 as const, style: "normal" as const },
-    ];
-  }
-
-  if (locale === "ko") {
-    return [
-      heading,
-      { name: "CJK", data: loadFont("noto-sans-kr-700.ttf"), weight: 700 as const, style: "normal" as const },
-    ];
-  }
-
-  // VI and EN — Plus Jakarta Sans covers Latin + Vietnamese diacritics
-  return [heading];
+/** Load OG fonts — ExtraBold (800) for maximum impact */
+export function getOgFonts() {
+  return [
+    {
+      name: "Heading",
+      data: loadFont("plus-jakarta-sans-800.ttf"),
+      weight: 800 as const,
+      style: "normal" as const,
+    },
+  ];
 }

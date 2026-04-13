@@ -1,17 +1,14 @@
-/** Brand colors and constants for OG image generation */
+import { readFileSync } from "fs";
+import { join } from "path";
+
 export const OG = {
   width: 1200,
   height: 630,
-  pad: 60,
-  colors: {
-    brand: "#FDDE24",
-    brandCream: "#FFFEE7",
-    text: "#1F2937",
-    textSecondary: "#6B7280",
-    mango: "#F97316",
-    mangoDark: "#EA580C",
-    white: "#FFFFFF",
-  },
+  bg: "#FDDE24",
+  text: "#1F2937",
+  textMuted: "#6B7280",
+  mango: "#F97316",
+  white: "#FFFFFF",
 } as const;
 
 export function truncate(text: string, maxLen: number): string {
@@ -19,15 +16,16 @@ export function truncate(text: string, maxLen: number): string {
   return text.slice(0, maxLen - 1) + "…";
 }
 
-/** Brand name per locale */
-export const BRAND_NAME: Record<string, string> = {
-  vi: "Trái Cây Bến Tre",
-  en: "Ben Tre Fruits",
-  ko: "벤째 과일",
-  ja: "ベンチェフルーツ",
-};
+const imageCache = new Map<string, string>();
 
-/** Font family string — CJK locales need fallback to CJK font */
-export function getFontFamily(locale: string): string {
-  return locale === "ja" || locale === "ko" ? "CJK" : "Heading";
+/** Load image from public/ as base64 data URI for Satori embedding */
+export function loadImageBase64(relativePath: string): string {
+  if (!imageCache.has(relativePath)) {
+    const abs = join(process.cwd(), "public", relativePath);
+    const buf = readFileSync(abs);
+    const ext = relativePath.split(".").pop() ?? "png";
+    const mime = ext === "jpg" || ext === "jpeg" ? "image/jpeg" : `image/${ext}`;
+    imageCache.set(relativePath, `data:${mime};base64,${buf.toString("base64")}`);
+  }
+  return imageCache.get(relativePath)!;
 }
