@@ -67,6 +67,22 @@ const SOCIAL_EMBEDS: SocialEmbed[] = [
       "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02x9rZaPLXQRVtrd3fiUchw6fiQpeRybxTBhBgtry89DkJhH2yxChZecAMeATGLvSRl%26id%3D61573415880985&show_text=true&width=500",
     titleKey: "embedPost" as const,
   },
+  {
+    id: "facebook-post-phucgiang-1",
+    platform: "facebook",
+    type: "post",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ftraicayphucgiang%2Fposts%2Fpfbid023FbircFt4MSWQMCcJGNmkkXTv1CZPRzcJLxdyAqUmL8P2hy1EuPoDji81GSG1X7Tl&show_text=true&width=500",
+    titleKey: "embedPost" as const,
+  },
+  {
+    id: "facebook-post-phucgiang-2",
+    platform: "facebook",
+    type: "post",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ftraicayphucgiang%2Fposts%2Fpfbid0eM4M39uYShkoJC6Zv6DEEg8ypKTtHmbQQF6sVDCiK46Pqdgtfi7s9uZaYJbaZeq7l&show_text=true&width=500",
+    titleKey: "embedPost" as const,
+  },
 ];
 
 const PLATFORM_LABEL: Record<string, string> = {
