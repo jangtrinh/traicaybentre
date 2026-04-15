@@ -1,8 +1,9 @@
 ---
-status: in-progress
+status: shipped
 domain: complex
 mode: autonomous
 created: 2026-04-15
+shipped: 2026-04-16
 issue: GSC "Discovered - currently not indexed" 102 URLs
 blockedBy: []
 blocks: []
