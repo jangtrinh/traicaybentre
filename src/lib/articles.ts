@@ -22,6 +22,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
 import matter from "gray-matter";
 import { getProductSlugs } from "@/lib/products";
+import { isEphemeralSlug } from "@/lib/sitemap-quality-filter";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -193,16 +194,90 @@ export function getArticlesByProduct(product: string, type?: ArticleType): Artic
   );
 }
 
-/** Related articles: same product + same type, excluding current slug. */
+/**
+ * Related articles — pillar-aware with cross-type fallback.
+ * Ranking priority:
+ *   1. Same product + same pillar + same type (strongest topical match)
+ *   2. Same product + same pillar + opposite type (cross-type pillar boost)
+ *   3. Same product + same type (loose topical match)
+ * This surfaces more internal links per article page, helping Google discover
+ * "orphan" long-tail content via the hub-and-spoke crawl pattern.
+ */
 export function getRelatedArticles(
   product: string,
   type: ArticleType,
   excludeSlug: string,
-  limit = 3
+  limit = 6,
+  pillar?: ArticlePillar
 ): Article[] {
-  return getArticlesByProduct(product, type)
-    .filter((a) => a.slug !== excludeSlug)
-    .slice(0, limit);
+  const pool = getArticlesByProduct(product).filter(
+    (a) => a.slug !== excludeSlug
+  );
+
+  const samePillarSameType: Article[] = [];
+  const samePillarCrossType: Article[] = [];
+  const sameTypeFallback: Article[] = [];
+
+  for (const a of pool) {
+    const matchesPillar = pillar && a.frontmatter.pillar === pillar;
+    if (matchesPillar && a.type === type) {
+      samePillarSameType.push(a);
+    } else if (matchesPillar && a.type !== type) {
+      samePillarCrossType.push(a);
+    } else if (a.type === type) {
+      sameTypeFallback.push(a);
+    }
+  }
+
+  const ranked = [
+    ...samePillarSameType,
+    ...samePillarCrossType,
+    ...sameTypeFallback,
+  ];
+  // Dedupe while preserving rank order
+  const seen = new Set<string>();
+  const unique: Article[] = [];
+  for (const a of ranked) {
+    if (seen.has(a.slug)) continue;
+    seen.add(a.slug);
+    unique.push(a);
+  }
+  return unique.slice(0, limit);
+}
+
+/**
+ * Homepage featured articles — picks top evergreen articles across all pillars.
+ * Used by the homepage hub section to seed internal links to unindexed long-tail
+ * pages. Excludes ephemeral slugs (weekly prices, seasonal) so Google's crawl
+ * follows these links to the evergreen content worth indexing.
+ */
+export function getHomepageFeaturedArticles(limit = 12): Article[] {
+  const evergreen = getAllPublishedArticles().filter(
+    (a) => !isEphemeralSlug(a.slug)
+  );
+
+  // Bucket by pillar, round-robin up to `limit` so all pillars get visibility.
+  const buckets = new Map<string, Article[]>();
+  for (const a of evergreen) {
+    const key = a.frontmatter.pillar ?? "misc";
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key)!.push(a);
+  }
+
+  const picked: Article[] = [];
+  let added = true;
+  while (picked.length < limit && added) {
+    added = false;
+    for (const bucket of buckets.values()) {
+      if (picked.length >= limit) break;
+      const next = bucket.shift();
+      if (next) {
+        picked.push(next);
+        added = true;
+      }
+    }
+  }
+  return picked;
 }
 
 /** generateStaticParams source — published articles only. */

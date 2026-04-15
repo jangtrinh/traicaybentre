@@ -267,13 +267,49 @@ const harvestEvents = [
   },
 ];
 
-/* Website schema */
+/* Website schema + SearchAction (enables sitelinks search box in SERP) */
 const websiteSchema = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
   name: "Trái Cây Bến Tre",
+  alternateName: ["Xoài Tứ Quý Bến Tre", "Vựa Xoài Thạnh Phú"],
   inLanguage: "vi",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/kien-thuc?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+/* Organization schema — backs publisher reference above (E-E-A-T signal) */
+const organizationSchema = {
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: BUSINESS_NAME,
+  url: SITE_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/icon-192.png`,
+    width: 192,
+    height: 192,
+  },
+  sameAs: [
+    "https://www.facebook.com/traicaybentre",
+    "https://www.tiktok.com/@traicaybentre",
+    "https://www.youtube.com/@traicaybentre",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+84-xxx-xxx-xxx",
+    contactType: "customer service",
+    areaServed: "VN",
+    availableLanguage: ["Vietnamese", "English"],
+  },
 };
 
 /* === Exports === */
@@ -284,6 +320,7 @@ export function getHomepageJsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       localBusiness,
+      organizationSchema,
       websiteSchema,
       definedTerm,
       productSchema,

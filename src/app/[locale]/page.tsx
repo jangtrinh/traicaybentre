@@ -9,6 +9,7 @@ import { DualCtaSection } from "@/components/dual-cta-section";
 import { TestimonialSection } from "@/components/testimonial-section";
 import { SocialVideoSection } from "@/components/social-video-section";
 import { TinTucSection } from "@/components/tin-tuc-section";
+import { HomepageKnowledgeHub } from "@/components/homepage-knowledge-hub";
 import { FaqSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -38,6 +39,7 @@ export default async function Home({
       <TestimonialSection />
       <SectionDivider from="brand" to="brand-cream" />
       <TinTucSection />
+      <HomepageKnowledgeHub />
       <FaqSection />
       <SectionDivider from="brand-cream" to="brand" />
       <ContactSection />

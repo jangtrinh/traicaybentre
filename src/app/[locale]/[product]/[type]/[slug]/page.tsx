@@ -108,7 +108,13 @@ export default async function ArticlePage({ params }: Props) {
   const article = getArticleByUrlPath(`/${product}/${type}/${slug}`);
   if (!article) notFound();
 
-  const related = getRelatedArticles(article.product, article.type, article.slug, 3);
+  const related = getRelatedArticles(
+    article.product,
+    article.type,
+    article.slug,
+    6,
+    article.frontmatter.pillar
+  );
   const fm = article.frontmatter;
   const canonical = `${SITE_URL}${article.urlPath}`;
   const hubHref = article.type === "kien-thuc" ? "/kien-thuc" : "/tin-tuc";

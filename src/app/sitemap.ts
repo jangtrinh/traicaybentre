@@ -13,6 +13,7 @@ import { getActiveProducts } from "@/lib/products";
 import { getAllPublishedArticles } from "@/lib/articles";
 import { KNOWLEDGE_ARTICLES } from "@/lib/knowledge-data";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { filterArticlesForSitemap } from "@/lib/sitemap-quality-filter";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -74,7 +75,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // New MDX articles (visible only when uxReviewed + publishedAt elapsed).
-  const mdxArticles: MetadataRoute.Sitemap = getAllPublishedArticles().map((a) => ({
+  // Crawl-budget filter: ephemeral slugs (weekly prices, seasonal, lunar) are
+  // excluded from sitemap to concentrate Google's crawl budget on evergreen
+  // content. Excluded pages remain live and are reachable via internal links.
+  // See src/lib/sitemap-quality-filter.ts for exclusion patterns.
+  const mdxArticles: MetadataRoute.Sitemap = filterArticlesForSitemap(
+    getAllPublishedArticles()
+  ).map((a) => ({
     ...localizedUrl(a.urlPath),
     lastModified: new Date(a.frontmatter.publishedAt),
     changeFrequency: a.type === "tin-tuc" ? ("weekly" as const) : ("monthly" as const),
