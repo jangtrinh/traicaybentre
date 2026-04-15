@@ -18,6 +18,7 @@ import {
   getProduct,
   isReservedPath,
 } from "@/lib/products";
+import { PRICE_DATA } from "@/lib/price-data";
 import {
   getBreadcrumbJsonLd,
   getProductJsonLd,
@@ -45,7 +46,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: product.seo.title,
     description: product.seo.description,
     keywords: product.seo.keywords,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: {
+        vi: `${SITE_URL}/${slug}`,
+        en: `${SITE_URL}/en/${slug}`,
+        ko: `${SITE_URL}/ko/${slug}`,
+        ja: `${SITE_URL}/ja/${slug}`,
+        "x-default": `${SITE_URL}/${slug}`,
+      },
+    },
     openGraph: {
       title: product.seo.ogTitle ?? product.seo.title,
       description: product.seo.ogDescription ?? product.seo.description,
@@ -73,6 +83,7 @@ export default async function ProductPage({ params }: Props) {
     description: product.seo.description,
     url,
     image: `${SITE_URL}${product.heroImage}`,
+    dateModified: PRICE_DATA.lastUpdated,
   });
 
   return (

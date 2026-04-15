@@ -354,6 +354,7 @@ export function getProductJsonLd(opts: {
   url: string;
   image: string;
   category?: string;
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -371,6 +372,32 @@ export function getProductJsonLd(opts: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#business`,
     },
+    ...(opts.dateModified && { dateModified: opts.dateModified }),
+  };
+}
+
+/** Pricing page JSON-LD — Product with Offer array + dateModified for freshness */
+export function getPricingPageJsonLd(opts: {
+  lastUpdated: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...productSchema,
+        dateModified: opts.lastUpdated,
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/bang-gia`,
+        url: `${SITE_URL}/bang-gia`,
+        name: "Bảng Giá Xoài Tứ Quý Bến Tre Hôm Nay",
+        dateModified: opts.lastUpdated,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#xoai-tu-quy` },
+      },
+      localBusiness,
+    ],
   };
 }
 

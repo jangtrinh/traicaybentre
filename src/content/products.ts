@@ -57,6 +57,8 @@ export const RESERVED_PATHS = [
   "images",
   "fonts",
   "public",
+  "bang-gia",
+  "dat-hang",
   "en",
   "ko",
   "ja",

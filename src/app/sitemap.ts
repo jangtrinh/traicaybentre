@@ -45,6 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { ...localizedUrl("/giao-hang/ha-noi"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { ...localizedUrl("/giao-hang/tp-hcm"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { ...localizedUrl("/giao-hang/da-nang"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { ...localizedUrl("/bang-gia"), lastModified: now, changeFrequency: "daily", priority: 0.9 },
+    { ...localizedUrl("/dat-hang"), lastModified: now, changeFrequency: "weekly", priority: 0.85 },
   ];
 
   // Active product landing pages (from registry).

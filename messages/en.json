@@ -1040,5 +1040,83 @@
         "badge": "Best Value"
       }
     }
+  },
+  "pricingPage": {
+    "hero": {
+      "badge": "Updated pricing",
+      "title": "Ben Tre Fruit Prices Today",
+      "updated": "Updated:",
+      "desc": "Prices direct from Thanh Phu farm, updated every morning. Call 0932 585 533 for exact pricing."
+    },
+    "xoaiTuQuy": {
+      "title": "Tu Quy Mango — Thanh Phu",
+      "subtitle": "GI #00124 — 3 grades by size and appearance"
+    },
+    "weightLabel": "Weight:",
+    "ctaOrder": "Order via Zalo",
+    "hoangKim": {
+      "title": "Hoang Kim Mango — Thanh Phu",
+      "desc": "Premium Tu Quy variant with golden skin. Ultra-sweet, fiberless — rare, available only when trees bear fruit."
+    },
+    "duaXiem": {
+      "badge": "Year-round",
+      "title": "Ben Tre Young Coconut",
+      "priceNote": "Wholesale 8–10k, retail 15–18k/fruit",
+      "desc": "Pre-husked coconut from Thanh Phu farm. Sweet water, beautiful packaging, cold-shipped nationwide."
+    },
+    "viewDetail": "View details",
+    "trust": {
+      "cdđl": "GI #00124",
+      "cdđlDesc": "Geographical Indication certified by Vietnam IP Office 2022 — verified Thanh Phu origin",
+      "shipping": "Cold-shipped nationwide",
+      "shippingDesc": "HCMC 24h, Hanoi 48h, Da Nang 36h. Under 2% damage rate over 3 years",
+      "contact": "Direct from the farm",
+      "contactDesc": "Mr. Phuc available from 4AM. Zalo or call 0932 585 533"
+    },
+    "cta": {
+      "title": "Order today",
+      "desc": "Picked morning — shipped afternoon — arrives next morning. COD or bank transfer.",
+      "zalo": "Order via Zalo"
+    }
+  },
+  "orderPage": {
+    "hero": {
+      "badge": "Order online",
+      "title": "Order Ben Tre Fruits Online",
+      "desc": "Direct from Thanh Phu farm — no middleman. Cold-shipped nationwide."
+    },
+    "products": {
+      "title": "Choose your product"
+    },
+    "ctaZalo": "Order via Zalo",
+    "ctaCall": "Call now",
+    "viewPrice": "View pricing",
+    "shipping": {
+      "title": "Nationwide delivery",
+      "desc": "Carefully packed, cold-shipped — under 2% damage rate",
+      "viewDetail": "View details"
+    },
+    "howTo": {
+      "title": "How to order",
+      "steps": [
+        { "step": "1", "title": "Choose product", "desc": "Select fruit type and grade" },
+        { "step": "2", "title": "Message or call", "desc": "Send Zalo message or call 0932 585 533" },
+        { "step": "3", "title": "Receive & pay", "desc": "COD or bank transfer. Delivery within 24–48h" }
+      ]
+    },
+    "trust": {
+      "title": "Why Thanh Phu Farm?",
+      "items": [
+        { "title": "Direct from garden", "desc": "Picked morning, shipped afternoon — no warehouse" },
+        { "title": "GI #00124", "desc": "Geographical Indication certified, IP Office 2022" },
+        { "title": "3 years shipping", "desc": "Under 2% damage, foam mesh + padded carton" },
+        { "title": "Farm price, no middleman", "desc": "Prices updated every morning, wholesale & retail" }
+      ]
+    },
+    "cta": {
+      "title": "Order now",
+      "desc": "Zalo or call — Mr. Phuc available from 4AM",
+      "zalo": "Order via Zalo"
+    }
   }
 }

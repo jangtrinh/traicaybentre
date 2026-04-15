@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "features": [
+    {
+      "path": "features/seo-keyword-ranking/_index.md",
+      "name": "SEO Keyword Ranking Improvement",
+      "importance": 75,
+      "tokenEstimate": 450,
+      "status": "shipped",
+      "date": "2026-04-15"
+    }
+  ]
+}

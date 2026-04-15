@@ -1040,5 +1040,83 @@
         "badge": "Giá tốt"
       }
     }
+  },
+  "pricingPage": {
+    "hero": {
+      "badge": "Bảng giá cập nhật",
+      "title": "Giá Trái Cây Bến Tre Hôm Nay",
+      "updated": "Cập nhật:",
+      "desc": "Giá trực tiếp từ vựa Thạnh Phú, cập nhật mỗi sáng. Gọi 0932 585 533 để có giá chính xác nhất."
+    },
+    "xoaiTuQuy": {
+      "title": "Xoài Tứ Quý Thạnh Phú",
+      "subtitle": "CDĐL #00124 — 3 phân hạng theo size và ngoại hình"
+    },
+    "weightLabel": "Trọng lượng:",
+    "ctaOrder": "Đặt qua Zalo",
+    "hoangKim": {
+      "title": "Xoài Hoàng Kim Thạnh Phú",
+      "desc": "Biến thể premium Tứ Quý da vàng kim. Ngọt lịm không xơ, hàng hiếm — chỉ có khi vườn ra trái."
+    },
+    "duaXiem": {
+      "badge": "Quanh năm",
+      "title": "Dừa Xiêm Bến Tre",
+      "priceNote": "Sỉ 8–10k, lẻ 15–18k/trái",
+      "desc": "Dừa sọ gọt sẵn từ vựa Thạnh Phú. Nước ngọt thanh, đóng gói đẹp, ship lạnh toàn quốc."
+    },
+    "viewDetail": "Xem chi tiết",
+    "trust": {
+      "cdđl": "CDĐL #00124",
+      "cdđlDesc": "Chỉ dẫn địa lý do Cục SHTT cấp 2022 — xác nhận nguồn gốc Thạnh Phú chính hãng",
+      "shipping": "Giao lạnh toàn quốc",
+      "shippingDesc": "TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Tỷ lệ dập dưới 2% sau 3 năm giao hàng",
+      "contact": "Gọi vựa trực tiếp",
+      "contactDesc": "A Phúc nghe máy từ 4h sáng. Zalo hoặc gọi 0932 585 533"
+    },
+    "cta": {
+      "title": "Đặt hàng ngay hôm nay",
+      "desc": "Sáng hái — chiều lên xe — sáng mai tới. COD hoặc chuyển khoản.",
+      "zalo": "Nhắn Zalo đặt hàng"
+    }
+  },
+  "orderPage": {
+    "hero": {
+      "badge": "Đặt hàng online",
+      "title": "Đặt Trái Cây Bến Tre Online",
+      "desc": "Trực tiếp từ vựa Thạnh Phú — không qua trung gian. Giao lạnh toàn quốc."
+    },
+    "products": {
+      "title": "Chọn sản phẩm"
+    },
+    "ctaZalo": "Đặt qua Zalo",
+    "ctaCall": "Gọi ngay",
+    "viewPrice": "Xem bảng giá",
+    "shipping": {
+      "title": "Giao hàng toàn quốc",
+      "desc": "Đóng gói cẩn thận, ship lạnh — tỷ lệ dập dưới 2%",
+      "viewDetail": "Xem chi tiết"
+    },
+    "howTo": {
+      "title": "Cách đặt hàng",
+      "steps": [
+        { "step": "1", "title": "Chọn sản phẩm", "desc": "Chọn loại trái cây và phân hạng bạn muốn" },
+        { "step": "2", "title": "Nhắn Zalo hoặc gọi", "desc": "Gửi tin nhắn qua Zalo hoặc gọi 0932 585 533" },
+        { "step": "3", "title": "Nhận hàng & thanh toán", "desc": "COD khi nhận hoặc chuyển khoản trước. Hàng giao trong 24–48h" }
+      ]
+    },
+    "trust": {
+      "title": "Tại sao chọn Vựa Thạnh Phú?",
+      "items": [
+        { "title": "Trực tiếp từ vườn", "desc": "Sáng hái, chiều lên xe lạnh — không qua kho trung chuyển" },
+        { "title": "CDĐL #00124", "desc": "Chỉ dẫn địa lý chính hãng, Cục SHTT cấp 2022" },
+        { "title": "3 năm giao hàng xa", "desc": "Tỷ lệ dập dưới 2%, đóng gói foam + thùng carton lót đệm" },
+        { "title": "Giá vựa, không trung gian", "desc": "Giá cập nhật mỗi sáng, sỉ lẻ đều phục vụ" }
+      ]
+    },
+    "cta": {
+      "title": "Đặt hàng ngay",
+      "desc": "Zalo hoặc gọi — A Phúc nghe máy từ 4h sáng",
+      "zalo": "Nhắn Zalo đặt hàng"
+    }
   }
 }
