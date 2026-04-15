@@ -7,10 +7,17 @@ interface SocialEmbed {
   platform: "tiktok" | "facebook" | "instagram";
   type: "video" | "post";
   embedUrl: string;
-  titleKey: "embedVideo" | "embedFarmVideo" | "embedReview" | "embedPost";
+  titleKey: "embedVideo" | "embedFarmVideo" | "embedReview" | "embedPost" | "embedTiktok";
 }
 
 const SOCIAL_EMBEDS: SocialEmbed[] = [
+  {
+    id: "tiktok-video-1",
+    platform: "tiktok",
+    type: "video",
+    embedUrl: "https://www.tiktok.com/embed/v2/7628568190871702792",
+    titleKey: "embedTiktok" as const,
+  },
   {
     id: "facebook-video-1",
     platform: "facebook",
@@ -153,6 +160,7 @@ export async function SocialVideoSection() {
         <FadeIn delay={0.3}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             {[
+              { brand: "tiktok" as const, url: "https://www.tiktok.com/@jangtrinh", label: "TikTok" },
               { brand: "facebook" as const, url: "https://www.facebook.com/profile.php?id=61573415880985", label: "Facebook" },
             ].map((social) => (
               <a
