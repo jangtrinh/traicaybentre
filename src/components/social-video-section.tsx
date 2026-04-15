@@ -19,6 +19,22 @@ interface SocialEmbed {
 
 const SOCIAL_EMBEDS: SocialEmbed[] = [
   {
+    id: "facebook-reel-new-1",
+    platform: "facebook",
+    type: "video",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1639347603983813&show_text=false&width=350",
+    titleKey: "embedVideo" as const,
+  },
+  {
+    id: "facebook-reel-new-2",
+    platform: "facebook",
+    type: "video",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F942833732038725&show_text=false&width=350",
+    titleKey: "embedVideo" as const,
+  },
+  {
     id: "facebook-video-1",
     platform: "facebook",
     type: "video",
