@@ -67,6 +67,14 @@ const SOCIAL_EMBEDS: SocialEmbed[] = [
     titleKey: "embedReview" as const,
   },
   {
+    id: "facebook-post-hoaquahuyenlongbien",
+    platform: "facebook",
+    type: "post",
+    embedUrl:
+      "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhoaquahuyenlongbien%2Fposts%2Fpfbid032k7Xmc8yKnvLkpncHherrvnyNWTaDULSFbxuQ2PVyTqbYDFyKmC3gk5CsdLB7td2l&show_text=true&width=500",
+    titleKey: "embedReview" as const,
+  },
+  {
     id: "facebook-post-1",
     platform: "facebook",
     type: "post",
