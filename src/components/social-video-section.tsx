@@ -151,18 +151,7 @@ export async function SocialVideoSection() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {TIKTOK_VIDEOS.map((videoId, i) => (
             <FadeIn key={videoId} delay={i * 0.1}>
-              <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
-                <TikTokEmbed videoId={videoId} username="jangtrinh" />
-                <div className="flex items-center gap-3 px-4 py-3">
-                  <BrandIcon brand="tiktok" size={24} />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold text-text">
-                      {t("embedTiktok")}
-                    </p>
-                    <p className="text-xs text-text-muted">TikTok</p>
-                  </div>
-                </div>
-              </div>
+              <TikTokEmbed videoId={videoId} username="jangtrinh" />
             </FadeIn>
           ))}
           {SOCIAL_EMBEDS.map((embed, i) => (
