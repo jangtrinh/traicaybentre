@@ -2,7 +2,7 @@
 
 const SITE_URL = "https://www.traicaybentre.com";
 const PHONE = "+84932585533";
-const BUSINESS_NAME = "Trái Cây Bến Tre — Vựa Đặc Sản Thạnh Phú";
+const BUSINESS_NAME = "Vựa Trái Cây Bến Tre - Phúc Giang";
 
 /* Shared business entity — reused across schemas */
 const localBusiness = {
@@ -30,7 +30,8 @@ const localBusiness = {
   openingHours: "Mo-Su 04:00-18:00",
   areaServed: { "@type": "Country", name: "VN" },
   sameAs: [
-    "https://www.facebook.com/profile.php?id=100089485120129",
+    "https://www.facebook.com/profile.php?id=61573415880985",
+    "https://www.tiktok.com/@jangtrinh",
     "https://xoaituquythanhphu.com",
   ],
 };
@@ -299,13 +300,12 @@ const organizationSchema = {
     height: 192,
   },
   sameAs: [
-    "https://www.facebook.com/traicaybentre",
-    "https://www.tiktok.com/@traicaybentre",
-    "https://www.youtube.com/@traicaybentre",
+    "https://www.facebook.com/profile.php?id=61573415880985",
+    "https://www.tiktok.com/@jangtrinh",
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+84-xxx-xxx-xxx",
+    telephone: PHONE,
     contactType: "customer service",
     areaServed: "VN",
     availableLanguage: ["Vietnamese", "English"],
