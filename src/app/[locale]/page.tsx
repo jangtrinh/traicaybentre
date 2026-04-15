@@ -27,6 +27,7 @@ export default async function Home({
       <HeroSection />
       <SectionDivider from="brand" to="brand-cream" />
       <ProductSection />
+      <SocialVideoSection />
       <SectionDivider from="brand-cream" to="brand" />
       <ProcessSection />
       <SectionDivider from="brand" to="brand-cream" />
@@ -36,7 +37,6 @@ export default async function Home({
       <DualCtaSection />
       <TestimonialSection />
       <SectionDivider from="brand" to="brand-cream" />
-      <SocialVideoSection />
       <TinTucSection />
       <FaqSection />
       <SectionDivider from="brand-cream" to="brand" />
