@@ -208,6 +208,24 @@ export default async function NguonGocPage({
             </FadeIn>
           </div>
 
+          {/* FB reel video */}
+          <FadeIn delay={0.2}>
+            <div className="mt-12 flex justify-center">
+              <iframe
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F957735149984398%2F&show_text=false&width=267&t=0"
+                width={267}
+                height={476}
+                style={{ border: "none", overflow: "hidden" }}
+                scrolling="no"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                loading="lazy"
+                title="Video vườn xoài tứ quý Bến Tre"
+                className="rounded-2xl shadow-md"
+              />
+            </div>
+          </FadeIn>
+
           {/* Photo carousel at bottom */}
           <FadeIn>
             <ImageCarousel images={VUON_IMAGES} className="mt-16" />
