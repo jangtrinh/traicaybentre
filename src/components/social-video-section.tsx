@@ -1,23 +1,23 @@
 import { BrandIcon } from "./brand-icon";
 import { FadeIn } from "./fade-in";
+import { TikTokEmbed } from "./tiktok-embed";
 import { getTranslations } from "next-intl/server";
+
+const TIKTOK_VIDEOS = [
+  "7628568190871702792",
+  "7628919296978144520",
+  "7628768268169284871",
+];
 
 interface SocialEmbed {
   id: string;
-  platform: "tiktok" | "facebook" | "instagram";
+  platform: "facebook" | "instagram";
   type: "video" | "post";
   embedUrl: string;
-  titleKey: "embedVideo" | "embedFarmVideo" | "embedReview" | "embedPost" | "embedTiktok";
+  titleKey: "embedVideo" | "embedFarmVideo" | "embedReview" | "embedPost";
 }
 
 const SOCIAL_EMBEDS: SocialEmbed[] = [
-  {
-    id: "tiktok-video-1",
-    platform: "tiktok",
-    type: "video",
-    embedUrl: "https://www.tiktok.com/embed/v2/7628568190871702792",
-    titleKey: "embedTiktok" as const,
-  },
   {
     id: "facebook-video-1",
     platform: "facebook",
@@ -149,8 +149,24 @@ export async function SocialVideoSection() {
         </FadeIn>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {TIKTOK_VIDEOS.map((videoId, i) => (
+            <FadeIn key={videoId} delay={i * 0.1}>
+              <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
+                <TikTokEmbed videoId={videoId} username="jangtrinh" />
+                <div className="flex items-center gap-3 px-4 py-3">
+                  <BrandIcon brand="tiktok" size={24} />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-semibold text-text">
+                      {t("embedTiktok")}
+                    </p>
+                    <p className="text-xs text-text-muted">TikTok</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
           {SOCIAL_EMBEDS.map((embed, i) => (
-            <FadeIn key={embed.id} delay={i * 0.1}>
+            <FadeIn key={embed.id} delay={(TIKTOK_VIDEOS.length + i) * 0.1}>
               <EmbedCard embed={embed} title={t(embed.titleKey)} />
             </FadeIn>
           ))}
