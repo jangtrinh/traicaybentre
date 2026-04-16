@@ -2,9 +2,17 @@
 .claude/hooks/.logs/
 .brv/
 plans/
-*.pdf
-*.png
-*.jpg
+docs/
 Khaitruong.png
 Banghieu.png
 Logo.png
+Logo.pdf
+VIP.pdf
+VIP.png
+Loai 1.pdf
+Loai 1.png
+Loai 2.pdf
+Loai 2.png
+*.md
+!CLAUDE.md
+!README.md
