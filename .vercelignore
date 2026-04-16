@@ -1,18 +1,22 @@
+# Worktrees (1.2GB) — causes CLI deploy "Deploying outputs" failure
 .claude/worktrees/
 .claude/hooks/.logs/
 .brv/
 plans/
 docs/
-Khaitruong.png
-Banghieu.png
-Logo.png
-Logo.pdf
-VIP.pdf
-VIP.png
-Loai 1.pdf
-Loai 1.png
-Loai 2.pdf
-Loai 2.png
-*.md
-!CLAUDE.md
-!README.md
+
+# Large root-level branding assets (not used at runtime)
+/Khaitruong.png
+/Banghieu.png
+/Logo.png
+/Logo.pdf
+/VIP.pdf
+/VIP.png
+/Loai 1.pdf
+/Loai 1.png
+/Loai 2.pdf
+/Loai 2.png
+/Xoai-*.jpg
+/landing-*.jsx
+/chien-luoc-*.md
+/security-audit-*.md
