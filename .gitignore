@@ -31,3 +31,4 @@ npm-debug.log*
 # Lock
 bun.lock
 .vercel
+.claude/worktrees/
