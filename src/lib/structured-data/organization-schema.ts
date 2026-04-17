@@ -1,11 +1,9 @@
-/* === Centralized JSON-LD structured data builders for SEO + AEO === */
+/* Organization, LocalBusiness, WebSite, Product, FAQ, Event schemas — homepage graph */
 
-const SITE_URL = "https://www.traicaybentre.com";
-const PHONE = "+84932585533";
-const BUSINESS_NAME = "Vựa Trái Cây Bến Tre - Phúc Giang";
+import { SITE_URL, PHONE, BUSINESS_NAME } from "./constants";
 
 /* Shared business entity — reused across schemas */
-const localBusiness = {
+export const localBusiness = {
   "@type": "LocalBusiness",
   "@id": `${SITE_URL}/#business`,
   name: BUSINESS_NAME,
@@ -38,7 +36,7 @@ const localBusiness = {
 };
 
 /* DefinedTerm — canonical definition for AI engines */
-const definedTerm = {
+export const definedTerm = {
   "@type": "DefinedTerm",
   "@id": `${SITE_URL}/#xoai-tu-quy-definition`,
   name: "Xoài Tứ Quý",
@@ -52,7 +50,7 @@ const definedTerm = {
 };
 
 /* Product schema with CDĐL certification */
-const productSchema = {
+export const productSchema = {
   "@type": "Product",
   "@id": `${SITE_URL}/#xoai-tu-quy`,
   name: "Xoài Tứ Quý Bến Tre",
@@ -118,7 +116,7 @@ const productSchema = {
 };
 
 /* FAQ with Speakable + author attribution */
-const faqSchema = {
+export const faqSchema = {
   "@type": "FAQPage",
   "@id": `${SITE_URL}/#faq`,
   speakable: {
@@ -220,7 +218,7 @@ const faqSchema = {
 };
 
 /* Harvest season events */
-const harvestEvents = [
+export const harvestEvents = [
   {
     "@type": "Event",
     "@id": `${SITE_URL}/#harvest-vu-1`,
@@ -269,8 +267,8 @@ const harvestEvents = [
   },
 ];
 
-/* Website schema + SearchAction (enables sitelinks search box in SERP) */
-const websiteSchema = {
+/* Website schema + SearchAction */
+export const websiteSchema = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
@@ -288,8 +286,8 @@ const websiteSchema = {
   },
 };
 
-/* Organization schema — backs publisher reference above (E-E-A-T signal) */
-const organizationSchema = {
+/* Organization schema with E-E-A-T signals: founder + contactPoint */
+export const organizationSchema = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: BUSINESS_NAME,
@@ -300,6 +298,12 @@ const organizationSchema = {
     width: 192,
     height: 192,
   },
+  founder: {
+    "@type": "Person",
+    name: "A Phúc",
+    jobTitle: "Chủ vựa & điều phối HTX Thạnh Phong",
+    sameAs: ["https://www.facebook.com/traicaybentre"],
+  },
   sameAs: [
     "https://www.facebook.com/profile.php?id=61573415880985",
     "https://www.tiktok.com/@jangtrinh",
@@ -309,134 +313,6 @@ const organizationSchema = {
     telephone: PHONE,
     contactType: "customer service",
     areaServed: "VN",
-    availableLanguage: ["Vietnamese", "English"],
+    availableLanguage: ["vi", "en"],
   },
 };
-
-/* === Exports === */
-
-/** Full JSON-LD graph for homepage (layout.tsx) */
-export function getHomepageJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      localBusiness,
-      organizationSchema,
-      websiteSchema,
-      definedTerm,
-      productSchema,
-      faqSchema,
-      ...harvestEvents,
-    ],
-  };
-}
-
-/** Breadcrumb builder for subpages */
-export function getBreadcrumbJsonLd(
-  items: { name: string; url: string }[]
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
-}
-
-/** Article schema for knowledge/blog pages */
-export function getArticleJsonLd(opts: {
-  title: string;
-  description: string;
-  url: string;
-  datePublished: string;
-  dateModified: string;
-  image?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: opts.title,
-    description: opts.description,
-    url: opts.url,
-    datePublished: opts.datePublished,
-    dateModified: opts.dateModified,
-    image: opts.image || `${SITE_URL}/images/xoai-real-2.jpg`,
-    author: {
-      "@type": "Organization",
-      name: "Trái Cây Bến Tre",
-      url: SITE_URL,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Trái Cây Bến Tre",
-      url: SITE_URL,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/images/logo.png` },
-    },
-    inLanguage: "vi",
-    mainEntityOfPage: opts.url,
-  };
-}
-
-/** Product schema for [product] landing pages.
- *  Minimal Schema.org Product — name, description, image, brand, category.
- *  NO nested Offer: price dao động si/le, tránh rich result penalty.
- *  Add Offer sau khi có stable price API. (red-team F5)
- */
-export function getProductJsonLd(opts: {
-  name: string;
-  description: string;
-  url: string;
-  image: string;
-  category?: string;
-  dateModified?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: opts.name,
-    description: opts.description,
-    image: opts.image,
-    url: opts.url,
-    category: opts.category ?? "Trái cây đặc sản Bến Tre",
-    brand: {
-      "@type": "Brand",
-      name: BUSINESS_NAME,
-    },
-    manufacturer: {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#business`,
-    },
-    ...(opts.dateModified && { dateModified: opts.dateModified }),
-  };
-}
-
-/** Pricing page JSON-LD — Product with Offer array + dateModified for freshness */
-export function getPricingPageJsonLd(opts: {
-  lastUpdated: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        ...productSchema,
-        dateModified: opts.lastUpdated,
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}/bang-gia`,
-        url: `${SITE_URL}/bang-gia`,
-        name: "Bảng Giá Xoài Tứ Quý Bến Tre Hôm Nay",
-        dateModified: opts.lastUpdated,
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${SITE_URL}/#xoai-tu-quy` },
-      },
-      localBusiness,
-    ],
-  };
-}
-
-export { SITE_URL };

@@ -117,10 +117,19 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen">
+      <body>
+        {/* Skip-to-content link — WCAG 2.4.1 Bypass Blocks */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-mango focus:text-white focus:px-3 focus:py-2 focus:rounded focus:shadow-lg focus:outline-none"
+        >
+          Bỏ qua đến nội dung chính
+        </a>
         <GoogleTagManagerNoscript />
         <NextIntlClientProvider>
-          {children}
+          <main id="main" className="min-h-screen">
+            {children}
+          </main>
           <FomoToastNotification />
         </NextIntlClientProvider>
         <Analytics />

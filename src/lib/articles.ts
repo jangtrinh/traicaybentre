@@ -23,6 +23,7 @@ import { join, basename } from "node:path";
 import matter from "gray-matter";
 import { getProductSlugs } from "@/lib/products";
 import { isEphemeralSlug } from "@/lib/sitemap-quality-filter";
+import type { AuthorKey } from "@/content/authors";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Types
@@ -68,12 +69,35 @@ export interface ArticleFrontmatter {
   secondaryKeywords?: string[];
   ogImage?: string;
   uxPassModel?: string;
+  /** Slug from src/content/authors.ts — falls back to default author if unknown */
   author?: string;
+  /** Key from src/content/authors.ts AuthorKey union for typed author lookup */
+  authorKey?: AuthorKey;
+  /** Optional ISO date — falls back to publishedAt for dateModified */
+  updatedAt?: string;
   pillar?: ArticlePillar;
   slot?: ArticleSlot;
   faq?: { q: string; a: string }[];
   geoCity?: string;
   geoRegion?: string;
+  /** Set true to emit Recipe JSON-LD on this article */
+  hasRecipe?: boolean;
+  /** Recipe structured data — required when hasRecipe === true */
+  recipe?: {
+    name?: string;
+    description?: string;
+    image?: string;
+    cookTime?: string;
+    prepTime?: string;
+    totalTime?: string;
+    recipeYield?: string;
+    recipeCuisine?: string;
+    recipeCategory?: string;
+    recipeIngredient: string[];
+    recipeInstructions: { name?: string; text: string; image?: string }[];
+    nutrition?: { calories?: string };
+    keywords?: string;
+  };
 }
 
 export interface Article {
@@ -120,6 +144,19 @@ function parseArticleFile(absPath: string, product: string, type: ArticleType): 
   for (const key of required) {
     if (fm[key] === undefined || fm[key] === null || fm[key] === "") {
       throw new Error(`[articles] ${absPath} missing required frontmatter: ${key}`);
+    }
+  }
+
+  // Recipe validation — fail loudly at build time if recipe block is malformed
+  if (fm.hasRecipe === true) {
+    if (!fm.recipe) {
+      throw new Error(`[articles] ${absPath} hasRecipe=true but missing recipe block`);
+    }
+    if (!Array.isArray(fm.recipe.recipeIngredient) || fm.recipe.recipeIngredient.length < 2) {
+      throw new Error(`[articles] ${absPath} recipe.recipeIngredient requires ≥2 items`);
+    }
+    if (!Array.isArray(fm.recipe.recipeInstructions) || fm.recipe.recipeInstructions.length < 2) {
+      throw new Error(`[articles] ${absPath} recipe.recipeInstructions requires ≥2 steps`);
     }
   }
 

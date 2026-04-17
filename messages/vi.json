@@ -879,6 +879,26 @@
         {
           "q": "Lấy sỉ TP.HCM liên hệ ai?",
           "a": "Liên hệ trực tiếp A Phúc — 0932 585 533 (gọi hoặc Zalo). Báo số lượng, điểm giao, loại xoài cần — vựa báo giá sỉ và lịch giao trong 15 phút."
+        },
+        {
+          "q": "Phí ship TP.HCM bao nhiêu?",
+          "a": "Phí xe lạnh tuyến Bến Tre – TP.HCM khoảng 15.000–25.000đ/thùng 20kg — rẻ nhất trong 3 thành phố lớn vì gần vựa nhất. Gọi 0932 585 533 để xác nhận."
+        },
+        {
+          "q": "Xoài giao TP.HCM có bị dập không?",
+          "a": "Không. Dù đường gần, vựa vẫn bọc lưới xốp từng trái, đóng thùng carton hoặc xốp cẩn thận. Tỷ lệ hàng hư dưới 2%."
+        },
+        {
+          "q": "Có bảo quản lạnh khi giao TP.HCM không?",
+          "a": "Có. Xe chuyên tuyến có khoang lạnh duy trì 8–12°C. Xoài tươi đến tay giống như lấy thẳng từ vựa."
+        },
+        {
+          "q": "Thanh toán TP.HCM thế nào?",
+          "a": "COD khi nhận hàng hoặc chuyển khoản trước. Xuất hóa đơn VAT đầy đủ cho nhà hàng, siêu thị, doanh nghiệp."
+        },
+        {
+          "q": "Đặt tối thiểu bao nhiêu giao TP.HCM?",
+          "a": "Tối thiểu 1 thùng 20kg. Khách quen từ 3 đơn có thể lấy nợ. Nhóm chung thùng cũng được — miễn đủ 20kg."
         }
       ]
     },
@@ -941,6 +961,22 @@
         {
           "q": "Phí ship Hà Nội bao nhiêu?",
           "a": "Phí ship xe lạnh tuyến Bến Tre – Hà Nội khoảng 35.000–50.000đ/thùng 20kg (báo chính xác khi đặt hàng). Gửi bay cao hơn, phụ thuộc chuyến. Gọi 0932 585 533 để báo giá trước."
+        },
+        {
+          "q": "Thanh toán và nhận hàng ở Hà Nội thế nào?",
+          "a": "Thanh toán COD khi nhận hàng hoặc chuyển khoản trước. Giao tận địa chỉ hoặc điểm giao thỏa thuận. Xuất hóa đơn VAT cho nhà hàng, doanh nghiệp."
+        },
+        {
+          "q": "Đặt tối thiểu bao nhiêu khi giao Hà Nội?",
+          "a": "Tối thiểu 1 thùng 20kg để đủ chi phí xe lạnh. Đặt nhiều hơn — phí ship trung bình/kg giảm xuống. Nhóm 3–5 người chung thùng cũng được."
+        },
+        {
+          "q": "Giao cuối tuần hoặc lễ được không?",
+          "a": "Được. Vựa hoạt động Thứ 2 – Chủ nhật, kể cả ngày lễ (trừ Tết nguyên đán). Đặt trước 1 ngày để vựa sắp lịch xe."
+        },
+        {
+          "q": "Theo dõi đơn hàng giao Hà Nội qua đâu?",
+          "a": "Nhắn Zalo 0932 585 533 — vựa gửi cập nhật vị trí xe và ảnh hàng đóng gói trước khi chạy. Khi xe đến Hà Nội, tài xế gọi trực tiếp báo giờ giao."
         }
       ]
     },
@@ -992,6 +1028,30 @@
         {
           "q": "Có giao các tỉnh miền Trung khác không?",
           "a": "Có. Vựa giao đến Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế và Quảng Trị theo tuyến xe lạnh cố định. Liên hệ 0932 585 533 để xác nhận lịch giao cho địa điểm cụ thể."
+        },
+        {
+          "q": "Phí ship Đà Nẵng bao nhiêu?",
+          "a": "Khoảng 25.000–40.000đ/thùng 20kg tuyến Bến Tre – Đà Nẵng. Gọi 0932 585 533 để báo giá chính xác theo số lượng và thời điểm."
+        },
+        {
+          "q": "Xoài có được bảo quản lạnh khi ship Đà Nẵng không?",
+          "a": "Có. Xe lạnh duy trì khoang hàng 8–12°C suốt 36 giờ. Xoài đến Đà Nẵng vẫn tươi như lúc đóng thùng."
+        },
+        {
+          "q": "Nhà hàng Đà Nẵng đặt sỉ thế nào?",
+          "a": "Gọi hoặc nhắn Zalo 0932 585 533 — A Phúc báo giá sỉ theo khối lượng, lịch giao cố định hàng tuần. Xuất hóa đơn VAT đầy đủ."
+        },
+        {
+          "q": "Đặt tối thiểu bao nhiêu giao Đà Nẵng?",
+          "a": "Tối thiểu 1 thùng 20kg để đủ chi phí tuyến xa. Đặt nhiều thùng — phí ship trung bình/kg giảm đáng kể."
+        },
+        {
+          "q": "Có đổi trả nếu hàng bị hư không?",
+          "a": "Có. Hàng hư dưới 2% là chỉ tiêu vựa giữ. Nếu trái dập, chụp ảnh gửi Zalo 0932 585 533 — đơn sau bồi lại, không hỏi nhiều."
+        },
+        {
+          "q": "Thanh toán và nhận hàng Đà Nẵng thế nào?",
+          "a": "COD khi nhận hàng hoặc chuyển khoản trước. Giao tận địa chỉ nhà hàng, khách sạn, resort hoặc điểm thỏa thuận."
         }
       ]
     },
