@@ -160,7 +160,7 @@ export function ContactSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder={t("formNamePlaceholder")}
-                    className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
+                    className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus-visible:border-mango focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                   />
                 </div>
 
@@ -174,7 +174,7 @@ export function ContactSection() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder={t("formPhonePlaceholder")}
-                    className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
+                    className="w-full border-b-2 border-text/15 bg-transparent py-3 text-base text-text outline-none placeholder:text-text/25 focus-visible:border-mango focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                   />
                 </div>
 
@@ -215,7 +215,7 @@ export function ContactSection() {
                     onChange={(e) => setNote(e.target.value)}
                     placeholder={t("formNotePlaceholder")}
                     rows={3}
-                    className="w-full resize-none border-b-2 border-text/15 bg-transparent py-3 font-[inherit] text-base text-text outline-none placeholder:text-text/25 focus:border-text transition-colors"
+                    className="w-full resize-none border-b-2 border-text/15 bg-transparent py-3 font-[inherit] text-base text-text outline-none placeholder:text-text/25 focus-visible:border-mango focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                   />
                 </div>
 

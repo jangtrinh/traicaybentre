@@ -90,7 +90,7 @@ export default async function NguonGocPage({
   return (
     <>
     <Header />
-    <main>
+    <div>
       {/* Hero — brand yellow like home page */}
       <section className="relative flex min-h-[60vh] flex-col items-center justify-center bg-brand px-5 pt-28 pb-24">
         <div className="relative z-10 mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2">
@@ -456,7 +456,7 @@ export default async function NguonGocPage({
         </div>
       </section>
 
-    </main>
+    </div>
     <Footer />
     </>
   );

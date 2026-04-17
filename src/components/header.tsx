@@ -177,7 +177,7 @@ export function Header() {
           <button
             ref={hamburgerRef}
             onClick={() => setMenuOpen((v) => !v)}
-            className="relative flex h-9 w-9 items-center justify-center rounded-full bg-black"
+            className="relative flex h-11 w-11 items-center justify-center rounded-full bg-black"
             aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
