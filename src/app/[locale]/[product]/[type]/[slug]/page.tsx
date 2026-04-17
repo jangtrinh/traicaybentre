@@ -31,6 +31,8 @@ import {
 import {
   getArticleJsonLd,
   getBreadcrumbJsonLd,
+  getRecipeJsonLd,
+  truncateDescription,
   SITE_URL,
 } from "@/lib/structured-data";
 
@@ -78,14 +80,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fm = article.frontmatter;
   const canonical = `${SITE_URL}${article.urlPath}`;
+  const desc = truncateDescription(fm.metaDescription, 160);
   return {
     title: fm.title,
-    description: fm.metaDescription,
+    description: desc,
     keywords: [fm.primaryKeyword, ...(fm.secondaryKeywords ?? [])].join(", "),
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      languages: { vi: canonical, "x-default": canonical },
+    },
     openGraph: {
       title: fm.title,
-      description: fm.metaDescription,
+      description: desc,
       url: canonical,
       type: "article",
       publishedTime: fm.publishedAt,
@@ -94,7 +100,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: fm.title,
-      description: fm.metaDescription,
+      description: desc,
       images: fm.ogImage ? [fm.ogImage] : undefined,
     },
   };
@@ -127,11 +133,15 @@ export default async function ArticlePage({ params }: Props) {
 
   const articleJsonLd = getArticleJsonLd({
     title: fm.title,
-    description: fm.metaDescription,
+    description: truncateDescription(fm.metaDescription, 160),
     url: canonical,
     datePublished: fm.publishedAt,
-    dateModified: fm.publishedAt,
+    dateModified: fm.updatedAt ?? fm.publishedAt,
     image: fm.ogImage ? `${SITE_URL}${fm.ogImage}` : undefined,
+    imageCaption: fm.title,
+    contentLocation: "Bến Tre, Việt Nam",
+    articleType: article.type,
+    authorKey: fm.authorKey ?? fm.author ?? null,
   });
 
   const breadcrumbJsonLd = getBreadcrumbJsonLd([
@@ -163,7 +173,23 @@ export default async function ArticlePage({ params }: Props) {
     },
   };
 
-  const jsonLd = [articleJsonLd, breadcrumbJsonLd, speakableJsonLd, faqJsonLd]
+  const recipeJsonLd =
+    fm.hasRecipe === true && fm.recipe
+      ? getRecipeJsonLd({
+          name: fm.title,
+          description: fm.metaDescription,
+          image: fm.ogImage
+            ? `${SITE_URL}${fm.ogImage}`
+            : `${SITE_URL}/images/xoai-real-2.jpg`,
+          url: canonical,
+          authorKey: fm.authorKey ?? fm.author ?? null,
+          datePublished: fm.publishedAt,
+          dateModified: fm.updatedAt ?? fm.publishedAt,
+          recipe: fm.recipe,
+        })
+      : null;
+
+  const jsonLd = [articleJsonLd, breadcrumbJsonLd, speakableJsonLd, faqJsonLd, recipeJsonLd]
     .filter((s): s is NonNullable<typeof s> => s !== null);
 
   const showPriceTicker =
@@ -178,12 +204,15 @@ export default async function ArticlePage({ params }: Props) {
       heroImage={{ src: heroImageSrc, alt: fm.title }}
       jsonLd={jsonLd}
     >
-      <MDXRemote
-        source={article.body}
-        options={{
-          mdxOptions: { remarkPlugins: [remarkGfm] },
-        }}
-      />
+      {/* #aeo-answer wraps article body — referenced by SpeakableSpecification cssSelector */}
+      <div id="aeo-answer">
+        <MDXRemote
+          source={article.body}
+          options={{
+            mdxOptions: { remarkPlugins: [remarkGfm] },
+          }}
+        />
+      </div>
 
       {/* FAQ render (also covered by FAQPage schema) */}
       {fm.faq && fm.faq.length > 0 && (
