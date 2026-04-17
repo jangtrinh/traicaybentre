@@ -531,8 +531,9 @@
       "fruitTitle": "과일 사양",
       "fruitSpecs": [
         { "label": "과일당 무게", "value": "1.0–1.5 kg (최대 2 kg)" },
+        { "label": "당도 (Brix)", "value": "15–17 °Bx" },
         { "label": "완숙 과육 경도", "value": "20.2–21.1 N" },
-        { "label": "나트륨 함량", "value": "1.58–2.02%" },
+        { "label": "과일 내 나트륨", "value": "1.58–2.02%" },
         { "label": "씨", "value": "작고 납작 — 높은 과육 비율" }
       ]
     },
@@ -783,10 +784,17 @@
     "pillarLabels": {
       "gia-thi-truong": "가격 & 시장",
       "ky-thuat-bao-quan": "보관 기술",
-      "so-sanh-giong": "망고 품종 비교",
+      "so-sanh-giong": "품종 비교",
+      "so-sanh-san-pham": "제품 비교",
       "giao-hang-theo-vung": "지역별 배송",
       "meo-thuong-thuc": "맛보기 팁",
-      "heritage-bentre": "벤째 헤리티지"
+      "heritage-bentre": "벤째 헤리티지",
+      "chi-dan-dia-ly": "지리적 표시",
+      "suc-khoe": "건강",
+      "ky-thuat-nong-nghiep": "농업 기술",
+      "an-toan-thuc-pham": "식품 안전",
+      "logistics": "물류",
+      "thi-truong": "시장"
     },
     "defaultKienThuc": "정보",
     "defaultTinTuc": "소식"

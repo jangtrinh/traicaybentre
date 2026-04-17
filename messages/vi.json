@@ -531,8 +531,9 @@
       "fruitTitle": "Thông số quả",
       "fruitSpecs": [
         { "label": "Trọng lượng/quả", "value": "1,0–1,5 kg (max 2 kg)" },
+        { "label": "Độ Brix (đường)", "value": "15–17 °Bx" },
         { "label": "Độ chắc thịt chín", "value": "20,2–21,1 N" },
-        { "label": "Hàm lượng Na", "value": "1,58–2,02%" },
+        { "label": "Sodium trong trái", "value": "1,58–2,02%" },
         { "label": "Hạt", "value": "Nhỏ, lép — tỉ lệ thịt cao" }
       ]
     },
@@ -783,10 +784,17 @@
     "pillarLabels": {
       "gia-thi-truong": "Giá & thị trường",
       "ky-thuat-bao-quan": "Kỹ thuật bảo quản",
-      "so-sanh-giong": "So sánh giống xoài",
+      "so-sanh-giong": "So sánh giống",
+      "so-sanh-san-pham": "So sánh sản phẩm",
       "giao-hang-theo-vung": "Giao hàng theo vùng",
       "meo-thuong-thuc": "Mẹo thưởng thức",
-      "heritage-bentre": "Di sản Bến Tre"
+      "heritage-bentre": "Di sản Bến Tre",
+      "chi-dan-dia-ly": "Chỉ dẫn địa lý",
+      "suc-khoe": "Sức khoẻ",
+      "ky-thuat-nong-nghiep": "Kỹ thuật nông nghiệp",
+      "an-toan-thuc-pham": "An toàn thực phẩm",
+      "logistics": "Logistics & vận chuyển",
+      "thi-truong": "Thị trường"
     },
     "defaultKienThuc": "Kiến thức",
     "defaultTinTuc": "Tin tức"
