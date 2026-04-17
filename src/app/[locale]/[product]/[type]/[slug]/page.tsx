@@ -19,6 +19,7 @@ import { setRequestLocale } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import remarkGfm from "remark-gfm";
 import { ArticleLayout } from "@/components/article-layout";
+import { ImageCarousel } from "@/components/image-carousel";
 import { PriceTickerFooter } from "@/components/price-ticker-footer";
 import {
   getArticleByUrlPath,
@@ -208,6 +209,7 @@ export default async function ArticlePage({ params }: Props) {
       <div id="aeo-answer">
         <MDXRemote
           source={article.body}
+          components={{ ImageCarousel }}
           options={{
             mdxOptions: { remarkPlugins: [remarkGfm] },
           }}

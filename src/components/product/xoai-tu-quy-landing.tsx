@@ -138,28 +138,28 @@ export async function XoaiTuQuyLanding() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "/images/xoai-thuc-te/xoai-tu-quy-vip-tay-cam-vua.jpg",
-                alt: "Xoài Tứ Quý VIP trái to — cầm tay tại vựa Thạnh Phú",
+                src: "/images/xoai-17-04/xoai-tu-quy-vip-trai-to-cuong-la-tay-cam.jpg",
+                alt: "Xoài Tứ Quý VIP trái to còn cuống lá — tay cầm tại vựa Thạnh Phú",
               },
               {
                 src: "/images/xoai-thuc-te/xoai-tu-quy-bo-thit-vang-tay-cam.jpg",
                 alt: "Xoài Tứ Quý bổ thịt vàng cam — tay cầm tại vựa",
               },
               {
-                src: "/images/xoai-thuc-te/vua-xoai-phan-loai-ngoai-troi.jpg",
-                alt: "Đội ngũ vựa phân loại xoài ngoài trời — sọt xanh vàng",
+                src: "/images/xoai-17-04/xoai-tu-quy-sot-xanh-nhieu-cuong-la-tuoi.jpg",
+                alt: "Rổ xoài Tứ Quý còn cuống lá tươi — mới hái từ vườn",
               },
               {
-                src: "/images/xoai-thuc-te/xoai-tu-quy-boc-luoi-foam-03.jpg",
-                alt: "Xoài Tứ Quý bọc lưới foam — đóng gói bảo vệ khi ship xa",
+                src: "/images/xoai-17-04/xoai-tu-quy-vip-hai-trai-tay-cam-so-sanh.jpg",
+                alt: "Hai trái xoài Tứ Quý VIP so sánh kích thước — tay cầm",
               },
               {
-                src: "/images/xoai-thuc-te/vua-xoai-dong-thung-xop-ban-ngay.jpg",
-                alt: "Đội ngũ vựa đóng thùng xốp — chuẩn bị giao hàng",
+                src: "/images/xoai-17-04/xoai-tu-quy-sot-vang-vua-thanh-phu-phan-loai.jpg",
+                alt: "Vựa xoài Thạnh Phú phân loại — sọt vàng đầy xoài còn cuống",
               },
               {
-                src: "/images/xoai-thuc-te/xoai-tu-quy-sot-xanh-nhieu-ro.jpg",
-                alt: "Nhiều rổ xoài tứ quý xanh — sọt xanh chờ đóng gói",
+                src: "/images/xoai-17-04/xoai-tu-quy-vip-can-canh-tay-cam-sot-nhieu-mau.jpg",
+                alt: "Xoài Tứ Quý VIP cận cảnh — trái lớn tay cầm, nền nhiều rổ",
               },
             ].map((img, i) => (
               <FadeIn key={img.src} delay={i * 0.05}>

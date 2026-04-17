@@ -531,8 +531,9 @@
       "fruitTitle": "Fruit specifications",
       "fruitSpecs": [
         { "label": "Weight per fruit", "value": "1.0–1.5 kg (max 2 kg)" },
+        { "label": "Brix (sugar)", "value": "15–17 °Bx" },
         { "label": "Ripe flesh firmness", "value": "20.2–21.1 N" },
-        { "label": "Sodium content", "value": "1.58–2.02%" },
+        { "label": "Sodium in fruit", "value": "1.58–2.02%" },
         { "label": "Seed", "value": "Small, flat — high flesh ratio" }
       ]
     },
@@ -783,10 +784,17 @@
     "pillarLabels": {
       "gia-thi-truong": "Price & Market",
       "ky-thuat-bao-quan": "Storage Techniques",
-      "so-sanh-giong": "Mango Variety Comparison",
+      "so-sanh-giong": "Variety Comparison",
+      "so-sanh-san-pham": "Product Comparison",
       "giao-hang-theo-vung": "Regional Delivery",
       "meo-thuong-thuc": "Tasting Tips",
-      "heritage-bentre": "Ben Tre Heritage"
+      "heritage-bentre": "Ben Tre Heritage",
+      "chi-dan-dia-ly": "Geographical Indication",
+      "suc-khoe": "Health",
+      "ky-thuat-nong-nghiep": "Farming Techniques",
+      "an-toan-thuc-pham": "Food Safety",
+      "logistics": "Logistics",
+      "thi-truong": "Market"
     },
     "defaultKienThuc": "Knowledge",
     "defaultTinTuc": "News"

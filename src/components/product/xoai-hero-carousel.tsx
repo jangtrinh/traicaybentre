@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const XOAI_HERO_IMAGES = [
-  { src: "/images/xoai-thuc-te/xoai-tu-quy-vip-cuong-la-tay-cam.jpg", alt: "Xoài Tứ Quý VIP — trái to còn cuống lá tươi, tay cầm tại vựa" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-vip-trai-to-cuong-la-tay-cam.jpg", alt: "Xoài Tứ Quý VIP — trái to còn cuống lá tươi, tay cầm tại vựa Thạnh Phú" },
   { src: "/images/xoai-thuc-te/xoai-tu-quy-bo-thit-vang-cam.jpg", alt: "Xoài Tứ Quý bổ ra thịt vàng cam — 3 trái chín mọng" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-vip-hai-trai-tay-cam-so-sanh.jpg", alt: "Hai trái xoài Tứ Quý VIP — so sánh kích thước cận cảnh" },
   { src: "/images/xoai-thuc-te/xoai-hoang-kim-ro-tre-01.jpg", alt: "Xoài Tứ Quý hoàng kim chín vàng trong rổ tre" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-sot-xanh-nhieu-cuong-la-tuoi.jpg", alt: "Rổ xoài Tứ Quý còn cuống lá tươi — mới hái từ vườn Thạnh Phú" },
   { src: "/images/xoai-thuc-te/xoai-tu-quy-boc-luoi-foam-la.jpg", alt: "Xoài Tứ Quý VIP bọc lưới foam — đóng gói cẩn thận tại vựa" },
-  { src: "/images/xoai-thuc-te/vua-xoai-hoat-dong-ban-ngay-01.jpg", alt: "Vựa xoài Thạnh Phú — đội ngũ phân loại và đóng gói" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-sot-vang-vua-thanh-phu-phan-loai.jpg", alt: "Vựa xoài Thạnh Phú phân loại — sọt vàng đầy xoài còn cuống" },
 ];
 
 /** Rotating image carousel for xoai-tu-quy product page hero */

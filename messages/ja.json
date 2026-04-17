@@ -531,8 +531,9 @@
       "fruitTitle": "果実仕様",
       "fruitSpecs": [
         { "label": "果実重量", "value": "1.0–1.5 kg（最大 2 kg）" },
+        { "label": "糖度 (Brix)", "value": "15–17 °Bx" },
         { "label": "完熟果肉硬度", "value": "20.2–21.1 N" },
-        { "label": "ナトリウム含量", "value": "1.58–2.02%" },
+        { "label": "果実中ナトリウム", "value": "1.58–2.02%" },
         { "label": "種", "value": "小さく薄い — 高い果肉比率" }
       ]
     },
@@ -783,10 +784,17 @@
     "pillarLabels": {
       "gia-thi-truong": "価格 & 市場",
       "ky-thuat-bao-quan": "保存技術",
-      "so-sanh-giong": "マンゴー品種比較",
+      "so-sanh-giong": "品種比較",
+      "so-sanh-san-pham": "製品比較",
       "giao-hang-theo-vung": "地域別配送",
       "meo-thuong-thuc": "試食のコツ",
-      "heritage-bentre": "ベンチェの伝統"
+      "heritage-bentre": "ベンチェの伝統",
+      "chi-dan-dia-ly": "地理的表示",
+      "suc-khoe": "健康",
+      "ky-thuat-nong-nghiep": "農業技術",
+      "an-toan-thuc-pham": "食品安全",
+      "logistics": "物流",
+      "thi-truong": "市場"
     },
     "defaultKienThuc": "豆知識",
     "defaultTinTuc": "ニュース"
