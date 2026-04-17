@@ -9,10 +9,10 @@ import { SectionDivider } from "@/components/section-divider";
 
 /* Carousel image groups */
 const VUON_IMAGES = [
-  { src: "/images/gdrive-01.jpg", alt: "Vườn xoài sáng sớm — tia nắng xuyên tán" },
-  { src: "/images/gdrive-11.jpg", alt: "Rổ xoài phân loại nhiều màu tại vựa" },
-  { src: "/images/gdrive-14.jpg", alt: "Xoài phân loại — rổ vàng, xanh, đỏ" },
-  { src: "/images/gdrive-02.jpg", alt: "Vựa xoài đóng hàng ban ngày" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-sot-xanh-nhieu-cuong-la-tuoi.jpg", alt: "Xoài Tứ Quý mới hái từ vườn — còn cuống lá tươi, xếp rổ xanh" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-sot-vang-vua-thanh-phu-phan-loai.jpg", alt: "Vựa xoài Thạnh Phú phân loại — sọt vàng đầy xoài còn cuống" },
+  { src: "/images/gdrive-14.jpg", alt: "Xoài phân loại — rổ vàng, xanh, đỏ tại vựa" },
+  { src: "/images/xoai-17-04/xoai-tu-quy-sot-xanh-la-cuong-can-canh.jpg", alt: "Cận cảnh xoài Tứ Quý trong rổ xanh — cuống lá tươi từ vườn" },
 ];
 
 const QUY_TRINH_IMAGES = [
@@ -187,9 +187,9 @@ export default async function NguonGocPage({
               <div className="overflow-hidden rounded-3xl bg-white shadow-md">
                 <ImageCarousel
                   images={[
-                    { src: "/images/gdrive-01.jpg", alt: "Vườn xoài sáng sớm" },
-                    { src: "/images/gdrive-12.jpg", alt: "Xoài tại vựa — rổ nhiều màu" },
-                    { src: "/images/gdrive-16.jpg", alt: "Xoài xanh trong rổ xanh" },
+                    { src: "/images/xoai-17-04/xoai-tu-quy-sot-xanh-cuong-la-tuoi-moi-hai.jpg", alt: "Xoài Tứ Quý mới hái từ vườn — cuống còn tươi, rổ xanh" },
+                    { src: "/images/xoai-17-04/xoai-tu-quy-vip-trai-to-cuong-la-tay-cam.jpg", alt: "Xoài Tứ Quý VIP — trái to còn cuống lá, tay cầm tại vựa" },
+                    { src: "/images/xoai-17-04/xoai-tu-quy-co-cuong-la-sot-do-can-canh.jpg", alt: "Xoài Tứ Quý Thạnh Phú — cuống lá xanh, nền rổ đỏ" },
                   ]}
                   height="h-48"
                 />
