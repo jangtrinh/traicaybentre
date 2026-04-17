@@ -19,7 +19,7 @@ import { FadeIn } from "@/components/fade-in";
 import { getCity, getCitySlugs, getMethodLabel, REGION_LABELS } from "@/content/cities";
 import { getActiveProducts } from "@/lib/products";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
+import { getBreadcrumbJsonLd, getShippingFaqJsonLd, SITE_URL } from "@/lib/structured-data";
 
 type RouteParams = { city: string };
 type Props = { params: Promise<{ locale: string } & RouteParams> };
@@ -81,17 +81,14 @@ export default async function CityShippingPage({ params }: Props) {
     { q: t("faq.q2", { cityName: city.name }), a: t("faq.a2", { cost: city.costEstimate }) },
     { q: t("faq.q3", { cityName: city.name }), a: t("faq.a3") },
     { q: t("faq.q4", { cityName: city.name }), a: t("faq.a4", { method: methodLabel.toLowerCase(), hours: city.shippingHours }) },
+    // Additional city-specific Q&A to meet 8-item minimum for FAQPage rich result
+    { q: `Xoài có bị dập khi ship tới ${city.name} không?`, a: `Không — mỗi trái bọc lưới xốp riêng, đóng thùng carton lót đệm. Tỷ lệ hàng hư dưới 2%.` },
+    { q: `Thanh toán khi nhận hàng tại ${city.name} được không?`, a: `Được — COD khi nhận hàng hoặc chuyển khoản trước. Xuất hóa đơn VAT cho nhà hàng, doanh nghiệp.` },
+    { q: `Đặt tối thiểu bao nhiêu để ship tới ${city.name}?`, a: `Tối thiểu 1 thùng 20kg. Nhóm chung thùng cũng được — miễn đủ 20kg.` },
+    { q: `Làm sao biết xoài Bến Tre thật khi nhận tại ${city.name}?`, a: `Mỗi thùng có QR truy xuất nguồn gốc. Sản phẩm thuộc Chỉ dẫn địa lý CDĐL #00124 do Cục SHTT cấp.` },
   ];
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  };
+  const faqJsonLd = getShippingFaqJsonLd(faq);
 
   return (
     <>
