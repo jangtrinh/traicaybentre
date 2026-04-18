@@ -19,6 +19,7 @@ import {
   isReservedPath,
 } from "@/lib/products";
 import { PRICE_DATA } from "@/lib/price-data";
+import { getProductOffersForSlug } from "@/lib/landing-data";
 import {
   getBreadcrumbJsonLd,
   getProductJsonLd,
@@ -78,12 +79,14 @@ export default async function ProductPage({ params }: Props) {
     { name: "Trang chủ", url: SITE_URL },
     { name: product.shortName, url },
   ]);
+  const offers = getProductOffersForSlug(slug);
   const productJsonLd = getProductJsonLd({
     name: product.name,
     description: product.seo.description,
     url,
     image: `${SITE_URL}${product.heroImage}`,
     dateModified: PRICE_DATA.lastUpdated,
+    ...(offers && { offers }),
   });
 
   return (
