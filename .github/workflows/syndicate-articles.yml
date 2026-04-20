@@ -30,7 +30,9 @@ jobs:
         if: github.event.inputs.mode != 'all'
         id: changed
         run: |
-          FILES=$(git diff --name-only HEAD~1 HEAD -- 'src/content/articles/**/*.mdx' || echo "")
+          # Collapse newline-separated file list to single space-separated line
+          # for single-line $GITHUB_OUTPUT compatibility (multiline requires EOF delimiter).
+          FILES=$(git diff --name-only HEAD~1 HEAD -- 'src/content/articles/**/*.mdx' | tr '\n' ' ' | sed 's/ *$//')
           echo "files=$FILES" >> $GITHUB_OUTPUT
           echo "Found changed: $FILES"
 
