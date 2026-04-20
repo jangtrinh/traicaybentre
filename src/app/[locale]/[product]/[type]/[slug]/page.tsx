@@ -21,6 +21,7 @@ import remarkGfm from "remark-gfm";
 import { ArticleLayout } from "@/components/article-layout";
 import { ImageCarousel } from "@/components/image-carousel";
 import { PriceTickerFooter } from "@/components/price-ticker-footer";
+import { TikTokEmbed } from "@/components/tiktok-embed";
 import {
   getArticleByUrlPath,
   getArticleByUrlPathIncludingScheduled,
@@ -181,7 +182,7 @@ export default async function ArticlePage({ params }: Props) {
     >
       <MDXRemote
         source={article.body}
-        components={{ ImageCarousel }}
+        components={{ ImageCarousel, TikTokEmbed }}
         options={{
           mdxOptions: { remarkPlugins: [remarkGfm] },
         }}
