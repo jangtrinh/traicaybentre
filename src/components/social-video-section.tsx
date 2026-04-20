@@ -4,6 +4,9 @@ import { TikTokEmbed } from "./tiktok-embed";
 import { getTranslations } from "next-intl/server";
 
 const TIKTOK_VIDEOS = [
+  "7630180747239836946",
+  "7630171553837239570",
+  "7629743520735071495",
   "7628568190871702792",
   "7628919296978144520",
   "7628768268169284871",
