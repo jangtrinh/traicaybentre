@@ -5,6 +5,10 @@
 plans/
 docs/
 
+# Raw source images (144MB, processed into public/images/dua/ already)
+# Local-only — gitignored but CLI uploads them, causing deploy failures
+public/images/gdrive/
+
 # Large root-level branding assets (not used at runtime)
 /Khaitruong.png
 /Banghieu.png

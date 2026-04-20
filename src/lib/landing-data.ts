@@ -196,6 +196,50 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
+/**
+ * Derive AggregateOffer shape for a product slug from PRODUCTS catalog.
+ * Parses `priceSi` ranges (e.g. "23.000–25.000") into low/high integers (VND).
+ * Used by product page JSON-LD to satisfy Google's Product rich-result requirements.
+ */
+export function getProductOffersForSlug(slug: string): {
+  lowPrice: number;
+  highPrice: number;
+  priceCurrency: "VND";
+  offerCount: number;
+  unitText: string;
+} | null {
+  // Map product slug → PRODUCTS.id subset carried under that product page
+  const idsBySlug: Record<string, number[]> = {
+    "xoai-tu-quy": [1, 2, 3],
+    "xoai-hoang-kim": [7],
+    "dua-xiem-ben-tre": [4, 5, 6],
+  };
+  const ids = idsBySlug[slug];
+  if (!ids) return null;
+  const items = PRODUCTS.filter((p) => ids.includes(p.id));
+  if (items.length === 0) return null;
+
+  const prices: number[] = [];
+  for (const it of items) {
+    // "23.000–25.000" → [23000, 25000]; "35.000" → [35000]
+    const matches = it.priceSi.match(/\d[\d.]*/g) ?? [];
+    for (const m of matches) {
+      const n = parseInt(m.replace(/\./g, ""), 10);
+      if (!isNaN(n) && n > 0) prices.push(n);
+    }
+  }
+  if (prices.length === 0) return null;
+
+  const unitText = items[0].unit === "trái" ? "trái" : "kg";
+  return {
+    lowPrice: Math.min(...prices),
+    highPrice: Math.max(...prices),
+    priceCurrency: "VND",
+    offerCount: items.length,
+    unitText,
+  };
+}
+
 export const PROCESS_STEPS = [
   {
     num: "01",

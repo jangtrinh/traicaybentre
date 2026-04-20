@@ -5,7 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
-import { getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
+import { getBreadcrumbJsonLd, getShippingFaqJsonLd, SITE_URL } from "@/lib/structured-data";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -48,6 +48,7 @@ export default async function GiaoHangTpHcmPage({ params }: Props) {
   const whyItems = t.raw("why") as string[];
   const faqItems = t.raw("faq.items") as { q: string; a: string }[];
   const internalLinks = t.raw("internalLinks") as { label: string; href: string }[];
+  const faqJsonLd = getShippingFaqJsonLd(faqItems);
 
   return (
     <>
@@ -55,6 +56,12 @@ export default async function GiaoHangTpHcmPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <Header />
 
       {/* Hero */}
