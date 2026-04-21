@@ -1,0 +1,61 @@
+name: Weekly Rank Tracker
+
+on:
+  schedule:
+    # 3:00 UTC Sunday = 10am Vietnam time Sunday (UTC+7)
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  rank-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check SERPAPI_KEY is set
+        run: |
+          if [ -z "${{ secrets.SERPAPI_KEY }}" ]; then
+            echo "ERROR: SERPAPI_KEY secret is not configured."
+            echo ""
+            echo "To fix:"
+            echo "  1. Sign up at https://serpapi.com (free tier: 100 searches/month)"
+            echo "  2. Get your API key at https://serpapi.com/manage-api-key"
+            echo "  3. Add it as a GitHub secret:"
+            echo "     gh secret set SERPAPI_KEY --body '<your-key>'"
+            echo "  OR: GitHub repo → Settings → Secrets → Actions → New secret"
+            echo ""
+            echo "The free tier covers 25 keywords × 4 weeks = 100 searches/month exactly."
+            exit 1
+          fi
+
+      - name: Run rank tracker
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: node scripts/rank-tracker.js
+
+      - name: Commit and push report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add plans/reports/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          DATE=$(date -u +"%Y-%m-%d")
+          git commit -m "chore(seo): weekly rank tracker ${DATE} [bot]"
+          git push

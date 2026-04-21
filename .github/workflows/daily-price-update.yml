@@ -1,0 +1,43 @@
+name: Daily Price Update
+
+on:
+  schedule:
+    # 23:00 UTC previous day = 6am Vietnam time (UTC+7)
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  price-snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate price snapshot
+        run: node scripts/daily-price-snapshot.js
+
+      - name: Commit and push if files changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/articles/xoai-tu-quy/tin-tuc/ src/lib/price-data.ts
+          if git diff --staged --quiet; then
+            echo "No changes to commit — snapshot already exists for today."
+            exit 0
+          fi
+          DATE=$(date -u +"%d/%m/%Y")
+          git commit -m "chore(content): daily price snapshot ${DATE} [bot]"
+          git push
