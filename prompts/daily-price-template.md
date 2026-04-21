@@ -1,0 +1,79 @@
+---
+title: "Giá Xoài Tứ Quý Hôm Nay {dateVN} — Bảng Giá VIP, Loại 1, Loại 2"
+publishedAt: "{date}T07:00:00+07:00"
+primaryKeyword: "giá xoài tứ quý hôm nay {dateVN}"
+metaDescription: "Giá xoài tứ quý hôm nay {dateVN}: VIP {vipRange}đ/kg, Loại 1 {loai1Range}đ/kg, Loại 2 {loai2Range}đ/kg. Cập nhật trực tiếp từ vựa Phúc Giang Thạnh Phú Bến Tre."
+uxReviewed: false
+uxPassModel: "template-v1"
+author: ai
+pillar: gia-thi-truong
+slot: A
+secondaryKeywords:
+ - "giá xoài tứ quý {dateVN}"
+ - "bảng giá xoài bến tre hôm nay"
+ - "xoài tứ quý bao nhiêu tiền 1 kg"
+ - "giá xoài sỉ tứ quý hôm nay"
+ogImage: "/images/vua-xoai/vua-phan-loai-ro-da-mau.jpg"
+faq:
+  - q: "Giá xoài tứ quý hôm nay {dateVN} là bao nhiêu?"
+    a: "Hôm nay {dateVN}, giá xoài tứ quý Bến Tre: VIP {vipRange}đ/kg, Loại 1 {loai1Range}đ/kg, Loại 2 {loai2Range}đ/kg. Gọi vựa Phúc Giang 0932 585 533 để xác nhận giá theo lô."
+  - q: "Giá xoài tứ quý sỉ hôm nay bao nhiêu?"
+    a: "Giá sỉ xoài tứ quý từ 5kg trở lên thường giảm 10-20% so với giá lẻ. Liên hệ vựa Phúc Giang 0932 585 533 để nhận báo giá sỉ theo số lượng thực tế."
+  - q: "Vì sao giá xoài tứ quý hôm nay lại như vậy?"
+    a: "{note}. Giá xoài tứ quý Thạnh Phú dao động theo mùa vụ, thời tiết và sản lượng thu hoạch từng ngày tại vườn."
+  - q: "Xoài tứ quý VIP và Loại 1 khác nhau thế nào về giá?"
+    a: "Xoài VIP ({vipRange}đ/kg) là trái đẹp không tì vết, size từ 600g, dùng làm quà tặng cao cấp. Loại 1 ({loai1Range}đ/kg) chất lượng tương đương nhưng có thể có 1 mặt xấu nhẹ — bán chạy nhất."
+  - q: "Thời tiết hôm nay ảnh hưởng giá xoài thế nào?"
+    a: "{weather}. Thời tiết nắng ráo giúp thu hoạch thuận lợi, sản lượng dồi dào hơn, giá thường ổn định hoặc nhỉnh xuống nhẹ. Mưa bão có thể làm tăng giá 5-15% do giảm sản lượng."
+---
+
+> **Trả lời nhanh:** Giá xoài tứ quý hôm nay **{dateVN}** — VIP **{vipRange}đ/kg**, Loại 1 **{loai1Range}đ/kg**, Loại 2 **{loai2Range}đ/kg**. Cập nhật trực tiếp từ vựa Phúc Giang, Thạnh Phú, Bến Tre.
+
+Dưới đây là bảng giá xoài tứ quý cập nhật mới nhất hôm nay **{dateVN}** từ vựa Phúc Giang — vựa xoài trực tiếp tại Thạnh Phú, Bến Tre, nắm giữ chứng nhận CDĐL #00124.
+
+## Bảng Giá Xoài Tứ Quý Hôm Nay {dateVN}
+
+| Loại | Giá (đ/kg) | Trọng lượng/trái | Đặc điểm |
+|------|-----------|-----------------|----------|
+| **VIP** | {vipRange}đ | 600–800g+ | Trái đẹp không tì vết, da mịn — quà tặng, nhà hàng |
+| **Loại 1** | {loai1Range}đ | 600–800g+ | Chất lượng tương đương VIP, bán chạy nhất |
+| **Loại 2** | {loai2Range}đ | 400–600g | Trái nhỏ hơn — lý tưởng cho tiểu thương, gỏi |
+
+> **Lưu ý:** Giá trên là giá tham khảo tại vựa. Gọi **0932 585 533** để nhận báo giá chính xác theo số lượng đặt hàng.
+
+## Vì Sao Giá Xoài Tứ Quý Hôm Nay Ở Mức Này?
+
+{note}
+
+Một số yếu tố tác động giá xoài tứ quý mỗi ngày:
+
+1. **Sản lượng thu hoạch** — Vườn Thạnh Phú thu hoạch theo mùa vụ, vào cao điểm sản lượng tăng, giá thường ổn định hơn
+2. **Thời tiết** — {weather}. Nắng ráo giúp xoài chín đều, thu hoạch dễ hơn
+3. **Nhu cầu thị trường** — Cuối tuần và dịp lễ nhu cầu tăng, giá VIP có thể nhỉnh lên
+4. **Chi phí vận chuyển** — Giao Hà Nội, Đà Nẵng cộng thêm phí ship theo kg
+
+## Cách Mua Xoài Tứ Quý Với Giá Tốt Nhất
+
+Để nhận giá tốt nhất từ vựa Phúc Giang:
+
+- **Đặt sỉ từ 5kg** — giảm 10–20% so với giá lẻ
+- **Chọn Loại 1** nếu mua ăn gia đình — chất lượng tương đương VIP, giá thấp hơn 10–15%
+- **Đặt trước 1 ngày** — vựa sẽ chọn lô tươi nhất, đóng thùng foam + đá gel giao đi sáng sớm
+- **Gọi thẳng vựa** thay vì qua trung gian để tránh giá bị đội lên
+
+## Snapshot Giá — Cập Nhật {dateVN}
+
+| Thời điểm | VIP | Loại 1 | Loại 2 |
+|-----------|-----|--------|--------|
+| Hôm nay ({dateVN}) | {vipRange}đ/kg | {loai1Range}đ/kg | {loai2Range}đ/kg |
+
+Để theo dõi biến động giá hàng ngày, bookmark trang này — cập nhật mỗi sáng trực tiếp từ vựa.
+
+---
+
+Cần đặt hàng hoặc hỏi thêm về giá sỉ? Liên hệ trực tiếp vựa Phúc Giang: **0932 585 533** (call/Zalo). Giao toàn quốc, đóng thùng foam + đá gel giữ tươi 24-36 giờ.
+
+**Bài liên quan:**
+- [Xoài tứ quý loại nào ngon nhất — VIP vs Loại 1 vs Loại 2](/xoai-tu-quy/kien-thuc/xoai-tu-quy-loai-nao-ngon-nhat)
+- [Cách bảo quản xoài tứ quý sau khi mua](/xoai-tu-quy/kien-thuc/cach-bao-quan-xoai-tu-quy)
+- [Đặt xoài tứ quý Bến Tre giao Hà Nội](/giao-hang/ha-noi)

@@ -75,7 +75,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { product, type, slug } = await params;
+  const { locale, product, type, slug } = await params;
   if (!isValidType(type)) return {};
   const article = getArticleByUrlPathIncludingScheduled(`/${product}/${type}/${slug}`);
   if (!article) return {};
@@ -91,6 +91,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical,
       languages: { vi: canonical, "x-default": canonical },
     },
+    robots: locale !== "vi" ? { index: false, follow: true } : undefined,
     openGraph: {
       title: fm.title,
       description: desc,

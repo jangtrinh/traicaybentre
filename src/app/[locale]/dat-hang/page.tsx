@@ -33,13 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     alternates: {
       canonical: url,
-      languages: {
-        vi: `${SITE_URL}${PAGE_PATH}`,
-        en: `${SITE_URL}/en${PAGE_PATH}`,
-        ko: `${SITE_URL}/ko${PAGE_PATH}`,
-        ja: `${SITE_URL}/ja${PAGE_PATH}`,
-        "x-default": `${SITE_URL}${PAGE_PATH}`,
-      },
+      languages: { "x-default": url },
     },
     openGraph: {
       title: "Đặt Trái Cây Bến Tre Online — Ship Lạnh Toàn Quốc",

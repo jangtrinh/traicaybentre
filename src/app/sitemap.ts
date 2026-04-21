@@ -19,18 +19,11 @@ export const dynamic = "force-static";
 export const revalidate = 3600;
 
 const BASE = "https://www.traicaybentre.com";
-const LOCALES = ["vi", "en", "ko", "ja"] as const;
 
-/** Builds a sitemap entry with hreflang alternates for all 4 locales. */
+/** Builds a sitemap entry for the vi (canonical) URL only. Non-vi locales are
+ *  excluded from sitemap — they carry robots:noindex and must not compete with vi. */
 function localizedUrl(path: string) {
-  return {
-    url: `${BASE}${path}`,
-    alternates: {
-      languages: Object.fromEntries(
-        LOCALES.map((l) => [l, `${BASE}${l === "vi" ? "" : `/${l}`}${path}`])
-      ),
-    },
-  };
+  return { url: `${BASE}${path}` };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

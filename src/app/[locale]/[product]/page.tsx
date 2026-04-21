@@ -36,7 +36,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { product: slug } = await params;
+  const { locale, product: slug } = await params;
   if (isReservedPath(slug)) return {};
   const product = getProduct(slug);
   if (!product || product.status !== "active") return {};
@@ -49,14 +49,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: product.seo.keywords,
     alternates: {
       canonical: url,
-      languages: {
-        vi: `${SITE_URL}/${slug}`,
-        en: `${SITE_URL}/en/${slug}`,
-        ko: `${SITE_URL}/ko/${slug}`,
-        ja: `${SITE_URL}/ja/${slug}`,
-        "x-default": `${SITE_URL}/${slug}`,
-      },
+      languages: { "x-default": url },
     },
+    robots: locale !== "vi" ? { index: false, follow: true } : undefined,
     openGraph: {
       title: product.seo.ogTitle ?? product.seo.title,
       description: product.seo.ogDescription ?? product.seo.description,

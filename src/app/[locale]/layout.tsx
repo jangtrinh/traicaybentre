@@ -38,6 +38,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  const isVi = locale === "vi";
 
   return {
     metadataBase: new URL("https://www.traicaybentre.com"),
@@ -65,23 +66,21 @@ export async function generateMetadata({
       description: t("twitterDescription"),
       images: ["https://www.traicaybentre.com/images/xoai-real-2.jpg"],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-snippet": -1,
-        "max-image-preview": "large",
-      },
-    },
+    robots: isVi
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+          },
+        }
+      : { index: false, follow: true },
     alternates: {
       canonical: "https://www.traicaybentre.com",
       languages: {
-        vi: "https://www.traicaybentre.com",
-        en: "https://www.traicaybentre.com/en",
-        ko: "https://www.traicaybentre.com/ko",
-        ja: "https://www.traicaybentre.com/ja",
         "x-default": "https://www.traicaybentre.com",
       },
     },
