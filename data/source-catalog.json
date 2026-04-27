@@ -161,6 +161,62 @@
       "type": "government-portal",
       "language": "vi",
       "useCase": "dữ liệu huyện, vựa địa phương, vùng trồng Tứ Quý chính"
+    },
+    "who-complementary-feeding": {
+      "title": "WHO Guideline for complementary feeding of infants and young children 6–23 months of age",
+      "url": "https://www.who.int/publications/i/item/9789240081864",
+      "publisher": "World Health Organization",
+      "type": "international-organization",
+      "language": "en",
+      "useCase": "ăn dặm 6 tháng, hướng dẫn giới thiệu trái cây"
+    },
+    "mango-allergy": {
+      "title": "Mango Allergy: Causes, Symptoms & Treatment",
+      "url": "https://www.medicalnewstoday.com/articles/mango-allergy",
+      "publisher": "Medical News Today",
+      "type": "health-information",
+      "language": "en",
+      "useCase": "dị ứng xoài ở trẻ, urushiol, biểu hiện"
+    },
+    "vietnam-health-cfd": {
+      "title": "Health Ministry Announces Complementary Feeding Guide for Vietnamese Children",
+      "url": "https://vietnamnews.vn/society/1663962/health-ministry-announces-complementary-feeding-guide-for-vietnamese-children.html",
+      "publisher": "Vietnam News",
+      "type": "news",
+      "language": "en",
+      "useCase": "hướng dẫn ăn dặm Việt Nam, 6 tháng tuổi"
+    },
+    "ucdavis-mango-postharvest": {
+      "title": "UC Davis Postharvest Research and Extension Center — Mango",
+      "url": "https://postharvest.ucdavis.edu/produce-facts-sheets/mango",
+      "publisher": "University of California, Davis",
+      "type": "research-institute",
+      "language": "en",
+      "useCase": "bảo quản xoài, nhiệt độ, postharvest ripening"
+    },
+    "mango-ripening-protocol": {
+      "title": "Mango Ripening Procedure — Temperature in the Ripening Room",
+      "url": "https://www.mango.org/wp-content/uploads/2022/12/Mango-Ripening.pdf",
+      "publisher": "Mango Board (USA)",
+      "type": "industry-standard",
+      "language": "en",
+      "useCase": "quy trình chín xoài, ethylene, nhiệt độ, độ ẩm"
+    },
+    "mango-ripening-research": {
+      "title": "PMC — Research Progress on Mango Post-Harvest Ripening Physiology and the Regulatory Technologies",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9818659/",
+      "publisher": "PubMed Central",
+      "type": "peer-reviewed",
+      "language": "en",
+      "useCase": "enzyme chín, cold storage, ripening inhibition"
+    },
+    "brix-maturity": {
+      "title": "Felix Instruments — Brix as a Metric of Fruit Maturity",
+      "url": "https://felixinstruments.com/blog/brix-as-a-metric-of-fruit-maturity/",
+      "publisher": "Felix Instruments",
+      "type": "technical-resource",
+      "language": "en",
+      "useCase": "Brix độ Brix, đo độ ngọt trái cây"
     }
   }
 }
