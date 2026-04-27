@@ -10,7 +10,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-mua-nao",
       "title": "Xoài Tứ Quý Mùa Nào Ngon Nhất? Lịch Ra Trái Quanh Năm",
-      "secondaryKeywords": ["xoài tứ quý thu hoạch mấy tháng", "xoài tứ quý vụ chính", "mùa xoài bến tre"],
+      "secondaryKeywords": [
+        "xoài tứ quý thu hoạch mấy tháng",
+        "xoài tứ quý vụ chính",
+        "mùa xoài bến tre"
+      ],
       "angle": "Explain why called tứ quý (4 seasons), peak harvest months, price curve, when to buy",
       "status": "pending",
       "usedAt": null
@@ -24,7 +28,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-cho-bau",
       "title": "Xoài Tứ Quý Cho Bầu Có Tốt Không? Bác Sĩ Dinh Dưỡng Giải Đáp",
-      "secondaryKeywords": ["bầu ăn xoài tứ quý được không", "xoài bầu 3 tháng đầu", "ăn xoài khi mang thai"],
+      "secondaryKeywords": [
+        "bầu ăn xoài tứ quý được không",
+        "xoài bầu 3 tháng đầu",
+        "ăn xoài khi mang thai"
+      ],
       "angle": "Safety check, trimester guidance, portion size, when to avoid (gestational diabetes)",
       "status": "pending",
       "usedAt": null
@@ -38,7 +46,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-an-truoc-hay-sau-bua-com",
       "title": "Ăn Xoài Tứ Quý Trước Hay Sau Bữa Cơm — Thời Điểm Tốt Nhất",
-      "secondaryKeywords": ["ăn xoài buổi sáng có tốt không", "xoài ăn trước bữa ăn", "thời điểm ăn xoài tốt nhất"],
+      "secondaryKeywords": [
+        "ăn xoài buổi sáng có tốt không",
+        "xoài ăn trước bữa ăn",
+        "thời điểm ăn xoài tốt nhất"
+      ],
       "angle": "Nutritional timing, blood sugar, digestion, ideal eating windows (morning vs evening)",
       "status": "pending",
       "usedAt": null
@@ -52,7 +64,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-bi-dang-vi-sao",
       "title": "Xoài Tứ Quý Bị Đắng Vì Sao? Cách Nhận Biết Và Xử Lý",
-      "secondaryKeywords": ["xoài tứ quý có vị đắng", "xoài đắng có ăn được không", "xoài chua đắng"],
+      "secondaryKeywords": [
+        "xoài tứ quý có vị đắng",
+        "xoài đắng có ăn được không",
+        "xoài chua đắng"
+      ],
       "angle": "Root causes (immature tannins, variety mismatch, storage), when it's safe to eat, prevention tips",
       "status": "pending",
       "usedAt": null
@@ -66,7 +82,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-cham-muoi-tom",
       "title": "Cách Ăn Xoài Tứ Quý Ngon Nhất — Chấm Muối Tôm Và 5 Cách Khác",
-      "secondaryKeywords": ["xoài tứ quý ăn cùng gì ngon", "công thức muối tôm chấm xoài", "xoài tứ quý xanh chấm mắm ruốc"],
+      "secondaryKeywords": [
+        "xoài tứ quý ăn cùng gì ngon",
+        "công thức muối tôm chấm xoài",
+        "xoài tứ quý xanh chấm mắm ruốc"
+      ],
       "angle": "Traditional vs modern pairings, homemade muối tôm recipe, Vietnamese street food style",
       "status": "pending",
       "usedAt": null
@@ -80,7 +100,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-de-duoc-bao-lau",
       "title": "Xoài Tứ Quý Để Được Bao Lâu? Bảng Thời Gian Theo Độ Chín",
-      "secondaryKeywords": ["xoài tứ quý để tủ lạnh bao lâu", "xoài tứ quý hạn sử dụng", "bảo quản xoài bao nhiêu ngày"],
+      "secondaryKeywords": [
+        "xoài tứ quý để tủ lạnh bao lâu",
+        "xoài tứ quý hạn sử dụng",
+        "bảo quản xoài bao nhiêu ngày"
+      ],
       "angle": "Shelf life table by ripeness + storage method, signs of spoilage, tips to extend life",
       "status": "pending",
       "usedAt": null
@@ -94,7 +118,11 @@
       "type": "kien-thuc",
       "slug": "cach-chon-xoai-tu-quy-ngon-nhat",
       "title": "Cách Chọn Xoài Tứ Quý Ngon — 7 Dấu Hiệu Nhận Biết Chuẩn",
-      "secondaryKeywords": ["nhận biết xoài tứ quý ngon", "xoài tứ quý chín đúng cách nhận biết", "chọn xoài không bị xơ"],
+      "secondaryKeywords": [
+        "nhận biết xoài tứ quý ngon",
+        "xoài tứ quý chín đúng cách nhận biết",
+        "chọn xoài không bị xơ"
+      ],
       "angle": "Visual + tactile + smell cues, common mistakes when buying, supplier vs market differences",
       "status": "pending",
       "usedAt": null
@@ -108,7 +136,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-vs-xoai-cat-hoa-loc-khac-nhau",
       "title": "Xoài Tứ Quý vs Xoài Cát Hoà Lộc — Khác Nhau Ở Điểm Nào?",
-      "secondaryKeywords": ["so sánh xoài tứ quý và cát hoà lộc", "xoài nào ngon hơn tứ quý hay cát", "giá xoài cát hoà lộc vs tứ quý"],
+      "secondaryKeywords": [
+        "so sánh xoài tứ quý và cát hoà lộc",
+        "xoài nào ngon hơn tứ quý hay cát",
+        "giá xoài cát hoà lộc vs tứ quý"
+      ],
       "angle": "Taste, texture, price, availability, use cases — help buyer decide which to buy",
       "status": "pending",
       "usedAt": null
@@ -122,7 +154,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-chin-ep-co-ngon-khong",
       "title": "Xoài Tứ Quý Chín Ép Có Ngon Không? So Sánh Chín Cây vs Chín Ép",
-      "secondaryKeywords": ["xoài chín ép vs chín cây", "xoài ép chín bằng đất đèn", "phân biệt xoài chín ép"],
+      "secondaryKeywords": [
+        "xoài chín ép vs chín cây",
+        "xoài ép chín bằng đất đèn",
+        "phân biệt xoài chín ép"
+      ],
       "angle": "Ripening process differences, taste/nutrition impact, how to detect ép, buying from reputable source",
       "status": "pending",
       "usedAt": null
@@ -136,7 +172,11 @@
       "type": "tin-tuc",
       "slug": "gia-xoai-tu-quy-hom-nay",
       "title": "Giá Xoài Tứ Quý Hôm Nay Bao Nhiêu? Bảng Giá VIP, Loại 1, Loại 2",
-      "secondaryKeywords": ["giá xoài tứ quý mới nhất", "bảng giá xoài bến tre hôm nay", "xoài tứ quý giá sỉ"],
+      "secondaryKeywords": [
+        "giá xoài tứ quý mới nhất",
+        "bảng giá xoài bến tre hôm nay",
+        "xoài tứ quý giá sỉ"
+      ],
       "angle": "Current price table, price history context, why prices fluctuate, how to get best deal",
       "status": "pending",
       "usedAt": null
@@ -150,7 +190,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-loai-nao-ngon-nhat",
       "title": "Xoài Tứ Quý Loại Nào Ngon Nhất? So Sánh VIP, Loại 1, Loại 2",
-      "secondaryKeywords": ["xoài tứ quý vip", "xoài tứ quý loại 1", "phân loại xoài tứ quý"],
+      "secondaryKeywords": [
+        "xoài tứ quý vip",
+        "xoài tứ quý loại 1",
+        "phân loại xoài tứ quý"
+      ],
       "angle": "Compare 3 tiers: VIP vs Loại 1 vs Loại 2 — taste, size, use case, price-to-value",
       "status": "pending",
       "usedAt": null
@@ -164,7 +208,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-thanh-phu-ben-tre-dac-san",
       "title": "Xoài Tứ Quý Thạnh Phú Bến Tre — Đặc Sản CDĐL #00124",
-      "secondaryKeywords": ["xoài tứ quý bến tre CDĐL", "vùng trồng xoài thạnh phú", "xoài tứ quý chỉ dẫn địa lý"],
+      "secondaryKeywords": [
+        "xoài tứ quý bến tre CDĐL",
+        "vùng trồng xoài thạnh phú",
+        "xoài tứ quý chỉ dẫn địa lý"
+      ],
       "angle": "Origin story, CDĐL certification #00124, why Thạnh Phú soil makes it unique, farm to table",
       "status": "pending",
       "usedAt": null
@@ -178,7 +226,11 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-co-tot-cho-suc-khoe",
       "title": "Xoài Tứ Quý Có Tốt Cho Sức Khoẻ Không? 8 Lợi Ích Dinh Dưỡng",
-      "secondaryKeywords": ["lợi ích xoài tứ quý", "xoài tứ quý vitamin c", "ăn xoài tứ quý mỗi ngày"],
+      "secondaryKeywords": [
+        "lợi ích xoài tứ quý",
+        "xoài tứ quý vitamin c",
+        "ăn xoài tứ quý mỗi ngày"
+      ],
       "angle": "Nutrition facts (vitamin C, fibre, antioxidants), 8 benefits, who should limit intake (diabetes)",
       "status": "pending",
       "usedAt": null
@@ -192,7 +244,11 @@
       "type": "tin-tuc",
       "slug": "dat-xoai-tu-quy-ben-tre-giao-ha-noi",
       "title": "Đặt Xoài Tứ Quý Bến Tre Giao Hà Nội — Cách Mua Tươi Tận Vựa",
-      "secondaryKeywords": ["mua xoài bến tre giao hà nội", "vựa xoài tứ quý ship toàn quốc", "xoài tứ quý bến tre online"],
+      "secondaryKeywords": [
+        "mua xoài bến tre giao hà nội",
+        "vựa xoài tứ quý ship toàn quốc",
+        "xoài tứ quý bến tre online"
+      ],
       "angle": "How ordering works, shipping times, packaging (foam box + ice gel), price + minimums, contact",
       "status": "pending",
       "usedAt": null
@@ -206,10 +262,204 @@
       "type": "kien-thuc",
       "slug": "xoai-tu-quy-ben-tre-cdđl",
       "title": "Xoài Tứ Quý Bến Tre Có CDĐL Không? Chứng Nhận Số 00124",
-      "secondaryKeywords": ["chỉ dẫn địa lý xoài bến tre", "CDĐL xoài tứ quý", "xoài bến tre nhãn hiệu"],
+      "secondaryKeywords": [
+        "chỉ dẫn địa lý xoài bến tre",
+        "CDĐL xoài tứ quý",
+        "xoài bến tre nhãn hiệu"
+      ],
       "angle": "Explain what CDĐL means, #00124 certificate details, how buyers verify authenticity",
       "status": "pending",
       "usedAt": null
+    },
+    {
+      "id": "kdx-001",
+      "keyword": "giá dừa xiêm bến tre hôm nay",
+      "intent": "transactional",
+      "priority": 10,
+      "pillar": "dua-xiem-ben-tre",
+      "type": "tin-tuc",
+      "slug": "gia-dua-xiem-ben-tre-hom-nay",
+      "title": "Giá Dừa Xiêm Bến Tre Hôm Nay — Cập Nhật Vựa Phúc Giang",
+      "secondaryKeywords": [
+        "giá dừa xiêm tươi",
+        "giá dừa xiêm sỉ",
+        "dừa xiêm bến tre giá"
+      ],
+      "angle": "Live daily prices VIP/Loại 1/Loại 2, GSC 42 imp/3mo proven demand, cite vựa Phúc Giang freshness",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "kdx-002",
+      "keyword": "dừa sọ là dừa gì",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "dua-xiem-ben-tre",
+      "type": "kien-thuc",
+      "slug": "dua-so-la-dua-gi",
+      "title": "Dừa Sọ Là Dừa Gì? Phân Biệt Với Dừa Xiêm — Hướng Dẫn Vựa",
+      "secondaryKeywords": [
+        "dừa sọ vs dừa xiêm",
+        "dừa sọ bến tre",
+        "phân biệt dừa sọ"
+      ],
+      "angle": "Define dừa sọ (mature coconut), compare with dừa xiêm (young), use cases",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "kdx-003",
+      "keyword": "dừa sọ để được bao lâu",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "dua-xiem-ben-tre",
+      "type": "kien-thuc",
+      "slug": "dua-so-de-duoc-bao-lau",
+      "title": "Dừa Sọ Để Được Bao Lâu? Cách Bảo Quản Dừa Tươi Tại Nhà",
+      "secondaryKeywords": [
+        "bảo quản dừa sọ",
+        "dừa sọ tươi để bao lâu",
+        "dừa để tủ lạnh"
+      ],
+      "angle": "Storage tips, room temp vs fridge, signs of spoilage",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "kdx-004",
+      "keyword": "dừa dâu là gì",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "dua-xiem-ben-tre",
+      "type": "kien-thuc",
+      "slug": "dua-dau-la-gi",
+      "title": "Dừa Dâu Là Gì? Phân Biệt Với Dừa Xiêm Bến Tre",
+      "secondaryKeywords": [
+        "dừa dâu vs dừa xiêm",
+        "dừa dâu bến tre",
+        "các loại dừa miền tây"
+      ],
+      "angle": "Variety comparison, water/meat ratio, regional preference",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "kdx-005",
+      "keyword": "vựa dừa bến tre",
+      "intent": "commercial",
+      "priority": 8,
+      "pillar": "dua-xiem-ben-tre",
+      "type": "tin-tuc",
+      "slug": "vua-dua-ben-tre-uy-tin",
+      "title": "Top Vựa Dừa Bến Tre Uy Tín 2026 — Sỉ Lẻ Toàn Quốc",
+      "secondaryKeywords": [
+        "vựa dừa xiêm",
+        "dừa bến tre giá sỉ",
+        "vựa dừa thạnh phú"
+      ],
+      "angle": "Local wholesale guide, vựa Phúc Giang positioning, B2B/B2C",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "kdx-006",
+      "keyword": "dừa xiêm vs dừa ta",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "dua-xiem-ben-tre",
+      "type": "kien-thuc",
+      "slug": "dua-xiem-vs-dua-ta",
+      "title": "Dừa Xiêm Vs Dừa Ta — Khác Nhau Thế Nào? So Sánh Vựa",
+      "secondaryKeywords": [
+        "dừa xiêm khác dừa ta",
+        "dừa ta bến tre",
+        "phân biệt dừa"
+      ],
+      "angle": "Comparison table: water content, sweetness, size, price, use case",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "ktq-016",
+      "keyword": "xoài tứ quý ngọt hay chua",
+      "intent": "informational",
+      "priority": 10,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "xoai-tu-quy-ngot-hay-chua",
+      "title": "Xoài Tứ Quý Ngọt Hay Chua? Brix Score Và Cách Phân Biệt",
+      "secondaryKeywords": [
+        "xoài tứ quý chua không",
+        "vị xoài tứ quý",
+        "xoài tứ quý có ngọt không"
+      ],
+      "angle": "GSC 22 imp/3mo proven demand, brix 16-18°, compare ripe vs unripe vs region",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "ktq-017",
+      "keyword": "cách chọn xoài tứ quý ngon",
+      "intent": "informational",
+      "priority": 9,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "cach-chon-xoai-tu-quy-ngon",
+      "title": "Cách Chọn Xoài Tứ Quý Ngon — 7 Mẹo Từ Vựa Phúc Giang",
+      "secondaryKeywords": [
+        "cách chọn xoài tứ quý già",
+        "chọn xoài ngon",
+        "mẹo chọn xoài tứ quý"
+      ],
+      "angle": "Buying guide: skin color, weight, smell, defects to avoid, ripe vs green",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "ktq-018",
+      "keyword": "xoài bao tử là gì",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "xoai-bao-tu-la-gi",
+      "title": "Xoài Bao Tử Là Gì? Giống Xoài Non Để Ngâm Chua Ngọt",
+      "secondaryKeywords": [
+        "xoài bao tử là giống xoài gì",
+        "xoài bao tử ngâm",
+        "giống xoài bao tử"
+      ],
+      "angle": "Define xoài bao tử (young green mango), origin from Tứ Quý, recipe uses",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
+    },
+    {
+      "id": "ktq-019",
+      "keyword": "xoài bao tử ngâm",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "xoai-bao-tu-ngam-chua-ngot",
+      "title": "Cách Ngâm Xoài Bao Tử Chua Ngọt — Công Thức Truyền Thống",
+      "secondaryKeywords": [
+        "ngâm xoài bao tử",
+        "cách làm xoài bao tử ngâm",
+        "xoài bao tử ngâm đường"
+      ],
+      "angle": "Recipe, ratios, fermentation time, storage, variations",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-260427"
     }
   ]
 }
