@@ -51,6 +51,15 @@ faq:
     a: "{{answer3}}"
   - q: "{{question4}}"
     a: "{{answer4}}"
+sources:
+  - title: "{{sourceTitle1}} — short descriptor"
+    url: "{{sourceUrl1 — full URL}}"
+    accessedAt: "{{YYYY-MM-DD}}"
+    catalogId: "{{optional: ID from data/source-catalog.json}}"
+  - title: "Vựa Phúc Giang — Internal observation, Thạnh Phú Bến Tre"
+    type: "internal"
+    publisher: "Vựa Phúc Giang, Thạnh Phú, Bến Tre"
+    accessedAt: "{{YYYY-MM-DD}}"
 ---
 ```
 
@@ -59,6 +68,44 @@ faq:
 - `faq`: minimum 4 entries, answers ≤ 80 words each, factual and specific
 - `publishedAt`: use today's date in ISO 8601 format with +07:00 timezone
 - `pillarSlug`: derive from pillar field (e.g., "xoai-tu-quy" → "ky-thuat-bao-quan" or relevant sub-pillar)
+- `sources`: **MANDATORY ≥1 entry**. Cite every factual claim. See `docs/source-citation-guide.md`. Reuse IDs from `data/source-catalog.json` when applicable. Each entry MUST have `title` + (`url` OR `type: internal` with `publisher`).
+
+### Source citation rules (CRITICAL — site credibility)
+
+**Inline citation format** for every factual claim:
+
+```mdx
+Xoài Tứ Quý chín chứa 60 kcal/100g[^1].
+Sản lượng Bến Tre đạt 850.000 tấn/năm 2024[^2].
+```
+
+**End body with `## Nguồn` section:**
+
+```mdx
+## Nguồn
+
+[^1]: USDA FoodData Central. [Mango, raw](https://fdc.nal.usda.gov/...). Truy cập 27/04/2026.
+[^2]: Tổng cục Thống kê (2024). Báo cáo sản lượng nông sản. [gso.gov.vn](url).
+```
+
+**Required citations for:**
+- ✅ Statistics, %, tấn, kg, calo, brix, vitamin
+- ✅ Năm, lịch sử, mùa vụ, vùng trồng
+- ✅ Comparative claims ("ngon nhất", "lớn nhất")
+- ✅ Health/safety claims (cho bầu, cho bé, tiểu đường)
+- ✅ Regulatory (CDĐL, kiểm dịch, xuất khẩu)
+- ✅ Prices (cite vựa Phúc Giang internal log)
+
+**NOT required for:**
+- Subjective taste descriptors ("ngọt thanh", "thơm")
+- Recipes (own creation OK)
+- General cultural ("Tết Đoan Ngọ")
+
+**NEVER do:**
+- "Theo nghiên cứu" without naming the study
+- "Các chuyên gia cho rằng" without naming experts
+- Made-up nutrition values — always verify USDA
+- Cite Wikipedia as primary — go to its source instead
 
 ### 2. TL;DR Block (REQUIRED — first element after frontmatter)
 
