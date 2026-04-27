@@ -34,7 +34,7 @@ export const PRICE_TIER_TRANSLATION_KEYS: Record<PriceTierSku, "vip" | "loai1" |
 
 /** Current price data — edit this file to update daily prices */
 export const PRICE_DATA: PriceData = {
-  lastUpdated: "2026-04-09",
+  lastUpdated: "2026-04-26",
   note: "Giá dao động theo ngày, gọi vựa 0932 585 533 để có giá chính xác.",
   tiers: [
     {
