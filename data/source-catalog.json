@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "description": "Centralized source registry for citing data in articles. Reuse IDs across articles for consistency. Add new entries as needed.",
+  "sources": {
+    "usda-mango": {
+      "title": "USDA FoodData Central — Mango, raw",
+      "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169910",
+      "publisher": "U.S. Department of Agriculture",
+      "type": "nutrition-database",
+      "language": "en",
+      "useCase": "calo, vitamin, dinh dưỡng xoài"
+    },
+    "usda-coconut-water": {
+      "title": "USDA FoodData Central — Coconut water",
+      "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/170174",
+      "publisher": "U.S. Department of Agriculture",
+      "type": "nutrition-database",
+      "language": "en",
+      "useCase": "calo, electrolyte, dinh dưỡng dừa"
+    },
+    "gso-vn": {
+      "title": "Tổng cục Thống kê Việt Nam",
+      "url": "https://www.gso.gov.vn/",
+      "publisher": "General Statistics Office of Vietnam",
+      "type": "government-statistics",
+      "language": "vi",
+      "useCase": "sản lượng nông sản, GDP nông nghiệp, xuất khẩu"
+    },
+    "mard-vn": {
+      "title": "Bộ Nông nghiệp và Phát triển Nông thôn",
+      "url": "https://www.mard.gov.vn/",
+      "publisher": "Ministry of Agriculture and Rural Development",
+      "type": "government-agency",
+      "language": "vi",
+      "useCase": "vùng trồng, mùa vụ, kỹ thuật, kiểm dịch"
+    },
+    "moit-vn": {
+      "title": "Bộ Công Thương Việt Nam",
+      "url": "https://moit.gov.vn/",
+      "publisher": "Ministry of Industry and Trade",
+      "type": "government-agency",
+      "language": "vi",
+      "useCase": "xuất khẩu, thương mại, CDĐL database"
+    },
+    "moit-cdđl-00124": {
+      "title": "CDĐL #00124 — Xoài Tứ Quý Thạnh Phú",
+      "url": "https://ipvietnam.gov.vn/web/guest/chi-dan-dia-ly",
+      "publisher": "Cục Sở hữu Trí tuệ Việt Nam",
+      "type": "government-registry",
+      "language": "vi",
+      "useCase": "Geographical Indication CDĐL claim, vùng trồng chính thức"
+    },
+    "vaas": {
+      "title": "Viện Khoa học Nông nghiệp Việt Nam (VAAS)",
+      "url": "https://vaas.vn/",
+      "publisher": "Vietnam Academy of Agricultural Sciences",
+      "type": "research-institute",
+      "language": "vi",
+      "useCase": "nghiên cứu giống, kỹ thuật canh tác, peer-reviewed"
+    },
+    "vinafruit": {
+      "title": "Hiệp hội Rau quả Việt Nam (Vinafruit)",
+      "url": "https://vinafruit.com/",
+      "publisher": "Vietnam Fruit and Vegetables Association",
+      "type": "industry-association",
+      "language": "vi",
+      "useCase": "thị trường, giá, xuất khẩu"
+    },
+    "fao": {
+      "title": "Food and Agriculture Organization of the United Nations",
+      "url": "https://www.fao.org/",
+      "publisher": "FAO",
+      "type": "international-organization",
+      "language": "en",
+      "useCase": "global production, trade, food security"
+    },
+    "who-nutrition": {
+      "title": "World Health Organization — Healthy diet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
+      "publisher": "World Health Organization",
+      "type": "international-organization",
+      "language": "en",
+      "useCase": "khuyến nghị dinh dưỡng tổng quát"
+    },
+    "phuc-giang-vua": {
+      "title": "Vựa Phúc Giang — Internal data",
+      "url": null,
+      "publisher": "Vựa Phúc Giang, Thạnh Phú, Bến Tre",
+      "type": "internal",
+      "language": "vi",
+      "useCase": "giá vựa, photos thực địa, công thức gia truyền, kinh nghiệm 20+ năm"
+    },
+    "phuc-giang-prices": {
+      "title": "Vựa Phúc Giang — Daily price log",
+      "url": null,
+      "publisher": "data/daily-prices.json (internal)",
+      "type": "internal-data",
+      "language": "vi",
+      "useCase": "giá hôm nay VIP/Loại 1/Loại 2 — cập nhật daily"
+    },
+    "cho-hoc-mon": {
+      "title": "Chợ Đầu Mối Nông Sản Hóc Môn",
+      "url": "https://chodaumoihocmon.com/",
+      "publisher": "Ban quản lý Chợ Đầu Mối Hóc Môn, TP.HCM",
+      "type": "wholesale-market",
+      "language": "vi",
+      "useCase": "giá sỉ HCM, sản lượng nhập về chợ"
+    },
+    "cho-thu-duc": {
+      "title": "Chợ Đầu Mối Thủ Đức",
+      "url": "https://chothuduc.com.vn/",
+      "publisher": "Chợ Đầu Mối Nông Sản Thủ Đức",
+      "type": "wholesale-market",
+      "language": "vi",
+      "useCase": "giá sỉ TP.HCM, miền Đông"
+    },
+    "cucbvtv-vn": {
+      "title": "Cục Bảo vệ Thực vật",
+      "url": "https://www.ppd.gov.vn/",
+      "publisher": "Plant Protection Department, MARD",
+      "type": "government-agency",
+      "language": "vi",
+      "useCase": "kiểm dịch xuất khẩu, sâu bệnh, thuốc BVTV"
+    },
+    "vnexpress": {
+      "title": "VnExpress",
+      "url": "https://vnexpress.net/",
+      "publisher": "FPT Online",
+      "type": "news",
+      "language": "vi",
+      "useCase": "tin tức ngành, sự kiện, thị trường (general news)"
+    },
+    "tuoitre": {
+      "title": "Báo Tuổi Trẻ",
+      "url": "https://tuoitre.vn/",
+      "publisher": "Tuổi Trẻ Online",
+      "type": "news",
+      "language": "vi",
+      "useCase": "tin tức nông nghiệp, miền Tây, Bến Tre"
+    },
+    "thanhnien": {
+      "title": "Báo Thanh Niên",
+      "url": "https://thanhnien.vn/",
+      "publisher": "Thanh Nien Newspaper",
+      "type": "news",
+      "language": "vi",
+      "useCase": "tin tức ngành, kinh tế nông nghiệp"
+    },
+    "ben-tre-portal": {
+      "title": "Cổng Thông tin Điện tử Tỉnh Bến Tre",
+      "url": "https://www.bentre.gov.vn/",
+      "publisher": "UBND Tỉnh Bến Tre",
+      "type": "government-portal",
+      "language": "vi",
+      "useCase": "dữ liệu tỉnh, vùng trồng, lễ hội, du lịch Bến Tre"
+    },
+    "thanh-phu-portal": {
+      "title": "UBND Huyện Thạnh Phú",
+      "url": "https://thanhphu.bentre.gov.vn/",
+      "publisher": "UBND Huyện Thạnh Phú, Bến Tre",
+      "type": "government-portal",
+      "language": "vi",
+      "useCase": "dữ liệu huyện, vựa địa phương, vùng trồng Tứ Quý chính"
+    }
+  }
+}

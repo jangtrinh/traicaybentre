@@ -18,7 +18,7 @@ const QUESTION_WORDS = [
   'Làm sao', 'Như thế nào', 'Là gì', 'Tại sao', 'Nên', 'Có thể',
 ];
 
-const REQUIRED_FRONTMATTER_FIELDS = ['title', 'description', 'pubDate', 'author', 'image', 'faq'];
+const REQUIRED_FRONTMATTER_FIELDS = ['title', 'description', 'pubDate', 'author', 'image', 'faq', 'sources'];
 // Also accept common aliases used in this project
 const REQUIRED_FRONTMATTER_ALIASES = {
   description: ['metaDescription'],
@@ -29,6 +29,7 @@ const REQUIRED_FRONTMATTER_ALIASES = {
 const WORD_COUNT_MIN = 800;
 const WORD_COUNT_MAX = 2500;
 const FAQ_MIN = 3;
+const SOURCES_MIN = 1;
 
 /**
  * Count words in a Vietnamese/mixed string.
@@ -128,6 +129,41 @@ function validateAeo(mdxString, frontmatter) {
   );
   if (missingFields.length > 0) {
     throw new Error(`Missing required frontmatter fields: ${missingFields.join(', ')}`);
+  }
+
+  // --- Sources frontmatter (data citation requirement) ---
+  // See feedback memory: "Data must have source" (Apr 27, 2026)
+  // Each entry must have title + (url OR type:internal)
+  const sources = frontmatter.sources;
+  if (!Array.isArray(sources)) {
+    throw new Error('sources frontmatter must be an array');
+  }
+  if (sources.length < SOURCES_MIN) {
+    throw new Error(
+      `Sources has ${sources.length} entries — minimum ${SOURCES_MIN}. Cite at least 1 source ` +
+      `(USDA/GSO/MARD/Vinafruit/internal vựa data). Reference data/source-catalog.json.`
+    );
+  }
+  sources.forEach((src, i) => {
+    if (!src.title) {
+      throw new Error(`Source entry ${i + 1} missing "title" field`);
+    }
+    if (!src.url && src.type !== 'internal' && src.type !== 'internal-data') {
+      throw new Error(
+        `Source entry ${i + 1} ("${src.title}") missing "url" — required unless type is "internal" or "internal-data"`
+      );
+    }
+    if (src.type === 'internal' && !src.publisher) {
+      throw new Error(`Source entry ${i + 1} (internal type) needs "publisher" field`);
+    }
+  });
+
+  // --- Source section in body (recommended, warning only) ---
+  const hasSourceSection = /^##\s+(Nguồn|Tham khảo|References|Citations)/im.test(body);
+  if (!hasSourceSection) {
+    warnings.push(
+      'Body missing "## Nguồn" section. Recommend adding numbered citations (e.g., [^1]) and a Nguồn section at the end.'
+    );
   }
 
   return { ok: true, warnings };
