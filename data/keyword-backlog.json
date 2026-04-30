@@ -34,8 +34,8 @@
         "ăn xoài khi mang thai"
       ],
       "angle": "Safety check, trimester guidance, portion size, when to avoid (gestational diabetes)",
-      "status": "pending",
-      "usedAt": null
+      "status": "published",
+      "usedAt": "2026-04-30"
     },
     {
       "id": "ktq-003",
@@ -170,7 +170,7 @@
       "priority": 10,
       "pillar": "xoai-tu-quy",
       "type": "tin-tuc",
-      "slug": "gia-xoai-tu-quy-hom-nay",
+      "slug": "gia-xoai-tu-quy-hom-nay-bao-nhieu",
       "title": "Giá Xoài Tứ Quý Hôm Nay Bao Nhiêu? Bảng Giá VIP, Loại 1, Loại 2",
       "secondaryKeywords": [
         "giá xoài tứ quý mới nhất",
@@ -178,8 +178,8 @@
         "xoài tứ quý giá sỉ"
       ],
       "angle": "Current price table, price history context, why prices fluctuate, how to get best deal",
-      "status": "pending",
-      "usedAt": null
+      "status": "published",
+      "usedAt": "2026-04-30"
     },
     {
       "id": "ktq-011",
@@ -279,15 +279,15 @@
       "pillar": "dua-xiem-ben-tre",
       "type": "tin-tuc",
       "slug": "gia-dua-xiem-ben-tre-hom-nay",
-      "title": "Giá Dừa Xiêm Bến Tre Hôm Nay — Cập Nhật Vựa Phúc Giang",
+      "title": "Giá Dừa Xiêm Bến Tre Hôm Nay — Hướng Dẫn Mua Sỉ Lẻ Từ Vựa Phúc Giang",
       "secondaryKeywords": [
         "giá dừa xiêm tươi",
         "giá dừa xiêm sỉ",
         "dừa xiêm bến tre giá"
       ],
       "angle": "Live daily prices VIP/Loại 1/Loại 2, GSC 42 imp/3mo proven demand, cite vựa Phúc Giang freshness",
-      "status": "pending",
-      "usedAt": null,
+      "status": "published",
+      "usedAt": "2026-04-30",
       "source": "gsc-260427"
     },
     {
@@ -400,8 +400,8 @@
         "xoài tứ quý có ngọt không"
       ],
       "angle": "GSC 22 imp/3mo proven demand, brix 16-18°, compare ripe vs unripe vs region",
-      "status": "pending",
-      "usedAt": null,
+      "status": "published",
+      "usedAt": "2026-04-30",
       "source": "gsc-260427"
     },
     {
@@ -419,8 +419,8 @@
         "mẹo chọn xoài tứ quý"
       ],
       "angle": "Buying guide: skin color, weight, smell, defects to avoid, ripe vs green",
-      "status": "pending",
-      "usedAt": null,
+      "status": "published",
+      "usedAt": "2026-04-30",
       "source": "gsc-260427"
     },
     {
