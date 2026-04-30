@@ -43,12 +43,12 @@
       "useCase": "xuất khẩu, thương mại, CDĐL database"
     },
     "moit-cdđl-00124": {
-      "title": "CDĐL #00124 — Xoài Tứ Quý Thạnh Phú",
-      "url": "https://ipvietnam.gov.vn/web/guest/chi-dan-dia-ly",
+      "title": "CDĐL #00124 — Xoài Tứ Quý Bến Tre",
+      "url": "https://ipvietnam.gov.vn/en/phat-trien-chi-dan-ia-ly/-/asset_publisher/SGA9PgvmYtWI/content/bao-ho-chi-dan-ia-ly-ben-tre-cho-san-pham-xoai-tu-quy",
       "publisher": "Cục Sở hữu Trí tuệ Việt Nam",
       "type": "government-registry",
       "language": "vi",
-      "useCase": "Geographical Indication CDĐL claim, vùng trồng chính thức"
+      "useCase": "Geographical Indication CDĐL claim, vùng trồng chính thức, Quyết định 5371/QĐ-SHTT 2022"
     },
     "vaas": {
       "title": "Viện Khoa học Nông nghiệp Việt Nam (VAAS)",
@@ -217,6 +217,14 @@
       "type": "technical-resource",
       "language": "en",
       "useCase": "Brix độ Brix, đo độ ngọt trái cây"
+    },
+    "moit-cdđl-00063": {
+      "title": "CDĐL #00063 — Dừa Xiêm Xanh Bến Tre",
+      "url": "https://ipvietnam.gov.vn/en/phat-trien-chi-dan-ia-ly/-/asset_publisher/SGA9PgvmYtWI/content/bao-ho-chi-dan-ia-ly-ben-tre-cho-san-pham-dua-uong-nuoc-xiem-xa-1",
+      "publisher": "Cục Sở hữu Trí tuệ Việt Nam",
+      "type": "government-registry",
+      "language": "vi",
+      "useCase": "Geographical Indication CDĐL claim, vùng trồng chính thức, Brix 7.36%, kali 1832 mg/L"
     }
   }
 }
