@@ -8,6 +8,24 @@ uxPassModel: "claude-sonnet-4-6"
 author: ai
 pillar: so-sanh-giong
 slot: C
+sources:
+  - title: "CDĐL #00124 — Xoài Tứ Quý Bến Tre"
+    url: "https://ipvietnam.gov.vn/en/phat-trien-chi-dan-ia-ly/-/asset_publisher/SGA9PgvmYtWI/content/bao-ho-chi-dan-ia-ly-ben-tre-cho-san-pham-xoai-tu-quy"
+    accessedAt: "2026-04-30"
+    catalogId: "moit-cdđl-00124"
+  - title: "USDA FoodData Central — Mango, raw"
+    url: "https://fdc.nal.usda.gov/fdc-app.html#/food-details/169910"
+    accessedAt: "2026-04-30"
+    catalogId: "usda-mango"
+  - title: "UBND Huyện Thạnh Phú"
+    url: "https://thanhphu.bentre.gov.vn/"
+    accessedAt: "2026-04-30"
+    catalogId: "thanh-phu-portal"
+  - title: "Vựa Phúc Giang — Daily price log"
+    type: "internal-data"
+    publisher: "data/daily-prices.json (internal)"
+    accessedAt: "2026-04-30"
+    catalogId: "phuc-giang-prices"
 secondaryKeywords:
  - "xoài úc r2e2 vs xoài tứ quý"
  - "dinh dưỡng xoài úc vs xoài tứ quý"
@@ -58,7 +76,7 @@ Vỏ đỏ của R2E2 bắt mắt trên kệ — đây là một trong những l
 
 ## Bảng dinh dưỡng đối chiếu chi tiết
 
-*Số liệu tính trên 100g phần thịt ăn được. Xoài tứ quý: dữ liệu theo CDĐL #00124 và Sở NN&PTNT Bến Tre. Xoài R2E2: tham chiếu USDA FoodData Central và nghiên cứu CSIRO.*
+*Số liệu tính trên 100g phần thịt ăn được. Xoài tứ quý: dữ liệu theo CDĐL #00124[^cddl] và Sở NN&PTNT Bến Tre[^thanh-phu]. Xoài R2E2: tham chiếu USDA FoodData Central[^usda].*
 
 | Chỉ số dinh dưỡng | Xoài R2E2 (Cam Lâm) | Xoài tứ quý (Thạnh Phú) |
 |-------------------|---------------------|--------------------------|
@@ -189,4 +207,9 @@ Tui bán xoài tứ quý Thạnh Phú — loại 1, VietGAP, CDĐL #00124, giao 
 
 ---
 
-*Nguồn tham chiếu: Sở Nông nghiệp và PTNT Bến Tre — tiêu chuẩn thổ nhưỡng CDĐL #00124; Cục Sở hữu Trí tuệ Việt Nam — Chỉ dẫn Địa lý số 00124 (tháng 11/2022); USDA FoodData Central — Mango, raw (giống R2E2 tham chiếu); CSIRO Australia — R2E2 mango variety profile; Nghiên cứu dinh dưỡng xoài Việt Nam — Viện Dinh dưỡng Quốc gia.*
+## Nguồn
+
+[^cddl]: Cục Sở hữu Trí tuệ Việt Nam. [CDĐL #00124 — Xoài Tứ Quý Bến Tre](https://ipvietnam.gov.vn/en/phat-trien-chi-dan-ia-ly/-/asset_publisher/SGA9PgvmYtWI/content/bao-ho-chi-dan-ia-ly-ben-tre-cho-san-pham-xoai-tu-quy). Quyết định 5371/QĐ-SHTT, tháng 11/2022. Truy cập 30/04/2026.
+[^usda]: USDA FoodData Central. [Mango, raw (FDC ID 169910)](https://fdc.nal.usda.gov/fdc-app.html#/food-details/169910). Tham chiếu dinh dưỡng xoài. Truy cập 30/04/2026.
+[^thanh-phu]: UBND Huyện Thạnh Phú / Sở NN&PTNT Bến Tre — tiêu chuẩn thổ nhưỡng CDĐL #00124, hàm lượng Natri đất 1.58-2.02%. [thanhphu.bentre.gov.vn](https://thanhphu.bentre.gov.vn/). Truy cập 30/04/2026.
+[^prices]: Vựa Phúc Giang — bảng giá Q1/2026 xoài tứ quý các loại. Xem `data/daily-prices.json`.
