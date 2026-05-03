@@ -460,6 +460,234 @@
       "status": "pending",
       "usedAt": null,
       "source": "gsc-260427"
+    },
+    {
+      "id": "khk-001",
+      "keyword": "xoài tứ quý hoàng kim",
+      "intent": "commercial",
+      "priority": 10,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-tu-quy-hoang-kim",
+      "title": "Xoài Tứ Quý Hoàng Kim Là Gì? Phân Biệt Với Xoài Hoàng Kim",
+      "secondaryKeywords": [
+        "xoài tứ quý hoàng kim là gì",
+        "xoài hoàng kim tứ quý",
+        "phân biệt tứ quý vs hoàng kim"
+      ],
+      "angle": "Định nghĩa giống Tứ Quý Hoàng Kim — biến thể premium của Tứ Quý có da vàng kim, ngọt lịm hơn",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-002",
+      "keyword": "xoài hoàng kim giá bao nhiêu",
+      "intent": "transactional",
+      "priority": 10,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-hoang-kim-gia-bao-nhieu",
+      "title": "Xoài Hoàng Kim Giá Bao Nhiêu 2026? Bảng Giá Premium Vựa Phúc Giang",
+      "secondaryKeywords": [
+        "giá xoài hoàng kim 2026",
+        "xoài hoàng kim 1kg",
+        "giá xoài hoàng kim sỉ"
+      ],
+      "angle": "Bảng giá VIP/Loại 1, so sánh với Tứ Quý thường, mùa cao điểm vs thấp điểm",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-003",
+      "keyword": "cách bảo quản xoài hoàng kim",
+      "intent": "informational",
+      "priority": 9,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "cach-bao-quan-xoai-hoang-kim",
+      "title": "Cách Bảo Quản Xoài Hoàng Kim Lâu — 7 Ngày Tươi Ngọt",
+      "secondaryKeywords": [
+        "bảo quản xoài hoàng kim tủ lạnh",
+        "xoài hoàng kim để được bao lâu",
+        "giữ xoài hoàng kim tươi"
+      ],
+      "angle": "Khác biệt với Tứ Quý thường (mỏng vỏ, ngọt hơn nên chín nhanh hơn), nhiệt độ tối ưu, hộp xốp",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-004",
+      "keyword": "xoài hoàng kim mùa nào",
+      "intent": "informational",
+      "priority": 9,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-hoang-kim-mua-nao-ngon-nhat",
+      "title": "Xoài Hoàng Kim Mùa Nào Ngon Nhất? Lịch Vụ Hiếm Cả Năm",
+      "secondaryKeywords": [
+        "xoài hoàng kim mùa nào",
+        "khi nào có xoài hoàng kim",
+        "vụ xoài hoàng kim"
+      ],
+      "angle": "Hiếm hơn Tứ Quý — chỉ có theo Tứ Quý nhưng sản lượng ít, đặt trước, peak tháng 4-6",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-005",
+      "keyword": "xoài hoàng kim bao nhiêu calo",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-hoang-kim-bao-nhieu-calo",
+      "title": "Xoài Hoàng Kim Bao Nhiêu Calo? Brix 18-20° Ngọt Hơn Bình Thường",
+      "secondaryKeywords": [
+        "xoài hoàng kim dinh dưỡng",
+        "calo xoài hoàng kim",
+        "xoài hoàng kim đường"
+      ],
+      "angle": "~60-65 kcal/100g (USDA), Brix 18-20° vs 16-18° Tứ Quý — vitamin C, beta-carotene",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-006",
+      "keyword": "xoài hoàng kim thạnh phú",
+      "intent": "commercial",
+      "priority": 9,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-hoang-kim-thanh-phu",
+      "title": "Xoài Hoàng Kim Thạnh Phú — Vùng Trồng Chính Cho Hoàng Kim Đẳng Cấp",
+      "secondaryKeywords": [
+        "hoàng kim thạnh phú",
+        "xoài hoàng kim bến tre",
+        "vườn hoàng kim thạnh phú"
+      ],
+      "angle": "Cùng đất giồng cát CDĐL #00124 với Tứ Quý, nhưng cây giống đặc biệt cho Hoàng Kim",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-007",
+      "keyword": "cách chọn xoài hoàng kim ngon",
+      "intent": "informational",
+      "priority": 9,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "cach-chon-xoai-hoang-kim-ngon",
+      "title": "Cách Chọn Xoài Hoàng Kim Ngon — Phân Biệt Hàng Thật Vựa",
+      "secondaryKeywords": [
+        "chọn xoài hoàng kim",
+        "phân biệt xoài hoàng kim thật giả",
+        "mẹo chọn hoàng kim"
+      ],
+      "angle": "Da vàng kim óng (vs vàng nhạt giả), trọng lượng 800g-1.5kg, hương thơm đậm, nhiều mủ",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-008",
+      "keyword": "xoài hoàng kim hộp quà tết",
+      "intent": "transactional",
+      "priority": 9,
+      "pillar": "xoai-hoang-kim",
+      "type": "tin-tuc",
+      "slug": "xoai-hoang-kim-hop-qua-tet",
+      "title": "Xoài Hoàng Kim Hộp Quà Tết 2026 — Quà Sang Trọng Đẳng Cấp",
+      "secondaryKeywords": [
+        "xoài hoàng kim quà tết",
+        "hộp xoài hoàng kim biếu sếp",
+        "quà tết xoài cao cấp"
+      ],
+      "angle": "Hộp 5kg/3kg gift packaging, ribbon thiệp, ship trước Tết, đặt từ tháng 11",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-009",
+      "keyword": "xoài hoàng kim cho bầu",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-hoang-kim-cho-bau",
+      "title": "Xoài Hoàng Kim Cho Bầu Có Tốt Không? Lưu Ý Brix Cao 18-20°",
+      "secondaryKeywords": [
+        "bầu ăn xoài hoàng kim",
+        "xoài hoàng kim trimester",
+        "tiểu đường thai kỳ xoài"
+      ],
+      "angle": "An toàn nhưng portion nhỏ hơn Tứ Quý do Brix cao, GDM warning, vitamin folate",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-010",
+      "keyword": "xoài hoàng kim ship hà nội",
+      "intent": "transactional",
+      "priority": 8,
+      "pillar": "xoai-hoang-kim",
+      "type": "tin-tuc",
+      "slug": "xoai-hoang-kim-ship-ha-noi",
+      "title": "Xoài Hoàng Kim Ship Hà Nội — Giao Lạnh 24h Hoa Trang Trí",
+      "secondaryKeywords": [
+        "xoài hoàng kim hà nội",
+        "ship xoài hoàng kim giao bắc",
+        "vựa hoàng kim ship"
+      ],
+      "angle": "Lạnh 24h, đóng hộp xốp, giá ship + hộp, đặt tối thiểu 3kg, weather-aware",
+      "status": "pending",
+      "usedAt": null,
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-011",
+      "keyword": "xoài hoàng kim ship hcm",
+      "intent": "transactional",
+      "priority": 8,
+      "pillar": "xoai-hoang-kim",
+      "type": "tin-tuc",
+      "slug": "xoai-hoang-kim-ship-hcm",
+      "title": "Xoài Hoàng Kim Ship TP.HCM — 6h Từ Vựa Đến Tay",
+      "secondaryKeywords": [
+        "xoài hoàng kim sài gòn",
+        "ship hoàng kim hcm",
+        "vựa hoàng kim sài gòn"
+      ],
+      "angle": "6h same-day từ Bến Tre, giá ship rẻ vì cận, mỗi ngày 1 chuyến vựa",
+      "status": "pending",
+      "usedAt": null,
+      "source": "manual-260503"
+    },
+    {
+      "id": "khk-012",
+      "keyword": "xoài hoàng kim vs xoài thái",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-hoang-kim",
+      "type": "kien-thuc",
+      "slug": "xoai-hoang-kim-vs-xoai-thai",
+      "title": "Xoài Hoàng Kim vs Xoài Thái — So Sánh Giống Cao Cấp",
+      "secondaryKeywords": [
+        "xoài hoàng kim vs xoài thái nhập",
+        "so sánh xoài thái và hoàng kim",
+        "xoài thái nhập khẩu"
+      ],
+      "angle": "Brix, sản lượng, giá, hương vị, đất trồng — tại sao Hoàng Kim VN cạnh tranh được",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
     }
   ]
 }
