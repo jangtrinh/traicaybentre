@@ -688,6 +688,158 @@
       "status": "published",
       "usedAt": "2026-05-03",
       "source": "manual-260503"
+    },
+    {
+      "id": "kos-001",
+      "keyword": "nguồn gốc xoài cát hòa lộc",
+      "intent": "informational",
+      "priority": 9,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-cat-hoa-loc",
+      "title": "Nguồn Gốc Xoài Cát Hòa Lộc — Câu Chuyện Cái Bè Tiền Giang",
+      "secondaryKeywords": [
+        "xoài cát hòa lộc ở đâu",
+        "lịch sử xoài cát hòa lộc",
+        "xoài cát hòa lộc tiền giang"
+      ],
+      "angle": "1930s-40s phát hiện tại Cái Bè, vua xoài VN, CDĐL #00012, đặc điểm di truyền, footer so sánh Tứ Quý",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-002",
+      "keyword": "nguồn gốc xoài cát chu",
+      "intent": "informational",
+      "priority": 9,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-cat-chu",
+      "title": "Nguồn Gốc Xoài Cát Chu — Đồng Tháp Cao Lãnh Vùng Đất Vàng",
+      "secondaryKeywords": [
+        "xoài cát chu ở đâu",
+        "xoài cát chu cao lãnh",
+        "lịch sử xoài cát chu"
+      ],
+      "angle": "Cao Lãnh Đồng Tháp, cát chu = thịt vàng, CDĐL, đặc điểm thịt mịn ngọt thanh, footer Tứ Quý compare",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-003",
+      "keyword": "nguồn gốc xoài keo",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-keo",
+      "title": "Nguồn Gốc Xoài Keo — Du Nhập Từ Campuchia, Ăn Xanh Trứ Danh",
+      "secondaryKeywords": [
+        "xoài keo ở đâu",
+        "xoài keo campuchia",
+        "xoài keo trồng ở việt nam"
+      ],
+      "angle": "Du nhập từ Campuchia 1980s-90s, miền Tây trồng phổ biến, ăn xanh giòn, footer Tứ Quý compare",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-004",
+      "keyword": "nguồn gốc xoài tượng",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-tuong",
+      "title": "Nguồn Gốc Xoài Tượng — Trái Khổng Lồ 1-3kg/quả",
+      "secondaryKeywords": [
+        "xoài tượng ở đâu",
+        "xoài tượng to",
+        "xoài tượng vùng nào"
+      ],
+      "angle": "Tên tượng do trái to như voi (1-3kg), trồng nhiều An Giang Tiền Giang, ăn xanh, footer Tứ Quý compare",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-005",
+      "keyword": "nguồn gốc xoài đài loan",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-dai-loan",
+      "title": "Nguồn Gốc Xoài Đài Loan — Giống Cao Sản Du Nhập 2000s",
+      "secondaryKeywords": [
+        "xoài đài loan trồng được vn không",
+        "xoài đài loan có ngon không",
+        "xoài đài loan sản xuất ở đâu"
+      ],
+      "angle": "Đài Loan lai tạo 1980s, du nhập VN 2000s, trồng Bình Phước Đắk Lắk, footer Tứ Quý compare",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-006",
+      "keyword": "nguồn gốc xoài úc r2e2",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-uc-r2e2",
+      "title": "Nguồn Gốc Xoài Úc R2E2 — Giống Premium Australia 1980s",
+      "secondaryKeywords": [
+        "xoài úc r2e2",
+        "xoài úc nhập khẩu",
+        "xoài r2e2 nguồn gốc"
+      ],
+      "angle": "Australia 1980s lai tạo, R2E2 = giống premium, nhập VN giá cao, footer Tứ Quý compare giá rẻ hơn",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-007",
+      "keyword": "nguồn gốc xoài thái nam dok mai",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-thai-nam-dok-mai",
+      "title": "Nguồn Gốc Xoài Thái Nam Dok Mai — Giống Hoàng Gia Thái Lan",
+      "secondaryKeywords": [
+        "xoài nam dok mai",
+        "xoài thái lan",
+        "xoài nam dok mai vs hoàng kim"
+      ],
+      "angle": "Thailand 1900s, royal variety, ngọt lịm vàng kim, so sánh với Hoàng Kim VN, footer Tứ Quý",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
+    },
+    {
+      "id": "kos-008",
+      "keyword": "nguồn gốc xoài bưởi",
+      "intent": "informational",
+      "priority": 6,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "nguon-goc-xoai-buoi",
+      "title": "Nguồn Gốc Xoài Bưởi — Trái Hình Bưởi Của Cần Thơ",
+      "secondaryKeywords": [
+        "xoài bưởi ở đâu",
+        "xoài bưởi cần thơ",
+        "xoài hình tròn bưởi"
+      ],
+      "angle": "Cần Thơ miền Tây, hình tròn như bưởi, footer Tứ Quý compare",
+      "status": "published",
+      "usedAt": "2026-05-03",
+      "source": "manual-260503"
     }
   ]
 }
