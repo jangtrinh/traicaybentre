@@ -147,5 +147,66 @@ export function getRecipeJsonLd(opts: RecipeJsonLdOpts) {
       nutrition: { "@type": "NutritionInformation", calories: r.nutrition.calories },
     }),
     ...(r.keywords && { keywords: r.keywords }),
+    ...(r.aggregateRating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: r.aggregateRating.ratingValue,
+        reviewCount: r.aggregateRating.reviewCount,
+        bestRating: r.aggregateRating.bestRating ?? 5,
+        worstRating: r.aggregateRating.worstRating ?? 1,
+      },
+    }),
+  };
+}
+
+/* ── HowTo schema ─────────────────────────────────────────────────────────── */
+
+export interface HowToJsonLdOpts {
+  name: string;
+  description: string;
+  image: string;
+  url: string;
+  authorKey?: string | null;
+  datePublished: string;
+  dateModified: string;
+  howTo: NonNullable<ArticleFrontmatter["howTo"]>;
+}
+
+/** HowTo JSON-LD per Schema.org/HowTo — unlocks Google HowTo rich result. */
+export function getHowToJsonLd(opts: HowToJsonLdOpts) {
+  const h = opts.howTo;
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: h.name ?? opts.name,
+    description: h.description ?? opts.description,
+    image: h.image ? `${SITE_URL}${h.image}` : opts.image,
+    url: opts.url,
+    author: getAuthorPersonJsonLd(opts.authorKey),
+    datePublished: ensureIsoWithOffset(opts.datePublished),
+    dateModified: ensureIsoWithOffset(opts.dateModified),
+    ...(h.totalTime && { totalTime: h.totalTime }),
+    ...(h.estimatedCost && {
+      estimatedCost: {
+        "@type": "MonetaryAmount",
+        currency: h.estimatedCost.currency,
+        value: h.estimatedCost.value,
+      },
+    }),
+    ...(h.supply && h.supply.length > 0 && {
+      supply: h.supply.map((s) => ({ "@type": "HowToSupply", name: s })),
+    }),
+    ...(h.tool && h.tool.length > 0 && {
+      tool: h.tool.map((t) => ({ "@type": "HowToTool", name: t })),
+    }),
+    step: h.step.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      ...(step.name && { name: step.name }),
+      text: step.text,
+      ...(step.image && { image: `${SITE_URL}${step.image}` }),
+      ...(step.url && { url: step.url }),
+    })),
+    inLanguage: "vi",
   };
 }
