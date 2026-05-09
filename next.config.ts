@@ -24,6 +24,27 @@ const nextConfig: NextConfig = {
         destination: "/xoai-tu-quy#gia",
         permanent: true,
       },
+      // Legacy TSX routes migrated → MDX system (09/05/2026)
+      {
+        source: "/kien-thuc/cach-bao-quan-lam-chin-xoai-tu-quy",
+        destination: "/xoai-tu-quy/kien-thuc/cach-bao-quan-xoai-tu-quy",
+        permanent: true,
+      },
+      {
+        source: "/:locale(vi|en|ja|ko)/kien-thuc/cach-bao-quan-lam-chin-xoai-tu-quy",
+        destination: "/:locale/xoai-tu-quy/kien-thuc/cach-bao-quan-xoai-tu-quy",
+        permanent: true,
+      },
+      {
+        source: "/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam",
+        destination: "/xoai-tu-quy/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam",
+        permanent: true,
+      },
+      {
+        source: "/:locale(vi|en|ja|ko)/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam",
+        destination: "/:locale/xoai-tu-quy/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam",
+        permanent: true,
+      },
     ];
   },
 

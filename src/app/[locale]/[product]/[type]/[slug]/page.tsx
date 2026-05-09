@@ -34,6 +34,7 @@ import {
   getArticleJsonLd,
   getBreadcrumbJsonLd,
   getRecipeJsonLd,
+  getHowToJsonLd,
   truncateDescription,
   SITE_URL,
 } from "@/lib/structured-data";
@@ -192,7 +193,23 @@ export default async function ArticlePage({ params }: Props) {
         })
       : null;
 
-  const jsonLd = [articleJsonLd, breadcrumbJsonLd, speakableJsonLd, faqJsonLd, recipeJsonLd]
+  const howToJsonLd =
+    fm.hasHowTo === true && fm.howTo
+      ? getHowToJsonLd({
+          name: fm.title,
+          description: fm.metaDescription,
+          image: fm.ogImage
+            ? `${SITE_URL}${fm.ogImage}`
+            : `${SITE_URL}/images/xoai-real-2.jpg`,
+          url: canonical,
+          authorKey: fm.authorKey ?? fm.author ?? null,
+          datePublished: fm.publishedAt,
+          dateModified: fm.updatedAt ?? fm.publishedAt,
+          howTo: fm.howTo,
+        })
+      : null;
+
+  const jsonLd = [articleJsonLd, breadcrumbJsonLd, speakableJsonLd, faqJsonLd, recipeJsonLd, howToJsonLd]
     .filter((s): s is NonNullable<typeof s> => s !== null);
 
   const showPriceTicker =

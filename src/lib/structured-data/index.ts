@@ -28,9 +28,10 @@ export {
   getAuthorPersonJsonLd,
   getArticleJsonLd,
   getRecipeJsonLd,
+  getHowToJsonLd,
 } from "./article-schema";
 
-export type { ArticleJsonLdOpts, RecipeJsonLdOpts } from "./article-schema";
+export type { ArticleJsonLdOpts, RecipeJsonLdOpts, HowToJsonLdOpts } from "./article-schema";
 
 export { getShippingFaqJsonLd } from "./faq-schema";
 
