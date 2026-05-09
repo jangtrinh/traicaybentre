@@ -4,7 +4,7 @@
  * Reuses price tier pattern from xoai-tu-quy-landing.tsx.
  * Shows all products with prices + CTA for maximum transactional intent coverage.
  */
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
   Clock,
   Truck,

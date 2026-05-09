@@ -2,7 +2,7 @@
  * Shared shipping routes section for SEO landing pages.
  * Reused by order-page-content (and potentially pricing-page-content).
  */
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Truck, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { FadeIn } from "@/components/fade-in";
 

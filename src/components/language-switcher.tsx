@@ -12,6 +12,17 @@ const LOCALE_CONFIG: Record<string, { flag: string; label: string }> = {
   ja: { flag: "🇯🇵", label: "日本語" },
 };
 
+/* Persist user's explicit choice as a 1-year cookie. With routing's
+   localeDetection=false, next-intl ignores cookie for redirect logic —
+   URL prefix is the single source of truth. The cookie is kept for
+   forward compat (any future next-intl helper reading getLocale() outside
+   a request scope). Module-level fn satisfies React Compiler — no DOM
+   mutation inside component body. */
+function persistLocaleCookie(locale: string) {
+  if (typeof document === "undefined") return;
+  document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000; samesite=lax`;
+}
+
 export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
@@ -31,6 +42,7 @@ export function LanguageSwitcher() {
   }, [open]);
 
   const switchLocale = (next: string) => {
+    persistLocaleCookie(next);
     router.replace(pathname, { locale: next });
     setOpen(false);
   };
