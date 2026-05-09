@@ -8,7 +8,7 @@
  */
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { ArrowRight, Clock } from "@phosphor-icons/react/dist/ssr";
 import { useTranslations } from "next-intl";
