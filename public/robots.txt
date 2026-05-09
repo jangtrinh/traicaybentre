@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
+# Non-vi locales carry robots:noindex by design (canonical = vi). Disallowing here
+# saves crawl budget on a low-authority new domain and reclassifies GSC reports
+# from "Excluded by noindex" to "Blocked by robots.txt" (expected, not flagged).
+Disallow: /en/
+Disallow: /ko/
+Disallow: /ja/
 Sitemap: https://www.traicaybentre.com/sitemap.xml
 
 # AI crawlers — explicit allow for citation trust
