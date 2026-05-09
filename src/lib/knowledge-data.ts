@@ -47,20 +47,6 @@ export const KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
     date: "2026-04-09",
     category: "Vùng trồng",
   },
-  {
-    slug: "mua-vu-xoai-tu-quy-3-vu-nam",
-    title: "Mùa Vụ Xoài Tứ Quý — 3 Vụ/Năm + Bảng Giá Theo Tháng",
-    description:
-      "Lịch mùa vụ xoài Tứ Quý: vụ 1 (T2-4), vụ 2 (T7-8), vụ 3 (T11-1, vụ Tết). Bảng giá theo tháng + mẹo mua sỉ.",
-    date: "2026-04-09",
-    category: "Mùa vụ",
-  },
-  {
-    slug: "cach-bao-quan-lam-chin-xoai-tu-quy",
-    title: "Cách Bảo Quản & Làm Chín Xoài Tứ Quý Tại Nhà",
-    description:
-      "Hướng dẫn bảo quản xoài Tứ Quý 7-14 ngày, 5 cách làm chín nhanh, tránh sai lầm thường gặp.",
-    date: "2026-04-09",
-    category: "Hướng dẫn",
-  },
+  // mua-vu-xoai-tu-quy-3-vu-nam: migrated to MDX 09/05/2026 → 301 redirect in next.config.ts
+  // cach-bao-quan-lam-chin-xoai-tu-quy: migrated to MDX cach-bao-quan-xoai-tu-quy 09/05/2026 → 301 redirect
 ];
