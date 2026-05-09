@@ -27,6 +27,16 @@ const REPORTS_DIR = path.join(ROOT, 'plans', 'reports');
 const TARGET_DOMAIN = 'traicaybentre.com';
 
 const isDryRun = process.argv.includes('--dry-run');
+const isTop5 = process.argv.includes('--top5');
+
+// Top 5 critical KW for daily tracking (lowest SerpAPI cost)
+const TOP5_KEYWORDS = [
+  'xoài tứ quý bến tre',
+  'xoài hoàng kim thạnh phú',
+  'giá dừa xiêm bến tre hôm nay',
+  'xoài bến tre có gì đặc biệt',
+  'xoài hoàng kim mua ở đâu',
+];
 
 // --- Date helpers ---
 
@@ -233,9 +243,11 @@ async function main() {
     process.exit(1);
   }
 
-  // Load keywords
-  const { keywords } = JSON.parse(fs.readFileSync(TRACKED_KW_PATH, 'utf8'));
-  console.log(`Tracking ${keywords.length} keywords`);
+  // Load keywords (full or top5)
+  const keywords = isTop5
+    ? TOP5_KEYWORDS
+    : JSON.parse(fs.readFileSync(TRACKED_KW_PATH, 'utf8')).keywords;
+  console.log(`Tracking ${keywords.length} keywords${isTop5 ? ' (top5 daily)' : ''}`);
 
   // Load previous report for delta computation
   const prevPositions = loadPreviousReport();
