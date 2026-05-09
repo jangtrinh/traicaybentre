@@ -23,12 +23,19 @@ const COUNTRY_TO_LOCALE: Record<string, string> = {
 
 const intlMiddleware = createMiddleware(routing);
 
+/* Search-engine + AI crawler User-Agents. GEO redirect MUST be skipped for these,
+   otherwise Googlebot from US edges gets 307'd to /en/* (noindex) and vi pages
+   never get crawled — destroying organic ranking on the canonical Vietnamese site. */
+const BOT_UA_PATTERN = /bot|crawler|spider|slurp|mediapartners|facebookexternalhit|applebot|gptbot|claude|anthropic-ai|perplexity|ccbot|google-extended/i;
+
 export default function proxy(request: NextRequest) {
   /* If user already has a locale cookie (NEXT_LOCALE), next-intl respects it
      automatically — no GEO override needed. GEO only applies on first visit. */
   const hasLocaleCookie = request.cookies.has("NEXT_LOCALE");
+  const userAgent = request.headers.get("user-agent") ?? "";
+  const isBot = BOT_UA_PATTERN.test(userAgent);
 
-  if (!hasLocaleCookie) {
+  if (!hasLocaleCookie && !isBot) {
     const country = request.headers.get("x-vercel-ip-country") ?? "";
     const geoLocale = COUNTRY_TO_LOCALE[country];
 
