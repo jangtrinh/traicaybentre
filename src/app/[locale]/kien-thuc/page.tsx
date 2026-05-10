@@ -63,7 +63,8 @@ export default async function KienThucIndexPage({
         // slug not in translations — use original data
       }
       return {
-        href: `/kien-thuc/${a.slug}`,
+        // Use custom urlPath when set (product-specific routes); fall back to legacy hub path
+        href: a.urlPath ?? `/kien-thuc/${a.slug}`,
         title,
         description,
         date: a.date,
