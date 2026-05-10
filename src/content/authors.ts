@@ -1,7 +1,7 @@
 /**
  * Author registry for E-E-A-T signals.
  * Consumed by structured-data helpers to emit Person schema on articles.
- * Frontmatter: authorKey: 'a-phuc' | 'jang-trinh' | 'htx-thanh-phong'
+ * Frontmatter: authorKey: 'a-phuc' | 'jang-trinh' | 'htx-thanh-phong' | 'vua-phuc-giang'
  */
 
 export interface Author {
@@ -37,6 +37,14 @@ export const AUTHORS = {
     name: "Đội ngũ HTX Thạnh Phong",
     jobTitle: "Tổ chức",
     bio: "HTX Dịch vụ Sản xuất Nông nghiệp Thạnh Phong — đơn vị giữ giống + phân phối Xoài Tứ Quý Bến Tre CDĐL #00124.",
+    url: "https://www.traicaybentre.com/nguon-goc",
+    sameAs: ["https://www.facebook.com/traicaybentre"],
+  },
+  "vua-phuc-giang": {
+    slug: "vua-phuc-giang",
+    name: "Vựa Phúc Giang",
+    jobTitle: "Vựa xoài Bến Tre — đối tác cung ứng",
+    bio: "Vựa xoài tứ quý Bến Tre — đối tác nhà vườn Thạnh Phú. Chuyên giống Tứ Quý CDĐL #00124, cung ứng sỉ và lẻ. Hotline: 0932 585 533.",
     url: "https://www.traicaybentre.com/nguon-goc",
     sameAs: ["https://www.facebook.com/traicaybentre"],
   },

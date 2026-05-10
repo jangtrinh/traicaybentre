@@ -361,6 +361,9 @@
       "note": "Mỗi trái bọc lưới xốp riêng, xếp thùng carton có lót đệm. Hàng hư không tới 2%. Có trái dập → chụp gửi Zalo, đơn sau bồi liền."
     },
     "internalLinks": [
+      { "label": "Xoài tứ quý là gì", "href": "/kien-thuc/xoai-tu-quy-la-gi" },
+      { "label": "Mùa vụ xoài tứ quý", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-may-vu-mot-nam" },
+      { "label": "Cách chọn xoài tứ quý", "href": "/kien-thuc/xoai-tu-quy-la-gi#cách-chọn" },
       { "label": "Nguồn gốc & chứng nhận", "href": "/nguon-goc" },
       { "label": "Xoài Bến Tre có gì đặc biệt?", "href": "/xoai-tu-quy/kien-thuc/xoai-ben-tre-co-gi-dac-biet" },
       { "label": "1 kg bao nhiêu trái?", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-1-kg-bao-nhieu-trai" },
@@ -768,9 +771,9 @@
         "description": "Bản đồ vùng trồng xoài miền Tây: Bến Tre (Tứ Quý CDĐL #00124), Tiền Giang (Cát Hòa Lộc), Vĩnh Long, Trà Vinh.",
         "category": "Vùng trồng"
       },
-      "mua-vu-xoai-tu-quy-3-vu-nam": {
-        "title": "Mùa Vụ Xoài Tứ Quý — 3 Vụ/Năm + Bảng Giá Theo Tháng",
-        "description": "Lịch mùa vụ xoài Tứ Quý: vụ 1 (T2-4), vụ 2 (T7-8), vụ 3 (T11-1, vụ Tết). Bảng giá theo tháng + mẹo mua sỉ.",
+      "xoai-tu-quy-may-vu-mot-nam": {
+        "title": "Xoài Tứ Quý Mấy Vụ Một Năm? Lịch Vụ + Mẹo Mua Sỉ Bến Tre",
+        "description": "Xoài Tứ Quý: 3 vụ chính/năm (T4-6, T8-9, T11-12). Giá 16k–25k/kg. Mẹo mua sỉ chi tiết.",
         "category": "Mùa vụ"
       },
       "cach-bao-quan-lam-chin-xoai-tu-quy": {
