@@ -4,14 +4,19 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SectionDivider } from "@/components/section-divider";
 import { FadeIn } from "@/components/fade-in";
-import { getArticleJsonLd, getBreadcrumbJsonLd, SITE_URL } from "@/lib/structured-data";
+import {
+  getArticleJsonLd,
+  getBreadcrumbJsonLd,
+  getShippingFaqJsonLd,
+  SITE_URL,
+} from "@/lib/structured-data";
 
 const PAGE_URL = `${SITE_URL}/kien-thuc/xoai-tu-quy-la-gi`;
 
 export const metadata: Metadata = {
-  title: "Xoài Tứ Quý Là Gì? Đặc Điểm, Mùa Vụ, Giá — Hướng Dẫn Đầy Đủ 2026",
+  title: "Xoài Tứ Quý Là Gì? Ngọt Hay Chua + Cách Chọn — Hướng Dẫn",
   description:
-    "Xoài Tứ Quý là gì? Tìm hiểu đặc điểm, vị mặn độc đáo, mùa vụ, phân loại, giá và chỉ dẫn địa lý CDĐL #00124 của xoài đặc sản Thạnh Phú, Bến Tre.",
+    "Xoài Tứ Quý: vị ngọt mặn độc đáo, xanh chua → chín ngọt. Cách chọn, bảo quản, nguồn gốc CDĐL #00124 Bến Tre.",
   keywords: [
     "xoài tứ quý là gì",
     "đặc điểm xoài tứ quý",
@@ -22,8 +27,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Xoài Tứ Quý Là Gì? Hướng Dẫn Đầy Đủ 2026",
-    description: "Đặc điểm, vị mặn, mùa vụ, giá, và CDĐL #00124 của xoài Tứ Quý Bến Tre.",
+    title: "Xoài Tứ Quý Là Gì? Ngọt Hay Chua + Cách Chọn",
+    description: "Vị ngọt mặn độc đáo, xanh chua → chín ngọt. Cách chọn, bảo quản, CDĐL #00124 Bến Tre.",
     url: PAGE_URL,
     images: [{ url: `${SITE_URL}/images/xoai-real-2.jpg`, width: 1200, height: 1500 }],
   },
@@ -57,18 +62,39 @@ const HARVEST_SEASONS = [
 ];
 
 const articleJsonLd = getArticleJsonLd({
-  title: "Xoài Tứ Quý Là Gì? Đặc Điểm, Mùa Vụ, Giá — Hướng Dẫn Đầy Đủ 2026",
+  title: "Xoài Tứ Quý Là Gì? Ngọt Hay Chua + Cách Chọn — Hướng Dẫn",
   description:
-    "Tìm hiểu xoài Tứ Quý là gì: đặc điểm, vị mặn độc đáo từ đất giồng cát, mùa vụ, phân loại, giá và CDĐL #00124.",
+    "Xoài Tứ Quý: vị ngọt mặn độc đáo, xanh chua → chín ngọt. Cách chọn, bảo quản, nguồn gốc CDĐL #00124 Bến Tre.",
   url: PAGE_URL,
   datePublished: "2026-01-01",
-  dateModified: "2026-04-09",
+  dateModified: "2026-05-10",
+  authorKey: "jang-trinh",
 });
 
 const breadcrumbJsonLd = getBreadcrumbJsonLd([
   { name: "Trang chủ", url: SITE_URL },
   { name: "Kiến thức", url: `${SITE_URL}/kien-thuc` },
   { name: "Xoài Tứ Quý là gì?", url: PAGE_URL },
+]);
+
+/** FAQPage schema — first-mover: 0% competitor adoption per Phase 01 audit */
+const faqJsonLd = getShippingFaqJsonLd([
+  {
+    q: "Xoài Tứ Quý là gì?",
+    a: "Xoài Tứ Quý là giống xoài đặc biệt ra quả quanh năm (4 mùa). Thơm nồng, vị mặn độc đáo khi xanh, ngọt khi chín, gần không xơ. CDĐL #00124 từ Thạnh Phú, Bến Tre.",
+  },
+  {
+    q: "Xoài Tứ Quý ngọt hay chua?",
+    a: "Khi xanh: chua, sour, herby. Khi chín: ngọt mặn cân bằng, thịt dày, gần không xơ. Vị khác nhau tùy độ chín.",
+  },
+  {
+    q: "Cách chọn xoài Tứ Quý ngon?",
+    a: "Chọn trái to, có cuống, không nứt. Xanh: mùi thơm, chắc tay. Chín: mềm nhẹ, mùi ngọt. Tránh trái dẹp, vỏ mềm.",
+  },
+  {
+    q: "Xoài Tứ Quý có xơ không?",
+    a: "Ít xơ hơn xoài thường. Xanh gần không xơ, chín có xơ rất ít. Đó là đặc trưng của Tứ Quý so với giống khác.",
+  },
 ]);
 
 export default async function XoaiTuQuyLaGiPage({
@@ -82,6 +108,7 @@ export default async function XoaiTuQuyLaGiPage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <Header />
 
       {/* Hero */}
@@ -94,12 +121,15 @@ export default async function XoaiTuQuyLaGiPage({
             <h1 className="mt-3 font-heading text-[32px] font-bold leading-tight text-text sm:text-5xl">
               Xoài Tứ Quý Là Gì?
               <br />
-              <span className="text-mango">Đặc Sản CDĐL Thạnh Phú Bến Tre</span>
+              <span className="text-mango">Ngọt Hay Chua + Cách Chọn</span>
             </h1>
             <p className="mt-6 text-lg leading-7 text-text/70">
               Xoài Tứ Quý là giống xoài đặc sản được trồng trên đất giồng cát ven biển nhiễm mặn tại
               Thạnh Phú, Bến Tre — nổi tiếng với vị ngọt đậm kèm chút mặn nhẹ cuối lưỡi không đâu có,
               và đặc tính cho trái quanh năm.
+            </p>
+            <p className="mt-4 text-sm text-text/40">
+              Tác giả: Jang Trinh | Cập nhật: 10/05/2026
             </p>
           </FadeIn>
         </div>
@@ -350,10 +380,12 @@ export default async function XoaiTuQuyLaGiPage({
           </FadeIn>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { label: "Mua xoài Tứ Quý", href: "/xoai-tu-quy" },
-              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
-              { label: "Nguồn gốc & CDĐL", href: "/nguon-goc" },
+              { label: "Mua xoài tứ quý bến tre", href: "/xoai-tu-quy" },
+              { label: "Mùa vụ xoài tứ quý", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-may-vu-mot-nam" },
+              { label: "Xoài tứ quý ngọt hay chua", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-chua-hay-ngot" },
+              { label: "Cách bảo quản xoài tứ quý", href: "/kien-thuc/cach-bao-quan-lam-chin-xoai-tu-quy" },
               { label: "So sánh với Cát Hòa Lộc", href: "/kien-thuc/xoai-tu-quy-vs-xoai-cat-hoa-loc" },
+              { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
             ].map((link) => (
               <a
                 key={link.href}
