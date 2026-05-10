@@ -97,6 +97,26 @@ export interface ArticleFrontmatter {
     recipeInstructions: { name?: string; text: string; image?: string }[];
     nutrition?: { calories?: string };
     keywords?: string;
+    /** Optional: aggregate rating from REAL reviews (Google policy: no fabrication) */
+    aggregateRating?: {
+      ratingValue: number;
+      reviewCount: number;
+      bestRating?: number;
+      worstRating?: number;
+    };
+  };
+  /** Set true to emit HowTo JSON-LD on this article — unlocks Google HowTo rich result */
+  hasHowTo?: boolean;
+  /** HowTo structured data — required when hasHowTo === true */
+  howTo?: {
+    name?: string;
+    description?: string;
+    image?: string;
+    totalTime?: string;
+    estimatedCost?: { currency: string; value: string };
+    supply?: string[];
+    tool?: string[];
+    step: { name?: string; text: string; image?: string; url?: string }[];
   };
 }
 
@@ -157,6 +177,16 @@ function parseArticleFile(absPath: string, product: string, type: ArticleType): 
     }
     if (!Array.isArray(fm.recipe.recipeInstructions) || fm.recipe.recipeInstructions.length < 2) {
       throw new Error(`[articles] ${absPath} recipe.recipeInstructions requires ≥2 steps`);
+    }
+  }
+
+  // HowTo validation — fail loudly at build time if howTo block is malformed
+  if (fm.hasHowTo === true) {
+    if (!fm.howTo) {
+      throw new Error(`[articles] ${absPath} hasHowTo=true but missing howTo block`);
+    }
+    if (!Array.isArray(fm.howTo.step) || fm.howTo.step.length < 2) {
+      throw new Error(`[articles] ${absPath} howTo.step requires ≥2 steps`);
     }
   }
 

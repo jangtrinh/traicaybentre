@@ -6,7 +6,7 @@
  * design system (FadeIn, Header, Footer, brand colors).
  */
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
   Truck,
   Drop,

@@ -5,7 +5,7 @@
  * Target: quà biếu VIP, nhà hàng cao cấp, khách sành ăn
  */
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Truck, Phone, Crown, Sparkle, Leaf, Scales } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/header";
