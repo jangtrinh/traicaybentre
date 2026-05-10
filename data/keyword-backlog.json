@@ -840,6 +840,174 @@
       "status": "published",
       "usedAt": "2026-05-03",
       "source": "manual-260503"
+    },
+    {
+      "id": "kgsc-001",
+      "keyword": "xoài miền tây",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "xoai-mien-tay-co-nhung-loai-nao",
+      "title": "Xoài Miền Tây Có Những Loại Nào? Top Giống Đặc Sản Bến Tre",
+      "secondaryKeywords": [
+        "các loại xoài miền tây",
+        "xoài đặc sản miền tây",
+        "xoài miền nam"
+      ],
+      "angle": "Roundup các giống xoài đặc trưng miền Tây (Cát Hòa Lộc, Cát Chu, Tứ Quý, Hoàng Kim, Bao Tử) — đặc điểm, mùa vụ, vùng trồng. Anchor về Bến Tre.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 2,
+        "clicks": 0,
+        "position": 60.5
+      }
+    },
+    {
+      "id": "kgsc-002",
+      "keyword": "giống xoài bao tử",
+      "intent": "informational",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "giong-xoai-bao-tu-la-gi",
+      "title": "Giống Xoài Bao Tử Là Gì? Có Phải Xoài Tứ Quý Non Không",
+      "secondaryKeywords": [
+        "xoài bao tử là loại gì",
+        "phân biệt xoài bao tử và xoài non",
+        "giống xoài làm bao tử ngâm"
+      ],
+      "angle": "Clarify xoài bao tử is xoài non (immature) of various varieties (Tứ Quý, Cát Chu) — not a separate variety. Best varieties for ngâm/muối, harvest size, sourcing tips.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 10.0
+      }
+    },
+    {
+      "id": "kgsc-003",
+      "keyword": "cách làm xoài bao tử",
+      "intent": "informational",
+      "priority": 8,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "cach-lam-xoai-bao-tu-tai-nha",
+      "title": "Cách Làm Xoài Bao Tử Tại Nhà — Công Thức Chuẩn Vị Mẹ Miền Tây",
+      "secondaryKeywords": [
+        "công thức xoài bao tử ngâm chua ngọt",
+        "cách muối xoài bao tử",
+        "ngâm xoài bao tử để được bao lâu"
+      ],
+      "angle": "Step-by-step recipe (rửa, gọt, pha nước ngâm chua ngọt, ngâm, bảo quản). Tỷ lệ đường-muối-giấm. Tip chọn xoài bao tử ngon. Thời gian ngâm.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 1,
+        "clicks": 1,
+        "position": 12.0
+      }
+    },
+    {
+      "id": "kgsc-004",
+      "keyword": "xoài miên",
+      "intent": "informational",
+      "priority": 6,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "xoai-mien-la-xoai-gi",
+      "title": "Xoài Miên Là Xoài Gì? Phân Biệt Xoài Campuchia Với Xoài Việt",
+      "secondaryKeywords": [
+        "xoài campuchia",
+        "xoài thái lan miên",
+        "phân biệt xoài miên và xoài tứ quý"
+      ],
+      "angle": "Origin câu chuyện về xoài Miên (Cambodian) trồng tại miền Tây, đặc điểm so với Tứ Quý/Cát Chu, có nên mua không. Bổ sung vào series nguồn gốc.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 42.0
+      }
+    },
+    {
+      "id": "kgsc-005",
+      "keyword": "vựa trái cây bến tre",
+      "intent": "commercial",
+      "priority": 7,
+      "pillar": "xoai-tu-quy",
+      "type": "thuong-mai",
+      "slug": "vua-trai-cay-ben-tre-uy-tin",
+      "title": "Vựa Trái Cây Bến Tre Uy Tín — Top Địa Chỉ Mua Sỉ Lẻ Tại Gốc",
+      "secondaryKeywords": [
+        "mua trái cây bến tre tại vườn",
+        "vựa xoài bến tre",
+        "đầu mối trái cây bến tre"
+      ],
+      "angle": "Local commercial intent — list các loại trái cây Bến Tre có vựa lớn (xoài, dừa, sầu riêng, măng cụt, chôm chôm), tiêu chí chọn vựa uy tín, giá sỉ vs lẻ, anchor về brand Trái Cây Bến Tre.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 70.0
+      }
+    },
+    {
+      "id": "kgsc-006",
+      "keyword": "xoài tứ quý có ngọt không",
+      "intent": "informational",
+      "priority": 6,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "xoai-tu-quy-co-ngot-khong",
+      "title": "Xoài Tứ Quý Có Ngọt Không? Khi Nào Ngọt Nhất, Khi Nào Chua",
+      "secondaryKeywords": [
+        "độ ngọt xoài tứ quý",
+        "xoài tứ quý chín ngọt hay chua",
+        "khi nào xoài tứ quý ngọt nhất"
+      ],
+      "angle": "FAQ answer: Tứ quý ngọt khi chín đúng độ (vàng đậm, mềm), chua khi xanh/non. Brix expected ranges, cách chọn xoài đã đủ ngọt, khác biệt với Hoàng Kim.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 67.0
+      }
+    },
+    {
+      "id": "kgsc-007",
+      "keyword": "xoai tu quy mango",
+      "intent": "informational",
+      "priority": 6,
+      "pillar": "xoai-tu-quy",
+      "type": "kien-thuc",
+      "slug": "tu-quy-mango-vietnam-guide-en",
+      "title": "Tu Quy Mango — The Year-Round Mango From Ben Tre, Vietnam",
+      "secondaryKeywords": [
+        "tu quy mango variety",
+        "vietnam four-season mango",
+        "ben tre mango"
+      ],
+      "angle": "English-language overview for foreign buyers/expats — what tu quy mango is, taste profile, harvest cycle, where to buy in Vietnam (specifically Ben Tre). Bilingual SEO play.",
+      "status": "pending",
+      "usedAt": null,
+      "source": "gsc-20260510",
+      "gscMetrics": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 11.0
+      }
     }
   ]
 }
