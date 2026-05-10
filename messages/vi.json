@@ -363,7 +363,8 @@
     "internalLinks": [
       { "label": "Xoài tứ quý là gì", "href": "/kien-thuc/xoai-tu-quy-la-gi" },
       { "label": "Mùa vụ xoài tứ quý", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-may-vu-mot-nam" },
-      { "label": "Cách chọn xoài tứ quý", "href": "/kien-thuc/xoai-tu-quy-la-gi#cách-chọn" },
+      { "label": "7 mẹo chọn xoài ngon", "href": "/xoai-tu-quy/kien-thuc/cach-chon-xoai-tu-quy-ngon" },
+      { "label": "Xoài bao tử là gì?", "href": "/xoai-tu-quy/kien-thuc/xoai-bao-tu-ngam-cong-thuc-cach-chon" },
       { "label": "Nguồn gốc & chứng nhận", "href": "/nguon-goc" },
       { "label": "Xoài Bến Tre có gì đặc biệt?", "href": "/xoai-tu-quy/kien-thuc/xoai-ben-tre-co-gi-dac-biet" },
       { "label": "1 kg bao nhiêu trái?", "href": "/xoai-tu-quy/kien-thuc/xoai-tu-quy-1-kg-bao-nhieu-trai" },
@@ -415,6 +416,7 @@
       ]
     },
     "internalLinks": [
+      { "label": "Xoài Hoàng Kim là gì?", "href": "/xoai-hoang-kim/kien-thuc/xoai-hoang-kim-la-gi-khac-tu-quy-thuong" },
       { "label": "Xoài Tứ Quý (giá sỉ)", "href": "/xoai-tu-quy#gia" },
       { "label": "Dừa Xiêm Bến Tre", "href": "/dua-xiem-ben-tre" },
       { "label": "Tất cả sản phẩm", "href": "/san-pham" },
@@ -478,6 +480,7 @@
       "viewDetail": "Xem chi tiết"
     },
     "internalLinks": [
+      { "label": "Dừa sọ là gì?", "href": "/dua-xiem-ben-tre/kien-thuc/dua-so-la-gi-khac-dua-xiem-nguyen-trai" },
       { "label": "Tất cả sản phẩm", "href": "/san-pham" },
       { "label": "Xoài Tứ Quý", "href": "/xoai-tu-quy" },
       { "label": "Dừa Xiêm vs Miền Tây", "href": "/dua-xiem-ben-tre/kien-thuc/dua-xiem-ben-tre-vs-dua-xiem-mien-tay" },
@@ -780,6 +783,26 @@
         "title": "Cách Bảo Quản & Làm Chín Xoài Tứ Quý Tại Nhà",
         "description": "Hướng dẫn bảo quản xoài Tứ Quý 7-14 ngày, 5 cách làm chín nhanh, tránh sai lầm thường gặp.",
         "category": "Hướng dẫn"
+      },
+      "cach-chon-xoai-tu-quy-ngon": {
+        "title": "Cách Chọn Xoài Tứ Quý Ngon: 7 Mẹo Vựa Truyền 20 Năm",
+        "description": "7 mẹo chọn xoài tứ quý ngon từ vựa: ấn nhẹ mềm đàn hồi, vỏ vàng cam đều, mùi thơm sâu, không vết thâm. 4 dấu hiệu cần tránh.",
+        "category": "Hướng dẫn chọn hàng"
+      },
+      "xoai-bao-tu-ngam-cong-thuc-cach-chon": {
+        "title": "Xoài Bao Tử Ngâm — Công Thức Chuẩn + Cách Chọn Xoài Non",
+        "description": "Xoài bao tử = trái non tỉa đi (50-80g), không phải giống riêng. Công thức ngâm giòn chua ngọt từ vựa Bến Tre.",
+        "category": "Định nghĩa + Công thức"
+      },
+      "xoai-hoang-kim-la-gi-khac-tu-quy-thuong": {
+        "title": "Xoài Hoàng Kim Là Gì? Premium Tứ Quý Da Vàng Kim 800g-1.5kg",
+        "description": "Xoài Hoàng Kim = premium Tứ Quý: da vàng kim, ngọt lịm không xơ, trái 800g-1.5kg, giá 35-45k/kg. Hiếm, đặt sớm vựa Phúc Giang.",
+        "category": "Đặc sản khác"
+      },
+      "dua-so-la-gi-khac-dua-xiem-nguyen-trai": {
+        "title": "Dừa Sọ Là Gì? Khác Dừa Xiêm Nguyên Trái — Vựa Bến Tre",
+        "description": "Dừa sọ = dừa xiêm xanh gọt sạch vỏ, chỉ còn sọ trắng + nước. Mở nắp uống liền, gọn nhẹ 500-700g, dễ ship. Bền 5-7 ngày.",
+        "category": "Định nghĩa"
       }
     }
   },
