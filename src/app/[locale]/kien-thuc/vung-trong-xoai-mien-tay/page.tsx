@@ -249,7 +249,7 @@ export default async function VungTrongXoaiMienTayPage({
                   Tính ưu việt lớn nhất của Bến Tre trong cạnh tranh thương mại:{" "}
                   <strong className="text-text">giống Tứ Quý cho 3 vụ/năm</strong>, đảm bảo nguồn
                   cung liên tục 12 tháng — một lợi thế không giống nào khác trong vùng có được. Xem
-                  chi tiết về <a href="/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam" className="text-mango underline underline-offset-4 hover:text-mango-dark">
+                  chi tiết về <a href="/xoai-tu-quy/kien-thuc/xoai-tu-quy-may-vu-mot-nam" className="text-mango underline underline-offset-4 hover:text-mango-dark">
                   lịch mùa vụ xoài Tứ Quý 3 vụ/năm</a>.
                 </p>
               </div>
@@ -517,7 +517,7 @@ export default async function VungTrongXoaiMienTayPage({
             {[
               { label: "Xoài Tứ Quý — Sản phẩm", href: "/xoai-tu-quy" },
               { label: "Giá xoài hôm nay", href: "/xoai-tu-quy#gia" },
-              { label: "Mùa vụ 3 vụ/năm", href: "/kien-thuc/mua-vu-xoai-tu-quy-3-vu-nam" },
+              { label: "Mùa vụ 3 vụ/năm", href: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-may-vu-mot-nam" },
               { label: "Xoài Tứ Quý là gì?", href: "/kien-thuc/xoai-tu-quy-la-gi" },
               { label: "So sánh với Cát Hòa Lộc", href: "/kien-thuc/xoai-tu-quy-vs-xoai-cat-hoa-loc" },
               { label: "Nguồn gốc & CDĐL", href: "/nguon-goc" },

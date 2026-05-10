@@ -110,9 +110,9 @@ export const products: Record<string, ProductEntry> = {
     status: "active",
     order: 0, // #1 premium — hiển thị đầu tiên
     seo: {
-      title: "Xoài Hoàng Kim Thạnh Phú — Da Vàng Kim, Ngọt Lịm, Không Xơ | Hàng Hiếm",
+      title: "Xoài Hoàng Kim — Tứ Quý Da Vàng, Ngọt Lịm, Ship Toàn Quốc",
       description:
-        "Xoài Hoàng Kim Thạnh Phú Bến Tre — biến thể premium Tứ Quý da vàng kim. Ngọt lịm như Cát Hòa Lộc, gần không xơ. Hàng hiếm 35-45k/kg. Gọi: 0932 585 533.",
+        "Xoài Hoàng Kim da vàng — biến thể Tứ Quý premium. Ngọt lịm, gần không xơ. Sỉ 18k/kg, lẻ 28k/kg. Giao 24h.",
       keywords: [
         "xoài hoàng kim",
         "xoài tứ quý hoàng kim",
@@ -140,9 +140,9 @@ export const products: Record<string, ProductEntry> = {
     status: "active",
     order: 2,
     seo: {
-      title: "Đặt Dừa Xiêm Bến Tre Online — Dừa Sọ Gọt Sẵn, Ship Toàn Quốc",
+      title: "Dừa Xiêm Bến Tre — Giá Hôm Nay, Giao Toàn Quốc | CDĐL #00124",
       description:
-        "Đặt dừa xiêm Bến Tre online ship toàn quốc. Dừa sọ gọt sẵn từ vựa Thạnh Phú. Sỉ 8-10k₫/trái, lẻ 15-18k₫/trái. Nước ngọt thanh, đóng gói đẹp, giao lạnh.",
+        "Dừa Xiêm Bến Tre giá 5k–15k/trái, sỉ 170k–185k/chục. Gọt sẵn, ship 24h toàn quốc. Đặt ngay.",
       keywords: [
         "đặt dừa xiêm bến tre online ship toàn quốc",
         "dừa xiêm bến tre",

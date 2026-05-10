@@ -49,4 +49,16 @@ export const KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
   },
   // mua-vu-xoai-tu-quy-3-vu-nam: migrated to MDX 09/05/2026 → 301 redirect in next.config.ts
   // cach-bao-quan-lam-chin-xoai-tu-quy: migrated to MDX cach-bao-quan-xoai-tu-quy 09/05/2026 → 301 redirect
+  {
+    // Register orphan MDX (was 174 impr, top-impression page on site, missing from registry)
+    // Targets KW "xoài tứ quý mùa nào ngon nhất" (60 impr GSC)
+    slug: "xoai-tu-quy-may-vu-mot-nam",
+    title: "Xoài Tứ Quý Mấy Vụ Một Năm? Lịch Vụ + Mẹo Mua Sỉ Bến Tre",
+    description:
+      "Xoài Tứ Quý: 3 vụ chính/năm (T4-6, T8-9, T11-12). Giá 16k–25k/kg. Mẹo mua sỉ chi tiết.",
+    date: "2026-04-19",
+    category: "Mùa vụ",
+    product: "xoai-tu-quy",
+    urlPath: "/xoai-tu-quy/kien-thuc/xoai-tu-quy-may-vu-mot-nam",
+  },
 ];
