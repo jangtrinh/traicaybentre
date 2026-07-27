@@ -1,9 +1,11 @@
 name: Syndicate MDX articles → WordPress.com + Blogger + Tumblr
 
 on:
-  push:
-    branches: [main]
-    paths: ['src/content/articles/**/*.mdx']
+  # PAUSED — auto-syndication tắt cho tới khi content được rà lại SĐT/tên liên hệ.
+  # Bật lại: bỏ comment khối push bên dưới.
+  # push:
+  #   branches: [main]
+  #   paths: ['src/content/articles/**/*.mdx']
   workflow_dispatch:
     inputs:
       mode:

@@ -85,7 +85,7 @@ export async function DualCtaSection() {
                   />
                 </Link>
                 <a
-                  href="tel:0932585533"
+                  href="tel:0327267795"
                   className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-text/15 px-6 py-4 text-sm font-bold text-text transition-colors hover:border-text"
                 >
                   <Phone size={16} weight="bold" />

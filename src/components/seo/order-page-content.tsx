@@ -66,7 +66,7 @@ export async function OrderPageContent() {
           <div className="grid gap-8 md:grid-cols-3">
             {products.map((product, i) => {
               const zaloLink =
-                "https://zalo.me/0932585533?text=" +
+                "https://zalo.me/0327267795?text=" +
                 encodeURIComponent(product.cta.zaloMessage);
               return (
                 <FadeIn key={product.slug} delay={i * 0.1}>
@@ -178,7 +178,7 @@ export async function OrderPageContent() {
         title={t("cta.title")}
         desc={t("cta.desc")}
         zaloLabel={t("cta.zalo")}
-        zaloLink="https://zalo.me/0932585533?text=M%C3%ACnh%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20tr%C3%A1i%20c%C3%A2y%20B%E1%BA%BFn%20Tre"
+        zaloLink="https://zalo.me/0327267795?text=M%C3%ACnh%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20tr%C3%A1i%20c%C3%A2y%20B%E1%BA%BFn%20Tre"
         bgClass="bg-brand-cream"
       />
 

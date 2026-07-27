@@ -114,11 +114,11 @@ export default async function CityShippingPage({ params }: Props) {
               {t("hero.desc", { method: methodLabel, hours: city.shippingHours, cityName: city.name })}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a href="tel:0932585533" className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors">
+              <a href="tel:0327267795" className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors">
                 <Phone size={18} weight="bold" />
                 {t("hero.ctaCall")}
               </a>
-              <a href={`https://zalo.me/0932585533?text=${encodeURIComponent(`Mình muốn đặt trái cây ship ${city.name}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors">
+              <a href={`https://zalo.me/0327267795?text=${encodeURIComponent(`Mình muốn đặt trái cây ship ${city.name}`)}`} target="_blank" rel="noopener noreferrer" className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors">
                 {t("hero.ctaZalo")}
               </a>
             </div>

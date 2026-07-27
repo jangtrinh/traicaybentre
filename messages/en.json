@@ -21,7 +21,7 @@
     },
     "desc1": "Tu Quy Mango from Thanh Phu, Ben Tre — grown on sandy coastal soil with natural salinity, giving it a unique subtle saltiness on the finish that no other region can replicate.",
     "desc2": "Picked fresh in the morning, cold-shipped to Hanoi by afternoon.",
-    "desc2Bold": "Mr. Phuc answers calls from 4 AM to evening",
+    "desc2Bold": "Ms. Van Linh answers calls from 4 AM to evening",
     "desc2Prefix": "Prices updated every morning — ",
     "scrollHint1": "scroll down",
     "scrollHint2": "discover now",
@@ -34,7 +34,7 @@
     "viewImage": "View image",
     "getQuote": "Get a quote",
     "priceUnit": "₫/kg",
-    "priceNote": "Prices change daily — call Mr. Phuc for today's exact price",
+    "priceNote": "Prices change daily — call Ms. Van Linh for today's exact price",
     "priceUntil": "Price valid until"
   },
   "process": {
@@ -76,8 +76,8 @@
       "Full VAT invoices available"
     ],
     "ctaPrimary": "View wholesale prices",
-    "ctaPhone": "0932 585 533",
-    "ctaNote": "Zalo reply within 5 min · 4 AM – 6 PM · Mr. Phuc"
+    "ctaPhone": "0327 267 795",
+    "ctaNote": "Zalo reply within 5 min · 4 AM – 6 PM · Ms. Van Linh"
   },
   "testimonials": {
     "sectionTag": "What our partners say",
@@ -107,11 +107,11 @@
     "sectionTag": "Get in touch",
     "sectionTitle": "We'll Call You Back",
     "zaloLabel": "Zalo (quick reply)",
-    "zaloValue": "0932 585 533",
-    "zaloSub": "Mr. Phuc replies within 5 minutes",
+    "zaloValue": "0327 267 795",
+    "zaloSub": "Ms. Van Linh replies within 5 minutes",
     "phoneLabel": "Call directly",
-    "phoneValue": "0932 585 533",
-    "phoneSub": "4 AM – 6 PM · Mr. Phuc",
+    "phoneValue": "0327 267 795",
+    "phoneSub": "4 AM – 6 PM · Ms. Van Linh",
     "addressLabel": "Farm address",
     "addressValue": "Thanh Phu, Ben Tre",
     "addressSub": "Open from 4 AM",
@@ -129,9 +129,9 @@
     "formSending": "Sending...",
     "formSuccessTitle": "Sent successfully!",
     "formSuccessMsg": "Thank you {name}! We've received your information.",
-    "formSuccessCallback": "Mr. Phuc will call {phone} within 15 minutes (business hours).",
+    "formSuccessCallback": "Ms. Van Linh will call {phone} within 15 minutes (business hours).",
     "formSuccessReset": "Send another inquiry",
-    "formErrorDefault": "Couldn't send — please try again, or Zalo 0932 585 533 to contact us directly."
+    "formErrorDefault": "Couldn't send — please try again, or Zalo 0327 267 795 to contact us directly."
   },
   "footer": {
     "followUs": "Follow us",
@@ -275,7 +275,7 @@
       },
       {
         "q": "How much does Ben Tre Tu Quy Mango cost?",
-        "a": "Prices change daily: VIP 23,000–25,000₫/kg, Grade 1 20,000–22,000₫/kg, Grade 2 16,000–18,000₫/kg. Call Mr. Phuc at 0932 585 533 for today's exact price — updated every morning."
+        "a": "Prices change daily: VIP 23,000–25,000₫/kg, Grade 1 20,000–22,000₫/kg, Grade 2 16,000–18,000₫/kg. Call Ms. Van Linh at 0327 267 795 for today's exact price — updated every morning."
       },
       {
         "q": "Will mangoes bruise during long-distance shipping?",
@@ -291,7 +291,7 @@
       },
       {
         "q": "What is the minimum for wholesale Ben Tre mango?",
-        "a": "Minimum 1 box of 20kg. Packed to your preference — cardboard, foam, or mesh bag. Shipping quoted upfront by route. Call 0932 585 533 for pricing."
+        "a": "Minimum 1 box of 20kg. Packed to your preference — cardboard, foam, or mesh bag. Shipping quoted upfront by route. Call 0327 267 795 for pricing."
       },
       {
         "q": "Payment and invoicing?",
@@ -334,7 +334,7 @@
       "updated": "Updated:",
       "weightLabel": "Weight:",
       "ctaOrder": "Order now",
-      "ctaCall": "Call farm: 0932 585 533"
+      "ctaCall": "Call farm: 0327 267 795"
     },
     "orderInfo": {
       "title": "Ordering Information",
@@ -462,7 +462,7 @@
     "faq": {
       "title": "FAQ — Ben Tre Young Coconut",
       "items": [
-        { "q": "Can I order Ben Tre young coconut online with nationwide shipping?", "a": "Yes. We ship cold-chain nationwide: HCM 24h, Hanoi 48h, Da Nang 36h. Order via Zalo or call 0932 585 533." },
+        { "q": "Can I order Ben Tre young coconut online with nationwide shipping?", "a": "Yes. We ship cold-chain nationwide: HCM 24h, Hanoi 48h, Da Nang 36h. Order via Zalo or call 0327 267 795." },
         { "q": "How is a coconut shell different from a whole coconut?", "a": "A coconut shell is a young coconut fully peeled of its green husk — just the white shell with water inside. Open the cap and drink immediately. Beautifully packaged, easy to ship long distance." },
         { "q": "How much does Ben Tre young coconut cost?", "a": "Wholesale 50+: 8,000-10,000₫/coconut. Retail 10+: 15,000-18,000₫/coconut. Prices may vary seasonally — call for accurate quote." },
         { "q": "Is the coconut water sweet?", "a": "Ben Tre young coconut water is naturally sweet, not astringent. We select coconuts at peak ripeness — sweetest possible." },
@@ -825,7 +825,7 @@
       "title": "Ben Tre Fruits Delivery",
       "titleTo": "To {cityName}",
       "desc": "{method} from Thanh Phu farm — {hours} hours to {cityName}. Tu Quy Mango GI #00124 + pre-peeled Young Coconut. Shock-resistant packaging, cold-chain end to end.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Order via Zalo"
     },
     "shippingDetails": {
@@ -847,7 +847,7 @@
       "q1": "How long does Ben Tre fruit delivery to {cityName} take?",
       "a1": "Around {hours} hours via {method}. Goods are cold-packed and arrive fresh.",
       "q2": "How much does shipping to {cityName} cost?",
-      "a2": "Estimated {cost}₫ per 20kg box. Exact cost confirmed at order — varies by weight and route. Call 0932 585 533.",
+      "a2": "Estimated {cost}₫ per 20kg box. Exact cost confirmed at order — varies by weight and route. Call 0327 267 795.",
       "q3": "Will Tu Quy Mango get bruised shipping to {cityName}?",
       "a3": "No. Each fruit is individually foam-wrapped, packed in cushioned carton. 3 years nationwide delivery, damage rate under 2%. Bruised? Send photo on Zalo — refunded on next order.",
       "q4": "Can I order Young Coconut shell shipped to {cityName}?",
@@ -866,8 +866,8 @@
       "title": "Tu Quy Mango Delivery TP.HCM",
       "titleHighlight": "24h From Thanh Phu Farm",
       "desc": "Closest city to the farm — refrigerated truck runs daily, lowest shipping cost, mangoes arrive within 24 hours. Delivered to markets, restaurants, supermarkets.",
-      "ctaCall": "Order now: 0932 585 533",
-      "ctaZalo": "Zalo: 0932 585 533"
+      "ctaCall": "Order now: 0327 267 795",
+      "ctaZalo": "Zalo: 0327 267 795"
     },
     "shipping": {
       "title": "Shipping Details",
@@ -898,14 +898,14 @@
         },
         {
           "q": "Who do I contact for wholesale in TP.HCM?",
-          "a": "Contact Mr. Phuc directly — 0932 585 533 (call or Zalo). Give us quantity, delivery point, mango type — we'll quote and schedule within 15 minutes."
+          "a": "Contact Ms. Van Linh directly — 0327 267 795 (call or Zalo). Give us quantity, delivery point, mango type — we'll quote and schedule within 15 minutes."
         }
       ]
     },
     "cta": {
       "title": "Order Mango Delivery to TP.HCM",
       "desc": "Call or Zalo — we quote price & delivery time within 15 minutes.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo now"
     },
     "internalLinks": [
@@ -920,8 +920,8 @@
       "title": "Authentic Ben Tre Mango in Hà Nội",
       "titleHighlight": "48h Cold Delivery From the Farm",
       "desc": "Cold truck maintained at 8–12°C or same-day air freight if urgent. Shock-resistant packaging for long-haul routes. 95% of our mango goes north — we know this route well.",
-      "ctaCall": "Order now: 0932 585 533",
-      "ctaZalo": "Zalo: 0932 585 533"
+      "ctaCall": "Order now: 0327 267 795",
+      "ctaZalo": "Zalo: 0327 267 795"
     },
     "shipping": {
       "title": "Shipping Details",
@@ -944,7 +944,7 @@
       "items": [
         {
           "q": "Where to buy authentic Ben Tre mango in Hà Nội?",
-          "a": "Order direct from Ben Tre Fruits farm in Thanh Phu. Mangoes carry GI #00124 issued by Vietnam's IP Office — certified authentic. Call 0932 585 533 or Zalo, we quote and schedule within 15 minutes."
+          "a": "Order direct from Ben Tre Fruits farm in Thanh Phu. Mangoes carry GI #00124 issued by Vietnam's IP Office — certified authentic. Call 0327 267 795 or Zalo, we quote and schedule within 15 minutes."
         },
         {
           "q": "How do I know the mango is really from Ben Tre, not blended?",
@@ -960,14 +960,14 @@
         },
         {
           "q": "What is the Hà Nội shipping cost?",
-          "a": "Cold truck from Ben Tre to Hà Nội approximately 35,000–50,000₫ per 20kg box (exact cost quoted at order). Air freight higher, depends on flight. Call 0932 585 533 for upfront quote."
+          "a": "Cold truck from Ben Tre to Hà Nội approximately 35,000–50,000₫ per 20kg box (exact cost quoted at order). Air freight higher, depends on flight. Call 0327 267 795 for upfront quote."
         }
       ]
     },
     "cta": {
       "title": "Order Mango for Hà Nội",
       "desc": "Call or Zalo — we quote price + delivery schedule within 15 minutes.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo now"
     },
     "internalLinks": [
@@ -983,8 +983,8 @@
       "title": "Tu Quy Mango Delivery to Đà Nẵng",
       "titleHighlight": "Cold Shipping Full Route",
       "desc": "36-hour cold truck from Thanh Phu straight to Đà Nẵng. Serving restaurants, hotels and resorts across Central Vietnam.",
-      "ctaCall": "Order now: 0932 585 533",
-      "ctaZalo": "Zalo: 0932 585 533"
+      "ctaCall": "Order now: 0327 267 795",
+      "ctaZalo": "Zalo: 0327 267 795"
     },
     "shipping": {
       "title": "Shipping Details",
@@ -1011,14 +1011,14 @@
         },
         {
           "q": "Do you deliver to other Central Vietnam provinces?",
-          "a": "Yes. We deliver to Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế and Quảng Trị on fixed cold truck routes. Contact 0932 585 533 to confirm schedule for your specific location."
+          "a": "Yes. We deliver to Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế and Quảng Trị on fixed cold truck routes. Contact 0327 267 795 to confirm schedule for your specific location."
         }
       ]
     },
     "cta": {
       "title": "Order Mango Delivery to Đà Nẵng",
       "desc": "Call or Zalo — we quote price & Central Vietnam delivery schedule within 15 minutes.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo now"
     },
     "internalLinks": [
@@ -1051,7 +1051,7 @@
     }
   },
   "priceData": {
-    "note": "Prices fluctuate daily — call farm 0932 585 533 for exact current price.",
+    "note": "Prices fluctuate daily — call farm 0327 267 795 for exact current price.",
     "tiers": {
       "vip": {
         "name": "Tu Quy Mango VIP",
@@ -1075,7 +1075,7 @@
       "badge": "Updated pricing",
       "title": "Ben Tre Fruit Prices Today",
       "updated": "Updated:",
-      "desc": "Prices direct from Thanh Phu farm, updated every morning. Call 0932 585 533 for exact pricing."
+      "desc": "Prices direct from Thanh Phu farm, updated every morning. Call 0327 267 795 for exact pricing."
     },
     "xoaiTuQuy": {
       "title": "Tu Quy Mango — Thanh Phu",
@@ -1100,7 +1100,7 @@
       "shipping": "Cold-shipped nationwide",
       "shippingDesc": "HCMC 24h, Hanoi 48h, Da Nang 36h. Under 2% damage rate over 3 years",
       "contact": "Direct from the farm",
-      "contactDesc": "Mr. Phuc available from 4AM. Zalo or call 0932 585 533"
+      "contactDesc": "Ms. Van Linh available from 4AM. Zalo or call 0327 267 795"
     },
     "cta": {
       "title": "Order today",
@@ -1129,7 +1129,7 @@
       "title": "How to order",
       "steps": [
         { "step": "1", "title": "Choose product", "desc": "Select fruit type and grade" },
-        { "step": "2", "title": "Message or call", "desc": "Send Zalo message or call 0932 585 533" },
+        { "step": "2", "title": "Message or call", "desc": "Send Zalo message or call 0327 267 795" },
         { "step": "3", "title": "Receive & pay", "desc": "COD or bank transfer. Delivery within 24–48h" }
       ]
     },
@@ -1144,7 +1144,7 @@
     },
     "cta": {
       "title": "Order now",
-      "desc": "Zalo or call — Mr. Phuc available from 4AM",
+      "desc": "Zalo or call — Ms. Van Linh available from 4AM",
       "zalo": "Order via Zalo"
     }
   }

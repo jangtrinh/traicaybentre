@@ -87,11 +87,11 @@ export async function XoaiTuQuyLanding() {
                   {t("hero.ctaPrice")}
                 </Link>
                 <a
-                  href="tel:0932585533"
+                  href="tel:0327267795"
                   className="flex items-center gap-2 rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"
                 >
                   <Phone size={18} weight="bold" />
-                  0932 585 533
+                  0327 267 795
                 </a>
               </div>
             </FadeIn>
@@ -229,7 +229,7 @@ export async function XoaiTuQuyLanding() {
           <p className="mt-6 text-center text-sm text-text/40">{PRICE_DATA.note}</p>
           <div className="mt-6 text-center">
             <a
-              href="tel:0932585533"
+              href="tel:0327267795"
               className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
             >
               <Phone size={18} weight="bold" />
@@ -310,7 +310,7 @@ export async function XoaiTuQuyLanding() {
             </div>
             <div className="mt-6 text-center">
               <a
-                href="https://zalo.me/0932585533?text=M%C3%ACnh%20mu%E1%BB%91n%20l%E1%BA%A5y%20s%E1%BB%89%20xo%C3%A0i%20T%E1%BB%A9%20Qu%C3%BD"
+                href="https://zalo.me/0327267795?text=M%C3%ACnh%20mu%E1%BB%91n%20l%E1%BA%A5y%20s%E1%BB%89%20xo%C3%A0i%20T%E1%BB%A9%20Qu%C3%BD"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"

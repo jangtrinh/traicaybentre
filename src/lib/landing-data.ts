@@ -297,7 +297,7 @@ export const FAQS = [
   },
   {
     q: "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
-    a: "Giá đổi mỗi ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi Anh Phúc 0932 585 533 lấy giá chuẩn trong ngày — giá cập mỗi sáng.",
+    a: "Giá đổi mỗi ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi Chị Vân Linh 0327 267 795 lấy giá chuẩn trong ngày — giá cập mỗi sáng.",
   },
   {
     q: "Ship xa xoài có bị dập không?",
@@ -313,7 +313,7 @@ export const FAQS = [
   },
   {
     q: "Mua xoài sỉ Bến Tre cần bao nhiêu?",
-    a: "Lấy tối thiểu 1 thùng 20kg. Đóng thùng theo ý bạn hàng — carton, xốp, bao lưới đều được. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá.",
+    a: "Lấy tối thiểu 1 thùng 20kg. Đóng thùng theo ý bạn hàng — carton, xốp, bao lưới đều được. Phí ship báo trước tuỳ tuyến. Gọi 0327 267 795 để báo giá.",
   },
   {
     q: "Thanh toán và hóa đơn?",

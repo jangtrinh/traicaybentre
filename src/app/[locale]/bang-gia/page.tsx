@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title:
       "Giá Xoài Tứ Quý Bến Tre Hôm Nay — Bảng Giá Cập Nhật Mỗi Sáng | Vựa Thạnh Phú",
     description:
-      "Bảng giá xoài Tứ Quý Bến Tre hôm nay: VIP 23–25k, Loại 1 20–22k, Loại 2 16–18k/kg. Giá cập nhật mỗi sáng từ vựa Thạnh Phú. Xoài Hoàng Kim 35–45k. Dừa Xiêm 8–18k/trái. Gọi 0932 585 533.",
+      "Bảng giá xoài Tứ Quý Bến Tre hôm nay: VIP 23–25k, Loại 1 20–22k, Loại 2 16–18k/kg. Giá cập nhật mỗi sáng từ vựa Thạnh Phú. Xoài Hoàng Kim 35–45k. Dừa Xiêm 8–18k/trái. Gọi 0327 267 795.",
     keywords: [
       "giá xoài tứ quý hôm nay",
       "giá xoài tứ quý bao nhiêu",

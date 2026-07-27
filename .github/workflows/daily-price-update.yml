@@ -1,9 +1,11 @@
 name: Daily Price Update
 
 on:
-  schedule:
-    # 23:00 UTC previous day = 6am Vietnam time (UTC+7)
-    - cron: '0 23 * * *'
+  # PAUSED — cron tắt để bot không sinh bài mới với SĐT/tên liên hệ cũ.
+  # Bật lại: bỏ comment khối schedule bên dưới.
+  # schedule:
+  #   # 23:00 UTC previous day = 6am Vietnam time (UTC+7)
+  #   - cron: '0 23 * * *'
   workflow_dispatch:
 
 jobs:

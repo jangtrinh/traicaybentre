@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: "Mua Xoài Bến Tre Chính Gốc Ở Đâu Hà Nội? — Giao 48h Từ Vựa Thạnh Phú",
     description:
-      "Mua xoài Bến Tre chính gốc ở đâu Hà Nội? Đặt trực tiếp từ vựa Thạnh Phú CDĐL #00124. Giao lạnh 48h, đóng gói chống dập. Gọi: 0932 585 533.",
+      "Mua xoài Bến Tre chính gốc ở đâu Hà Nội? Đặt trực tiếp từ vựa Thạnh Phú CDĐL #00124. Giao lạnh 48h, đóng gói chống dập. Gọi: 0327 267 795.",
     keywords: [
       "mua xoài bến tre chính gốc ở đâu hà nội",
       "xoài tứ quý giao hà nội",
@@ -84,14 +84,14 @@ export default async function GiaoHangHaNoiPage({ params }: Props) {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="tel:0932585533"
+                href="tel:0327267795"
                 className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
                 <Phone size={18} weight="bold" />
                 {t("hero.ctaCall")}
               </a>
               <a
-                href="https://zalo.me/0932585533"
+                href="https://zalo.me/0327267795"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"
@@ -191,14 +191,14 @@ export default async function GiaoHangHaNoiPage({ params }: Props) {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="tel:0932585533"
+                href="tel:0327267795"
                 className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
                 <Phone size={18} weight="bold" />
                 {t("cta.ctaCall")}
               </a>
               <a
-                href="https://zalo.me/0932585533"
+                href="https://zalo.me/0327267795"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"

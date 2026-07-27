@@ -80,7 +80,7 @@ export default async function CatalogPage({ params }: Props) {
                   {t("gift.box5kg.desc")}
                 </p>
                 <a
-                  href="https://zalo.me/0932585533?text=M%C3%ACnh%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20h%E1%BB%99p%20xo%C3%A0i%20VIP%205kg%20qu%C3%A0%20bi%E1%BA%BFu"
+                  href="https://zalo.me/0327267795?text=M%C3%ACnh%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20h%E1%BB%99p%20xo%C3%A0i%20VIP%205kg%20qu%C3%A0%20bi%E1%BA%BFu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-block rounded-full bg-black px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
@@ -99,7 +99,7 @@ export default async function CatalogPage({ params }: Props) {
                   {t("gift.box10kg.desc")}
                 </p>
                 <a
-                  href="https://zalo.me/0932585533?text=M%C3%ACnh%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20h%E1%BB%99p%20xo%C3%A0i%20VIP%2010kg%20qu%C3%A0%20bi%E1%BA%BFu"
+                  href="https://zalo.me/0327267795?text=M%C3%ACnh%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20h%E1%BB%99p%20xo%C3%A0i%20VIP%2010kg%20qu%C3%A0%20bi%E1%BA%BFu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-block rounded-full bg-black px-6 py-3 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
@@ -112,8 +112,8 @@ export default async function CatalogPage({ params }: Props) {
           <FadeIn delay={0.2}>
             <p className="mt-8 text-center text-sm text-text/50">
               {t("gift.comboNote")}{" "}
-              <a href="tel:0932585533" className="font-bold text-text hover:text-mango transition-colors">
-                0932 585 533
+              <a href="tel:0327267795" className="font-bold text-text hover:text-mango transition-colors">
+                0327 267 795
               </a>{" "}
               — vựa tư vấn riêng.
             </p>

@@ -21,7 +21,7 @@ import { getPriceDataTranslated } from "@/lib/price-data";
 import { SeoCTASection } from "@/components/seo/seo-cta-section";
 
 const ZALO_LINK =
-  "https://zalo.me/0932585533?text=" +
+  "https://zalo.me/0327267795?text=" +
   encodeURIComponent("Mình muốn hỏi giá xoài Tứ Quý hôm nay");
 
 export async function PricingPageContent() {

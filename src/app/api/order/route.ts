@@ -106,7 +106,7 @@ export async function POST(request: Request) {
 
     if (!resend) {
       return NextResponse.json(
-        { error: "Email vựa đang trục trặc — anh/chị Zalo 0932 585 533 cho Anh Phúc nha, trả liền." },
+        { error: "Email vựa đang trục trặc — anh/chị Zalo 0327 267 795 cho Chị Vân Linh nha, trả liền." },
         { status: 503 }
       );
     }
@@ -122,7 +122,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Order email error:", error);
     return NextResponse.json(
-      { error: "Đơn chưa gửi đi được — anh/chị thử lại, hoặc Zalo 0932 585 533 để vựa nhận trực tiếp nha." },
+      { error: "Đơn chưa gửi đi được — anh/chị thử lại, hoặc Zalo 0327 267 795 để vựa nhận trực tiếp nha." },
       { status: 500 }
     );
   }

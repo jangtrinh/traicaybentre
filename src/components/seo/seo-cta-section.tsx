@@ -34,11 +34,11 @@ export function SeoCTASection({
               {zaloLabel}
             </a>
             <a
-              href="tel:0932585533"
+              href="tel:0327267795"
               className="flex items-center gap-2 rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"
             >
               <Phone size={18} weight="bold" />
-              0932 585 533
+              0327 267 795
             </a>
           </div>
         </FadeIn>

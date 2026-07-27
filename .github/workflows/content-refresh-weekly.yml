@@ -1,8 +1,10 @@
 name: Weekly content refresh + FAQ expansion
 
 on:
-  schedule:
-    - cron: '0 3 * * 1' # Every Monday 3:00 UTC (10:00 Vietnam)
+  # PAUSED — cron tắt để bot không tự refresh content với SĐT/tên liên hệ cũ.
+  # Bật lại: bỏ comment khối schedule bên dưới.
+  # schedule:
+  #   - cron: '0 3 * * 1' # Every Monday 3:00 UTC (10:00 Vietnam)
   workflow_dispatch: # Manual trigger
 
 jobs:

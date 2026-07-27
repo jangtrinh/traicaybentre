@@ -149,7 +149,7 @@ export const faqSchema = {
       name: "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Giá dao động theo ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi vựa 0932 585 533 (A Phúc) để có giá chính xác. Giá cập nhật mỗi sáng.",
+        text: "Giá dao động theo ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi vựa 0327 267 795 (Chị Vân Linh) để có giá chính xác. Giá cập nhật mỗi sáng.",
         datePublished: "2026-01-01",
         dateModified: "2026-04-09",
       },
@@ -189,7 +189,7 @@ export const faqSchema = {
       name: "Mua xoài sỉ Bến Tre cần bao nhiêu?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tối thiểu 1 thùng 20kg. Đóng thùng linh hoạt theo yêu cầu. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá.",
+        text: "Tối thiểu 1 thùng 20kg. Đóng thùng linh hoạt theo yêu cầu. Phí ship báo trước tuỳ tuyến. Gọi 0327 267 795 để báo giá.",
         datePublished: "2026-01-01",
         dateModified: "2026-04-09",
       },
@@ -300,7 +300,7 @@ export const organizationSchema = {
   },
   founder: {
     "@type": "Person",
-    name: "A Phúc",
+    name: "Chị Vân Linh",
     jobTitle: "Chủ vựa & điều phối HTX Thạnh Phong",
     sameAs: ["https://www.facebook.com/traicaybentre"],
   },

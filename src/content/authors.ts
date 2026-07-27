@@ -17,11 +17,10 @@ export interface Author {
 export const AUTHORS = {
   "a-phuc": {
     slug: "a-phuc",
-    name: "A Phúc",
+    name: "Chị Vân Linh",
     jobTitle: "Chủ vựa & điều phối HTX Thạnh Phong",
     bio: "15 năm kinh nghiệm vườn xoài Thạnh Phú, thành viên sáng lập HTX Dịch vụ Sản xuất Nông nghiệp Thạnh Phong, giữ giống Tứ Quý cổ.",
     url: "https://www.traicaybentre.com/nguon-goc",
-    image: "/images/author-a-phuc.jpg",
     sameAs: ["https://www.facebook.com/traicaybentre"],
   },
   "jang-trinh": {
@@ -44,7 +43,7 @@ export const AUTHORS = {
     slug: "vua-phuc-giang",
     name: "Vựa Phúc Giang",
     jobTitle: "Vựa xoài Bến Tre — đối tác cung ứng",
-    bio: "Vựa xoài tứ quý Bến Tre — đối tác nhà vườn Thạnh Phú. Chuyên giống Tứ Quý CDĐL #00124, cung ứng sỉ và lẻ. Hotline: 0932 585 533.",
+    bio: "Vựa xoài tứ quý Bến Tre — đối tác nhà vườn Thạnh Phú. Chuyên giống Tứ Quý CDĐL #00124, cung ứng sỉ và lẻ. Hotline: 0327 267 795.",
     url: "https://www.traicaybentre.com/nguon-goc",
     sameAs: ["https://www.facebook.com/traicaybentre"],
   },

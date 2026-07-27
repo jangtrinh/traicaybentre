@@ -21,7 +21,7 @@
     },
     "desc1": "Xoài Tứ Quý Thạnh Phú, Bến Tre — trồng trên đất giồng cát ven biển, nhiễm mặn tự nhiên nên vị xoài có chút mặn nhẹ cuối lưỡi, không chỗ nào làm lại được.",
     "desc2": "Sáng hái ngoài vườn, chiều lên xe lạnh ra Hà Nội.",
-    "desc2Bold": "Anh Phúc nghe máy từ 4h sáng tới tối",
+    "desc2Bold": "Chị Vân Linh nghe máy từ 4h sáng tới tối",
     "desc2Prefix": "Giá cập mỗi sáng — ",
     "scrollHint1": "cuộn xuống",
     "scrollHint2": "khám phá ngay",
@@ -34,7 +34,7 @@
     "viewImage": "Xem ảnh",
     "getQuote": "Nhận báo giá",
     "priceUnit": "đ/kg",
-    "priceNote": "Giá đổi mỗi sáng — gọi Anh Phúc lấy giá chuẩn ngày",
+    "priceNote": "Giá đổi mỗi sáng — gọi Chị Vân Linh lấy giá chuẩn ngày",
     "priceUntil": "Giá áp dụng đến"
   },
   "process": {
@@ -76,8 +76,8 @@
       "Xuất hoá đơn VAT đầy đủ"
     ],
     "ctaPrimary": "Xem giá sỉ",
-    "ctaPhone": "0932 585 533",
-    "ctaNote": "Zalo trả trong 5 phút · 4h sáng – 18h · Anh Phúc nghe máy"
+    "ctaPhone": "0327 267 795",
+    "ctaNote": "Zalo trả trong 5 phút · 4h sáng – 18h · Chị Vân Linh nghe máy"
   },
   "testimonials": {
     "sectionTag": "Bạn hàng nói vầy",
@@ -107,11 +107,11 @@
     "sectionTag": "Liên hệ lấy mối",
     "sectionTitle": "Để Vựa Gọi Lại",
     "zaloLabel": "Zalo (trả nhanh)",
-    "zaloValue": "0932 585 533",
-    "zaloSub": "Anh Phúc trả trong 5 phút",
+    "zaloValue": "0327 267 795",
+    "zaloSub": "Chị Vân Linh trả trong 5 phút",
     "phoneLabel": "Gọi trực tiếp",
-    "phoneValue": "0932 585 533",
-    "phoneSub": "4h sáng – 18h · Anh Phúc nghe máy",
+    "phoneValue": "0327 267 795",
+    "phoneSub": "4h sáng – 18h · Chị Vân Linh nghe máy",
     "addressLabel": "Địa chỉ vựa",
     "addressValue": "Thạnh Phú, Bến Tre",
     "addressSub": "Mở cửa 4h sáng",
@@ -129,9 +129,9 @@
     "formSending": "Đang gửi...",
     "formSuccessTitle": "Gửi thành công!",
     "formSuccessMsg": "Cảm ơn anh/chị {name}! Vựa đã nhận thông tin.",
-    "formSuccessCallback": "Anh Phúc sẽ gọi vô {phone} trong vòng 15 phút (giờ làm việc).",
+    "formSuccessCallback": "Chị Vân Linh sẽ gọi vô {phone} trong vòng 15 phút (giờ làm việc).",
     "formSuccessReset": "Gửi liên hệ khác",
-    "formErrorDefault": "Gửi không được rồi — anh/chị thử lại, hoặc Zalo 0932 585 533 để vựa nhận trực tiếp nha."
+    "formErrorDefault": "Gửi không được rồi — anh/chị thử lại, hoặc Zalo 0327 267 795 để vựa nhận trực tiếp nha."
   },
   "footer": {
     "followUs": "Theo dõi vựa",
@@ -275,7 +275,7 @@
       },
       {
         "q": "Giá xoài Tứ Quý Bến Tre bao nhiêu?",
-        "a": "Giá đổi mỗi ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi Anh Phúc 0932 585 533 lấy giá chuẩn trong ngày — giá cập mỗi sáng."
+        "a": "Giá đổi mỗi ngày: VIP 23.000–25.000đ/kg, Loại 1 20.000–22.000đ/kg, Loại 2 16.000–18.000đ/kg. Gọi Chị Vân Linh 0327 267 795 lấy giá chuẩn trong ngày — giá cập mỗi sáng."
       },
       {
         "q": "Ship xa xoài có bị dập không?",
@@ -291,7 +291,7 @@
       },
       {
         "q": "Mua xoài sỉ Bến Tre cần bao nhiêu?",
-        "a": "Lấy tối thiểu 1 thùng 20kg. Đóng thùng theo ý bạn hàng — carton, xốp, bao lưới đều được. Phí ship báo trước tuỳ tuyến. Gọi 0932 585 533 để báo giá."
+        "a": "Lấy tối thiểu 1 thùng 20kg. Đóng thùng theo ý bạn hàng — carton, xốp, bao lưới đều được. Phí ship báo trước tuỳ tuyến. Gọi 0327 267 795 để báo giá."
       },
       {
         "q": "Thanh toán và hóa đơn?",
@@ -334,7 +334,7 @@
       "updated": "Cập nhật:",
       "weightLabel": "Trọng lượng:",
       "ctaOrder": "Đặt hàng",
-      "ctaCall": "Gọi vựa: 0932 585 533"
+      "ctaCall": "Gọi vựa: 0327 267 795"
     },
     "orderInfo": {
       "title": "Thông tin đặt hàng",
@@ -467,7 +467,7 @@
     "faq": {
       "title": "Câu hỏi thường gặp — Dừa Xiêm Bến Tre",
       "items": [
-        { "q": "Đặt dừa xiêm Bến Tre online ship toàn quốc được không?", "a": "Được. Vựa giao lạnh toàn quốc: TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Đặt qua Zalo hoặc gọi 0932 585 533." },
+        { "q": "Đặt dừa xiêm Bến Tre online ship toàn quốc được không?", "a": "Được. Vựa giao lạnh toàn quốc: TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Đặt qua Zalo hoặc gọi 0327 267 795." },
         { "q": "Dừa sọ khác dừa xiêm nguyên trái sao?", "a": "Dừa sọ là dừa xiêm đã gọt sạch vỏ xanh, chỉ còn sọ trắng + nước bên trong. Mở nắp uống liền, đóng gói đẹp, dễ ship xa." },
         { "q": "Giá dừa xiêm Bến Tre bao nhiêu?", "a": "Sỉ từ 50 trái: 8.000-10.000₫/trái. Lẻ từ 10 trái: 15.000-18.000₫/trái. Giá có thể thay đổi theo mùa, gọi vựa báo giá chính xác." },
         { "q": "Nước dừa có ngọt không?", "a": "Dừa xiêm Bến Tre nước ngọt thanh tự nhiên, không gắt. Vựa chọn trái chín tới — ngọt nhất." },
@@ -831,7 +831,7 @@
       "title": "Giao Trái Cây Bến Tre",
       "titleTo": "Đến {cityName}",
       "desc": "{method} từ vựa Thạnh Phú — {hours} giờ đến {cityName}. Xoài Tứ Quý CDĐL #00124 + Dừa Xiêm sọ gọt sẵn. Đóng gói chống dập, giữ lạnh suốt tuyến.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo đặt hàng"
     },
     "shippingDetails": {
@@ -853,7 +853,7 @@
       "q1": "Giao trái cây Bến Tre đến {cityName} mất bao lâu?",
       "a1": "Khoảng {hours} giờ bằng {method}. Hàng đóng gói giữ lạnh, tươi khi đến nơi.",
       "q2": "Phí ship {cityName} bao nhiêu?",
-      "a2": "Ước tính {cost}₫/thùng 20kg. Phí chính xác báo khi đặt hàng — tùy trọng lượng và tuyến. Gọi 0932 585 533.",
+      "a2": "Ước tính {cost}₫/thùng 20kg. Phí chính xác báo khi đặt hàng — tùy trọng lượng và tuyến. Gọi 0327 267 795.",
       "q3": "Xoài Tứ Quý ship {cityName} có bị dập không?",
       "a3": "Không. Mỗi trái bọc lưới xốp riêng, thùng carton đệm chống sốc. 3 năm giao toàn quốc, hàng hư < 2%. Dập → Zalo ảnh → bồi đơn sau.",
       "q4": "Mua dừa xiêm sọ ship {cityName} được không?",
@@ -872,8 +872,8 @@
       "title": "Xoài Tứ Quý Giao TP.HCM",
       "titleHighlight": "24h Từ Vựa Thạnh Phú",
       "desc": "Thành phố gần vựa nhất — xe lạnh đi mỗi chiều, phí ship rẻ nhất, xoài tới tay trong 24 giờ. Giao tận chợ, nhà hàng, siêu thị.",
-      "ctaCall": "Gọi đặt hàng: 0932 585 533",
-      "ctaZalo": "Zalo: 0932 585 533"
+      "ctaCall": "Gọi đặt hàng: 0327 267 795",
+      "ctaZalo": "Zalo: 0327 267 795"
     },
     "shipping": {
       "title": "Chi tiết vận chuyển",
@@ -904,11 +904,11 @@
         },
         {
           "q": "Lấy sỉ TP.HCM liên hệ ai?",
-          "a": "Liên hệ trực tiếp A Phúc — 0932 585 533 (gọi hoặc Zalo). Báo số lượng, điểm giao, loại xoài cần — vựa báo giá sỉ và lịch giao trong 15 phút."
+          "a": "Liên hệ trực tiếp Chị Vân Linh — 0327 267 795 (gọi hoặc Zalo). Báo số lượng, điểm giao, loại xoài cần — vựa báo giá sỉ và lịch giao trong 15 phút."
         },
         {
           "q": "Phí ship TP.HCM bao nhiêu?",
-          "a": "Phí xe lạnh tuyến Bến Tre – TP.HCM khoảng 15.000–25.000đ/thùng 20kg — rẻ nhất trong 3 thành phố lớn vì gần vựa nhất. Gọi 0932 585 533 để xác nhận."
+          "a": "Phí xe lạnh tuyến Bến Tre – TP.HCM khoảng 15.000–25.000đ/thùng 20kg — rẻ nhất trong 3 thành phố lớn vì gần vựa nhất. Gọi 0327 267 795 để xác nhận."
         },
         {
           "q": "Xoài giao TP.HCM có bị dập không?",
@@ -931,7 +931,7 @@
     "cta": {
       "title": "Đặt xoài giao TP.HCM ngay",
       "desc": "Gọi hoặc nhắn Zalo — vựa báo giá & thời gian giao trong 15 phút.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo ngay"
     },
     "internalLinks": [
@@ -946,8 +946,8 @@
       "title": "Xoài Tứ Quý Giao Hà Nội",
       "titleHighlight": "48h Từ Vựa Thạnh Phú",
       "desc": "Xe lạnh duy trì 8–12°C hoặc gửi bay trong ngày nếu gấp. Đóng gói chống dập chuẩn tuyến xa. 95% xoài vựa bán cho mối ngoài Bắc — quen tuyến lắm rồi.",
-      "ctaCall": "Gọi đặt hàng: 0932 585 533",
-      "ctaZalo": "Zalo: 0932 585 533"
+      "ctaCall": "Gọi đặt hàng: 0327 267 795",
+      "ctaZalo": "Zalo: 0327 267 795"
     },
     "shipping": {
       "title": "Chi tiết vận chuyển",
@@ -970,7 +970,7 @@
       "items": [
         {
           "q": "Mua xoài Bến Tre chính gốc ở đâu Hà Nội?",
-          "a": "Đặt trực tiếp từ vựa Trái Cây Bến Tre tại Thạnh Phú. Xoài có Chỉ dẫn địa lý CDĐL #00124 do Cục SHTT cấp — đảm bảo chính gốc. Gọi 0932 585 533 hoặc nhắn Zalo, vựa báo giá + lịch giao trong 15 phút."
+          "a": "Đặt trực tiếp từ vựa Trái Cây Bến Tre tại Thạnh Phú. Xoài có Chỉ dẫn địa lý CDĐL #00124 do Cục SHTT cấp — đảm bảo chính gốc. Gọi 0327 267 795 hoặc nhắn Zalo, vựa báo giá + lịch giao trong 15 phút."
         },
         {
           "q": "Làm sao biết xoài Bến Tre chính gốc, không phải hàng trộn?",
@@ -986,7 +986,7 @@
         },
         {
           "q": "Phí ship Hà Nội bao nhiêu?",
-          "a": "Phí ship xe lạnh tuyến Bến Tre – Hà Nội khoảng 35.000–50.000đ/thùng 20kg (báo chính xác khi đặt hàng). Gửi bay cao hơn, phụ thuộc chuyến. Gọi 0932 585 533 để báo giá trước."
+          "a": "Phí ship xe lạnh tuyến Bến Tre – Hà Nội khoảng 35.000–50.000đ/thùng 20kg (báo chính xác khi đặt hàng). Gửi bay cao hơn, phụ thuộc chuyến. Gọi 0327 267 795 để báo giá trước."
         },
         {
           "q": "Thanh toán và nhận hàng ở Hà Nội thế nào?",
@@ -1002,14 +1002,14 @@
         },
         {
           "q": "Theo dõi đơn hàng giao Hà Nội qua đâu?",
-          "a": "Nhắn Zalo 0932 585 533 — vựa gửi cập nhật vị trí xe và ảnh hàng đóng gói trước khi chạy. Khi xe đến Hà Nội, tài xế gọi trực tiếp báo giờ giao."
+          "a": "Nhắn Zalo 0327 267 795 — vựa gửi cập nhật vị trí xe và ảnh hàng đóng gói trước khi chạy. Khi xe đến Hà Nội, tài xế gọi trực tiếp báo giờ giao."
         }
       ]
     },
     "cta": {
       "title": "Lấy xoài ra Hà Nội",
       "desc": "Gọi hoặc nhắn Zalo — vựa báo giá + lịch giao trong 15 phút.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo ngay"
     },
     "internalLinks": [
@@ -1025,8 +1025,8 @@
       "title": "Xoài Tứ Quý Giao Đà Nẵng",
       "titleHighlight": "Ship Lạnh Toàn Tuyến",
       "desc": "Xe lạnh 36 giờ từ Thạnh Phú thẳng ra Đà Nẵng. Bạn hàng là nhà hàng, khách sạn, resort khu vực miền Trung.",
-      "ctaCall": "Gọi đặt hàng: 0932 585 533",
-      "ctaZalo": "Zalo: 0932 585 533"
+      "ctaCall": "Gọi đặt hàng: 0327 267 795",
+      "ctaZalo": "Zalo: 0327 267 795"
     },
     "shipping": {
       "title": "Chi tiết vận chuyển",
@@ -1053,11 +1053,11 @@
         },
         {
           "q": "Có giao các tỉnh miền Trung khác không?",
-          "a": "Có. Vựa giao đến Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế và Quảng Trị theo tuyến xe lạnh cố định. Liên hệ 0932 585 533 để xác nhận lịch giao cho địa điểm cụ thể."
+          "a": "Có. Vựa giao đến Quảng Nam, Quảng Ngãi, Bình Định, Phú Yên, Huế và Quảng Trị theo tuyến xe lạnh cố định. Liên hệ 0327 267 795 để xác nhận lịch giao cho địa điểm cụ thể."
         },
         {
           "q": "Phí ship Đà Nẵng bao nhiêu?",
-          "a": "Khoảng 25.000–40.000đ/thùng 20kg tuyến Bến Tre – Đà Nẵng. Gọi 0932 585 533 để báo giá chính xác theo số lượng và thời điểm."
+          "a": "Khoảng 25.000–40.000đ/thùng 20kg tuyến Bến Tre – Đà Nẵng. Gọi 0327 267 795 để báo giá chính xác theo số lượng và thời điểm."
         },
         {
           "q": "Xoài có được bảo quản lạnh khi ship Đà Nẵng không?",
@@ -1065,7 +1065,7 @@
         },
         {
           "q": "Nhà hàng Đà Nẵng đặt sỉ thế nào?",
-          "a": "Gọi hoặc nhắn Zalo 0932 585 533 — A Phúc báo giá sỉ theo khối lượng, lịch giao cố định hàng tuần. Xuất hóa đơn VAT đầy đủ."
+          "a": "Gọi hoặc nhắn Zalo 0327 267 795 — Chị Vân Linh báo giá sỉ theo khối lượng, lịch giao cố định hàng tuần. Xuất hóa đơn VAT đầy đủ."
         },
         {
           "q": "Đặt tối thiểu bao nhiêu giao Đà Nẵng?",
@@ -1073,7 +1073,7 @@
         },
         {
           "q": "Có đổi trả nếu hàng bị hư không?",
-          "a": "Có. Hàng hư dưới 2% là chỉ tiêu vựa giữ. Nếu trái dập, chụp ảnh gửi Zalo 0932 585 533 — đơn sau bồi lại, không hỏi nhiều."
+          "a": "Có. Hàng hư dưới 2% là chỉ tiêu vựa giữ. Nếu trái dập, chụp ảnh gửi Zalo 0327 267 795 — đơn sau bồi lại, không hỏi nhiều."
         },
         {
           "q": "Thanh toán và nhận hàng Đà Nẵng thế nào?",
@@ -1084,7 +1084,7 @@
     "cta": {
       "title": "Đặt xoài giao Đà Nẵng ngay",
       "desc": "Gọi hoặc nhắn Zalo — vựa báo giá & lịch giao tuyến miền Trung trong 15 phút.",
-      "ctaCall": "0932 585 533",
+      "ctaCall": "0327 267 795",
       "ctaZalo": "Zalo ngay"
     },
     "internalLinks": [
@@ -1117,7 +1117,7 @@
     }
   },
   "priceData": {
-    "note": "Giá dao động theo ngày, gọi vựa 0932 585 533 để có giá chính xác.",
+    "note": "Giá dao động theo ngày, gọi vựa 0327 267 795 để có giá chính xác.",
     "tiers": {
       "vip": {
         "name": "Xoài Tứ Quý VIP",
@@ -1141,7 +1141,7 @@
       "badge": "Bảng giá cập nhật",
       "title": "Giá Trái Cây Bến Tre Hôm Nay",
       "updated": "Cập nhật:",
-      "desc": "Giá trực tiếp từ vựa Thạnh Phú, cập nhật mỗi sáng. Gọi 0932 585 533 để có giá chính xác nhất."
+      "desc": "Giá trực tiếp từ vựa Thạnh Phú, cập nhật mỗi sáng. Gọi 0327 267 795 để có giá chính xác nhất."
     },
     "xoaiTuQuy": {
       "title": "Xoài Tứ Quý Thạnh Phú",
@@ -1166,7 +1166,7 @@
       "shipping": "Giao lạnh toàn quốc",
       "shippingDesc": "TP.HCM 24h, Hà Nội 48h, Đà Nẵng 36h. Tỷ lệ dập dưới 2% sau 3 năm giao hàng",
       "contact": "Gọi vựa trực tiếp",
-      "contactDesc": "A Phúc nghe máy từ 4h sáng. Zalo hoặc gọi 0932 585 533"
+      "contactDesc": "Chị Vân Linh nghe máy từ 4h sáng. Zalo hoặc gọi 0327 267 795"
     },
     "cta": {
       "title": "Đặt hàng ngay hôm nay",
@@ -1195,7 +1195,7 @@
       "title": "Cách đặt hàng",
       "steps": [
         { "step": "1", "title": "Chọn sản phẩm", "desc": "Chọn loại trái cây và phân hạng bạn muốn" },
-        { "step": "2", "title": "Nhắn Zalo hoặc gọi", "desc": "Gửi tin nhắn qua Zalo hoặc gọi 0932 585 533" },
+        { "step": "2", "title": "Nhắn Zalo hoặc gọi", "desc": "Gửi tin nhắn qua Zalo hoặc gọi 0327 267 795" },
         { "step": "3", "title": "Nhận hàng & thanh toán", "desc": "COD khi nhận hoặc chuyển khoản trước. Hàng giao trong 24–48h" }
       ]
     },
@@ -1210,7 +1210,7 @@
     },
     "cta": {
       "title": "Đặt hàng ngay",
-      "desc": "Zalo hoặc gọi — A Phúc nghe máy từ 4h sáng",
+      "desc": "Zalo hoặc gọi — Chị Vân Linh nghe máy từ 4h sáng",
       "zalo": "Nhắn Zalo đặt hàng"
     }
   }

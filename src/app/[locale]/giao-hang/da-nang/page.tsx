@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: "Xoài Tứ Quý Giao Đà Nẵng — Ship Lạnh Toàn Tuyến Miền Trung | Trái Cây Bến Tre",
     description:
-      "Giao xoài Tứ Quý Bến Tre đến Đà Nẵng trong 36h bằng xe lạnh. Phục vụ nhà hàng, khách sạn khu vực miền Trung. Gọi đặt sỉ: 0932 585 533.",
+      "Giao xoài Tứ Quý Bến Tre đến Đà Nẵng trong 36h bằng xe lạnh. Phục vụ nhà hàng, khách sạn khu vực miền Trung. Gọi đặt sỉ: 0327 267 795.",
     keywords: [
       "xoài tứ quý giao đà nẵng",
       "xoài bến tre miền trung",
@@ -83,14 +83,14 @@ export default async function GiaoHangDaNangPage({ params }: Props) {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="tel:0932585533"
+                href="tel:0327267795"
                 className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
                 <Phone size={18} weight="bold" />
                 {t("hero.ctaCall")}
               </a>
               <a
-                href="https://zalo.me/0932585533"
+                href="https://zalo.me/0327267795"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"
@@ -190,14 +190,14 @@ export default async function GiaoHangDaNangPage({ params }: Props) {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="tel:0932585533"
+                href="tel:0327267795"
                 className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-text transition-colors"
               >
                 <Phone size={18} weight="bold" />
                 {t("cta.ctaCall")}
               </a>
               <a
-                href="https://zalo.me/0932585533"
+                href="https://zalo.me/0327267795"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border-2 border-text/20 px-6 py-4 text-sm font-bold text-text hover:border-text transition-colors"

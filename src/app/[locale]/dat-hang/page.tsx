@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title:
       "Đặt Trái Cây Bến Tre Online — Xoài Tứ Quý, Hoàng Kim, Dừa Xiêm | Ship Toàn Quốc",
     description:
-      "Mua xoài Tứ Quý, Hoàng Kim, dừa xiêm Bến Tre online. Trực tiếp từ vựa Thạnh Phú, giao lạnh toàn quốc 24–48h. CDĐL #00124. Gọi 0932 585 533.",
+      "Mua xoài Tứ Quý, Hoàng Kim, dừa xiêm Bến Tre online. Trực tiếp từ vựa Thạnh Phú, giao lạnh toàn quốc 24–48h. CDĐL #00124. Gọi 0327 267 795.",
     keywords: [
       "mua xoài tứ quý online",
       "đặt xoài tứ quý",

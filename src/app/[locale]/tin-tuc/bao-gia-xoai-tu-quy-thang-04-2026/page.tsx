@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Báo Giá Xoài Tứ Quý Tháng 4/2026 — Giá Sỉ Cập Nhật",
     description:
-      "VIP 23–25k, Loại 1 20–22k, Loại 2 16–18k. Vụ 1 chất lượng cao. Gọi 0932 585 533.",
+      "VIP 23–25k, Loại 1 20–22k, Loại 2 16–18k. Vụ 1 chất lượng cao. Gọi 0327 267 795.",
     url: PAGE_URL,
   },
 };
@@ -252,14 +252,14 @@ export default async function BaoGiaThang04Page({
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <a
-                  href="tel:0932585533"
+                  href="tel:0327267795"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-wider text-text hover:bg-mango hover:text-white transition-colors"
                 >
                   <Phone size={18} weight="bold" />
-                  Gọi: 0932 585 533
+                  Gọi: 0327 267 795
                 </a>
                 <a
-                  href="https://zalo.me/0932585533"
+                  href="https://zalo.me/0327267795"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:border-white transition-colors"
